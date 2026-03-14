@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>הפרטים נקלטו | קוד המפצח — אוריאל סול</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="logo_final.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- Analytics placeholder -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script> -->
+<!-- Meta Pixel placeholder -->
+<!-- <script>!function(f,b,e,v,n,t,s){...}('YOUR-PIXEL-ID')</script> -->
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--black:#08080a;--black-light:#0e0e12;--black-card:#131318;
+--border:rgba(255,255,255,0.1);
+--white:#f3f4f8;--white-dim:#a5a7b3;
+--core:#8f2fa0;--core-light:#b159c1;--core-dark:#652173;
+--core-glow:rgba(143,47,160,0.22);
+--gradient-core:linear-gradient(135deg,#6f2480,var(--core),#a649b6);
+--font:'Heebo',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--black);color:var(--white);line-height:1.7;overflow-x:hidden;direction:rtl;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:
+radial-gradient(70% 45% at 50% 0%,rgba(255,255,255,0.05),transparent 60%),
+radial-gradient(50% 40% at 80% 10%,rgba(143,47,160,0.06),transparent 50%)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.highlight{background:var(--gradient-core);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* LAYOUT */
+.thank-you-wrapper{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 20px;position:relative;z-index:1}
+.thank-you-card{max-width:620px;width:100%;text-align:center}
+
+/* CHECK ANIMATION */
+.success-icon{width:80px;height:80px;margin:0 auto 32px;border-radius:50%;background:rgba(143,47,160,0.15);border:2px solid rgba(143,47,160,0.4);display:flex;align-items:center;justify-content:center;animation:pulseGlow 2s ease-in-out infinite}
+.success-icon svg{width:40px;height:40px}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 20px rgba(143,47,160,0.15)}50%{box-shadow:0 0 40px rgba(143,47,160,0.3)}}
+
+/* TYPOGRAPHY */
+.thank-you-card h1{font-size:clamp(28px,5vw,40px);font-weight:800;line-height:1.3;margin-bottom:24px}
+.thank-you-card .main-text{font-size:17px;color:var(--white);line-height:1.8;margin-bottom:28px}
+.thank-you-card .sub-text{font-size:15px;color:var(--white-dim);line-height:1.8;margin-bottom:32px}
+
+/* WHATSAPP BLOCK */
+.whatsapp-block{display:inline-flex;align-items:center;gap:12px;padding:16px 32px;border-radius:14px;background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.3);margin-bottom:28px;font-size:18px;font-weight:700;color:#25d366}
+.whatsapp-block svg{width:28px;height:28px;fill:#25d366;flex-shrink:0}
+
+/* SMALL TEXT */
+.fallback-text{font-size:14px;color:var(--white-dim);opacity:0.7}
+.fallback-text a{color:var(--core-light);text-decoration:underline;text-underline-offset:3px}
+
+/* FOOTER */
+.site-footer{padding:32px 20px;text-align:center;border-top:1px solid rgba(255,255,255,0.06);position:relative;z-index:1}
+.footer-logo{height:32px;margin:0 auto 12px;opacity:0.7}
+.site-footer p{font-size:13px;color:var(--white-dim);opacity:0.6}
+
+/* FADE IN */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeUp 0.8s ease forwards}
+.fade-in-delay-1{animation-delay:0.2s}
+.fade-in-delay-2{animation-delay:0.4s}
+.fade-in-delay-3{animation-delay:0.6s}
+.fade-in-delay-4{animation-delay:0.8s}
+.fade-in-delay-5{animation-delay:1s}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){
+.thank-you-wrapper{padding:40px 20px}
+.whatsapp-block{padding:14px 24px;font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<main class="thank-you-wrapper">
+  <div class="thank-you-card">
+
+    <div class="success-icon fade-in">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#b159c1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+
+    <h1 class="fade-in fade-in-delay-1">הפרטים נקלטו <span class="highlight">בהצלחה.</span></h1>
+
+    <p class="main-text fade-in fade-in-delay-2">תוך כמה דקות אשלח לך הודעת וואטסאפ עם שאלון קצר.<br>זה לא סתם טופס. זה מה שמאפשר לי להגיע לשיחה שלנו מוכן, ממוקד, ולא לבזבז לך זמן על שאלות בסיסיות.</p>
+
+    <p class="sub-text fade-in fade-in-delay-3">אחרי השאלון תיפתח לך מיד אופציה לקביעת שיחה בזום ולבחור את התאריך והשעה שמתאימים לך.<br>השיחה היא בין 30 ל-60 דקות.<br>בסופה תדע בדיוק אם זה מתאים לך ומה הצעד הבא שנכון לך.</p>
+
+    <div class="fade-in fade-in-delay-4">
+      <div class="whatsapp-block">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        בדוק את הוואטסאפ שלך עכשיו
+      </div>
+    </div>
+
+    <p class="fallback-text fade-in fade-in-delay-5">לא קיבלת הודעה תוך 5 דקות? כתוב לי ישירות: <a href="https://wa.me/972503032199">050-3032199</a></p>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <img src="logo_final.png" alt="Uriel Sol" class="footer-logo" />
+  <p>&copy; 2026 אוריאל סול. כל הזכויות שמורות.</p>
+</footer>
+
+</body>
+</html>
