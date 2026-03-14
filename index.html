@@ -418,6 +418,19 @@ input:focus-visible,select:focus-visible{outline:none;border-color:var(--purple-
 .scroll-line-svg .scroll-line-fill{stroke:var(--core-light);stroke-width:1.5;filter:drop-shadow(0 0 6px rgba(143,47,160,0.4))}
 
 /* RESPONSIVE */
+/* TEXT TESTIMONIALS MARQUEE */
+.text-testimonials{background:var(--black);overflow:hidden;padding-top:80px;padding-bottom:80px}
+.text-testimonials h2{text-align:center;margin-bottom:48px}
+.marquee-wrapper{position:relative;width:100%;overflow:hidden;mask-image:linear-gradient(to left,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(to left,transparent,#000 10%,#000 90%,transparent)}
+.marquee-track{display:flex;gap:24px;width:max-content;animation:marqueeScroll 60s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.quote-card{flex:0 0 360px;padding:28px 24px;border-radius:16px;background:rgba(16,16,22,0.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.1);position:relative;transition:border-color 0.35s,box-shadow 0.35s}
+.quote-card::before{content:'';position:absolute;inset:0;pointer-events:none;border-radius:16px;background:linear-gradient(140deg,rgba(255,255,255,0.06),transparent 42%,rgba(143,47,160,0.1) 100%)}
+.quote-card:hover{border-color:rgba(143,47,160,0.35);box-shadow:0 12px 40px rgba(0,0,0,0.4),0 0 50px rgba(143,47,160,0.1)}
+.quote-icon{color:var(--core-light);font-size:32px;line-height:1;margin-bottom:12px;font-family:Georgia,serif;opacity:0.6}
+.quote-text{font-size:15px;color:var(--white-dim);line-height:1.75;direction:rtl}
+
 @media(max-width:768px){
 section{padding:70px 20px}
 .hero{padding-top:96px;min-height:auto}
@@ -448,6 +461,9 @@ section{padding:70px 20px}
 .after-timeline{padding-right:30px}
 .social-proof{gap:16px}
 .scroll-line-svg{display:none}
+.quote-card{flex:0 0 300px;padding:24px 20px}
+.quote-text{font-size:14px}
+.marquee-track{animation-duration:45s}
 body{padding-bottom:70px}
 }
 </style>
@@ -788,6 +804,28 @@ body{padding-bottom:70px}
 
 <div class="glow-divider"></div>
 
+<!-- TEXT TESTIMONIALS (MARQUEE) -->
+<section class="text-testimonials" id="quotes">
+  <div class="container">
+    <h2 class="reveal">מה <span class="highlight">הלקוחות אומרים</span></h2>
+  </div>
+  <div class="marquee-wrapper">
+    <div class="marquee-track" id="marqueeTrack">
+      <div class="quote-card"><div class="quote-icon">״</div><div class="quote-text">הייתי במקום מתסכל, ניסיתי ממומן אורגני וכלום לא עבד. בתהליך הזה הבנתי מה אני באמת מוכרת ועוד בתהליך כבר סגרתי שתי סגירות קלות בחדות מטורפת. החזרתי את ההשקעה מזמן, למעשה שילשתי אותה.</div></div>
+      <div class="quote-card"><div class="quote-icon">״</div><div class="quote-text">השיווק הרגיש לי כמו עול ורדיפה בלתי פוסקת. בתהליך בניתי את כל הקו האסטרטגי שלי וראיתי איך הכל מתחבר כמו פאזל בעסק שלי. היום אני לא שובר את הראש, אני יודע בדיוק מה אני עושה מחר ואיך זה משרת אותי ואת העסק שלי.</div></div>
+      <div class="quote-card"><div class="quote-icon">״</div><div class="quote-text">לפני כן נסחפתי עם הגל, הרגשתי כמו ׳עוד אחת׳ שמעלה תוכן כי צריך. אצלך בתהליך דייקתי את הזהות העסקית שלי והמסר הפך למדויק. סגרתי שני תהליכי פרימיום דרך האינסטגרם כבר בשבוע השלישי של התהליך, הגיעו נשים שהן ממש שיקוף שלי.</div></div>
+      <div class="quote-card"><div class="quote-icon">״</div><div class="quote-text">חשבתי שאני יודע לעבוד עם AI אבל הבנתי עד כמה שהוא לא באמת ידע עלי ועל העסק שלי. אוריאל לימד אותי להפוך את ה-GPT למכונה אסטרטגית שעובדת בשבילי, הוא הפך להיות ממש יד ימיני כמאמן עסקי, שיווקי ומכירתי.</div></div>
+      <div class="quote-card"><div class="quote-icon">״</div><div class="quote-text">כל עסק שבנוי על מיתוג אישי חייב להגיע לתהליך הזה כדי להבין איך לעשות את זה נכון ומדויק. קיבלתי ארסנל של כלים שלא קיבלתי בשום מקום אחר והרבה יותר ביטחון להוציא את מה שישב אצלי הרבה זמן.</div></div>
+      <div class="quote-card"><div class="quote-icon">״</div><div class="quote-text">חשבתי שאני בא ללמוד איך לערוך סרטונים, אבל קיבלתי פצצה למוח. הבנתי שהמוצר הוא לא התספורות או הקורסים שלי — אני המוצר. פתאום כל העסק והשיווק שלי הפך למסר אחד ברור והקהל שהתחיל להגיע אלי פשוט היה כבר מוכן לקנות.</div></div>
+      <div class="quote-card"><div class="quote-icon">״</div><div class="quote-text">הייתי בטוחה שאני הולכת ללמוד שיווק, אבל קיבלתי ערך שייזכר לכל החיים. זה תהליך עומק שגרם לי להבין את המהות שלי, מה הערך הייחודי שאני מביאה ואיך זה יוצא החוצה בשיווק בצורה חדה ומבודלת מכולם. זה המקפצה הכי טובה כדי לא להיות ׳עוד אחת׳ בשוק.</div></div>
+      <div class="quote-card"><div class="quote-icon">״</div><div class="quote-text">ה-AI הזה חוסך לי עבודה ברמה חולנית. במקום לבנות תוכנית עסקית בחודש וחצי, הוא בונה אותה בשנייה אחרי שהגדרנו אותו נכון לפי כל ה-DNA העסקי שלי. זה לא רק קורס, זה שינוי תפיסה ב-180 מעלות.</div></div>
+      <div class="quote-card"><div class="quote-icon">״</div><div class="quote-text">הבנתי מה זה שיווק שבא מה-DNA וזה מה ששינה לי את כל התמונה בעסק. הבנתי שאני צריך לייצר מותג שמבוסס על הערך הייחודי שלי ולהוביל את הלקוח משפך חכם שמחמם אותו. אבל היופי הוא שהבנתי איך כל השלבים מתחברים זה לזה בקו אחיד, כך שמי שמגיע אלי כבר מוכן לרכוש ומכיר אותי.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
 <!-- SCREENSHOTS (PHONE MOCKUP) -->
 <section class="screenshots-section" id="screenshots">
   <div class="container">
@@ -1052,6 +1090,12 @@ if(cards.length){
 }
 
 // (mouse border glow removed — mobile-first)
+
+// TEXT TESTIMONIALS MARQUEE — duplicate cards for infinite loop
+(function(){
+  const mt=document.getElementById('marqueeTrack');
+  if(mt){mt.innerHTML+=mt.innerHTML}
+})();
 
 // REVEAL
 const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
