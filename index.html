@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>קוד המפצח | אוריאל סול</title>
-<meta name="description" content="קוד המפצח - תהליך 13 שבועות לבעלי עסקים ומומחים שרוצים לבנות מנגנון ביקוש יציב. אוריאל סול.">
-<meta property="og:title" content="קוד המפצח | אוריאל סול">
-<meta property="og:description" content="ב 13 שבועות תבנה את הבסיס שגורם לאנשים להבין למה לבחור דווקא בך.">
+<title>קוד המפצח | אוריאל סול – בניית יסודות ומנגנון</title>
+<meta name="description" content="תהליך 13 שבועות למומחים שרוצים להפסיק לרדוף אחרי לקוחות, ולבנות מנגנון ויסודות שגורמים לשוק להבין את הערך שלהם באמת. אוריאל סול.">
+<meta property="og:title" content="קוד המפצח | אוריאל סול – בניית יסודות ומנגנון">
+<meta property="og:description" content="תהליך 13 שבועות למומחים שרוצים להפסיק לרדוף אחרי לקוחות, ולבנות מנגנון ויסודות שגורמים לשוק להבין את הערך שלהם באמת.">
 <meta property="og:image" content="IMG_4598.jpeg">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="logo_final.png">
@@ -401,6 +401,10 @@ radial-gradient(560px 250px at 50% 122%,rgba(143,47,160,0.24),rgba(143,47,160,0)
 .footer-social a:hover{opacity:1}
 .section-desc{margin-bottom:24px;color:var(--white-dim);font-size:17px}
 
+/* ===== CONSENT CHECKBOX ===== */
+.consent-checkbox{display:flex;align-items:flex-start;gap:10px;margin:12px 0 16px;cursor:pointer;font-size:13px;color:var(--white-dim);line-height:1.6}
+.consent-checkbox input[type="checkbox"]{width:18px;height:18px;margin-top:2px;flex-shrink:0;accent-color:var(--core);cursor:pointer}
+
 /* ===== FOCUS STATES ===== */
 :focus-visible{outline:2px solid var(--purple-main);outline-offset:2px}
 .cta-btn:focus-visible{outline:2px solid var(--white);outline-offset:4px}
@@ -468,12 +472,13 @@ body{padding-bottom:70px}
       <div class="error-msg" id="fphoneErr">נא להזין מספר טלפון תקין</div>
       <select id="fcycle" class="form-select" required aria-label="בחר מחזור">
         <option value="" disabled selected>בחר מחזור מועדף</option>
-        <option value="morning">מחזור בוקר (ימי ראשון 10:00 עד 13:00)</option>
-        <option value="evening">מחזור ערב (ימי ראשון 18:00 עד 21:00)</option>
+        <option value="morning-25">מחזור #25 בוקר (נפתח ב-23/04/2026)</option>
+        <option value="evening-25">מחזור #25 ערב (נפתח ב-27/04/2026)</option>
+        <option value="future">מחזורים עתידיים (תאריכים מאוחרים יותר)</option>
       </select>
-      <button class="cta-btn" type="submit">קבעו לי שיחת מיפוי</button>
-      <p class="modal-note">בסוף השיחה תדע בדיוק איפה להשקיע את האנרגיה שלך.</p>
-      <div class="spots-counter">נשארו <span>4</span> מקומות במחזור מרץ 2026</div>
+      <label class="consent-checkbox"><input type="checkbox" id="fconsent" required /><span>אני מאשר/ת קבלת תוכן רלוונטי ועדכונים מאוריאל סול (ניתן להסיר בכל עת).</span></label>
+      <button class="cta-btn" type="submit">בוא נקבע שיחת התאמה</button>
+      <p class="modal-note">מיד לאחר השארת הפרטים, יישלח אליך שאלון קצר לוואטסאפ כדי שנגיע לשיחה ממוקדים ובלי לבזבז זמן.</p>
     </form>
   </div>
 </div>
@@ -498,13 +503,13 @@ body{padding-bottom:70px}
       <p class="micro-copy reveal">למומחה שעובד קשה, יודע שהוא שווה הרבה יותר, ורוצה שהשוק סוף סוף יראה את זה.</p>
       <div class="hero-focus">
         <h1 class="reveal reveal-delay-1">הלקוחות שלך אומרים שאתה <span class="highlight">הכי טוב</span> שהכירו, אז למה אתה עדיין רודף אחרי לקוחות?</h1>
-        <p class="sub-text reveal reveal-delay-2">אתה יודע? זו לא בעיה של שיווק ולא בעיה של ביטחון. זו בעיה שאין לך יסודות ברורים שעליהם הכול יושב. אתה שם גז על ניוטרל, משקיע אנרגיה, זמן וכסף, אבל הגלגלים לא זזים.</p>
-        <p class="sub-text reveal reveal-delay-3 mt-16">ב <span class="highlight">13 שבועות</span> תבנה את הבסיס שגורם לאנשים להבין למה לבחור דווקא בך, ולא במישהו אחר שמוכר בפחות ממך.</p>
+        <p class="sub-text reveal reveal-delay-2">אתה יודע? זו לא בעיה של שיווק ולא בעיה של מכירות. הבעיה היא שאין לך יסודות ברורים שעליהם הכול יושב. אתה בפול גז על ניוטרל, משקיע אנרגיה, זמן וכסף, אבל הגלגלים לא זזים.</p>
+        <p class="sub-text reveal reveal-delay-3 mt-16">ב <span class="highlight">13 שבועות</span> תבנה את מנגנון היסוד שגורם לאנשים להבין למה לבחור דווקא בך, ולא במישהו אחר שמוכר בפחות ממך.</p>
         
         </div>
       <div class="hero-cta-area reveal reveal-delay-4">
         <button class="cta-btn" onclick="openModal()">בוא נבדוק אם זה מתאים לך</button>
-        <p class="cta-sub cta-sub-center">שיחה ללא עלות. בסוף תדע בדיוק איפה להשקיע את האנרגיה שלך ומה הצעד הבא שנכון לך.</p>
+        <p class="cta-sub cta-sub-center">שיחת זום אסטרטגית של 30 עד 60 דקות. נשים הכל על השולחן, בלי לחץ ובלי שעון מתקתק.</p>
       </div>
     </div>
   </div>
@@ -515,15 +520,15 @@ body{padding-bottom:70px}
 <!-- VSL -->
 <section class="vsl-section" id="vsl">
   <div class="container"><div class="vsl-wrapper">
-    <h2 class="reveal">רוב האנשים שמגיעים אלי <span class="highlight">ניסו הכל</span> לפי הסדר הלא נכון</h2>
+    <h2 class="reveal">רוב מי שמגיע אלי ניסה הכל, <span class="highlight">אבל לא לפי הסדר הנכון.</span></h2>
     <div class="vsl-video reveal reveal-delay-1">
       <div class="play-overlay" onclick="this.style.display='none';this.parentElement.innerHTML='<iframe src=\'https://www.youtube.com/embed/VIDEO_ID?autoplay=1\' allow=\'autoplay; encrypted-media\' allowfullscreen></iframe>'">
         <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
       </div>
     </div>
-    <p class="sub-text reveal reveal-delay-2 sub-center">רוב האנשים רצים לשווק לפני שהם מזקקים את ה DNA העסקי שלהם, ובלי יסודות ברורים כל שיווק נשחק. <span class="highlight">קוד המפצח</span> בנוי בשלושה שלבים שמייצרים בהירות, מבנה ומנגנון, וכשיש מבנה הכול יושב על קו אחד שמתחיל לעבוד יציב</p>
+    <p class="sub-text reveal reveal-delay-2 sub-center">רוב האנשים רצים לשווק לפני שהם מזקקים את ה DNA העסקי שלהם. וזה בדיוק העניין, בלי יסודות ברורים, כל שיווק נשחק. <span class="highlight">קוד המפצח</span> בנוי מ 3 שלבים שמייצרים דיוק יסודות, מבנה ומנגנון. וכשיש לך מבנה, הכול יושב על קו אחד שפועל יציב וחזק יותר.</p>
     <div class="text-center mt-32 reveal reveal-delay-3">
-      <button class="cta-btn" onclick="openModal()">לשיחת מיפוי ללא עלות</button>
+      <button class="cta-btn" onclick="openModal()">תראה לי איפה אני עומד היום</button>
     </div>
   </div></div>
 </section>
@@ -533,8 +538,8 @@ body{padding-bottom:70px}
 <!-- NOT NETFLIX -->
 <section class="not-netflix">
   <div class="container"><div class="highlight-box glow-card reveal">
-    <h2>זה לא נטפליקס של שיווק, <span class="highlight">זה חדר כושר</span></h2>
-    <p class="sub-text mx-auto">אנחנו לא צופים אלא בונים בזמן אמת, ואתה יוצא עם נכסים מוכנים ולא עם שיעורי בית</p>
+    <h2>זה לא נטפליקס של שיווק, <span class="highlight">זה חדר כושר לעסקים.</span></h2>
+    <p class="sub-text mx-auto">אנחנו לא צופים בהדרכות, אנחנו בונים בזמן אמת. אתה יוצא עם נכסים מוכנים ופרקטיקה ביצועית, לא עם שיעורי בית.</p>
   </div></div>
 </section>
 
@@ -543,12 +548,12 @@ body{padding-bottom:70px}
 <!-- WHY -->
 <section class="why-section" id="why">
   <div class="container"><div class="why-content">
-    <h2 class="reveal">ניסית יועצים, קורסים, קמפיינים ותוכן, ועדיין <span class="highlight">אין שיטה ואין סדר ואין שקט.</span></h2>
-    <div class="why-callout reveal reveal-delay-1">למה? כי בנית הכל אבל לא את היסודות.</div>
-    <p class="reveal reveal-delay-2">רצת ללמוד איך לשווק לפני שפיצחת מי אתה ומה המהות, והתוצאה היא שכל יום שעובר אתה מחזק את המותג של מישהו אחר במקום את שלך. אתה משווק בלי DNA ברור, מדבר בלי מסר ממוקד ומוכר בלי להבין מה אתה באמת מוכר.</p>
-    <p class="reveal reveal-delay-3"><strong>אי אפשר לבנות גורד שחקים בלי יסודות בטון, וקוד המפצח הוא הבטון.</strong></p>
-    <p class="reveal reveal-delay-4">וזה לא רק שהשיווק לא עובד, זה שלאט לאט אתה מתחיל לפקפק בעצמך, במה שאתה מביא ובערך שלך, לא כי אתה לא טוב אלא כי אין שום דבר שמשקף את זה בחזרה אליך</p>
-    <div class="mt-32 reveal"><button class="cta-btn" onclick="openModal()">לשיחת מיפוי ללא עלות</button><p class="cta-sub">15 דקות, בלי מחויבות</p></div>
+    <h2 class="reveal">ניסית יועצים, קורסים, קמפיינים ותוכן, ועדיין <span class="highlight">אין שיטה שעובדת, אין סדר ואין תוצאות.</span></h2>
+    <div class="why-callout reveal reveal-delay-1">למה? כי בנית הכל, אבל לא את היסודות.</div>
+    <p class="reveal reveal-delay-2">רצת ללמוד איך לשווק לפני שפיצחת מי אתה ומה המהות שלך. התוצאה היא שכל יום שעובר אתה מחזק את המותג של מישהו אחר במקום את שלך. אתה משווק בלי DNA ברור, מדבר בלי מסר ממוקד ומוכר בלי להבין מה אתה באמת מוכר.</p>
+    <p class="reveal reveal-delay-3"><strong>תחשוב על זה רגע, אי אפשר לבנות גורד שחקים בלי יסודות בטון. קוד המפצח הוא הבטון.</strong></p>
+    <p class="reveal reveal-delay-4">וזה לא רק שהשיווק לא עובד. זה שלאט לאט אתה מתחיל לפקפק בעצמך, במה שאתה מביא ובערך שלך. לא כי אתה לא טוב, אלא כי אין שום דבר שמשקף את זה בחזרה אליך.</p>
+    <div class="mt-32 reveal"><button class="cta-btn" onclick="openModal()">תראה לי איפה אני נתקע</button></div>
   </div></div>
 </section>
 
@@ -558,8 +563,8 @@ body{padding-bottom:70px}
 <section class="steps-section" id="steps">
   <div class="container">
     <div class="steps-intro">
-      <h2 class="reveal">ממומחה שאף אחד לא מכיר <span class="highlight">לנוכחות יציבה וממגנטת.</span></h2>
-      <p class="sub-text reveal reveal-delay-1">אנחנו לא מנסים דברים אלא בונים נכסים לפי סדר ברור.</p>
+      <h2 class="reveal">ממומחה שאף אחד לא מכיר <span class="highlight">לנוכחות יציבה ומושכת.</span></h2>
+      <p class="sub-text reveal reveal-delay-1">אנחנו לא מנסים דברים, אלא בונים נכסים לפי סדר ברור.</p>
     </div>
     <div class="steps-grid">
       <div class="steps-wiring"><div class="wire-fill" id="stepsWire"></div></div>
@@ -567,22 +572,22 @@ body{padding-bottom:70px}
         <div class="step-number">01</div>
         <div class="icon-3d"><svg viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
         <h3>פיצוח ה DNA</h3>
-        <p>מגלים מה מבדל אותך מכולם וזה הופך לבסיס שעליו העסק והתוכן והמסרים שלך יושבים, אתה מפסיק לגמגם מול השאלה "אז מה אתה עושה" ויש לך תשובה אחת שגורמת לאנשים לעצור ולהקשיב</p>
+        <p>אנחנו מגלים מה באמת מבדל אותך מכולם, וזה הופך לבסיס שעליו העסק, התוכן והמסרים שלך יושבים. אתה מפסיק לגמגם מול השאלה "אז מה אתה עושה" ויש לך תשובה אחת שגורמת לאנשים לעצור ולהקשיב.</p>
       </div>
       <div class="step-card glow-card reveal reveal-delay-2">
         <div class="step-number">02</div>
         <div class="icon-3d"><svg viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="2"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></div>
         <h3>אריזת הייחודיות לשיטה</h3>
-        <p>בונים את הדרך הטבעית שבה אתה פועל וחושב והיא הופכת למסלול לקוח ברור ולמפה שמחזיקה את המסרים והתוכן ומסע הלקוח, אתה מפסיק להיות ספק שירות שאפשר להחליף</p>
+        <p>אנחנו בונים את הדרך הטבעית שבה אתה פועל וחושב. היא הופכת למסלול לקוח ברור ולמפה שמחזיקה את המסרים והתוכן. אתה מפסיק להיות ספק שירות שאפשר להחליף, ומתחיל להיות הדמות שאנשים בתחום מפנים אליה אחרים.</p>
       </div>
       <div class="step-card glow-card reveal reveal-delay-3">
         <div class="step-number">03</div>
         <div class="icon-3d"><svg viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8Z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <h3>מנגנון הביקוש וההשפעה</h3>
-        <p>מפסיקים לנחש מה להעלות ולקוות שמישהו יראה ויש לך מפת תוכן שמובילה אנשים אליך, מנגנון שעובד בשבילך גם כשאתה לא בחדר</p>
+        <p>אתה מפסיק לנחש מה להעלות ולקוות שמישהו יראה, יש לך מפת תוכן שמובילה אנשים אליך. מנגנון שעובד בשבילך גם כשאתה לא בחדר, ומביא אליך את האנשים הנכונים כשהם כבר מוכנים לקנות.</p>
       </div>
     </div>
-    <div class="text-center mt-48 reveal"><button class="cta-btn" onclick="openModal()">לשיחת מיפוי ללא עלות</button></div>
+    <div class="text-center mt-48 reveal"><button class="cta-btn" onclick="openModal()">תראה לי איך המנגנון הזה נראה תכלס</button></div>
   </div>
 </section>
 
@@ -592,22 +597,17 @@ body{padding-bottom:70px}
 <section class="process-section" id="process">
   <div class="container">
     <h2 class="reveal text-center">לא קורס שצופים בו לבד <span class="highlight">ולא ייעוץ שעולה פי 4.</span></h2>
-    <p class="sub-text reveal reveal-delay-1 sub-center-16">הבעיה עם קורסים היא שהם כלליים מדי והבעיה עם ייעוץ אישי היא שהוא יקר מדי, אז בניתי תהליך משולב שנותן לך את הטוב מכל העולמות.</p>
+    <p class="sub-text reveal reveal-delay-1 sub-center-16">אתה יודע מה הבעיה עם קורסים? הם כלליים מדי, והבעיה עם ייעוץ אישי? הוא יקר מדי. אז בניתי תהליך משולב שנותן לך את הטוב מכל העולמות.</p>
     <div class="process-grid">
-      <div class="process-card glow-card reveal reveal-delay-2"><div class="card-badge">קבוצה</div><h3>7 מפגשי מאסטרמיינד קבוצתיים לייב</h3><p>אחת לשבועיים עם 4 שעות עבודה נטו, כל שבועיים אנחנו בונים חלק אחר במנגנון, ואתה רואה איך אחרים עוברים את התהליך ומקבל משוב בזמן אמת</p></div>
-      <div class="process-card glow-card reveal reveal-delay-3"><div class="card-badge">אישי</div><h3>3 תהליכים אישיים איתי</h3><p>בנקודות הקריטיות של ההתחלה והאמצע והסוף, אני לא נותן לך לנחש אם עשית נכון אלא מזקק אותך אישית לפי שלוש התחנות שלנו</p></div>
+      <div class="process-card glow-card reveal reveal-delay-2"><div class="card-badge">👥 קבוצה</div><h3>7 מפגשי מאסטרמיינד קבוצתיים לייב</h3><p>אחת לשבועיים עם 4 שעות עבודה נטו, כל שבועיים אנחנו בונים חלק אחר במנגנון: פיצוח ה DNA, אריזת השיטה, ואז הפעלת המנגנון בשטח. אתה רואה איך אחרים עוברים את התהליך ומקבל משוב בזמן אמת.</p></div>
+      <div class="process-card glow-card reveal reveal-delay-3"><div class="card-badge">👤 אישי</div><h3>3 תהליכים אישיים איתי</h3><p>בנקודות הקריטיות של ההתחלה, האמצע והסוף. אני לא נותן לך לנחש אם עשית נכון, אלא מזקק אותך אישית לפי שלוש התחנות שלנו.</p></div>
     </div>
     <div class="process-highlight glow-card reveal">
-      <p>רק שלושת המפגשים האישיים מתומחרים בנפרד ב <span class="stat">15,000 ₪</span>, כאן אתה מקבל אותם כחלק ממבנה שלם שבנוי לייצר לך תוצאה.</p>
-      <p class="mt-16">ומתוך בדיקה בשלושת המחזורים האחרונים, <span class="stat">8 מתוך 10</span> אמרו שהם החזירו את ההשקעה עוד לפני סוף ה 13 שבועות.</p>
+      <p>רק שלושת המפגשים האישיים האלו מתומחרים בנפרד ב <span class="stat">15,000 שקל</span>. כאן אתה מקבל אותם כחלק ממבנה שלם שבנוי לייצר לך מסלול ממוקד ותוצאה מדידה לאורך התהליך.</p>
+      <p class="mt-16">ומתוך בדיקה שעשיתי בשלושת המחזורים האחרונים, <span class="stat">8 מתוך 10</span> משתתפים החזירו את ההשקעה שלהם עוד לפני סוף ה 13 שבועות. לא כי עשינו קסמים, פשוט כי ברגע שהמסר שלהם התיישר עם מה שהם באמת מביאים ומאמינים בו, הם סגרו עסקאות מהר יותר, העלו מחיר בלי התנגדות, וקיבלו פניות מאנשים שכבר הבינו את הערך לפני שהגיעו לשיחה.</p>
     </div>
   </div>
 </section>
-
-<!-- VISUAL BREAK 1 -->
-<div class="visual-break"><div class="big-number reveal">8/10</div><div class="big-label reveal reveal-delay-1">החזירו את ההשקעה לפני סוף התהליך</div></div>
-
-<div class="glow-divider"></div>
 
 <!-- COMPARISON -->
 <section class="comparison-section" id="comparison">
@@ -616,13 +616,14 @@ body{padding-bottom:70px}
     <div class="table-wrapper glow-card reveal reveal-delay-1">
       <table class="compare-table"><thead><tr><th>מה ניסית</th><th>למה זה לא עבד</th><th class="highlight-col">מה אתה מקבל פה</th></tr></thead>
       <tbody>
-        <tr><td>יועץ עסקי</td><td>נתן לך "תעלה מחיר ותשווק יותר" בלי לשאול מי אתה</td><td class="highlight-col">בונים את ה DNA והמיצוב שעליהם כל המנגנון יושב</td></tr>
-        <tr><td>קורסים לשיווק</td><td>קיבלת ידע שלא יישמת כי לא היה לך "למה" לפני הטקטיקה</td><td class="highlight-col">בונים יסודות קודם ויוצאים עם נכסים ולא עם שיעורי בית</td></tr>
-        <tr><td>קמפיינר</td><td>לידים קרים ו"כמה זה עולה" בהודעה ראשונה</td><td class="highlight-col">מסרים שמביאים לקוחות שכבר מבינים את הערך</td></tr>
-        <tr><td>רילס ויראליים</td><td>עוקבים בלי פניות כי לא היה מסר ברור</td><td class="highlight-col">קו תוכן אסטרטגי שבונה סמכות ומוביל לפניות</td></tr>
-        <tr><td>ניסית לבד</td><td>שעות על תוכן שלא זז וכל פוסט מאבק</td><td class="highlight-col">מפת תוכן ומנגנון שמראה לך מה לעשות ומתי ולמה</td></tr>
+        <tr><td>יועץ עסקי</td><td>נתן לך "תעלה מחיר ותשווק יותר" בלי לשאול מי אתה ומה הערך שלך</td><td class="highlight-col">בונים את ה DNA והמיצוב שעליהם כל המנגנון יושב</td></tr>
+        <tr><td>קורסים לשיווק</td><td>קיבלת ידע שלא יישמת כי לא היה לך "למה" או "מי" לפני הטקטיקה</td><td class="highlight-col">בונים יסודות קודם ויוצאים עם נכסים ולא עם שיעורי בית</td></tr>
+        <tr><td>קמפיינר</td><td>לידים קרים, "כמה זה עולה" בהודעה ראשונה והשוואות למתחרים</td><td class="highlight-col">מסרים שמביאים לקוחות שכבר מבינים את הערך לפני השיחה</td></tr>
+        <tr><td>רילס ויראליים</td><td>עוקבים בלי פניות כי לא היה מסר ברור מאחורי החשיפה</td><td class="highlight-col">קו תוכן אסטרטגי שבונה סמכות ומוביל לפניות, לא רק לצפיות</td></tr>
+        <tr><td>ניסית לבד</td><td>שעות על תוכן שלא זז וכל פוסט הוא מאבק על מה להגיד</td><td class="highlight-col">מפת תוכן ומנגנון שמראה לך מה לעשות, מתי ולמה</td></tr>
       </tbody></table>
     </div>
+    <p class="sub-text reveal mt-32 sub-center">כל מה שניסית עד עכשיו עבד על הסימפטום ולא על השורש. אני לא מתקן, אני בונה מהיסוד.</p>
   </div>
 </section>
 
@@ -633,13 +634,16 @@ body{padding-bottom:70px}
   <div class="container">
     <h2 class="reveal text-center">בסוף 13 שבועות אתה יוצא עם <span class="highlight">מנגנון בנוי,</span> ולא עם מחברת סיכומים.</h2>
     <div class="deliverables-grid">
-      <div class="deliver-card glow-card reveal reveal-delay-1"><div class="icon-3d"><svg viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg></div><h3>מסמך ה DNA</h3><p>תשובה חדה לשאלה מי אתה, מה הערך שלך ולמה דווקא אתה</p><div class="mockup-frame"></div></div>
-      <div class="deliver-card glow-card reveal reveal-delay-2"><div class="icon-3d"><svg viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div><h3>שלד השיטה</h3><p>הידע שלך הופך למסלול עם תחנות ותוצרים ברורים שאפשר למכור</p><div class="mockup-frame"></div></div>
-      <div class="deliver-card glow-card reveal reveal-delay-3"><div class="icon-3d"><svg viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>מפת תוכן אסטרטגית</h3><p>תוכנית ל 180 יום לפי 4 שכבות קהל, בלי לנחש כל בוקר מה להעלות</p><div class="mockup-frame"></div></div>
-      <div class="deliver-card glow-card reveal reveal-delay-1"><div class="icon-3d"><svg viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>מערכת המרות</h3><p>פרופיל שעובד בשבילך, תסריטים מוכנים ומסלול ברור</p><div class="mockup-frame"></div></div>
-      <div class="deliver-card glow-card reveal reveal-delay-2"><div class="icon-3d"><svg viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div><h3>המוח האסטרטגי</h3><p>AI שמאומן על ה DNA שלך, שותף אסטרטגי שנשאר איתך גם אחרי</p><div class="mockup-frame"></div></div>
+      <div class="deliver-card glow-card reveal reveal-delay-1"><div class="icon-3d">📂</div><h3>מסמך DNA עסקי</h3><p>תשובה חדה לשאלה מי אתה, מה הערך שלך ולמה דווקא אתה ולא המתחרה שלך.</p><div class="mockup-frame"></div></div>
+      <div class="deliver-card glow-card reveal reveal-delay-2"><div class="icon-3d">📂</div><h3>אפיון לקוח עומק (פסיכוגרפי)</h3><p>זורקים לפח את ההגדרות של "גיל ומקום מגורים" וממפים את הראש של הלקוח שלך. מה כואב לו, מה הוא כבר ניסה בעבר, ואיך לנסח מסר שגורם לו להגיד "הוא קורא לי את המחשבות".</p><div class="mockup-frame"></div></div>
+      <div class="deliver-card glow-card reveal reveal-delay-3"><div class="icon-3d">📂</div><h3>שלד השיטה</h3><p>הידע שלך הופך למסלול עם תחנות ותוצרים ברורים שאפשר למכור ולהסביר הלאה.</p><div class="mockup-frame"></div></div>
+      <div class="deliver-card glow-card reveal reveal-delay-1"><div class="icon-3d">📂</div><h3>מערכת הפעלה למותג</h3><p>הופכים את אסטרטגיית המותג שלך ליישום בנקודות המגע עם הקהל, משערי כניסה של לידים ועד לקוחות פרימיום.</p><div class="mockup-frame"></div></div>
+      <div class="deliver-card glow-card reveal reveal-delay-2"><div class="icon-3d">📂</div><h3>מפת תוכן אסטרטגית</h3><p>תוכנית ל 180 יום לפי 4 שכבות קהל. חשיפה, עוקבים, פניות, מכירה. בלי לנחש כל בוקר מה להעלות והכל מחובר ל DNA העסקי ולמסר שלך.</p><div class="mockup-frame"></div></div>
+      <div class="deliver-card glow-card reveal reveal-delay-3"><div class="icon-3d">📂</div><h3>מערכת המרות</h3><p>פרופיל שעובד בשבילך, תסריטים מוכנים ומסלול ברור שהופך אדם זר ללקוח חם.</p><div class="mockup-frame"></div></div>
+      <div class="deliver-card glow-card reveal reveal-delay-1"><div class="icon-3d">📂</div><h3>המוח האסטרטגי</h3><p>AI שמאומן על ה DNA שלך, יושב איתך לאורך כל התהליך ונשאר איתך גם אחריו. לא מחולל טקסטים, אלא שותף אסטרטגי.</p><div class="mockup-frame"></div></div>
     </div>
-    <div class="bonus-box reveal"><span class="bonus-badge">בונוס</span><p>15+ פרוטוקולים ותבניות מוכנות, גישה לקהילה סגורה, הקלטות לכל החיים.</p></div>
+    <div class="bonus-box reveal"><span class="bonus-badge">💡 בונוס</span><p>15+ פרוטוקולים ותבניות מוכנות, גישה לקהילה סגורה, והקלטות לכל החיים.</p></div>
+    <p class="sub-text reveal mt-32 sub-center">זה בדיוק מה שמאפשר לשיווק שלך להפסיק להיות הימור, ולהפוך למערכת ממוקדת שעובדת יציב בלי ניחושים וסטיות.</p>
   </div>
 </section>
 
@@ -650,13 +654,13 @@ body{padding-bottom:70px}
   <div class="container">
     <h2 class="reveal text-center">אתה לא רק יודע יותר אלא <span class="highlight">עובד ומרוויח אחרת.</span></h2>
     <div class="after-timeline">
-      <div class="after-item reveal reveal-delay-1"><div class="after-dot"></div><div><strong>בבוקר אתה פותח את המחשב ויש לך תוכנית ברורה.</strong><p>אתה יודע על מה אתה מדבר היום, מה עולה לרשתות ולמי. בלי ניחושים מול מסך ריק.</p></div></div>
-      <div class="after-item reveal reveal-delay-2"><div class="after-dot"></div><div><strong>כשלקוח שואל "מה אתה עושה" יש לך משפט אחד ברור.</strong><p>שגורם לו להבין מיד מה יוצא לו מזה.</p></div></div>
-      <div class="after-item reveal reveal-delay-3"><div class="after-dot"></div><div><strong>אתה מפסיק להתחרות על מחיר.</strong><p>כי יש לך שיטה ברורה שאי אפשר להשוות לאחרים.</p></div></div>
-      <div class="after-item reveal reveal-delay-4"><div class="after-dot"></div><div><strong>יש לך מנגנון ולא רק ידע.</strong><p>אתה יודע בדיוק מאיפה מגיע הלקוח הבא ומה קורה בכל שלב.</p></div></div>
-      <div class="after-item reveal"><div class="after-dot"></div><div><strong>כשמישהו בתחום שלך מוזכר, השם שלך עולה.</strong><p>לא כי שיווקת יותר, אלא כי היית ברור יותר מכולם.</p></div></div>
+      <div class="after-item reveal reveal-delay-1"><div class="after-dot"></div><div><strong>✅ בבוקר אתה פותח את המחשב ויש לך תוכנית ברורה.</strong><p>אתה יודע על מה אתה מדבר היום, מה עולה לרשתות ולמי. בלי ניחושים מול מסך ריק.</p></div></div>
+      <div class="after-item reveal reveal-delay-2"><div class="after-dot"></div><div><strong>✅ כשלקוח שואל מה אתה עושה, יש לך משפט אחד ברור.</strong><p>משפט שגורם לו להבין מיד מה יוצא לו מזה. לא עוד "אה מעניין, תשלח לי בווטסאפ".</p></div></div>
+      <div class="after-item reveal reveal-delay-3"><div class="after-dot"></div><div><strong>✅ אתה מפסיק להתחרות על מחיר.</strong><p>כי יש לך שיטה ברורה שאי אפשר להשוות לאחרים. הלקוחות מגיעים כי הם מבינים את הערך לפני שדיברו איתך.</p></div></div>
+      <div class="after-item reveal reveal-delay-4"><div class="after-dot"></div><div><strong>✅ יש לך מנגנון, לא רק ידע.</strong><p>אתה יודע בדיוק מאיפה מגיע הלקוח הבא ומה קורה בכל שלב.</p></div></div>
+      <div class="after-item reveal"><div class="after-dot"></div><div><strong>✅ כשמישהו בתחום שלך מוזכר, השם שלך עולה.</strong><p>לא כי שיווקת יותר, אלא כי היית ברור יותר מכולם.</p></div></div>
     </div>
-    <div class="text-center mt-48 reveal"><button class="cta-btn" onclick="openModal()">לשיחת מיפוי ללא עלות</button></div>
+    <div class="text-center mt-48 reveal"><button class="cta-btn" onclick="openModal()">זה מה שאני רוצה, בוא נדבר</button></div>
   </div>
 </section>
 
@@ -690,28 +694,23 @@ body{padding-bottom:70px}
   <div class="container"><div class="story-grid">
     <div class="story-image reveal"><img src="IMG_4598.jpeg" alt="אוריאל סול" loading="lazy" /><div class="story-image-glow"></div></div>
     <div class="story-content">
-      <h2 class="reveal">הייתי איש שיווק מצליח שלא האמין בעצמו, <span class="highlight">והנה מה שהביא אותי לפה.</span></h2>
-      <p class="reveal reveal-delay-1">היו לי לקוחות והיה לי צוות, ומבחוץ הכל עבד אבל מבפנים הרגשתי מתחזה.</p>
-      <p class="reveal reveal-delay-2">הלכתי ליועצים עסקיים שבנו לי אסטרטגיות על בסיס מה שאמרתי להם שאני יודע, אבל אף אחד לא שאל אותי את השאלות האמיתיות של מי אתה ומה הערך שלך.</p>
-      <p class="reveal reveal-delay-3">ואז ב 7 באוקטובר הכל עצר, ובמקום לברוח לפעולה פשוט עצרתי ופתחתי שיחה עם AI וביקשתי ממנו לשאול אותי שאלות, וכשקראתי את מה שאני עצמי כתבתי ראיתי את עצמי בבהירות בפעם הראשונה</p>
-      <p class="reveal reveal-delay-4">אז היום אני עושה לאחרים את מה שאף אחד לא עשה איתי, לא ממציא להם בידול אלא עוזר להם לראות את מה שכבר יש להם ולבנות מזה מנגנון שמושך את האנשים הנכונים</p>
-      <div class="mt-32 reveal"><button class="cta-btn" onclick="openModal()">בוא נבין ביחד מה תוקע אותך</button><p class="cta-sub">15 דקות, בלי מחויבות</p></div>
+      <h2 class="reveal">הייתי איש שיווק מצליח שלא ראה את הערך של עצמו, <span class="highlight">והנה מה שהביא אותי לפה.</span></h2>
+      <p class="reveal reveal-delay-1">היו לי לקוחות והיה לי צוות רציני… מבחוץ הכול עבד, אבל מבפנים הרגשתי מתחזה.</p>
+      <p class="reveal reveal-delay-2">הלכתי ליועצים עסקיים שבנו לי אסטרטגיות על בסיס מה שאמרתי להם שאני יודע. אבל אף אחד לא שאל אותי את השאלות האמיתיות שאני לא חשבתי עליהן, כמו: מי אתה? מה הערך שלך? למה שמישהו יבחר דווקא בך, במה אתה שונה בגישה שלך, למה אתה מאמין בזה?</p>
+      <p class="reveal reveal-delay-3">ואז, ב 7 באוקטובר, הכול עצר. ובמקום לברוח לפעולה, פשוט עצרתי. פתחתי שיחה עם AI וביקשתי ממנו לשאול אותי שאלות. הוא שאל, ואני עניתי. וכשקראתי את מה שאני עצמי כתבתי, ראיתי את עצמי בבהירות בפעם הראשונה.</p>
+      <p class="reveal reveal-delay-4">הבנתי שחסר לי מישהו שיחפור איתי ויגיד לי שזה הבסיס שלי, ובוא נבנה ממנו משהו אמיתי. אז היום אני עושה לאחרים את מה שאף אחד לא עשה איתי. אני לא ממציא להם בידול ולא מדביק להם שיטה, אלא עוזר להם לראות את מה שכבר יש להם ולבנות מזה מנגנון שמושך את האנשים הנכונים.</p>
+      <div class="mt-32 reveal"><button class="cta-btn" onclick="openModal()">בוא נבין ביחד מה תוקע אותך</button></div>
     </div>
   </div></div>
 </section>
-
-<!-- VISUAL BREAK 2 -->
-<div class="visual-break"><div class="quote reveal">"ברגע שהמסר שלהם התיישר עם מה שהם באמת מביאים, הם סגרו עסקאות מהר יותר."</div></div>
-
-<div class="glow-divider"></div>
 
 <!-- FILTER -->
 <section class="filter-section" id="filter">
   <div class="container">
     <h2 class="reveal text-center">רגע לפני שאנחנו מדברים, <span class="highlight">בוא נהיה כנים.</span></h2>
     <div class="filter-grid">
-      <div class="filter-card filter-yes reveal reveal-delay-1"><h3>זה בול בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">✓</span> אתה מומחה שכבר יש לו לקוחות ויש לו ניסיון ואתה לא מתחיל מאפס</div><div class="filter-item"><span class="fi-icon">✓</span> מרגיש שאתה הסוד הכי שמור בתחום שלך ונמאס לך</div><div class="filter-item"><span class="fi-icon">✓</span> מוכן לעבוד וליישם ולהיות מחויב ל 13 שבועות</div></div>
-      <div class="filter-card filter-no reveal reveal-delay-2"><h3>זה ממש לא בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">×</span> אתה מחפש כפתור קסם או ויראליות ריקה</div><div class="filter-item"><span class="fi-icon">×</span> אתה רוצה שמישהו ינהל לך את האינסטגרם במקומך</div><div class="filter-item"><span class="fi-icon">×</span> אתה לא מוכן לעצור ולהסתכל על מה שבאמת תקוע</div></div>
+      <div class="filter-card filter-yes reveal reveal-delay-1"><h3>זה בול בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">✅</span> אתה מומחה שכבר יש לו לקוחות וניסיון, ואתה לא מתחיל מאפס.</div><div class="filter-item"><span class="fi-icon">✅</span> אתה מרגיש שאתה הסוד הכי שמור בתחום שלך ונמאס לך.</div><div class="filter-item"><span class="fi-icon">✅</span> אתה מוכן לעבוד, ליישם, ולהיות מחויב ל 13 שבועות.</div></div>
+      <div class="filter-card filter-no reveal reveal-delay-2"><h3>זה ממש לא בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">❌</span> אתה מחפש כפתור קסם או ויראליות ריקה.</div><div class="filter-item"><span class="fi-icon">❌</span> אתה רוצה שמישהו ינהל לך את האינסטגרם במקומך.</div><div class="filter-item"><span class="fi-icon">❌</span> אתה לא מוכן לעצור ולהסתכל על מה שבאמת תקוע.</div></div>
     </div>
   </div>
 </section>
@@ -721,11 +720,11 @@ body{padding-bottom:70px}
 <!-- COST (WARNING) -->
 <section class="cost-section" id="cost">
   <div class="container"><div class="cost-content">
-    <div class="cost-header"><span class="cost-warning-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="#f44336" stroke-width="2" fill="rgba(244,67,54,0.15)"/><line x1="12" y1="9" x2="12" y2="13" stroke="#f44336" stroke-width="2"/><line x1="12" y1="17" x2="12.01" y2="17" stroke="#f44336" stroke-width="2"/></svg></span><h2>החשבונית הסמויה <span class="highlight">שאתה משלם כל חודש</span></h2></div>
-    <p class="reveal reveal-delay-1">כל חודש בלי יסודות אתה שורף כסף על פרסום שלא ממיר וזמן על תוכן שאף אחד לא זוכר ואנרגיה על לרדוף אחרי הזנב של עצמך.</p>
-    <p class="reveal reveal-delay-2">אבל מה שבאמת כואב פה זה שעוד שנה שהלכה לפח. אתה שוב תראה מתחרה שפחות טוב ממך עוקף אותך, רק כי הוא ידע לארוז את עצמו.</p>
-    <div class="cost-callout reveal reveal-delay-3">השאלה היא לא כמה עולה להצטרף אלא <span class="highlight">כמה עולה לך להמשיך להפסיד לקוחות</span> לאנשים שפחות טובים ממך.</div>
-    <div class="reveal"><button class="cta-btn" onclick="openModal()">לשיחת מיפוי ללא עלות</button></div>
+    <div class="cost-header"><span class="cost-warning-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="#f44336" stroke-width="2" fill="rgba(244,67,54,0.15)"/><line x1="12" y1="9" x2="12" y2="13" stroke="#f44336" stroke-width="2"/><line x1="12" y1="17" x2="12.01" y2="17" stroke="#f44336" stroke-width="2"/></svg></span><h2>החשבונית הסמויה <span class="highlight">שאתה משלם כל חודש.</span></h2></div>
+    <p class="reveal reveal-delay-1">כל חודש בלי יסודות אתה שורף כסף על פרסום שלא ממיר, זמן על תוכן שאף אחד לא זוכר, ואנרגיה על לרדוף אחרי הזנב של עצמך.</p>
+    <p class="reveal reveal-delay-2">אבל מבין מה באמת כואב פה? שעוד שנה הלכה לפח. אתה שוב תראה מתחרה שפחות טוב ממך עוקף אותך, רק כי הוא ידע לארוז את עצמו ואתה המשכת לקוות שהעבודה הקשה תדבר בעד עצמה.</p>
+    <div class="cost-callout reveal reveal-delay-3">השאלה היא לא כמה עולה להצטרף. השאלה היא <span class="highlight">כמה עולה לך להמשיך להפסיד לקוחות</span> לאנשים שפחות טובים ממך.</div>
+    <div class="reveal"><button class="cta-btn" onclick="openModal()">בוא נעצור את הדימום</button></div>
   </div></div>
 </section>
 
@@ -752,9 +751,10 @@ body{padding-bottom:70px}
   <div class="container"><div class="tech-box glow-card reveal">
     <p class="section-desc">המסגרת הזו נבנתה כדי לאפשר עבודה אמיתית ולא עוד צריכה פסיבית של תוכן.</p>
     <div class="tech-grid">
-      <div class="tech-item"><span class="tech-icon"></span><span>המחזור הקרוב נפתח בקרוב</span></div>
-      <div class="tech-item"><span class="tech-icon"></span><span>מפגשים לייב עם הקלטות זמינות לכל החיים</span></div>
-      <div class="tech-item"><span class="tech-icon"></span><span>עד 15 משתתפים בלבד כדי לשמור על האיכות</span></div>
+      <div class="tech-item"><span class="tech-icon"></span><span>📅 מחזור #25 בוקר נפתח ב-23/04/2026 | ימי חמישי 10:00–14:00</span></div>
+      <div class="tech-item"><span class="tech-icon"></span><span>📅 מחזור #25 ערב נפתח ב-27/04/2026 | ימי שני 17:00–21:00</span></div>
+      <div class="tech-item"><span class="tech-icon"></span><span>📍 מפגשים לייב, וההקלטות זמינות לך לכל החיים</span></div>
+      <div class="tech-item"><span class="tech-icon"></span><span>👥 עד 15 משתתפים בקבוצה בלבד כדי לשמור על איכות הקבוצה ויחס אישי ממני</span></div>
     </div>
   </div></div>
 </section>
@@ -767,19 +767,20 @@ body{padding-bottom:70px}
     <p class="micro-copy reveal text-center">רגע לפני שאתה משאיר פרטים, בוא נדבר תכלס.</p>
     <h2 class="reveal text-center mb-48">שאלות שאנשים חכמים שואלים <span class="highlight">לפני שהם נכנסים</span></h2>
     <div class="faq-list">
-      <div class="faq-group-title">שאלות על התהליך</div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-1" onclick="toggleFaq(this.parentElement)"><span>מה אם כבר עשיתי תהליך בידול וזה לא החזיק?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-1" role="region"><p>אם זה לא החזיק, זה לא היה בידול, זה היה ניסוח. אני עובד על מה שעדיין לא זוקק, על הדרך שאתה חושב, רואה ופותר.</p></div></div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-2" onclick="toggleFaq(this.parentElement)"><span>איך אני יודע שזה לא עוד תהליך תיאורטי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-2" role="region"><p>כי אתה לא יוצא עם רעיונות אלא עם מבנה, שיטה, מסלול לקוח, מסרים ושלד שמחזיק את הכול.</p></div></div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-3" onclick="toggleFaq(this.parentElement)"><span>מה אם השוק שלי רווי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-3" role="region"><p>השוק רווי באנשים שנשמעים אותו דבר, וכשיש בהירות אין תחרות אלא יש בחירה</p></div></div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-4" onclick="toggleFaq(this.parentElement)"><span>מה אם הבעיה היא בי ולא במנגנון?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-4" role="region"><p>כשאין בהירות זה מרגיש אישי, אבל ברוב המקרים אין בעיה באדם אלא חוסר סדר, ומבנה מייצר שקט ושקט מייצר ביטחון</p></div></div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-5" onclick="toggleFaq(this.parentElement)"><span>אני לא כריזמטי, זה מתאים לי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-5" role="region"><p>מותג זה לא הופעה אלא בהירות, ורוב האנשים שעובדים איתי רוצים שהעבודה שלהם תדבר</p></div></div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-6" onclick="toggleFaq(this.parentElement)"><span>מה אם זה לא הזמן הנכון כלכלית?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-6" role="region"><p>השאלה היא כמה עולה לך להמשיך בלי יסודות. מבנה חוסך אנרגיה וכסף ולא להפך</p></div></div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-7" onclick="toggleFaq(this.parentElement)"><span>מה אם אגלה שזה לא מתאים לי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-7" role="region"><p>אז לא נמשיך, השיחה היא שיחת מיפוי ואם אין התאמה אני אומר את זה</p></div></div>
+      <div class="faq-group-title">הפיל שבחדר</div>
+      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-1" onclick="toggleFaq(this.parentElement)"><span>מה אם כבר עשיתי תהליך בידול וזה לא החזיק?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-1" role="region"><p>אתה יודע למה זה לא החזיק? כי לא עשית בידול, עשית קופירייטינג. זה כמו לקנות חליפה יקרה שלא תפורה עליך. אנחנו עובדים על מה שעדיין לא זוקק – הדרך שאתה חושב ופותר. בידול אמיתי לא נכתב, צריך לדייק אותו מבפנים.</p></div></div>
+      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-2" onclick="toggleFaq(this.parentElement)"><span>איך אני יודע שזה לא עוד תהליך אסטרטגי תיאורטי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-2" role="region"><p>כי אתה לא יוצא מפה עם רעיונות. אתה יוצא עם נכסים שאפשר להפעיל מחר: מסמך DNA, שלד שיטה, מפת תוכן. אי אפשר לבנות גורד שחקים מתיאוריות, צריך יציקות בטון.</p></div></div>
+      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-3" onclick="toggleFaq(this.parentElement)"><span>מה אם השוק שלי רווי ויש מלא כמוני?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-3" role="region"><p>אין דבר כזה שוק רווי. יש שוק שרווי באנשים שנשמעים אותו דבר. כשיש לך בהירות, אתה יוצא מהתחרות על מחיר ועובר למגרש של בחירה.</p></div></div>
+      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-4" onclick="toggleFaq(this.parentElement)"><span>אני לא כריזמטי ולא רוצה להיות "אושיית רשת", זה מתאים לי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-4" role="region"><p>מותג זה לא הופעה, מותג זה עמדה מקצועית וסמכות. רוב הלקוחות שלי לא רוצים להיות בפרונט בצורה רועשת, הם רוצים שהמקצועיות שלהם תדבר. בשביל זה צריך מנגנון.</p></div></div>
+      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-5" onclick="toggleFaq(this.parentElement)"><span>איך אני יודע שזה באמת שונה ממה שכבר ניסיתי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-5" role="region"><p>סביר להניח שכל מה שניסית התחיל מהאמצע. קורסים וקמפיינים אמרו לך "בוא נשווק" לפני ששאלו למה שיבחרו בך. אני מתחיל מהמרתף. משם הכל נבנה ביסודיות.</p></div></div>
+      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-6" onclick="toggleFaq(this.parentElement)"><span>מה אם זה לא הזמן הנכון מבחינה כלכלית?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-6" role="region"><p>השאלה היא כמה עולה לך להמשיך בלי יסודות? עוד קמפיין שלא ממיר, עוד לקוחות שבורחים למתחרה זול. השאלה היא אם אתה יכול להרשות לעצמך להמשיך להפסיד את הלקוחות שאתה באמת שווה.</p></div></div>
+      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-7" onclick="toggleFaq(this.parentElement)"><span>מה אם אשאיר פרטים ואז אגלה בשיחה שזה לא מתאים לי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-7" role="region"><p>אז פשוט לא נמשיך. זה כל הקטע של שיחת ההתאמה. אם אין התאמה, אני אגיד לך הכי ישיר שיש. אני לא מחפש למלא אולמות.</p></div></div>
 
       <div class="faq-group-title">פרטים טכניים</div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-8" onclick="toggleFaq(this.parentElement)"><span>למה תהליך משולב ולא רק קבוצה?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-8" role="region"><p>כי קבוצה נותנת אנרגיה ומסגרת, אבל הפיצוח האמיתי קורה בארבע עיניים. כאן אתה מקבל גם וגם.</p></div></div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-9" onclick="toggleFaq(this.parentElement)"><span>ה AI ילחיץ אותי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-9" role="region"><p>להפך, ה AI נועד להוריד ממך עומס. אנחנו מגדירים אותו יחד צעד אחרי צעד.</p></div></div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-10" onclick="toggleFaq(this.parentElement)"><span>כמה זמן זה דורש?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-10" role="region"><p>המפגשים הם העוגן, ונדרשות עוד כ 3 שעות שבועיות ליישום.</p></div></div>
+      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-8" onclick="toggleFaq(this.parentElement)"><span>כמה זמן זה דורש ממני בפועל (ואם אני עמוס)?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-8" role="region"><p>מפגש קבוצתי אחת לשבועיים, ועוד כ-3 שעות שבועיות ליישום. התהליך לא מוסיף עומס לטווח הארוך, הוא מנקה אותו, כי אתה מפסיק לנחש כל בוקר מה לעשות.</p></div></div>
+      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-9" onclick="toggleFaq(this.parentElement)"><span>איך אני יודע שזה יעבוד דווקא בתחום שלי ולמה משולב?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-9" role="region"><p>התהליך בנוי עליך כבן אדם וכמומחה, לא על נישה. המודל משולב כי קבוצה נותנת אנרגיה ומראה, אבל הפיצוח הכירורגי קורה רק בארבע עיניים איתי.</p></div></div>
+      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-10" onclick="toggleFaq(this.parentElement)"><span>אני לא טכנולוגי, ה-AI ילחיץ אותי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-10" role="region"><p>להפך. ה-AI מוריד ממך עבודה שחורה. אנחנו מגדירים אותו יחד, וכשנסיים יהיה לך שותף אסטרטגי מאומן על ה-DNA שלך.</p></div></div>
+      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-11" onclick="toggleFaq(this.parentElement)"><span>מה קורה אם פספסתי מפגש (או עסקית אני לא יציב)?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-11" role="region"><p>הכל מוקלט לאזור האישי. לגבי יציבות: אם יש לך מומחיות ולקוחות אבל אתה מוכר בזול – זה המקום. אם אתה לגמרי בתחילת הדרך בלי לקוח אחד – עדיף קודם להשיג לקוחות ראשונים.</p></div></div>
     </div>
   </div>
 </section>
@@ -789,8 +790,8 @@ body{padding-bottom:70px}
 <!-- FINAL CTA -->
 <section class="final-cta-section" id="final">
   <div class="container text-center">
-    <h2 class="reveal">הכניסה לא פתוחה לכולם <span class="highlight">וזה מתחיל בשיחת מיפוי.</span></h2>
-    <p class="sub-text reveal reveal-delay-1 mx-auto-32">בשיחה נשים הכל על השולחן ונבין איפה אתה עומד ומה תוקע אותך. 15 דקות בלי מחויבות ובסוף תדע בדיוק אם זה הזמן לזוז.</p>
+    <h2 class="reveal">הכניסה לתהליך לא פתוחה לכולם, <span class="highlight">וזה מתחיל בשיחת התאמה.</span></h2>
+    <p class="sub-text reveal reveal-delay-1 mx-auto-32">בשיחה הזו נשים הכול על השולחן, נבין איפה אתה עומד, מה תוקע אותך, והאם התהליך הזה מתאים לך עכשיו. השיחה היא ללא התחייבות. בסוף תדע בדיוק אם זה הזמן לעלות שלב ואת הדרך לשם.</p>
     <div class="final-form reveal reveal-delay-2">
       <form id="bottomForm" onsubmit="return submitBottomForm(event)">
         <input type="text" id="bname" placeholder="שם מלא" required />
@@ -798,11 +799,13 @@ body{padding-bottom:70px}
         <input type="tel" id="bphone" placeholder="טלפון" required />
         <select id="bcycle" class="form-select" required aria-label="בחר מחזור">
           <option value="" disabled selected>בחר מחזור מועדף</option>
-          <option value="morning">מחזור בוקר (ימי ראשון 10:00 עד 13:00)</option>
-          <option value="evening">מחזור ערב (ימי ראשון 18:00 עד 21:00)</option>
+          <option value="morning-25">מחזור #25 בוקר (נפתח ב-23/04/2026)</option>
+          <option value="evening-25">מחזור #25 ערב (נפתח ב-27/04/2026)</option>
+          <option value="future">מחזורים עתידיים (תאריכים מאוחרים יותר)</option>
         </select>
+        <label class="consent-checkbox"><input type="checkbox" id="bconsent" required /><span>אני מאשר/ת קבלת תוכן רלוונטי ועדכונים מאוריאל סול (ניתן להסיר בכל עת).</span></label>
         <button class="cta-btn" type="submit">הגיע הזמן לעשות את זה נכון</button>
-        <p class="cta-sub cta-sub-center mt-16">המחזור הקרוב מוגבל ל 15 משתתפים בלבד.</p>
+        <p class="cta-sub cta-sub-center mt-16">התהליך הקרוב מוגבל ל 15 משתתפים בלבד כדי לשמור על איכות הקבוצה והליווי.</p>
       </form>
     </div>
   </div>
