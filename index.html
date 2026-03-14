@@ -977,13 +977,14 @@ async function submitLead(data, btn){
   btn.textContent = 'שולח...';
   btn.disabled = true;
   try {
-    if(WEBHOOK_URL !== 'YOUR_MAKE_WEBHOOK_URL_HERE'){
-      await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data)
-      });
-    }
+    console.log('Sending lead to:', WEBHOOK_URL, data);
+    const formData = new URLSearchParams(data);
+    const response = await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      body: formData
+    });
+    if(!response.ok) throw new Error('Webhook error: ' + response.status);
+    console.log('Lead sent successfully');
     // Analytics events (fire if available)
     if(typeof gtag === 'function') gtag('event', 'lead_submit', {source: data.source, cycle: data.cycle});
     if(typeof fbq === 'function') fbq('track', 'Lead', {content_name: 'kod_hamfatzach', cycle: data.cycle});
