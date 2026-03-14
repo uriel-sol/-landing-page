@@ -8,6 +8,12 @@ Landing page for "קוד המפצח" (The Cracking Code) by Uriel Sol — a 13-w
 
 The source of truth will be defined only after the user adds the latest landing page file to the repository. Until then, do not treat any existing HTML file as authoritative.
 
+### When the user adds the latest file:
+- The new file (expected: `index.html`) becomes the sole source of truth
+- `landing-page (4).html` is an outdated legacy file — do NOT edit, reference, or use it
+- If `landing-page (4).html` still exists after `index.html` is added, recommend its removal to the user
+- Only architect-lead may propose changes to the source of truth file
+
 ## Agent System
 
 This project uses a multi-agent workflow defined in `.claude/agents/`. See `docs/project-operating-system.md` for the full operating system.
@@ -61,3 +67,4 @@ User (Uriel)
 3. All technical decisions go through frontend-builder → architect-lead
 4. QA findings are recommendations only — architect-lead decides action
 5. Keep the project structure clean and simple
+6. Never commit or push without explicit approval from the user
