@@ -421,7 +421,7 @@ input:focus-visible,select:focus-visible{outline:none;border-color:var(--purple-
 /* TEXT TESTIMONIALS MARQUEE */
 .text-testimonials{background:var(--black);overflow:hidden;padding-top:80px;padding-bottom:80px}
 .text-testimonials h2{text-align:center;margin-bottom:48px}
-.marquee-wrapper{position:relative;width:100%;overflow:hidden;mask-image:linear-gradient(to left,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(to left,transparent,#000 10%,#000 90%,transparent)}
+.marquee-wrapper{position:relative;width:100%;overflow:hidden;direction:ltr;mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent)}
 .marquee-track{display:flex;gap:24px;width:max-content;animation:marqueeScroll 60s linear infinite}
 .marquee-track:hover{animation-play-state:paused}
 @keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
