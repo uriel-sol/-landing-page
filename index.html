@@ -202,16 +202,13 @@ radial-gradient(560px 250px at 50% 122%,rgba(143,47,160,0.24),rgba(143,47,160,0)
 .process-highlight p{font-size:16px;color:var(--white-dim);line-height:1.8}
 .process-highlight .stat{font-size:18px;font-weight:600;color:#c9cbd6}
 
-/* COMPARISON — BEFORE/AFTER CARDS */
+/* COMPARISON — EDITORIAL TYPOGRAPHY */
 .comparison-section{background:var(--black-light)}
-.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
-.compare-card{border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:0}
-.compare-tried{opacity:0.55;margin-bottom:16px}
-.compare-label{display:inline-block;padding:4px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:20px;font-size:12px;font-weight:600;color:#c8c9d2;margin-bottom:10px;letter-spacing:0.3px}
-.compare-tried p{font-size:14px;color:var(--white-dim);line-height:1.7}
-.compare-divider{height:1px;background:linear-gradient(90deg,transparent,var(--core-light),transparent);margin:4px 0 16px;opacity:0.5}
-.compare-here{border-right:2px solid var(--core);padding-right:16px}
-.compare-here p{font-size:15px;color:var(--white);font-weight:500;line-height:1.7}
+.compare-editorial{max-width:740px;margin:48px auto 0;padding:0 20px}
+.compare-pair{padding:32px 0}
+.compare-tried{font-size:14px;color:var(--white-dim);opacity:0.4;text-decoration:line-through;margin-bottom:12px;line-height:1.6}
+.compare-answer{font-size:20px;font-weight:700;color:var(--white);line-height:1.6;border-right:3px solid var(--core);padding-right:20px}
+.compare-sep{height:1px;background:linear-gradient(90deg,transparent,var(--core-light),transparent);opacity:0.3}
 
 /* DELIVERABLES */
 .deliverables-section{background:linear-gradient(180deg,var(--black) 0%,rgba(255,255,255,0.02) 50%,var(--black) 100%)}
@@ -441,7 +438,7 @@ section{padding:70px 20px}
 .screenshots-grid{grid-template-columns:1fr 1fr}
 .carousel-card{flex:0 0 240px}
 .carousel-card.active{flex:0 0 270px}
-.compare-grid{grid-template-columns:1fr}
+.compare-answer{font-size:18px}
 .bonus-box{flex-direction:column;text-align:center}
 .after-timeline{padding-right:30px}
 .social-proof{gap:16px}
@@ -617,31 +614,30 @@ body{padding-bottom:70px}
 <section class="comparison-section" id="comparison">
   <div class="container">
     <h2 class="reveal text-center">אז מה שונה פה ולמה זה <span class="highlight">לא עוד קורס או יועץ?</span></h2>
-    <div class="compare-grid">
-      <div class="compare-card glow-card reveal reveal-delay-1">
-        <div class="compare-tried"><span class="compare-label">יועץ עסקי</span><p>נתן לך "תעלה מחיר ותשווק יותר" בלי לשאול מי אתה ומה הערך שלך</p></div>
-        <div class="compare-divider"></div>
-        <div class="compare-here"><p>בונים את ה DNA והמיצוב שעליהם כל המנגנון יושב</p></div>
+    <div class="compare-editorial">
+      <div class="compare-pair reveal">
+        <p class="compare-tried">יועץ עסקי — נתן לך "תעלה מחיר ותשווק יותר" בלי לשאול מי אתה ומה הערך שלך</p>
+        <p class="compare-answer">בונים את ה-DNA והמיצוב שעליהם כל המנגנון יושב</p>
       </div>
-      <div class="compare-card glow-card reveal reveal-delay-2">
-        <div class="compare-tried"><span class="compare-label">קורסים לשיווק</span><p>קיבלת ידע שלא יישמת כי לא היה לך "למה" או "מי" לפני הטקטיקה</p></div>
-        <div class="compare-divider"></div>
-        <div class="compare-here"><p>בונים יסודות קודם ויוצאים עם נכסים ולא עם שיעורי בית</p></div>
+      <div class="compare-sep"></div>
+      <div class="compare-pair reveal">
+        <p class="compare-tried">קורסים לשיווק — קיבלת ידע שלא יישמת כי לא היה לך "למה" או "מי" לפני הטקטיקה</p>
+        <p class="compare-answer">בונים יסודות קודם ויוצאים עם נכסים ולא עם שיעורי בית</p>
       </div>
-      <div class="compare-card glow-card reveal reveal-delay-3">
-        <div class="compare-tried"><span class="compare-label">קמפיינר</span><p>לידים קרים, "כמה זה עולה" בהודעה ראשונה והשוואות למתחרים</p></div>
-        <div class="compare-divider"></div>
-        <div class="compare-here"><p>מסרים שמביאים לקוחות שכבר מבינים את הערך לפני השיחה</p></div>
+      <div class="compare-sep"></div>
+      <div class="compare-pair reveal">
+        <p class="compare-tried">קמפיינר — לידים קרים, "כמה זה עולה" בהודעה ראשונה והשוואות למתחרים</p>
+        <p class="compare-answer">מסרים שמביאים לקוחות שכבר מבינים את הערך לפני השיחה</p>
       </div>
-      <div class="compare-card glow-card reveal reveal-delay-1">
-        <div class="compare-tried"><span class="compare-label">רילס ויראליים</span><p>עוקבים בלי פניות כי לא היה מסר ברור מאחורי החשיפה</p></div>
-        <div class="compare-divider"></div>
-        <div class="compare-here"><p>קו תוכן אסטרטגי שבונה סמכות ומוביל לפניות, לא רק לצפיות</p></div>
+      <div class="compare-sep"></div>
+      <div class="compare-pair reveal">
+        <p class="compare-tried">רילס ויראליים — עוקבים בלי פניות כי לא היה מסר ברור מאחורי החשיפה</p>
+        <p class="compare-answer">קו תוכן אסטרטגי שבונה סמכות ומוביל לפניות, לא רק לצפיות</p>
       </div>
-      <div class="compare-card glow-card reveal reveal-delay-2">
-        <div class="compare-tried"><span class="compare-label">ניסית לבד</span><p>שעות על תוכן שלא זז וכל פוסט הוא מאבק על מה להגיד</p></div>
-        <div class="compare-divider"></div>
-        <div class="compare-here"><p>מפת תוכן ומנגנון שמראה לך מה לעשות, מתי ולמה</p></div>
+      <div class="compare-sep"></div>
+      <div class="compare-pair reveal">
+        <p class="compare-tried">ניסית לבד — שעות על תוכן שלא זז וכל פוסט הוא מאבק על מה להגיד</p>
+        <p class="compare-answer">מפת תוכן ומנגנון שמראה לך מה לעשות, מתי ולמה</p>
       </div>
     </div>
     <p class="sub-text reveal mt-32 sub-center">כל מה שניסית עד עכשיו עבד על הסימפטום ולא על השורש. אני לא מתקן, אני בונה מהיסוד.</p>
