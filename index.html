@@ -202,13 +202,18 @@ radial-gradient(560px 250px at 50% 122%,rgba(143,47,160,0.24),rgba(143,47,160,0)
 .process-highlight p{font-size:16px;color:var(--white-dim);line-height:1.8}
 .process-highlight .stat{font-size:18px;font-weight:600;color:#c9cbd6}
 
-/* COMPARISON — EDITORIAL TYPOGRAPHY */
+/* COMPARISON — GLASSMORPHISM CARDS */
 .comparison-section{background:var(--black-light)}
-.compare-editorial{max-width:740px;margin:48px auto 0;padding:0 20px}
-.compare-pair{padding:32px 0}
-.compare-tried{font-size:14px;color:var(--white-dim);opacity:0.4;text-decoration:line-through;margin-bottom:12px;line-height:1.6}
-.compare-answer{font-size:20px;font-weight:700;color:var(--white);line-height:1.6;border-right:3px solid var(--core);padding-right:20px}
-.compare-sep{height:1px;background:linear-gradient(90deg,transparent,var(--core-light),transparent);opacity:0.3}
+.compare-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px}
+.compare-card{border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:0}
+.compare-title{font-size:17px;font-weight:700;color:var(--white);margin-bottom:16px}
+.compare-tried{opacity:0.6;margin-bottom:16px}
+.compare-label{display:inline-block;font-size:13px;font-weight:600;color:#c8c9d2;margin-bottom:8px}
+.compare-label--hero{color:var(--core-light)}
+.compare-tried p{font-size:14px;color:var(--white-dim);line-height:1.7}
+.compare-divider{height:1px;background:linear-gradient(90deg,transparent,var(--core-light),transparent);margin:4px 0 16px;opacity:0.5}
+.compare-here{border-right:3px solid #8f2fa0;padding-right:16px}
+.compare-here p{font-size:15px;color:var(--white);font-weight:600;line-height:1.7}
 
 /* DELIVERABLES */
 .deliverables-section{background:linear-gradient(180deg,var(--black) 0%,rgba(255,255,255,0.02) 50%,var(--black) 100%)}
@@ -438,7 +443,7 @@ section{padding:70px 20px}
 .screenshots-grid{grid-template-columns:1fr 1fr}
 .carousel-card{flex:0 0 240px}
 .carousel-card.active{flex:0 0 270px}
-.compare-answer{font-size:18px}
+.compare-grid{grid-template-columns:1fr}
 .bonus-box{flex-direction:column;text-align:center}
 .after-timeline{padding-right:30px}
 .social-proof{gap:16px}
@@ -614,33 +619,69 @@ body{padding-bottom:70px}
 <section class="comparison-section" id="comparison">
   <div class="container">
     <h2 class="reveal text-center">אז מה שונה פה ולמה זה <span class="highlight">לא עוד קורס או יועץ?</span></h2>
-    <div class="compare-editorial">
-      <div class="compare-pair reveal">
-        <p class="compare-tried">יועץ עסקי — נתן לך "תעלה מחיר ותשווק יותר" בלי לשאול מי אתה ומה הערך שלך</p>
-        <p class="compare-answer">בונים את ה-DNA והמיצוב שעליהם כל המנגנון יושב</p>
+    <div class="compare-grid">
+      <div class="compare-card glow-card reveal">
+        <h3 class="compare-title">השלב שלפני השיווק (המיצוב)</h3>
+        <div class="compare-tried">
+          <span class="compare-label">הניסיון:</span>
+          <p>יועץ עסקי שנתן לך "תעלה מחיר ותשווק יותר" בלי לשאול מי אתה ומה הערך שלך.</p>
+        </div>
+        <div class="compare-divider"></div>
+        <div class="compare-here">
+          <span class="compare-label compare-label--hero">ב"קוד המפצח":</span>
+          <p>בונים את ה-DNA והמיצוב שעליהם כל המנגנון יושב. כשהבסיס יצוק, המחיר הוא רק תוצאה של הערך.</p>
+        </div>
       </div>
-      <div class="compare-sep"></div>
-      <div class="compare-pair reveal">
-        <p class="compare-tried">קורסים לשיווק — קיבלת ידע שלא יישמת כי לא היה לך "למה" או "מי" לפני הטקטיקה</p>
-        <p class="compare-answer">בונים יסודות קודם ויוצאים עם נכסים ולא עם שיעורי בית</p>
+      <div class="compare-card glow-card reveal">
+        <h3 class="compare-title">המעבר מידע ליישום (הנכסים)</h3>
+        <div class="compare-tried">
+          <span class="compare-label">הניסיון:</span>
+          <p>קורסים לשיווק שבהם קיבלת ידע שלא יישמת, כי לא היה לך "למה" או "מי" לפני הטקטיקה.</p>
+        </div>
+        <div class="compare-divider"></div>
+        <div class="compare-here">
+          <span class="compare-label compare-label--hero">ב"קוד המפצח":</span>
+          <p>בונים יסודות קודם ויוצאים עם נכסים מוכנים ולא עם שיעורי בית. אתה לא צופה, אתה בונה.</p>
+        </div>
       </div>
-      <div class="compare-sep"></div>
-      <div class="compare-pair reveal">
-        <p class="compare-tried">קמפיינר — לידים קרים, "כמה זה עולה" בהודעה ראשונה והשוואות למתחרים</p>
-        <p class="compare-answer">מסרים שמביאים לקוחות שכבר מבינים את הערך לפני השיחה</p>
+      <div class="compare-card glow-card reveal">
+        <h3 class="compare-title">איכות הקהל (המסר)</h3>
+        <div class="compare-tried">
+          <span class="compare-label">הניסיון:</span>
+          <p>קמפיינר שהביא לידים קרים ששואלים "כמה זה עולה" בהודעה ראשונה ומשווים אותך למתחרים.</p>
+        </div>
+        <div class="compare-divider"></div>
+        <div class="compare-here">
+          <span class="compare-label compare-label--hero">ב"קוד המפצח":</span>
+          <p>מסרים שמביאים לקוחות שכבר מבינים את הערך שלך עוד לפני שפתחתם את המצלמה בזום.</p>
+        </div>
       </div>
-      <div class="compare-sep"></div>
-      <div class="compare-pair reveal">
-        <p class="compare-tried">רילס ויראליים — עוקבים בלי פניות כי לא היה מסר ברור מאחורי החשיפה</p>
-        <p class="compare-answer">קו תוכן אסטרטגי שבונה סמכות ומוביל לפניות, לא רק לצפיות</p>
+      <div class="compare-card glow-card reveal">
+        <h3 class="compare-title">המנגנון שעובד בשבילך (הסמכות)</h3>
+        <div class="compare-tried">
+          <span class="compare-label">הניסיון:</span>
+          <p>רילס ויראליים ועוקבים בלי פניות, כי לא היה מסר ברור ואסטרטגי מאחורי החשיפה.</p>
+        </div>
+        <div class="compare-divider"></div>
+        <div class="compare-here">
+          <span class="compare-label compare-label--hero">ב"קוד המפצח":</span>
+          <p>קו תוכן אסטרטגי שבונה סמכות אמיתית ומוביל לפניות איכותיות, לא רק לצפיות ריקות.</p>
+        </div>
       </div>
-      <div class="compare-sep"></div>
-      <div class="compare-pair reveal">
-        <p class="compare-tried">ניסית לבד — שעות על תוכן שלא זז וכל פוסט הוא מאבק על מה להגיד</p>
-        <p class="compare-answer">מפת תוכן ומנגנון שמראה לך מה לעשות, מתי ולמה</p>
+      <div class="compare-card glow-card reveal">
+        <h3 class="compare-title">השקט והסדר (התוכנית)</h3>
+        <div class="compare-tried">
+          <span class="compare-label">הניסיון:</span>
+          <p>ניסית לבד – שעות על תוכן שלא זז וכל פוסט הוא מאבק מתיש על מה להגיד היום.</p>
+        </div>
+        <div class="compare-divider"></div>
+        <div class="compare-here">
+          <span class="compare-label compare-label--hero">ב"קוד המפצח":</span>
+          <p>מפת תוכן ומנגנון שמראה לך בדיוק מה לעשות, מתי ולמה. בלי ניחושים.</p>
+        </div>
       </div>
     </div>
-    <p class="sub-text reveal mt-32 sub-center">כל מה שניסית עד עכשיו עבד על הסימפטום ולא על השורש. אני לא מתקן, אני בונה מהיסוד.</p>
+    <p class="sub-text reveal mt-32 sub-center">כל מה שניסית עד עכשיו עבד על הסימפטום ולא על השורש. אני לא מתקן – אני בונה מהיסוד.</p>
   </div>
 </section>
 
