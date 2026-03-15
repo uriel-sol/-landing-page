@@ -171,7 +171,7 @@ radial-gradient(500px 220px at 50% 115%,rgba(143,47,160,0.16),transparent 72%)}
 /* Authority Logos Marquee */
 .authority-marquee-wrapper{width:100%;max-width:700px;overflow:hidden;margin:32px auto 0;direction:ltr;-webkit-mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent)}
 .authority-marquee-track{display:flex;gap:48px;width:max-content;animation:authorityScroll 30s linear infinite;align-items:center}
-.authority-marquee-track img{height:44px;width:auto;filter:grayscale(100%);opacity:0.35;transition:opacity 0.3s}
+.authority-marquee-track img{height:56px;width:auto;opacity:0.85;transition:opacity 0.3s}
 @keyframes authorityScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ===== VSL ===== */
@@ -286,9 +286,9 @@ radial-gradient(500px 220px at 50% 115%,rgba(143,47,160,0.16),transparent 72%)}
 .steps-wiring .wire-fill{position:absolute;top:0;right:0;bottom:0;width:0%;background:var(--core-light);box-shadow:0 0 15px var(--core-light);border-radius:2px}
 
 /* ===== MOCKUP FRAMES ===== */
-.mockup-frame{width:100%;max-height:140px;background:none;border-top:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-top:16px;position:relative;overflow:hidden;transition:transform 0.4s ease}
+.mockup-frame{width:100%;background:none;border-top:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-top:16px;position:relative;overflow:hidden;transition:transform 0.4s ease}
 .mockup-frame::before,.mockup-frame::after{display:none}
-.mockup-frame img{width:100%;border-radius:8px;display:block;object-fit:cover}
+.mockup-frame img{width:100%;border-radius:8px;display:block;object-fit:contain}
 .deliver-card:hover .mockup-frame{transform:translateY(-3px)}
 
 /* (mouse-glow removed — mobile-first) */
