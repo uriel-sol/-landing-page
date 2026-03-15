@@ -12,13 +12,10 @@
 <link rel="icon" type="image/png" href="logo_final.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://www.youtube-nocookie.com">
 <link rel="preconnect" href="https://img.youtube.com">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
-<!-- Analytics placeholder - replace with your tracking codes -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script> -->
-<!-- Meta Pixel placeholder -->
-<!-- <script>!function(f,b,e,v,n,t,s){...}('YOUR-PIXEL-ID')</script> -->
+<!-- GA4 + Meta Pixel are loaded dynamically by the consent system (see JS below) -->
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -550,6 +547,108 @@ body{padding-bottom:70px}
     padding:9px 12px;
   }
 }
+/* CONSENT BANNER */
+.consent-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:150;
+  padding:20px 24px;
+  background:rgba(14,14,20,0.92);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border-top:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 -8px 32px rgba(0,0,0,0.4);
+  transform:translateY(100%);
+  display:none;
+}
+.consent-banner.visible{display:block;animation:consentUp 0.6s var(--ease-structural) 1.5s forwards}
+.consent-banner.hidden{animation:consentDown 0.4s var(--ease-structural) forwards}
+@keyframes consentUp{to{transform:translateY(0)}}
+@keyframes consentDown{to{transform:translateY(100%)}}
+.consent-banner-inner{
+  max-width:var(--max-width);margin:0 auto;
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+}
+.consent-banner-text{flex:1;min-width:280px;font-size:13px;color:var(--white-dim);line-height:1.7}
+.consent-banner-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.consent-btn-reject{
+  padding:10px 22px;font-size:13px;font-weight:600;
+  background:transparent;border:1px solid rgba(255,255,255,0.15);
+  border-radius:10px;color:var(--white);cursor:pointer;
+  font-family:var(--font);transition:all 0.3s;
+}
+.consent-btn-reject:hover{border-color:rgba(255,255,255,0.3)}
+.consent-btn-settings{
+  background:none;border:none;color:var(--core-light);
+  font-size:13px;font-weight:600;cursor:pointer;
+  font-family:var(--font);text-decoration:underline;
+  text-underline-offset:3px;transition:color 0.3s;
+}
+.consent-btn-settings:hover{color:var(--white)}
+/* CONSENT PREFERENCES MODAL */
+.consent-overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  z-index:200;display:none;align-items:center;justify-content:center;padding:20px;
+}
+.consent-overlay.active{display:flex}
+.consent-modal-box{
+  background:rgba(16,16,22,0.82);
+  backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:20px;padding:36px 28px;
+  max-width:480px;width:100%;position:relative;
+  box-shadow:0 24px 64px rgba(0,0,0,0.5),0 0 80px rgba(143,47,160,0.08);
+  animation:modalIn 0.35s ease;
+  max-height:90vh;overflow-y:auto;
+}
+.consent-modal-title{font-size:20px;font-weight:700;text-align:center;margin:0 0 6px}
+.consent-modal-sub{font-size:13px;color:#b8b8c2;text-align:center;margin-bottom:24px}
+.consent-category{padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.consent-category:last-of-type{border-bottom:none}
+.consent-category-header{display:flex;justify-content:space-between;align-items:center}
+.consent-category-desc{font-size:12px;color:var(--white-dim);line-height:1.7;margin-top:8px}
+.consent-tools{color:rgba(255,255,255,0.3);font-size:11px}
+/* Toggle switch */
+.consent-toggle{position:relative;display:inline-block;width:44px;height:24px;cursor:pointer}
+.consent-toggle input{opacity:0;width:0;height:0}
+.toggle-slider{
+  position:absolute;inset:0;
+  background:rgba(255,255,255,0.1);
+  border-radius:24px;border:1px solid rgba(255,255,255,0.1);
+  transition:all 0.3s;
+}
+.toggle-slider::before{
+  content:'';position:absolute;
+  height:18px;width:18px;right:2px;bottom:2px;
+  background:var(--white);border-radius:50%;
+  transition:transform 0.3s;
+}
+.consent-toggle input:checked + .toggle-slider{background:var(--core);border-color:var(--core-light)}
+.consent-toggle input:checked + .toggle-slider::before{transform:translateX(-20px)}
+.consent-toggle.disabled{opacity:0.5;cursor:not-allowed}
+.consent-youtube-note{font-size:11px;color:rgba(255,255,255,0.3);text-align:center;margin:12px 0;font-style:italic}
+.consent-modal-actions{display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.consent-btn-save{
+  padding:12px 28px;font-size:14px;font-weight:600;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:10px;color:var(--white);cursor:pointer;
+  font-family:var(--font);transition:all 0.3s;
+}
+.consent-btn-save:hover{border-color:rgba(143,47,160,0.4)}
+.consent-btn-back{
+  background:none;border:none;color:var(--white-dim);
+  font-size:13px;cursor:pointer;font-family:var(--font);
+  text-decoration:underline;text-underline-offset:3px;
+}
+.consent-footer-link{color:rgba(255,255,255,0.35);cursor:pointer;transition:color 0.3s}
+.consent-footer-link:hover{color:#c8c9d6}
+@media(max-width:768px){
+  .consent-banner{padding:16px 18px}
+  .consent-banner-inner{flex-direction:column;text-align:center}
+  .consent-banner-actions{justify-content:center}
+  .consent-banner-text{font-size:12px;min-width:auto}
+  .consent-modal-box{padding:28px 20px}
+}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -675,7 +774,7 @@ body{padding-bottom:70px}
   <div class="container"><div class="vsl-wrapper">
     <h2 class="reveal">רוב מי שמגיע אלי ניסה הכל, <span class="highlight">אבל לא לפי הסדר הנכון.</span></h2>
     <div class="vsl-video reveal reveal-delay-1">
-      <div class="play-overlay" onclick="this.style.display='none';this.parentElement.innerHTML='<iframe src=\'https://www.youtube.com/embed/VIDEO_ID?autoplay=1\' allow=\'autoplay; encrypted-media\' allowfullscreen></iframe>'">
+      <div class="play-overlay" onclick="this.style.display='none';this.parentElement.innerHTML='<iframe src=\'https://www.youtube-nocookie.com/embed/VIDEO_ID?autoplay=1\' allow=\'autoplay; encrypted-media\' allowfullscreen></iframe>'">
         <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
       </div>
     </div>
@@ -1061,11 +1160,140 @@ body{padding-bottom:70px}
       <a href="https://www.threads.com/@uriel.sol?xmt=AQF05RR3rZiry0IW8b3y1x4N0_Tm06ZZ-xoJKH6lx4iVhEo" target="_blank" aria-label="טרדס" class="footer-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.773.779c-1.005-3.575-3.473-5.364-7.533-5.392h-.013c-2.653.018-4.627.885-5.864 2.577-1.096 1.5-1.67 3.63-1.706 6.332v.233c.036 2.7.61 4.829 1.707 6.327 1.238 1.69 3.213 2.556 5.867 2.574h.008c2.26-.015 3.98-.607 5.256-1.812 1.119-1.058 1.767-2.514 1.924-4.33h.003c-.088-.468-.23-.905-.428-1.3-.568-1.137-1.63-1.895-3.084-2.2-.405 2.495-1.416 4.333-3.054 5.237-.85.468-1.83.713-2.91.713h-.034c-1.267-.008-2.343-.403-3.198-1.174-.889-.8-1.364-1.89-1.339-3.07.044-2.1 1.782-3.76 4.158-3.97.73-.065 1.455-.037 2.16.082l.003-.003c.04-.667.039-1.35-.006-2.04l2.482-.093c.07.938.062 1.867-.016 2.777 1.476.438 2.668 1.207 3.473 2.282.629.842 1.057 1.844 1.263 2.97.006.048.01.096.013.144.202 2.466-.496 4.56-2.074 6.044-1.61 1.513-3.84 2.313-6.63 2.38h-.03l.003.002zm-.664-8.853c-1.243.11-2.15.747-2.17 1.527-.012.47.193.886.578 1.173.528.394 1.278.528 2.024.387 1.257-.238 2.059-1.2 2.406-2.876-.905-.186-1.856-.27-2.838-.211z"/></svg></a>
     </div>
     <p>© 2026 אוריאל סול. כל הזכויות שמורות.</p>
-    <p class="mt-8"><a href="privacy-policy.html">מדיניות פרטיות</a> · <a href="accessibility.html">הצהרת נגישות</a></p>
+    <p class="mt-8"><a href="privacy-policy.html">מדיניות פרטיות</a> · <a href="accessibility.html">הצהרת נגישות</a> · <a href="javascript:void(0)" onclick="openConsentSettings()" class="consent-footer-link">הגדרות פרטיות</a></p>
   </div>
 </footer>
 
 <script>
+// ===== COOKIE CONSENT SYSTEM =====
+(function(){
+  var CONSENT_KEY='cookieConsent';
+  var CONSENT_VERSION=1;
+
+  function getConsent(){
+    try{
+      var raw=localStorage.getItem(CONSENT_KEY);
+      if(!raw)return null;
+      var data=JSON.parse(raw);
+      if(data.version!==CONSENT_VERSION)return null;
+      return data;
+    }catch(e){return null;}
+  }
+
+  function setConsent(analytics,marketing){
+    var data={
+      version:CONSENT_VERSION,
+      necessary:true,
+      analytics:!!analytics,
+      marketing:!!marketing,
+      timestamp:new Date().toISOString()
+    };
+    localStorage.setItem(CONSENT_KEY,JSON.stringify(data));
+    applyConsent(data);
+  }
+
+  function applyConsent(data){
+    if(data.analytics)loadGA4();
+    if(data.marketing)loadMetaPixel();
+  }
+
+  function loadGA4(){
+    if(document.getElementById('ga4-script'))return;
+    var GA_ID='YOUR-GA-ID';
+    if(GA_ID==='YOUR-GA-ID')return;
+    var s=document.createElement('script');
+    s.id='ga4-script';s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=function(){dataLayer.push(arguments);};
+    gtag('js',new Date());
+    gtag('config',GA_ID);
+  }
+
+  function loadMetaPixel(){
+    if(window.fbq&&window.fbq.loaded)return;
+    var PIXEL_ID='YOUR-PIXEL-ID';
+    if(PIXEL_ID==='YOUR-PIXEL-ID')return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init',PIXEL_ID);
+    fbq('track','PageView');
+  }
+
+  function showBanner(){
+    var b=document.getElementById('consentBanner');
+    b.classList.remove('hidden');
+    b.classList.add('visible');
+  }
+
+  function hideBanner(){
+    var b=document.getElementById('consentBanner');
+    b.classList.add('hidden');
+    setTimeout(function(){b.classList.remove('visible');},500);
+  }
+
+  function hideModal(){
+    document.getElementById('consentModal').classList.remove('active');
+    document.body.style.overflow='';
+  }
+
+  window.acceptAllCookies=function(){
+    setConsent(true,true);
+    hideBanner();
+    hideModal();
+  };
+
+  window.rejectNonEssential=function(){
+    setConsent(false,false);
+    hideBanner();
+  };
+
+  window.openConsentSettings=function(){
+    hideBanner();
+    var consent=getConsent();
+    document.getElementById('consentAnalytics').checked=consent?consent.analytics:false;
+    document.getElementById('consentMarketing').checked=consent?consent.marketing:false;
+    document.getElementById('consentModal').classList.add('active');
+    document.body.style.overflow='hidden';
+  };
+
+  window.closeConsentModal=function(){
+    hideModal();
+    if(!getConsent())showBanner();
+  };
+
+  window.saveConsentPreferences=function(){
+    var analytics=document.getElementById('consentAnalytics').checked;
+    var marketing=document.getElementById('consentMarketing').checked;
+    setConsent(analytics,marketing);
+    hideModal();
+  };
+
+  // Init
+  var existing=getConsent();
+  if(existing){
+    applyConsent(existing);
+  }else{
+    showBanner();
+  }
+
+  // Close modal on overlay click
+  document.getElementById('consentModal').addEventListener('click',function(e){
+    if(e.target===this)closeConsentModal();
+  });
+
+  // Close modal on Escape
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&document.getElementById('consentModal').classList.contains('active')){
+      closeConsentModal();
+    }
+  });
+})();
+
 // MODAL (focus trap + return focus)
 let lastFocusedEl=null;
 function openModal(){
@@ -1230,7 +1458,7 @@ if(cards.length){
   cards.forEach((c,i)=>{c.addEventListener('click',()=>{
     if(i===currentSlide){
       const vid=c.dataset.vid;
-      c.querySelector('.vid-thumb').innerHTML=`<iframe src="https://www.youtube.com/embed/${vid}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+      c.querySelector('.vid-thumb').innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${vid}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
     }else{currentSlide=i;updateCarousel()}
   })});
 }
@@ -1380,17 +1608,69 @@ document.querySelectorAll('section:not(.hero)').forEach(function(sec){
 })();
 
 // Mobile deliverables accordion
-if(window.innerWidth <= 768){
-  document.querySelectorAll('.deliver-card').forEach(function(card){
-    card.addEventListener('click', function(){
-      var isActive = card.classList.contains('active');
-      document.querySelectorAll('.deliver-card.active').forEach(function(c){ c.classList.remove('active'); });
-      if(!isActive) card.classList.add('active');
-    });
+document.querySelectorAll('.deliver-card').forEach(function(card){
+  card.addEventListener('click', function(){
+    if(window.innerWidth > 768) return;
+    var isActive = card.classList.contains('active');
+    document.querySelectorAll('.deliver-card.active').forEach(function(c){ c.classList.remove('active'); });
+    if(!isActive) card.classList.add('active');
   });
-}
+});
 
 </script>
 <a href="accessibility.html" class="accessibility-fab" aria-label="מעבר להצהרת נגישות">נגישות</a>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="consentBanner" class="consent-banner" role="dialog" aria-label="הגדרות פרטיות">
+  <div class="consent-banner-inner">
+    <p class="consent-banner-text">אנו משתמשים בעוגיות ובטכנולוגיות דומות לצורך תפעול האתר, מדידה, שיפור חוויית המשתמש ופעילות שיווקית. ניתן לאשר את כולן, לדחות רכיבים לא הכרחיים, או להגדיר העדפות.</p>
+    <div class="consent-banner-actions">
+      <button class="cta-btn consent-btn-accept" onclick="acceptAllCookies()">אשר הכל</button>
+      <button class="consent-btn-reject" onclick="rejectNonEssential()">דחה לא הכרחי</button>
+      <button class="consent-btn-settings" onclick="openConsentSettings()">הגדר העדפות</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONSENT PREFERENCES MODAL -->
+<div id="consentModal" class="consent-overlay" role="dialog" aria-modal="true" aria-labelledby="consent-modal-title">
+  <div class="consent-modal-box">
+    <button class="modal-close" onclick="closeConsentModal()" aria-label="סגור">&times;</button>
+    <h3 class="consent-modal-title" id="consent-modal-title">הגדרות פרטיות</h3>
+    <p class="consent-modal-sub">בחר אילו רכיבים תרצה לאפשר באתר</p>
+
+    <div class="consent-category">
+      <div class="consent-category-header">
+        <div><strong>הכרחי</strong></div>
+        <label class="consent-toggle disabled"><input type="checkbox" checked disabled /><span class="toggle-slider"></span></label>
+      </div>
+      <p class="consent-category-desc">עוגיות ורכיבים הנדרשים לתפעול בסיסי של האתר, אבטחה ושמירת ההעדפות שלך.</p>
+    </div>
+
+    <div class="consent-category">
+      <div class="consent-category-header">
+        <div><strong>אנליטיקה</strong></div>
+        <label class="consent-toggle"><input type="checkbox" id="consentAnalytics" /><span class="toggle-slider"></span></label>
+      </div>
+      <p class="consent-category-desc">כלים המסייעים לנו להבין איך משתמשים באתר, למדוד ביצועים ולשפר את חוויית השימוש. <span class="consent-tools">(Google Analytics)</span></p>
+    </div>
+
+    <div class="consent-category">
+      <div class="consent-category-header">
+        <div><strong>שיווק</strong></div>
+        <label class="consent-toggle"><input type="checkbox" id="consentMarketing" /><span class="toggle-slider"></span></label>
+      </div>
+      <p class="consent-category-desc">כלים המאפשרים מדידה שיווקית, התאמת מסרים ופרסום רלוונטי בפלטפורמות חיצוניות. <span class="consent-tools">(Meta Pixel)</span></p>
+    </div>
+
+    <p class="consent-youtube-note">שימו לב: סרטוני YouTube מוטמעים עשויים ליצור עוגיות צד שלישי בעת הפעלה.</p>
+
+    <div class="consent-modal-actions">
+      <button class="cta-btn consent-btn-accept" onclick="acceptAllCookies()">אשר הכל</button>
+      <button class="consent-btn-save" onclick="saveConsentPreferences()">שמור העדפות</button>
+      <button class="consent-btn-back" onclick="closeConsentModal()">חזור</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
