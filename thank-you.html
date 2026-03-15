@@ -9,10 +9,47 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
-<!-- Analytics placeholder -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script> -->
-<!-- Meta Pixel placeholder -->
-<!-- <script>!function(f,b,e,v,n,t,s){...}('YOUR-PIXEL-ID')</script> -->
+<!-- Consent Mode v2 defaults (must load before GTM) -->
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  'analytics_storage':'denied',
+  'ad_storage':'denied',
+  'ad_user_data':'denied',
+  'ad_personalization':'denied',
+  'functionality_storage':'granted',
+  'security_storage':'granted',
+  'wait_for_update':500
+});
+(function(){
+  try{
+    var raw=localStorage.getItem('cookieConsent');
+    if(raw){
+      var data=JSON.parse(raw);
+      if(data.version===1){
+        if(data.analytics){
+          gtag('consent','update',{'analytics_storage':'granted'});
+        }
+        if(data.marketing){
+          gtag('consent','update',{
+            'ad_storage':'granted',
+            'ad_user_data':'granted',
+            'ad_personalization':'granted'
+          });
+        }
+      }
+    }
+  }catch(e){}
+})();
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M62TMDLK');</script>
+<!-- End Google Tag Manager -->
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -83,6 +120,10 @@ img{max-width:100%;display:block}
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M62TMDLK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <main class="thank-you-wrapper">
   <div class="thank-hero-figure fade-in">
@@ -128,5 +169,15 @@ img{max-width:100%;display:block}
   <p>&copy; 2026 אוריאל סול. כל הזכויות שמורות.</p>
 </footer>
 
+<script>
+// Conversion event — fires on thank-you page load after dataLayer is ready
+document.addEventListener('DOMContentLoaded',function(){
+  window.dataLayer=window.dataLayer||[];
+  dataLayer.push({
+    'event':'thank_you_conversion',
+    'page_type':'thank_you'
+  });
+});
+</script>
 </body>
 </html>
