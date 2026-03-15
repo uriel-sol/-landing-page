@@ -455,7 +455,7 @@ input:focus-visible,select:focus-visible{outline:none;border-color:var(--purple-
 .quote-text{font-size:15px;color:var(--white-dim);line-height:1.75;direction:rtl}
 
 /* FLOATING WHATSAPP */
-.float-wa{position:fixed;bottom:24px;left:24px;z-index:99;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#25d366,#128c7e);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform 0.3s,box-shadow 0.3s;cursor:pointer}
+.float-wa{position:fixed;bottom:24px;right:24px;z-index:99;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#25d366,#128c7e);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform 0.3s,box-shadow 0.3s;cursor:pointer}
 .float-wa:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.5)}
 .float-wa svg{width:30px;height:30px;fill:#fff}
 
@@ -486,9 +486,15 @@ section{padding:80px 20px}
 .process-grid{grid-template-columns:1fr}
 .not-netflix .highlight-box{padding:28px 22px}
 .navbar-logo img{height:44px}
-.deliverables-grid{grid-template-columns:1fr}
-.deliver-card{padding:28px 20px}
-.mockup-frame img{max-height:200px;margin:0 auto}
+.deliverables-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+.deliver-card{padding:18px 14px;cursor:pointer}
+.deliver-card p,.deliver-card .mockup-frame{display:none}
+.deliver-card h3{font-size:15px;margin:0}
+.deliver-card h3::after{content:'+';float:left;font-size:18px;font-weight:400;color:rgba(255,255,255,0.4);transition:transform 0.3s}
+.deliver-card.active{grid-column:1 / -1}
+.deliver-card.active p,.deliver-card.active .mockup-frame{display:block}
+.deliver-card.active .mockup-frame img{max-height:200px;margin:0 auto}
+.deliver-card.active h3::after{content:'−'}
 .videos-grid{grid-template-columns:1fr}
 .story-grid{grid-template-columns:1fr}
 .story-image{text-align:center;position:relative;top:auto}
@@ -1372,6 +1378,17 @@ document.querySelectorAll('section:not(.hero)').forEach(function(sec){
     });
   }
 })();
+
+// Mobile deliverables accordion
+if(window.innerWidth <= 768){
+  document.querySelectorAll('.deliver-card').forEach(function(card){
+    card.addEventListener('click', function(){
+      var isActive = card.classList.contains('active');
+      document.querySelectorAll('.deliver-card.active').forEach(function(c){ c.classList.remove('active'); });
+      if(!isActive) card.classList.add('active');
+    });
+  });
+}
 
 </script>
 <a href="accessibility.html" class="accessibility-fab" aria-label="מעבר להצהרת נגישות">נגישות</a>
