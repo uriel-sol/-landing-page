@@ -1273,24 +1273,26 @@ body{padding-bottom:70px}
     hideModal();
   };
 
-  // Init
-  var existing=getConsent();
-  if(existing){
-    applyConsent(existing);
-  }else{
-    showBanner();
-  }
-
-  // Close modal on overlay click
-  document.getElementById('consentModal').addEventListener('click',function(e){
-    if(e.target===this)closeConsentModal();
-  });
-
-  // Close modal on Escape
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'&&document.getElementById('consentModal').classList.contains('active')){
-      closeConsentModal();
+  // Init — wait for DOM so consent HTML elements exist
+  document.addEventListener('DOMContentLoaded',function(){
+    var existing=getConsent();
+    if(existing){
+      applyConsent(existing);
+    }else{
+      showBanner();
     }
+
+    // Close modal on overlay click
+    document.getElementById('consentModal').addEventListener('click',function(e){
+      if(e.target===this)closeConsentModal();
+    });
+
+    // Close modal on Escape
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&document.getElementById('consentModal').classList.contains('active')){
+        closeConsentModal();
+      }
+    });
   });
 })();
 
