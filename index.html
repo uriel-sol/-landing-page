@@ -1386,8 +1386,14 @@ async function submitLead(data, btn){
     console.log('Lead sent successfully');
     // Analytics events (fire if available)
     window.dataLayer=window.dataLayer||[];
-    dataLayer.push({'event':'lead_submit','source':data.source,'cycle':data.cycle,'content_name':'kod_hamfatzach'});
-    window.location.href = 'thank-you.html';
+    dataLayer.push({
+      'event': 'lead_submit',
+      'source': data.source,
+      'cycle': data.cycle,
+      'content_name': 'kod_hamfatzach',
+      'eventCallback': function(){ window.location.href = 'thank-you.html'; },
+      'eventTimeout': 2000
+    });
   } catch(err) {
     console.error('Submit error:', err);
     btn.textContent = origText;
