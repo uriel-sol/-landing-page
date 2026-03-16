@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>הפרטים נקלטו | קוד המפצח — אוריאל סול</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="logo_final.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- Consent Mode v2 defaults (must load before GTM) -->
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  'analytics_storage':'denied',
+  'ad_storage':'denied',
+  'ad_user_data':'denied',
+  'ad_personalization':'denied',
+  'functionality_storage':'granted',
+  'security_storage':'granted',
+  'wait_for_update':500
+});
+(function(){
+  try{
+    var raw=localStorage.getItem('cookieConsent');
+    if(raw){
+      var data=JSON.parse(raw);
+      if(data.version===1){
+        if(data.analytics){
+          gtag('consent','update',{'analytics_storage':'granted'});
+        }
+        if(data.marketing){
+          gtag('consent','update',{
+            'ad_storage':'granted',
+            'ad_user_data':'granted',
+            'ad_personalization':'granted'
+          });
+        }
+      }
+    }
+  }catch(e){}
+})();
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M62TMDLK');</script>
+<!-- End Google Tag Manager -->
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--black:#08080a;--black-light:#0e0e12;--black-card:#131318;
+--border:rgba(255,255,255,0.1);
+--white:#f3f4f8;--white-dim:#a5a7b3;
+--core:#8f2fa0;--core-light:#b159c1;--core-dark:#652173;
+--core-glow:rgba(143,47,160,0.22);
+--gradient-core:linear-gradient(135deg,#6f2480,var(--core),#a649b6);
+--font:'Heebo',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--black);color:var(--white);line-height:1.7;overflow-x:hidden;direction:rtl;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:
+radial-gradient(70% 45% at 50% 0%,rgba(255,255,255,0.05),transparent 60%),
+radial-gradient(50% 40% at 80% 10%,rgba(143,47,160,0.06),transparent 50%)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.highlight{background:var(--gradient-core);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* LAYOUT */
+.thank-you-wrapper{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 20px 60px;position:relative;z-index:1}
+.thank-you-card{max-width:620px;width:100%;text-align:center}
+
+/* HERO FIGURE */
+.thank-hero-figure{position:relative;margin-bottom:40px}
+.thank-hero-figure img{width:100%;max-width:300px;display:block;margin:0 auto;position:relative;z-index:1;-webkit-mask-image:linear-gradient(to bottom,#000 35%,rgba(0,0,0,0.5) 60%,rgba(0,0,0,0.15) 80%,transparent 100%);mask-image:linear-gradient(to bottom,#000 35%,rgba(0,0,0,0.5) 60%,rgba(0,0,0,0.15) 80%,transparent 100%)}
+.thank-hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:450px;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(143,47,160,0.30),rgba(143,47,160,0.10) 50%,transparent 80%);filter:blur(100px);z-index:0;pointer-events:none}
+
+/* CHECK ANIMATION */
+.success-icon{width:80px;height:80px;margin:0 auto 32px;border-radius:50%;background:rgba(143,47,160,0.15);border:2px solid rgba(143,47,160,0.4);display:flex;align-items:center;justify-content:center;animation:pulseGlow 2s ease-in-out infinite}
+.success-icon svg{width:40px;height:40px}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 20px rgba(143,47,160,0.15)}50%{box-shadow:0 0 40px rgba(143,47,160,0.3)}}
+
+/* TYPOGRAPHY */
+.thank-you-card h1{font-size:clamp(28px,5vw,40px);font-weight:800;line-height:1.3;margin-bottom:24px}
+.thank-you-card .main-text{font-size:17px;color:var(--white);line-height:1.8;margin-bottom:28px}
+.thank-you-card .sub-text{font-size:15px;color:var(--white-dim);line-height:1.8;margin-bottom:32px}
+
+/* WHATSAPP BLOCK */
+.whatsapp-block{display:inline-flex;align-items:center;gap:12px;padding:16px 36px;border-radius:14px;background:linear-gradient(135deg,rgba(143,47,160,0.15),rgba(143,47,160,0.08));border:1px solid rgba(143,47,160,0.35);margin-bottom:28px;font-size:18px;font-weight:700;color:var(--core-light)}
+.whatsapp-block svg{width:28px;height:28px;fill:var(--core-light);flex-shrink:0}
+
+/* SMALL TEXT */
+.fallback-text{font-size:14px;color:var(--white-dim);opacity:0.7}
+.fallback-text a{color:var(--core-light);text-decoration:underline;text-underline-offset:3px}
+
+/* FOOTER */
+.site-footer{padding:32px 20px;text-align:center;border-top:1px solid rgba(255,255,255,0.06);position:relative;z-index:1}
+.footer-logo{height:32px;margin:0 auto 12px;opacity:0.7}
+.site-footer p{font-size:13px;color:var(--white-dim);opacity:0.6}
+
+/* FADE IN */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeUp 0.8s ease forwards}
+.fade-in-delay-1{animation-delay:0.2s}
+.fade-in-delay-2{animation-delay:0.4s}
+.fade-in-delay-3{animation-delay:0.6s}
+.fade-in-delay-4{animation-delay:0.8s}
+.fade-in-delay-5{animation-delay:1s}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){
+.thank-you-wrapper{padding:80px 20px 40px}
+.whatsapp-block{padding:14px 24px;font-size:16px}
+.thank-hero-figure img{max-width:220px}
+.thank-hero-glow{width:280px;height:320px;filter:blur(70px)}
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M62TMDLK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<main class="thank-you-wrapper">
+  <div class="thank-hero-figure fade-in">
+    <div class="thank-hero-glow"></div>
+    <img src="assets/images/noback.png" alt="אוריאל סול" />
+  </div>
+
+  <div class="thank-you-card">
+
+    <div class="success-icon fade-in fade-in-delay-1">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#b159c1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+
+    <h1 class="fade-in fade-in-delay-1">הפרטים נקלטו <span class="highlight">בהצלחה.</span></h1>
+
+    <p class="main-text fade-in fade-in-delay-2">תוך כמה דקות אשלח לך הודעת וואטסאפ עם שאלון קצר.<br>זה לא סתם טופס. זה מה שמאפשר לי להגיע לשיחה שלנו מוכן, ממוקד, ולא לבזבז לך זמן על שאלות בסיסיות.</p>
+
+    <p class="sub-text fade-in fade-in-delay-3">אחרי השאלון תיפתח לך מיד אופציה לקביעת שיחה בזום ולבחור את התאריך והשעה שמתאימים לך.<br>השיחה היא בין 30 ל-60 דקות.<br>בסופה תדע בדיוק אם זה מתאים לך ומה הצעד הבא שנכון לך.</p>
+
+    <div class="fade-in fade-in-delay-4">
+      <div class="whatsapp-block">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        בדוק את הוואטסאפ שלך עכשיו
+      </div>
+    </div>
+
+    <p class="fallback-text fade-in fade-in-delay-5">לא קיבלת הודעה תוך 5 דקות? כתוב לי ישירות: <a href="https://api.whatsapp.com/send/?phone=972503032199&text=%D7%94%D7%99%D7%99+%D7%90%D7%95%D7%A8%D7%99%D7%90%D7%9C%2C+%D7%94%D7%A9%D7%90%D7%A8%D7%AA%D7%99+%D7%A4%D7%A8%D7%98%D7%99%D7%9D+%D7%91%D7%90%D7%AA%D7%A8+%D7%91%D7%A0%D7%95%D7%92%D7%A2+%D7%9C%D7%AA%D7%94%D7%9C%D7%99%D7%9A+%D7%A9%D7%9C%D7%9A+%D7%B4%D7%A7%D7%95%D7%93+%D7%94%D7%9E%D7%A4%D7%A6%D7%97%D7%B4%2C+%D7%90%D7%A9%D7%9E%D7%97+%D7%9C%D7%93%D7%91%D7%A8+%D7%90%D7%99%D7%AA%D7%9A&type=phone_number&app_absent=0">050-3032199</a></p>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <img src="logo_final.png" alt="Uriel Sol" class="footer-logo" />
+  <p style="margin-bottom:12px">אוריאל סול, בניית מנגנון אסטרטגי עסקי שיווקי לבעלי עסקים ומומחים</p>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/uriel.sol" target="_blank" aria-label="אינסטגרם"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://api.whatsapp.com/send/?phone=972503032199&text=%D7%94%D7%99%D7%99+%D7%90%D7%95%D7%A8%D7%99%D7%90%D7%9C%2C+%D7%94%D7%A9%D7%90%D7%A8%D7%AA%D7%99+%D7%A4%D7%A8%D7%98%D7%99%D7%9D+%D7%91%D7%90%D7%AA%D7%A8+%D7%91%D7%A0%D7%95%D7%92%D7%A2+%D7%9C%D7%AA%D7%94%D7%9C%D7%99%D7%9A+%D7%A9%D7%9C%D7%9A+%D7%B4%D7%A7%D7%95%D7%93+%D7%94%D7%9E%D7%A4%D7%A6%D7%97%D7%B4%2C+%D7%90%D7%A9%D7%9E%D7%97+%D7%9C%D7%93%D7%91%D7%A8+%D7%90%D7%99%D7%AA%D7%9A&type=phone_number&app_absent=0" target="_blank" aria-label="וואטסאפ"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    <a href="https://www.facebook.com/rtyuriel/" target="_blank" aria-label="פייסבוק"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    <a href="https://www.youtube.com/@Urielsol" target="_blank" aria-label="יוטיוב"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://www.tiktok.com/@uriel.sol?is_from_webapp=1&sender_device=pc" target="_blank" aria-label="טיקטוק"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@uriel.sol?xmt=AQF05RR3rZiry0IW8b3y1x4N0_Tm06ZZ-xoJKH6lx4iVhEo" target="_blank" aria-label="טרדס"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.773.779c-1.005-3.575-3.473-5.364-7.533-5.392h-.013c-2.653.018-4.627.885-5.864 2.577-1.096 1.5-1.67 3.63-1.706 6.332v.233c.036 2.7.61 4.829 1.707 6.327 1.238 1.69 3.213 2.556 5.867 2.574h.008c2.26-.015 3.98-.607 5.256-1.812 1.119-1.058 1.767-2.514 1.924-4.33h.003c-.088-.468-.23-.905-.428-1.3-.568-1.137-1.63-1.895-3.084-2.2-.405 2.495-1.416 4.333-3.054 5.237-.85.468-1.83.713-2.91.713h-.034c-1.267-.008-2.343-.403-3.198-1.174-.889-.8-1.364-1.89-1.339-3.07.044-2.1 1.782-3.76 4.158-3.97.73-.065 1.455-.037 2.16.082l.003-.003c.04-.667.039-1.35-.006-2.04l2.482-.093c.07.938.062 1.867-.016 2.777 1.476.438 2.668 1.207 3.473 2.282.629.842 1.057 1.844 1.263 2.97.006.048.01.096.013.144.202 2.466-.496 4.56-2.074 6.044-1.61 1.513-3.84 2.313-6.63 2.38h-.03l.003.002zm-.664-8.853c-1.243.11-2.15.747-2.17 1.527-.012.47.193.886.578 1.173.528.394 1.278.528 2.024.387 1.257-.238 2.059-1.2 2.406-2.876-.905-.186-1.856-.27-2.838-.211z"/></svg></a>
+  </div>
+  <p>&copy; 2026 אוריאל סול. כל הזכויות שמורות.</p>
+</footer>
+
+<script>
+// Conversion event — fires on thank-you page load after dataLayer is ready
+document.addEventListener('DOMContentLoaded',function(){
+  window.dataLayer=window.dataLayer||[];
+  dataLayer.push({
+    'event':'thank_you_conversion',
+    'page_type':'thank_you'
+  });
+});
+</script>
+</body>
+</html>
