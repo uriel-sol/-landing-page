@@ -86,8 +86,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 --grid-line:rgba(255,255,255,0.025);
 --section-pad:120px;
 }
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:var(--font);background:var(--black);color:var(--white);line-height:1.7;overflow-x:hidden;direction:rtl;-webkit-font-smoothing:antialiased;position:relative}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100vw}
+body{font-family:var(--font);background:var(--black);color:var(--white);line-height:1.7;overflow-x:hidden;max-width:100vw;direction:rtl;-webkit-font-smoothing:antialiased;position:relative}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:
@@ -357,7 +357,8 @@ radial-gradient(500px 220px at 50% 115%,rgba(143,47,160,0.16),transparent 72%)}
 .cost-callout{font-size:20px;font-weight:600;color:var(--white);padding:24px;border:1px solid rgba(244,67,54,0.38);background:rgba(244,67,54,0.06);border-radius:12px;margin:28px auto;max-width:820px}
 
 /* ===== SCREENSHOTS (MARQUEE) ===== */
-.screenshots-section{background:var(--black);overflow:hidden}
+.screenshots-section{background:var(--black);overflow:hidden;padding-left:0;padding-right:0}
+.screenshots-section .container{padding:0 24px}
 .screenshot-marquee-wrapper{position:relative;width:100%;overflow:hidden;direction:ltr;margin-top:40px;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
 .screenshot-marquee-track{display:flex;gap:20px;width:max-content;animation:screenshotScroll 55s linear infinite}
 .screenshot-marquee-track:hover{animation-play-state:paused}
@@ -482,7 +483,8 @@ input:focus-visible,select:focus-visible{outline:none;border-color:var(--purple-
 
 /* RESPONSIVE */
 /* TEXT TESTIMONIALS MARQUEE */
-.text-testimonials{background:var(--black);overflow:hidden;padding-top:80px;padding-bottom:80px}
+.text-testimonials{background:var(--black);overflow:hidden;padding-top:80px;padding-bottom:80px;padding-left:0;padding-right:0}
+.text-testimonials .container{padding:0 24px}
 .text-testimonials h2{text-align:center;margin-bottom:48px}
 .marquee-wrapper{position:relative;width:100%;overflow:hidden;direction:ltr;mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent)}
 .marquee-track{display:flex;gap:24px;width:max-content;animation:marqueeScroll 60s linear infinite}
@@ -556,10 +558,10 @@ section{padding:80px 20px}
 .deliver-card.active p{display:block}
 .deliver-card.active h3::after{content:'−'}
 /* Marquee */
-.screenshot-marquee-card{flex:0 0 290px}
-.carousel-card{flex:0 0 250px}
-.carousel-card.active{flex:0 0 280px}
-.quote-card{flex:0 0 300px;padding:24px 20px}
+.screenshot-marquee-card{flex:0 0 min(290px,75vw)}
+.carousel-card{flex:0 0 min(250px,70vw)}
+.carousel-card.active{flex:0 0 min(280px,75vw)}
+.quote-card{flex:0 0 min(300px,80vw);padding:24px 20px}
 .bonus-box{flex-direction:row}
 .after-timeline{padding-right:32px}
 .scroll-line-svg{display:none}
@@ -579,8 +581,8 @@ section{padding:80px 20px}
 .tech-section{padding:60px 20px}
 .not-netflix{padding:68px 20px}
 .hero{padding-top:102px;min-height:auto;overflow:hidden}
-.hero-figure img{max-width:240px;-webkit-mask-image:linear-gradient(to bottom,#000 25%,rgba(0,0,0,0.4) 55%,rgba(0,0,0,0.1) 78%,transparent 100%);mask-image:linear-gradient(to bottom,#000 25%,rgba(0,0,0,0.4) 55%,rgba(0,0,0,0.1) 78%,transparent 100%)}
-.hero-figure-glow{width:min(320px,90vw);height:360px;filter:blur(80px)}
+.hero-figure img{max-width:240px;-webkit-mask-image:linear-gradient(to bottom,#000 45%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.15) 85%,transparent 100%);mask-image:linear-gradient(to bottom,#000 45%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.15) 85%,transparent 100%)}
+.hero-figure-glow{width:min(320px,90vw);height:360px;filter:blur(80px);max-width:100vw}
 .hero-headline .hero-line1{font-size:clamp(26px,7vw,42px)}
 .hero-headline .hero-line2{font-size:clamp(26px,7vw,42px)}
 .hero-headline .hero-line3{font-size:clamp(26px,7vw,42px)}
@@ -668,10 +670,11 @@ section{padding:60px 14px}
 .not-netflix{padding:60px 14px}
 .hero{padding-top:88px}
 .hero-headline .hero-line1,.hero-headline .hero-line2,.hero-headline .hero-line3{font-size:clamp(24px,8vw,36px);letter-spacing:-0.5px}
-.hero-focus{padding:18px 14px 20px;border-radius:18px;margin:14px auto 0}
+.hero-focus{padding:18px 14px 20px;border-radius:18px;margin:14px auto 0;overflow:hidden}
+.hero-focus::before{inset:-30px -5px -50px;filter:blur(25px)}
 .hero-focus .sub-text{font-size:15px;line-height:1.65}
-.hero-figure img{max-width:200px}
-.hero-figure-glow{width:min(260px,85vw);height:300px}
+.hero-figure img{max-width:220px;-webkit-mask-image:linear-gradient(to bottom,#000 50%,rgba(0,0,0,0.6) 75%,rgba(0,0,0,0.2) 90%,transparent 100%);mask-image:linear-gradient(to bottom,#000 50%,rgba(0,0,0,0.6) 75%,rgba(0,0,0,0.2) 90%,transparent 100%)}
+.hero-figure-glow{width:min(260px,85vw);height:300px;max-width:100vw}
 .hero .cta-btn{width:100%;max-width:100%}
 .hero-cta-area{margin-top:24px}
 .hero-figure{margin-bottom:-40px}
@@ -698,11 +701,13 @@ h3{font-size:clamp(16px,4vw,20px)}
 .faq-item{padding:0 12px}
 .micro-copy{font-size:11px;letter-spacing:0.8px}
 /* Marquee cards */
-.quote-card{flex:0 0 260px;padding:20px 16px}
+.quote-card{flex:0 0 min(260px,78vw);padding:18px 14px}
 .quote-text{font-size:13px}
-.screenshot-marquee-card{flex:0 0 240px}
-.carousel-card{flex:0 0 220px}
-.carousel-card.active{flex:0 0 245px}
+.marquee-track{gap:16px}
+.screenshot-marquee-card{flex:0 0 min(240px,72vw)}
+.screenshot-marquee-track{gap:12px}
+.carousel-card{flex:0 0 min(220px,65vw)}
+.carousel-card.active{flex:0 0 min(245px,72vw)}
 /* Timeline */
 .after-timeline{padding-right:26px;margin-top:28px}
 .after-dot{right:-22px;top:24px;width:8px;height:8px}
@@ -1704,8 +1709,11 @@ function updateCarousel(){
     const gap=20;
     let shift=0;
     for(let i=0;i<currentSlide;i++)shift+=cards[i].offsetWidth+gap;
-    // RTL: active card at right edge with small padding
-    track.style.transform=`translateX(${containerW-cardW-shift-16}px)`;
+    // RTL: active card at right edge with small padding, clamped to prevent overflow
+    const rawShift=containerW-cardW-shift-16;
+    const maxShift=containerW-16;
+    const minShift=-(track.scrollWidth-containerW+16);
+    track.style.transform=`translateX(${Math.min(maxShift,Math.max(minShift,rawShift))}px)`;
   }
 }
 function moveCarousel(dir){
