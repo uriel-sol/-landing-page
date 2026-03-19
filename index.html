@@ -205,11 +205,17 @@ radial-gradient(500px 220px at 50% 115%,rgba(143,47,160,0.16),transparent 72%)}
 .hero .cta-btn{min-width:280px}
 .hero-figure{margin-bottom:-60px}
 
-/* Authority Logos Marquee */
-.authority-marquee-wrapper{width:100%;max-width:700px;overflow:hidden;margin:32px auto 0;direction:ltr;-webkit-mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent)}
-.authority-marquee-track{display:flex;gap:28px;width:max-content;animation:authorityScroll 30s linear infinite;align-items:center}
-.authority-marquee-track img{height:72px;width:auto;opacity:0.85;transition:opacity 0.3s}
-@keyframes authorityScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* Authority Logos — Static Ecosystem */
+.authority-logos{position:absolute;inset:0;z-index:1;pointer-events:none}
+.authority-logo{position:absolute;width:38px;height:38px;object-fit:contain;opacity:0.25;filter:grayscale(0.4) brightness(1.2);transition:opacity 0.4s;z-index:1}
+.authority-logo.logo-pos-1{top:5%;right:-8%}
+.authority-logo.logo-pos-2{top:5%;left:-8%}
+.authority-logo.logo-pos-3{top:30%;right:-14%}
+.authority-logo.logo-pos-4{top:30%;left:-14%}
+.authority-logo.logo-pos-5{top:55%;right:-10%}
+.authority-logo.logo-pos-6{top:55%;left:-10%}
+.authority-logo.logo-pos-7{top:78%;right:-6%}
+.authority-logo.logo-pos-8{top:78%;left:-6%}
 
 /* ===== VSL ===== */
 .vsl-section{background:var(--black);text-align:center}
@@ -271,26 +277,33 @@ radial-gradient(500px 220px at 50% 115%,rgba(143,47,160,0.16),transparent 72%)}
 .compare-here{border-right:2px solid rgba(143,47,160,0.5);padding-right:16px}
 .compare-here p{font-size:15px;color:var(--white);font-weight:600;line-height:1.7}
 
-/* DELIVERABLES */
-.deliverables-section{background:linear-gradient(180deg,var(--black) 0%,rgba(255,255,255,0.015) 50%,var(--black) 100%)}
-.deliverables-section .container>h2{text-align:center;max-width:900px;margin-left:auto;margin-right:auto}
-.deliverables-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
-.deliver-card{border-radius:18px;padding:40px 32px;position:relative}
-.deliver-card:hover{transform:translateY(-4px)}
-.deliver-card h3{font-size:18px;margin-bottom:10px}
-.deliver-card p{font-size:14px;color:var(--white-dim);line-height:1.7}
+/* DELIVERABLES — WHITE SECTION */
+.deliverables-section{background:#fafafa;position:relative;overflow:hidden}
+.deliverables-section::before{display:none}
+.deliverables-section .container>h2{text-align:center;max-width:900px;margin-left:auto;margin-right:auto;color:#111}
+.deliverables-section .highlight{color:var(--core)}
+.deliverables-section .sub-text{color:#555}
+.deliverables-primary{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.deliverables-secondary{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:32px}
+.deliverables-section .deliver-card{border-radius:16px;padding:32px 24px;position:relative;background:#fff;border:1px solid #e8e8ec;box-shadow:0 2px 16px rgba(0,0,0,0.05);transition:transform 0.3s,box-shadow 0.3s}
+.deliverables-section .deliver-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+.deliverables-section .deliver-card h3{font-size:18px;margin-bottom:10px;color:#111;font-weight:700}
+.deliverables-section .deliver-card p{font-size:14px;color:#555;line-height:1.7}
+.deliver-card--compact{padding:24px 20px !important}
+.deliver-card--compact h3{font-size:16px !important}
+.deliver-card--compact p{font-size:13px !important}
 .bonus-box{margin-top:32px;background:linear-gradient(145deg,rgba(18,18,26,0.65),rgba(14,14,20,0.6));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(143,47,160,0.15);border-radius:16px;padding:24px 28px;display:flex;align-items:center;gap:16px;box-shadow:0 4px 24px rgba(0,0,0,0.2),0 0 40px rgba(143,47,160,0.04)}
 .bonus-badge{display:inline-flex;align-items:center;padding:6px 16px;background:linear-gradient(135deg,rgba(30,30,40,0.9),rgba(20,20,28,0.85));border:1px solid rgba(255,255,255,0.14);border-radius:20px;font-size:13px;font-weight:600;white-space:nowrap;box-shadow:0 6px 16px rgba(0,0,0,0.25)}
 .bonus-box p{font-size:15px;color:var(--white-dim)}
 
-/* AFTER 13 WEEKS - TIMELINE */
+/* TRANSFORMATION SECTION */
 .after-section{background:var(--black)}
-.after-timeline{max-width:750px;margin:40px auto 0;position:relative;padding-right:44px}
-.after-timeline::before{content:'';position:absolute;right:12px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,rgba(143,47,160,0.3),rgba(255,255,255,0.1) 50%,rgba(143,47,160,0.3))}
-.after-item{display:flex;gap:16px;padding:22px 0;position:relative}
-.after-dot{position:absolute;right:-38px;top:28px;width:10px;height:10px;border-radius:50%;background:var(--core-light);box-shadow:0 0 12px rgba(143,47,160,0.3),0 0 0 3px rgba(143,47,160,0.15);z-index:2}
-.after-item strong{color:var(--white);font-weight:600;display:block;margin-bottom:6px}
-.after-item p{color:var(--white-dim);font-size:15px}
+.transform-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin:48px auto 0}
+.transform-card{padding:28px 24px;border-radius:16px;border:1px solid rgba(255,255,255,0.08);background:linear-gradient(145deg,rgba(18,18,26,0.6),rgba(14,14,20,0.5));transition:border-color 0.3s,box-shadow 0.3s}
+.transform-card:hover{border-color:rgba(143,47,160,0.2);box-shadow:0 8px 28px rgba(0,0,0,0.3),0 0 30px rgba(143,47,160,0.05)}
+.transform-card--wide{grid-column:1/-1;text-align:center;max-width:500px;margin:0 auto;width:100%}
+.transform-card strong{color:var(--white);font-weight:700;display:block;margin-bottom:8px;font-size:17px;line-height:1.5}
+.transform-card p{color:var(--white-dim);font-size:15px;line-height:1.7}
 
 /* VISUAL BREAK / QUOTE */
 .visual-break{padding:60px 24px;text-align:center;background:var(--black)}
@@ -312,8 +325,8 @@ radial-gradient(500px 220px at 50% 115%,rgba(143,47,160,0.16),transparent 72%)}
 
 /* STORY */
 .story-section{background:linear-gradient(180deg,var(--black) 0%,rgba(40,12,50,0.4) 30%,rgba(50,15,60,0.35) 50%,rgba(40,12,50,0.4) 70%,var(--black) 100%)}
-.story-grid{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:start}
-.story-image{position:relative;position:sticky;top:120px}
+.story-grid{display:grid;grid-template-columns:320px 1fr;gap:48px;align-items:center}
+.story-image{position:relative}
 .story-image img{width:100%;position:relative;z-index:2;-webkit-mask-image:linear-gradient(to bottom,#000 60%,transparent 96%);mask-image:linear-gradient(to bottom,#000 60%,transparent 96%)}
 .story-image-glow{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:320px;height:380px;background:radial-gradient(circle,rgba(143,47,160,0.2),transparent 62%);filter:blur(80px);z-index:1;pointer-events:none}
 .story-content p{font-size:16px;color:var(--white-dim);line-height:1.8;margin-bottom:16px}
@@ -356,17 +369,15 @@ radial-gradient(500px 220px at 50% 115%,rgba(143,47,160,0.16),transparent 72%)}
 .cost-content p{font-size:17px;color:var(--white-dim);line-height:1.8;margin-bottom:20px}
 .cost-callout{font-size:20px;font-weight:600;color:var(--white);padding:24px;border:1px solid rgba(244,67,54,0.38);background:rgba(244,67,54,0.06);border-radius:12px;margin:28px auto;max-width:820px}
 
-/* ===== SCREENSHOTS (MARQUEE) ===== */
-.screenshots-section{background:var(--black);overflow:hidden;padding-left:0;padding-right:0}
-.screenshots-section .container{padding:0 24px}
-.screenshot-marquee-wrapper{position:relative;width:100%;overflow:hidden;direction:ltr;margin-top:40px;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
-.screenshot-marquee-track{display:flex;gap:20px;width:max-content;animation:screenshotScroll 55s linear infinite}
-.screenshot-marquee-track:hover{animation-play-state:paused}
-@keyframes screenshotScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.screenshot-marquee-card{flex:0 0 340px;border-radius:16px;overflow:hidden;background:linear-gradient(145deg,rgba(18,18,26,0.75),rgba(14,14,20,0.7));border:1px solid rgba(255,255,255,0.07);padding:6px;transition:border-color 0.35s,box-shadow 0.35s;box-shadow:0 4px 16px rgba(0,0,0,0.25)}
-.screenshot-marquee-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;pointer-events:none;z-index:2;background:linear-gradient(90deg,transparent 10%,rgba(255,255,255,0.08) 50%,transparent 90%)}
-.screenshot-marquee-card:hover{border-color:rgba(143,47,160,0.2);box-shadow:0 8px 28px rgba(0,0,0,0.35),0 0 30px rgba(143,47,160,0.05)}
-.screenshot-marquee-card img{width:100%;border-radius:12px;display:block}
+/* ===== SCREENSHOTS — WHITE PROOF SECTION ===== */
+.screenshots-section{background:#fafafa;overflow:hidden}
+.screenshots-section::before{display:none}
+.screenshots-section h2{color:#111}
+.screenshots-section .highlight{color:var(--core)}
+.screenshots-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.screenshot-card{border-radius:12px;overflow:hidden;border:1px solid #e8e8ec;box-shadow:0 2px 12px rgba(0,0,0,0.06);background:#fff;transition:transform 0.3s,box-shadow 0.3s}
+.screenshot-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.1)}
+.screenshot-card img{width:100%;display:block}
 
 /* TECH */
 .tech-section{background:var(--black-light);padding:60px 24px}
@@ -418,21 +429,13 @@ radial-gradient(500px 220px at 50% 115%,rgba(143,47,160,0.16),transparent 72%)}
 .icon-3d img{width:80%;height:80%;object-fit:contain;border-radius:8px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3))}
 .glow-active .icon-3d{box-shadow:inset 0 1px 0 rgba(255,255,255,0.12),0 6px 16px rgba(0,0,0,0.3),0 0 30px rgba(143,47,160,0.12)}
 
-/* ===== VIDEO CAROUSEL ===== */
-.carousel-wrapper{position:relative;margin-top:40px;overflow:hidden}
-.carousel-track{display:flex;gap:20px;transition:transform 0.5s cubic-bezier(.25,.46,.45,.94);padding:20px 0}
-.carousel-card{flex:0 0 300px;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);transition:border-color 0.4s,transform 0.5s var(--ease-structural),box-shadow 0.4s;background:linear-gradient(145deg,rgba(18,18,26,0.75),rgba(14,14,20,0.7));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);cursor:pointer;position:relative}
-.carousel-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;pointer-events:none;z-index:2;background:linear-gradient(90deg,transparent 10%,rgba(255,255,255,0.1) 50%,transparent 90%)}
-.carousel-card.active{flex:0 0 340px;border-color:rgba(143,47,160,0.2);box-shadow:0 14px 44px rgba(0,0,0,0.45),0 0 60px rgba(143,47,160,0.08);transform:scale(1.03)}
-.carousel-card .vid-thumb{position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--black)}
-.carousel-card .vid-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 0.3s}
-.carousel-card:hover .vid-thumb img{transform:scale(1.05)}
-.carousel-card .vid-thumb iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
-.carousel-card .play-circle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#70267f,#9a3bab);display:flex;align-items:center;justify-content:center;box-shadow:0 16px 36px rgba(0,0,0,0.45);opacity:0.9}
-.carousel-card .play-circle svg{fill:white;width:24px;height:24px;margin-right:-2px}
-.carousel-nav{display:flex;justify-content:center;gap:16px;margin-top:28px}
-.carousel-btn{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.16);color:var(--white);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s}
-.carousel-btn:hover{background:rgba(255,255,255,0.1);box-shadow:var(--glow-shadow)}
+/* ===== VIDEO MODAL ===== */
+.video-modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.9);backdrop-filter:blur(8px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.video-modal-overlay.active{display:flex}
+.video-modal-box{position:relative;width:100%;max-width:900px;max-height:90vh}
+.video-modal-box .modal-close{position:absolute;top:-44px;left:0;z-index:3}
+.video-modal-content{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000}
+.video-modal-content iframe{width:100%;height:100%;border:none}
 
 /* FOOTER */
 .site-footer{padding:48px 24px;border-top:1px solid rgba(255,255,255,0.06);background:var(--black)}
@@ -533,7 +536,8 @@ section{padding:80px 20px}
 /* 5th compare card spans full width on tablet (odd item in 2-col grid) */
 .compare-card:last-child:nth-child(odd){grid-column:1/-1}
 .filter-grid{grid-template-columns:repeat(2,1fr)}
-.deliverables-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+.deliverables-primary{grid-template-columns:repeat(2,1fr);gap:16px}
+.deliverables-secondary{grid-template-columns:repeat(3,1fr);gap:12px}
 .videos-grid{grid-template-columns:repeat(2,1fr)}
 /* Story keeps side-by-side but narrower image */
 .story-grid{grid-template-columns:200px 1fr;gap:28px}
@@ -558,12 +562,11 @@ section{padding:80px 20px}
 .deliver-card.active p{display:block}
 .deliver-card.active h3::after{content:'−'}
 /* Marquee */
-.screenshot-marquee-card{flex:0 0 min(290px,75vw)}
-.carousel-card{flex:0 0 min(250px,70vw)}
-.carousel-card.active{flex:0 0 min(280px,75vw)}
+.screenshots-grid{grid-template-columns:repeat(3,1fr)}
+/* carousel removed — using grid */
 .quote-card{flex:0 0 min(300px,80vw);padding:24px 20px}
 .bonus-box{flex-direction:row}
-.after-timeline{padding-right:32px}
+/* transform-grid inherits base styles */
 .scroll-line-svg{display:none}
 .sub-text{margin:0 auto}
 body{padding-bottom:70px}
@@ -599,26 +602,25 @@ section{padding:80px 20px}
 .process-grid{grid-template-columns:1fr}
 .not-netflix .highlight-box{padding:28px 22px;max-width:100%}
 .navbar-logo img{height:44px}
-.deliverables-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-.deliver-card{padding:18px 14px;cursor:pointer}
-.deliver-card p,.deliver-card .mockup-frame{display:none}
+.deliverables-primary{grid-template-columns:repeat(2,1fr);gap:12px}
+.deliverables-secondary{grid-template-columns:repeat(2,1fr);gap:10px}
+.deliver-card{padding:18px 14px}
+.deliver-card .mockup-frame{display:none}
 .deliver-card h3{font-size:15px;margin:0}
 .deliver-card h3::after{content:'+';float:left;font-size:18px;font-weight:400;color:rgba(255,255,255,0.4);transition:transform 0.3s}
 .deliver-card.active{grid-column:1 / -1}
 .deliver-card.active p{display:block}
 .deliver-card.active h3::after{content:'−'}
-.videos-grid{grid-template-columns:1fr}
+.videos-grid{grid-template-columns:repeat(2,1fr);gap:16px}
 .story-grid{grid-template-columns:1fr}
 .story-image{text-align:center;position:relative;top:auto}
 .story-image img{width:220px;margin:0 auto}
 .filter-grid{grid-template-columns:1fr}
-.screenshot-marquee-card{flex:0 0 280px}
-.screenshot-marquee-track{animation-duration:40s}
-.carousel-card{flex:0 0 240px}
-.carousel-card.active{flex:0 0 270px}
+.screenshots-grid{grid-template-columns:repeat(3,1fr);gap:12px}
+/* carousel removed */
 .compare-grid{grid-template-columns:1fr}
 .bonus-box{flex-direction:column;text-align:center}
-.after-timeline{padding-right:30px}
+/* transform-grid inherits base styles */
 .social-proof{gap:16px}
 .scroll-line-svg{display:none}
 .quote-card{flex:0 0 290px;padding:24px 20px}
@@ -658,7 +660,7 @@ body{padding-bottom:70px}
 /* Tech box full width */
 .tech-box{max-width:100%}
 /* Authority marquee: slightly reduce logo height */
-.authority-marquee-track img{height:60px}
+.authority-logo{width:32px;height:32px}
 /* Text testimonials override */
 .text-testimonials{padding-top:64px;padding-bottom:64px}
 }
@@ -679,12 +681,13 @@ section{padding:60px 14px}
 .hero-cta-area{margin-top:24px}
 .hero-figure{margin-bottom:-40px}
 /* Single column everywhere */
-.deliverables-grid{grid-template-columns:1fr}
+.deliverables-primary{grid-template-columns:1fr}
+.deliverables-secondary{grid-template-columns:repeat(2,1fr);gap:10px}
 .steps-grid{grid-template-columns:1fr}
 .process-grid{grid-template-columns:1fr}
 .compare-grid{grid-template-columns:1fr}
 .filter-grid{grid-template-columns:1fr}
-.videos-grid{grid-template-columns:1fr}
+.videos-grid{grid-template-columns:repeat(2,1fr);gap:12px}
 /* Card padding reductions */
 .step-card{padding:22px 16px}
 .process-card{padding:22px 16px}
@@ -701,18 +704,17 @@ h3{font-size:clamp(16px,4vw,20px)}
 .faq-item{padding:0 12px}
 .micro-copy{font-size:11px;letter-spacing:0.8px}
 /* Marquee cards */
-.quote-card{flex:0 0 min(260px,78vw);padding:18px 14px}
-.quote-text{font-size:13px}
-.marquee-track{gap:16px}
-.screenshot-marquee-card{flex:0 0 min(240px,72vw)}
-.screenshot-marquee-track{gap:12px}
-.carousel-card{flex:0 0 min(220px,65vw)}
-.carousel-card.active{flex:0 0 min(245px,72vw)}
+.marquee-track{flex-wrap:wrap;width:auto !important;animation:none !important;justify-content:center;gap:16px;padding:0 14px}
+.quote-card{flex:0 0 100%;max-width:100%;padding:20px 18px}
+.quote-card:nth-child(n+5){display:none}
+.quote-text{font-size:14px;line-height:1.7}
+.screenshots-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+/* carousel removed */
 /* Timeline */
-.after-timeline{padding-right:26px;margin-top:28px}
-.after-dot{right:-22px;top:24px;width:8px;height:8px}
-.after-item strong{font-size:15px}
-.after-item p{font-size:14px}
+.transform-grid{grid-template-columns:1fr;gap:14px}
+.transform-card{padding:22px 18px}
+.transform-card strong{font-size:15px}
+.transform-card p{font-size:14px}
 /* Bonus box */
 .bonus-box{padding:18px 16px;gap:12px;flex-direction:column;text-align:center}
 .bonus-badge{font-size:12px;padding:5px 12px}
@@ -729,8 +731,8 @@ h3{font-size:clamp(16px,4vw,20px)}
 /* CTA area */
 .cta-sub{font-size:12px}
 /* Authority marquee */
-.authority-marquee-track img{height:48px}
-.authority-marquee-wrapper{margin:24px auto 0}
+.authority-logo{width:28px;height:28px;opacity:0.2}
+.authority-logo.logo-pos-7,.authority-logo.logo-pos-8{display:none}
 /* Process highlight */
 .process-highlight{padding:18px 14px}
 .process-highlight p{font-size:15px}
@@ -761,7 +763,7 @@ h3{font-size:clamp(16px,4vw,20px)}
 /* Section desc */
 .section-desc{font-size:15px}
 /* Carousel nav */
-.carousel-btn{width:42px;height:42px;font-size:18px}
+/* carousel removed */
 /* Process card badge */
 .process-card .card-badge{font-size:11px}
 /* Visual break */
@@ -1003,38 +1005,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-figure reveal reveal-delay-2">
         <div class="hero-figure-glow"></div>
         <img src="assets/images/noback.png" alt="אוריאל סול" />
-      </div>
-      <!-- Authority Logos Marquee -->
-      <div class="authority-marquee-wrapper">
-        <div class="authority-marquee-track">
-          <img src="assets/icons/newchatgpt.png" alt="ChatGPT" />
-          <img src="assets/icons/newfb.png" alt="Meta" />
-          <img src="assets/icons/newtiktok.png" alt="TikTok" />
-          <img src="assets/icons/newyt.png" alt="YouTube" />
-          <img src="assets/icons/newclaude.png" alt="Claude" />
-          <img src="assets/icons/newcanva.png" alt="Canva" />
-          <img src="assets/icons/newnotion.png" alt="Notion" />
-          <img src="assets/icons/newcapcut.png" alt="CapCut" />
-          <img src="assets/icons/newmanychat.png" alt="ManyChat" />
-          <img src="assets/icons/newgemini.png" alt="Gemini" />
-          <img src="assets/icons/newcodex.png" alt="Codex" />
-          <img src="assets/icons/newfillout.png" alt="Fillout" />
-          <img src="assets/icons/newlinktree.png" alt="Linktree" />
-          <img src="assets/icons/newwhatsapp.png" alt="WhatsApp" />
-          <img src="assets/icons/newchatgpt.png" alt="ChatGPT" />
-          <img src="assets/icons/newfb.png" alt="Meta" />
-          <img src="assets/icons/newtiktok.png" alt="TikTok" />
-          <img src="assets/icons/newyt.png" alt="YouTube" />
-          <img src="assets/icons/newclaude.png" alt="Claude" />
-          <img src="assets/icons/newcanva.png" alt="Canva" />
-          <img src="assets/icons/newnotion.png" alt="Notion" />
-          <img src="assets/icons/newcapcut.png" alt="CapCut" />
-          <img src="assets/icons/newmanychat.png" alt="ManyChat" />
-          <img src="assets/icons/newgemini.png" alt="Gemini" />
-          <img src="assets/icons/newcodex.png" alt="Codex" />
-          <img src="assets/icons/newfillout.png" alt="Fillout" />
-          <img src="assets/icons/newlinktree.png" alt="Linktree" />
-          <img src="assets/icons/newwhatsapp.png" alt="WhatsApp" />
+        <div class="authority-logos">
+          <img class="authority-logo logo-pos-1" src="assets/icons/newchatgpt.png" alt="ChatGPT" />
+          <img class="authority-logo logo-pos-2" src="assets/icons/newclaude.png" alt="Claude" />
+          <img class="authority-logo logo-pos-3" src="assets/icons/newyt.png" alt="YouTube" />
+          <img class="authority-logo logo-pos-4" src="assets/icons/newcanva.png" alt="Canva" />
+          <img class="authority-logo logo-pos-5" src="assets/icons/newfb.png" alt="Meta" />
+          <img class="authority-logo logo-pos-6" src="assets/icons/newnotion.png" alt="Notion" />
+          <img class="authority-logo logo-pos-7" src="assets/icons/newmanychat.png" alt="ManyChat" />
+          <img class="authority-logo logo-pos-8" src="assets/icons/newgemini.png" alt="Gemini" />
         </div>
       </div>
     </div>
@@ -1207,19 +1186,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="glow-divider"></div>
 
-<!-- DELIVERABLES -->
+<!-- DELIVERABLES — WHITE SECTION -->
 <section class="deliverables-section" id="deliverables">
   <div class="container">
     <h2 class="reveal text-center">בסוף 13 שבועות אתה יוצא עם <span class="highlight">מנגנון בנוי,</span> ולא עם מחברת סיכומים.</h2>
-    <div class="deliverables-grid">
-      <div class="deliver-card glow-card reveal reveal-delay-1"><h3>מסמך DNA עסקי</h3><p>תשובה חדה לשאלה מי אתה, מה הערך שלך ולמה דווקא אתה ולא המתחרה שלך.</p><div class="mockup-frame"><img src="assets/images/mockup-dna.png" alt="מסמך DNA עסקי" loading="lazy"></div></div>
-      <div class="deliver-card glow-card reveal reveal-delay-2"><h3>אפיון לקוח עומק (פסיכוגרפי)</h3><p>זורקים לפח את ההגדרות של "גיל ומקום מגורים" וממפים את הראש של הלקוח שלך. מה כואב לו, מה הוא כבר ניסה בעבר, ואיך לנסח מסר שגורם לו להגיד "הוא קורא לי את המחשבות".</p><div class="mockup-frame"><img src="assets/images/mockup-customer.png" alt="אפיון לקוח עומק" loading="lazy"></div></div>
-      <div class="deliver-card glow-card reveal reveal-delay-3"><h3>שלד השיטה</h3><p>הידע שלך הופך למסלול עם תחנות ותוצרים ברורים שאפשר למכור ולהסביר הלאה.</p><div class="mockup-frame"><img src="assets/images/mockup-method.png" alt="שלד השיטה" loading="lazy"></div></div>
-      <div class="deliver-card glow-card reveal reveal-delay-1"><h3>מערכת הפעלה למותג</h3><p>הופכים את אסטרטגיית המותג שלך ליישום בנקודות המגע עם הקהל, משערי כניסה של לידים ועד לקוחות פרימיום.</p><div class="mockup-frame"><img src="assets/images/mockup-os.png" alt="מערכת הפעלה למותג" loading="lazy"></div></div>
-      <div class="deliver-card glow-card reveal reveal-delay-2"><h3>מפת תוכן אסטרטגית</h3><p>תוכנית ל 180 יום לפי 4 שכבות קהל. חשיפה, עוקבים, פניות, מכירה. בלי לנחש כל בוקר מה להעלות והכל מחובר ל DNA העסקי ולמסר שלך.</p><div class="mockup-frame"><img src="assets/images/mockup-content.png" alt="מפת תוכן אסטרטגית" loading="lazy"></div></div>
-      <div class="deliver-card glow-card reveal reveal-delay-3"><h3>מערכת המרות</h3><p>פרופיל שעובד בשבילך, תסריטים מוכנים ומסלול ברור שהופך אדם זר ללקוח חם.</p><div class="mockup-frame"><img src="assets/images/mockup-system.png.png" alt="מערכת המרות" loading="lazy"></div></div>
-      <div class="deliver-card glow-card reveal reveal-delay-1"><h3>המוח האסטרטגי</h3><p>AI שמאומן על ה DNA שלך, יושב איתך לאורך כל התהליך ונשאר איתך גם אחריו. לא מחולל טקסטים, אלא שותף אסטרטגי.</p><div class="mockup-frame"><img src="assets/images/mockup-ai.png" alt="המוח האסטרטגי" loading="lazy"></div></div>
-      <div class="deliver-card glow-card reveal reveal-delay-2"><h3>ארגז הכלים</h3><p>15+ פרוטוקולים ותבניות מוכנות, גישה לקהילה סגורה, והקלטות לכל החיים.</p><div class="mockup-frame"><img src="assets/images/mockup-tools.png" alt="ארגז הכלים" loading="lazy"></div></div>
+    <div class="deliverables-primary">
+      <div class="deliver-card reveal reveal-delay-1"><h3>מסמך DNA עסקי</h3><p>תשובה חדה לשאלה מי אתה, מה הערך שלך ולמה דווקא אתה ולא המתחרה שלך.</p><div class="mockup-frame"><img src="assets/images/mockup-dna.png" alt="מסמך DNA עסקי" loading="lazy"></div></div>
+      <div class="deliver-card reveal reveal-delay-2"><h3>אפיון לקוח עומק (פסיכוגרפי)</h3><p>זורקים לפח את ההגדרות של "גיל ומקום מגורים" וממפים את הראש של הלקוח שלך. מה כואב לו, מה הוא כבר ניסה בעבר, ואיך לנסח מסר שגורם לו להגיד "הוא קורא לי את המחשבות".</p><div class="mockup-frame"><img src="assets/images/mockup-customer.png" alt="אפיון לקוח עומק" loading="lazy"></div></div>
+      <div class="deliver-card reveal reveal-delay-3"><h3>שלד השיטה</h3><p>הידע שלך הופך למסלול עם תחנות ותוצרים ברורים שאפשר למכור ולהסביר הלאה.</p><div class="mockup-frame"><img src="assets/images/mockup-method.png" alt="שלד השיטה" loading="lazy"></div></div>
+    </div>
+    <div class="deliverables-secondary">
+      <div class="deliver-card deliver-card--compact reveal"><h3>מערכת הפעלה למותג</h3><p>הופכים את אסטרטגיית המותג שלך ליישום בנקודות המגע עם הקהל, משערי כניסה של לידים ועד לקוחות פרימיום.</p></div>
+      <div class="deliver-card deliver-card--compact reveal"><h3>מפת תוכן אסטרטגית</h3><p>תוכנית ל 180 יום לפי 4 שכבות קהל. חשיפה, עוקבים, פניות, מכירה. בלי לנחש כל בוקר מה להעלות והכל מחובר ל DNA העסקי ולמסר שלך.</p></div>
+      <div class="deliver-card deliver-card--compact reveal"><h3>מערכת המרות</h3><p>פרופיל שעובד בשבילך, תסריטים מוכנים ומסלול ברור שהופך אדם זר ללקוח חם.</p></div>
+      <div class="deliver-card deliver-card--compact reveal"><h3>המוח האסטרטגי</h3><p>AI שמאומן על ה DNA שלך, יושב איתך לאורך כל התהליך ונשאר איתך גם אחריו. לא מחולל טקסטים, אלא שותף אסטרטגי.</p></div>
+      <div class="deliver-card deliver-card--compact reveal"><h3>ארגז הכלים</h3><p>15+ פרוטוקולים ותבניות מוכנות, גישה לקהילה סגורה, והקלטות לכל החיים.</p></div>
     </div>
     <p class="sub-text reveal mt-32 sub-center">זה בדיוק מה שמאפשר לשיווק שלך להפסיק להיות הימור, ולהפוך למערכת ממוקדת שעובדת יציב בלי ניחושים וסטיות.</p>
   </div>
@@ -1227,16 +1208,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="glow-divider"></div>
 
-<!-- AFTER 13 WEEKS (TIMELINE) -->
+<!-- TRANSFORMATION -->
 <section class="after-section" id="after">
   <div class="container">
     <h2 class="reveal text-center">אתה לא רק יודע יותר אלא <span class="highlight">עובד ומרוויח אחרת.</span></h2>
-    <div class="after-timeline">
-      <div class="after-item reveal reveal-delay-1"><div class="after-dot"></div><div><strong>בבוקר אתה פותח את המחשב ויש לך תוכנית ברורה.</strong><p>אתה יודע על מה אתה מדבר היום, מה עולה לרשתות ולמי. בלי ניחושים מול מסך ריק.</p></div></div>
-      <div class="after-item reveal reveal-delay-2"><div class="after-dot"></div><div><strong>כשלקוח שואל מה אתה עושה, יש לך משפט אחד ברור.</strong><p>משפט שגורם לו להבין מיד מה יוצא לו מזה. לא עוד "אה מעניין, תשלח לי בווטסאפ".</p></div></div>
-      <div class="after-item reveal reveal-delay-3"><div class="after-dot"></div><div><strong>אתה מפסיק להתחרות על מחיר.</strong><p>כי יש לך שיטה ברורה שאי אפשר להשוות לאחרים. הלקוחות מגיעים כי הם מבינים את הערך לפני שדיברו איתך.</p></div></div>
-      <div class="after-item reveal reveal-delay-4"><div class="after-dot"></div><div><strong>יש לך מנגנון, לא רק ידע.</strong><p>אתה יודע בדיוק מאיפה מגיע הלקוח הבא ומה קורה בכל שלב.</p></div></div>
-      <div class="after-item reveal"><div class="after-dot"></div><div><strong>כשמישהו בתחום שלך מוזכר, השם שלך עולה.</strong><p>לא כי שיווקת יותר, אלא כי היית ברור יותר מכולם.</p></div></div>
+    <div class="transform-grid">
+      <div class="transform-card reveal reveal-delay-1"><strong>בבוקר אתה פותח את המחשב ויש לך תוכנית ברורה.</strong><p>אתה יודע על מה אתה מדבר היום, מה עולה לרשתות ולמי. בלי ניחושים מול מסך ריק.</p></div>
+      <div class="transform-card reveal reveal-delay-2"><strong>כשלקוח שואל מה אתה עושה, יש לך משפט אחד ברור.</strong><p>משפט שגורם לו להבין מיד מה יוצא לו מזה. לא עוד "אה מעניין, תשלח לי בווטסאפ".</p></div>
+      <div class="transform-card reveal reveal-delay-3"><strong>אתה מפסיק להתחרות על מחיר.</strong><p>כי יש לך שיטה ברורה שאי אפשר להשוות לאחרים. הלקוחות מגיעים כי הם מבינים את הערך לפני שדיברו איתך.</p></div>
+      <div class="transform-card reveal reveal-delay-4"><strong>יש לך מנגנון, לא רק ידע.</strong><p>אתה יודע בדיוק מאיפה מגיע הלקוח הבא ומה קורה בכל שלב.</p></div>
+      <div class="transform-card transform-card--wide reveal"><strong>כשמישהו בתחום שלך מוזכר, השם שלך עולה.</strong><p>לא כי שיווקת יותר, אלא כי היית ברור יותר מכולם.</p></div>
     </div>
     <div class="text-center mt-48 reveal"><button class="cta-btn" onclick="openModal()">זה מה שאני רוצה, בוא נדבר</button></div>
   </div>
@@ -1244,26 +1225,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="glow-divider"></div>
 
-<!-- VIDEO TESTIMONIALS (CAROUSEL) -->
+<!-- VIDEO TESTIMONIALS (GRID) -->
 <section class="video-testimonials" id="videos">
   <div class="container">
     <h2 class="reveal text-center"><span class="highlight">הם עשו את זה</span> ויש להם מה לספר</h2>
-    <div class="carousel-wrapper reveal">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-card active" data-vid="V6cgYiMA5xw"><div class="vid-thumb"><img src="https://img.youtube.com/vi/V6cgYiMA5xw/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-circle"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-        <div class="carousel-card" data-vid="NYMCapciQTA"><div class="vid-thumb"><img src="https://img.youtube.com/vi/NYMCapciQTA/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-circle"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-        <div class="carousel-card" data-vid="ItJIRWanuNw"><div class="vid-thumb"><img src="https://img.youtube.com/vi/ItJIRWanuNw/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-circle"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-        <div class="carousel-card" data-vid="tJRGOTy1B-k"><div class="vid-thumb"><img src="https://img.youtube.com/vi/tJRGOTy1B-k/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-circle"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-        <div class="carousel-card" data-vid="gBlajkk5B70"><div class="vid-thumb"><img src="https://img.youtube.com/vi/gBlajkk5B70/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-circle"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-        <div class="carousel-card" data-vid="X3y9kSQLg4I"><div class="vid-thumb"><img src="https://img.youtube.com/vi/X3y9kSQLg4I/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-circle"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
-      </div>
-      <div class="carousel-nav">
-        <button class="carousel-btn" onclick="moveCarousel(1)" aria-label="הבא">→</button>
-        <button class="carousel-btn" onclick="moveCarousel(-1)" aria-label="הקודם">←</button>
-      </div>
+    <div class="videos-grid reveal">
+      <div class="video-card" data-vid="V6cgYiMA5xw"><div class="video-thumb"><img src="https://img.youtube.com/vi/V6cgYiMA5xw/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-small"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="white"/></svg></div></div></div>
+      <div class="video-card" data-vid="NYMCapciQTA"><div class="video-thumb"><img src="https://img.youtube.com/vi/NYMCapciQTA/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-small"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="white"/></svg></div></div></div>
+      <div class="video-card" data-vid="ItJIRWanuNw"><div class="video-thumb"><img src="https://img.youtube.com/vi/ItJIRWanuNw/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-small"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="white"/></svg></div></div></div>
+      <div class="video-card" data-vid="tJRGOTy1B-k"><div class="video-thumb"><img src="https://img.youtube.com/vi/tJRGOTy1B-k/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-small"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="white"/></svg></div></div></div>
+      <div class="video-card" data-vid="gBlajkk5B70"><div class="video-thumb"><img src="https://img.youtube.com/vi/gBlajkk5B70/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-small"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="white"/></svg></div></div></div>
+      <div class="video-card" data-vid="X3y9kSQLg4I"><div class="video-thumb"><img src="https://img.youtube.com/vi/X3y9kSQLg4I/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-small"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="white"/></svg></div></div></div>
     </div>
   </div>
 </section>
+<!-- Video Modal -->
+<div class="video-modal-overlay" id="videoModal">
+  <div class="video-modal-box">
+    <button class="modal-close" onclick="closeVideoModal()">&times;</button>
+    <div class="video-modal-content" id="videoModalContent"></div>
+  </div>
+</div>
 
 <div class="glow-divider"></div>
 
@@ -1330,26 +1312,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="glow-divider"></div>
 
-<!-- SCREENSHOTS (PHONE MOCKUP) -->
+<!-- SCREENSHOTS — WHITE PROOF SECTION -->
 <section class="screenshots-section" id="screenshots">
   <div class="container">
     <h2 class="reveal text-center">מלרדוף אחרי לידים — <span class="highlight">למנגנון שמושך את האנשים הנכונים אליך</span></h2>
-    <div class="screenshot-marquee-wrapper reveal">
-      <div class="screenshot-marquee-track" id="screenshotMarquee">
-        <div class="screenshot-marquee-card"><img src="assets/images/1.png" alt="עדות" loading="lazy"></div>
-        <div class="screenshot-marquee-card"><img src="assets/images/2.png" alt="עדות" loading="lazy"></div>
-        <div class="screenshot-marquee-card"><img src="assets/images/3.png" alt="עדות" loading="lazy"></div>
-        <div class="screenshot-marquee-card"><img src="assets/images/4.png" alt="עדות" loading="lazy"></div>
-        <div class="screenshot-marquee-card"><img src="assets/images/5.png" alt="עדות" loading="lazy"></div>
-        <div class="screenshot-marquee-card"><img src="assets/images/6.png" alt="עדות" loading="lazy"></div>
-        <div class="screenshot-marquee-card"><img src="assets/images/7.png" alt="עדות" loading="lazy"></div>
-        <div class="screenshot-marquee-card"><img src="assets/images/8.png" alt="עדות" loading="lazy"></div>
-        <div class="screenshot-marquee-card"><img src="assets/images/9.png" alt="עדות" loading="lazy"></div>
-        <div class="screenshot-marquee-card"><img src="assets/images/10.png" alt="עדות" loading="lazy"></div>
-        <div class="screenshot-marquee-card"><img src="assets/images/11.png" alt="עדות" loading="lazy"></div>
-        <div class="screenshot-marquee-card"><img src="assets/images/12.png" alt="עדות" loading="lazy"></div>
-        <div class="screenshot-marquee-card"><img src="assets/images/13.png" alt="עדות" loading="lazy"></div>
-      </div>
+    <div class="screenshots-grid reveal">
+      <div class="screenshot-card"><img src="assets/images/1.png" alt="עדות" loading="lazy"></div>
+      <div class="screenshot-card"><img src="assets/images/2.png" alt="עדות" loading="lazy"></div>
+      <div class="screenshot-card"><img src="assets/images/3.png" alt="עדות" loading="lazy"></div>
+      <div class="screenshot-card"><img src="assets/images/4.png" alt="עדות" loading="lazy"></div>
+      <div class="screenshot-card"><img src="assets/images/5.png" alt="עדות" loading="lazy"></div>
+      <div class="screenshot-card"><img src="assets/images/6.png" alt="עדות" loading="lazy"></div>
+      <div class="screenshot-card"><img src="assets/images/7.png" alt="עדות" loading="lazy"></div>
+      <div class="screenshot-card"><img src="assets/images/8.png" alt="עדות" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -1697,38 +1672,29 @@ function toggleFaq(item){
   }
 }
 
-// CAROUSEL
-let currentSlide=0;
-const track=document.getElementById('carouselTrack');
-const cards=track?track.querySelectorAll('.carousel-card'):[];
-function updateCarousel(){
-  cards.forEach((c,i)=>{c.classList.toggle('active',i===currentSlide)});
-  if(track&&cards.length){
-    const cardW=cards[currentSlide].offsetWidth;
-    const containerW=track.parentElement.offsetWidth;
-    const gap=20;
-    let shift=0;
-    for(let i=0;i<currentSlide;i++)shift+=cards[i].offsetWidth+gap;
-    // RTL: active card at right edge with small padding, clamped to prevent overflow
-    const rawShift=containerW-cardW-shift-16;
-    const maxShift=containerW-16;
-    const minShift=-(track.scrollWidth-containerW+16);
-    track.style.transform=`translateX(${Math.min(maxShift,Math.max(minShift,rawShift))}px)`;
-  }
+// VIDEO GRID — click to open modal
+function openVideoModal(vid){
+  var overlay=document.getElementById('videoModal');
+  var content=document.getElementById('videoModalContent');
+  if(!overlay||!content)return;
+  content.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+  overlay.classList.add('active');
+  document.body.style.overflow='hidden';
 }
-function moveCarousel(dir){
-  currentSlide=Math.max(0,Math.min(cards.length-1,currentSlide+dir));
-  updateCarousel();
+function closeVideoModal(){
+  var overlay=document.getElementById('videoModal');
+  var content=document.getElementById('videoModalContent');
+  if(!overlay||!content)return;
+  content.innerHTML='';
+  overlay.classList.remove('active');
+  document.body.style.overflow='';
 }
-if(cards.length){
-  setTimeout(updateCarousel,100);
-  cards.forEach((c,i)=>{c.addEventListener('click',()=>{
-    if(i===currentSlide){
-      const vid=c.dataset.vid;
-      c.querySelector('.vid-thumb').innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${vid}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-    }else{currentSlide=i;updateCarousel()}
-  })});
-}
+document.querySelectorAll('.video-card[data-vid]').forEach(function(card){
+  card.addEventListener('click',function(){openVideoModal(card.dataset.vid)});
+});
+document.getElementById('videoModal')&&document.getElementById('videoModal').addEventListener('click',function(e){
+  if(e.target===this)closeVideoModal();
+});
 
 // (mouse border glow removed — mobile-first)
 
@@ -1738,11 +1704,7 @@ if(cards.length){
   if(mt){mt.innerHTML+=mt.innerHTML}
 })();
 
-// SCREENSHOT TESTIMONIALS MARQUEE — duplicate for infinite loop
-(function(){
-  var st=document.getElementById('screenshotMarquee');
-  if(st){st.innerHTML+=st.innerHTML}
-})();
+// (screenshot marquee removed — using static grid)
 
 // REVEAL
 const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
@@ -1786,34 +1748,7 @@ document.querySelectorAll('section:not(.hero)').forEach(function(sec){
   }});
 });
 
-// CAROUSEL TOUCH/SWIPE
-(function(){
-  if(!track)return;
-  let touchStartX=0,touchStartY=0,isSwiping=false;
-  track.addEventListener('touchstart',function(e){
-    touchStartX=e.touches[0].clientX;
-    touchStartY=e.touches[0].clientY;
-    isSwiping=false;
-  },{passive:true});
-  track.addEventListener('touchmove',function(e){
-    if(!touchStartX)return;
-    const dx=e.touches[0].clientX-touchStartX;
-    const dy=e.touches[0].clientY-touchStartY;
-    if(!isSwiping&&Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>10){
-      isSwiping=true;
-    }
-    if(isSwiping)e.preventDefault();
-  },{passive:false});
-  track.addEventListener('touchend',function(e){
-    if(!isSwiping){touchStartX=0;return}
-    const dx=e.changedTouches[0].clientX-touchStartX;
-    if(Math.abs(dx)>40){
-      // RTL: swipe right = next (positive dir), swipe left = prev
-      moveCarousel(dx>0?1:-1);
-    }
-    touchStartX=0;isSwiping=false;
-  },{passive:true});
-})();
+// (carousel touch/swipe removed — using grid layout)
 
 // ===== SVG SCROLLYTELLING (desktop only) =====
 (function(){
