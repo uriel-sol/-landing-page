@@ -84,7 +84,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 --duration-reveal:1s;--duration-hover:0.4s;
 /* === ARCHITECTURAL GRID === */
 --grid-line:rgba(255,255,255,0.025);
---section-pad:120px;
+--section-pad:90px;
 }
 html{scroll-behavior:smooth;overflow-x:hidden;max-width:100vw}
 body{font-family:var(--font);background:var(--black);color:var(--white);line-height:1.7;overflow-x:hidden;max-width:100vw;direction:rtl;-webkit-font-smoothing:antialiased;position:relative}
@@ -231,10 +231,7 @@ radial-gradient(500px 220px at 50% 115%,rgba(143,47,160,0.16),transparent 72%)}
 .play-icon{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#70267f,#9a3bab);display:flex;align-items:center;justify-content:center;box-shadow:0 16px 36px rgba(0,0,0,0.45),0 0 30px rgba(143,47,160,0.2),inset 0 1px 0 rgba(255,255,255,0.15)}
 .play-icon svg{fill:white;width:32px;height:32px;margin-right:-4px}
 
-/* NOT NETFLIX */
-.not-netflix{background:var(--black-light);text-align:center;padding:80px 24px}
-.not-netflix .highlight-box{display:block;border-radius:20px;padding:44px 60px;max-width:900px;margin:0 auto}
-.not-netflix h2{font-size:clamp(22px,3.5vw,34px)}
+/* (not-netflix removed) */
 
 /* WHY SECTION */
 .why-section{background:radial-gradient(ellipse at center,rgba(255,255,255,0.03),transparent 60%)}
@@ -260,6 +257,8 @@ radial-gradient(500px 220px at 50% 115%,rgba(143,47,160,0.16),transparent 72%)}
 .process-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:40px 0}
 .process-card{border-radius:20px;padding:42px;position:relative}
 .process-card:hover{transform:translateY(-4px)}
+.process-card--premium{border-color:rgba(143,47,160,0.25)!important;box-shadow:0 8px 32px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.08),0 0 60px rgba(143,47,160,0.06)}
+.process-card--premium::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(143,47,160,0.5),transparent);border-radius:20px 20px 0 0;pointer-events:none}
 .process-card h3{font-size:22px}
 .process-card p{font-size:15px;color:var(--white-dim);line-height:1.8}
 .process-card .card-badge{display:inline-flex;align-items:center;padding:5px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:20px;font-size:12px;font-weight:500;color:#c0c1cc;margin-bottom:16px;letter-spacing:0.3px}
@@ -267,20 +266,26 @@ radial-gradient(500px 220px at 50% 115%,rgba(143,47,160,0.16),transparent 72%)}
 .process-highlight p{font-size:16px;color:var(--white-dim);line-height:1.8}
 .process-highlight .stat{font-size:18px;font-weight:600;color:var(--white);text-shadow:0 0 16px rgba(255,255,255,0.1)}
 
-/* COMPARISON — GLASSMORPHISM CARDS */
-.comparison-section{background:var(--black-light)}
+/* COMPARISON — LIGHT SECTION */
+.comparison-section{background:#fafafa;position:relative;overflow:hidden}
+.comparison-section::before{display:none}
+.comparison-section::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:radial-gradient(ellipse 60% 100% at 50% 100%,rgba(143,47,160,0.04),transparent);pointer-events:none;z-index:0}
+.comparison-section h2{color:#111}
+.comparison-section .highlight{color:var(--core)}
 .comparison-section h2{margin-bottom:16px}
 .compare-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px}
-.compare-card{border-radius:18px;padding:36px 30px;display:flex;flex-direction:column;gap:0}
-.compare-title{font-size:17px;font-weight:700;color:var(--white);margin-bottom:16px;letter-spacing:-0.2px}
-.compare-tried{opacity:0.4;margin-bottom:16px}
-.compare-label{display:inline-block;font-size:11px;font-weight:600;color:#a0a1ad;margin-bottom:8px;letter-spacing:0.8px;text-transform:uppercase}
-.compare-label--hero{color:var(--core-light);text-shadow:0 0 12px rgba(143,47,160,0.3);font-size:12px;letter-spacing:1px}
-.compare-tried p{font-size:14px;color:var(--white-dim);line-height:1.7}
+.compare-card{border-radius:18px;padding:36px 30px;display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid #e8e8ec;box-shadow:0 2px 16px rgba(0,0,0,0.05);transition:transform 0.3s,box-shadow 0.3s}
+.compare-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(143,47,160,0.08)}
+.compare-title{font-size:17px;font-weight:700;color:#111;margin-bottom:16px;letter-spacing:-0.2px}
+.compare-tried{opacity:0.65;margin-bottom:16px}
+.compare-label{display:inline-block;font-size:11px;font-weight:600;color:#888;margin-bottom:8px;letter-spacing:0.8px;text-transform:uppercase}
+.compare-label--hero{color:var(--core);text-shadow:none;font-size:12px;letter-spacing:1px}
+.compare-tried p{font-size:14px;color:#555;line-height:1.7}
 .compare-divider{height:1px;background:linear-gradient(90deg,transparent 5%,rgba(143,47,160,0.35) 50%,transparent 95%);margin:4px 0 16px;opacity:0.8}
-.compare-here{border-right:3px solid rgba(143,47,160,0.25);padding-right:18px}
-.compare-here p{font-size:15px;color:var(--white);font-weight:600;line-height:1.7}
-.compare-card:nth-child(even){border-color:rgba(143,47,160,0.12)}
+.compare-here{border-right:3px solid rgba(143,47,160,0.3);padding-right:18px}
+.compare-here p{font-size:15px;color:#111;font-weight:600;line-height:1.7}
+.compare-card:nth-child(even){border-color:rgba(143,47,160,0.08)}
+.comparison-section .sub-text{color:#555}
 
 /* DELIVERABLES — WHITE SECTION */
 .deliverables-section{background:#fafafa;position:relative;overflow:hidden}
@@ -301,14 +306,14 @@ radial-gradient(500px 220px at 50% 115%,rgba(143,47,160,0.16),transparent 72%)}
 .deliver-card--compact{padding:24px 20px !important}
 .deliver-card--compact h3{font-size:16px !important}
 .deliver-card--compact p{font-size:13px !important}
-.bonus-box{margin-top:32px;background:linear-gradient(145deg,rgba(18,18,26,0.65),rgba(14,14,20,0.6));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(143,47,160,0.15);border-radius:16px;padding:24px 28px;display:flex;align-items:center;gap:16px;box-shadow:0 4px 24px rgba(0,0,0,0.2),0 0 40px rgba(143,47,160,0.04)}
-.bonus-badge{display:inline-flex;align-items:center;padding:6px 16px;background:linear-gradient(135deg,rgba(30,30,40,0.9),rgba(20,20,28,0.85));border:1px solid rgba(255,255,255,0.14);border-radius:20px;font-size:13px;font-weight:600;white-space:nowrap;box-shadow:0 6px 16px rgba(0,0,0,0.25)}
-.bonus-box p{font-size:15px;color:var(--white-dim)}
+.bonus-box{margin-top:32px;background:rgba(143,47,160,0.03);border:1px solid rgba(143,47,160,0.15);border-radius:16px;padding:24px 28px;display:flex;align-items:center;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
+.bonus-badge{display:inline-flex;align-items:center;padding:6px 16px;background:#fff;border:1px solid rgba(143,47,160,0.2);border-radius:20px;font-size:13px;font-weight:600;white-space:nowrap;color:var(--core);box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.bonus-box p{font-size:15px;color:#555}
 
 /* TRANSFORMATION SECTION */
 .after-section{background:var(--black);background:radial-gradient(ellipse 50% 35% at 50% 50%,rgba(143,47,160,0.06),transparent 60%),var(--black)}
-.transform-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin:48px auto 0}
-.transform-card{position:relative;padding:28px 24px;border-radius:16px;border:1px solid rgba(255,255,255,0.08);background:linear-gradient(145deg,rgba(18,18,26,0.6),rgba(14,14,20,0.5));transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s}
+.transform-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:900px;margin:40px auto 0}
+.transform-card{position:relative;padding:22px 20px;border-radius:16px;border:1px solid rgba(255,255,255,0.08);background:linear-gradient(145deg,rgba(18,18,26,0.6),rgba(14,14,20,0.5));transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s}
 .transform-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(143,47,160,0.35),transparent);border-radius:16px 16px 0 0;pointer-events:none}
 .transform-card:hover{border-color:rgba(143,47,160,0.2);box-shadow:0 8px 28px rgba(0,0,0,0.3),0 0 30px rgba(143,47,160,0.05)}
 .transform-card--wide{grid-column:1/-1;text-align:center;max-width:700px;margin:0 auto;width:100%;border-color:rgba(143,47,160,0.15);box-shadow:0 0 30px rgba(143,47,160,0.04)}
@@ -370,14 +375,7 @@ radial-gradient(500px 220px at 50% 115%,rgba(143,47,160,0.16),transparent 72%)}
 .filter-yes .fi-icon{background:rgba(143,47,160,0.2);color:#c464d4;border:1px solid rgba(143,47,160,0.3)}
 .filter-no .fi-icon{background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.35);border:1px solid rgba(255,255,255,0.08)}
 
-/* ===== COST (WARNING STYLE — architectural, not aggressive) ===== */
-.cost-section{background:radial-gradient(ellipse at center,rgba(60,10,10,0.12),transparent 55%);border-top:1px solid rgba(244,67,54,0.15);border-bottom:1px solid rgba(244,67,54,0.15)}
-.cost-content{max-width:860px;margin:0 auto;text-align:center}
-.cost-header{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:24px}
-.cost-warning-icon{font-size:40px;animation:warningPulse 2s ease-in-out infinite}
-@keyframes warningPulse{0%,100%{opacity:.7}50%{opacity:1}}
-.cost-content p{font-size:17px;color:var(--white-dim);line-height:1.8;margin-bottom:20px}
-.cost-callout{font-size:20px;font-weight:600;color:var(--white);padding:24px;border:1px solid rgba(244,67,54,0.38);background:rgba(244,67,54,0.06);border-radius:12px;margin:28px auto;max-width:820px}
+/* (cost-section removed — merged into final CTA) */
 
 /* ===== SCREENSHOTS — WHITE PROOF SECTION ===== */
 .screenshots-section{background:#fafafa;overflow:hidden;position:relative}
@@ -415,15 +413,10 @@ radial-gradient(500px 220px at 50% 115%,rgba(143,47,160,0.16),transparent 72%)}
 .faq-a p{font-size:15px;color:var(--white-dim);line-height:1.8}
 
 /* FINAL CTA */
-.final-cta-section{padding:120px 24px;background:radial-gradient(ellipse 60% 45% at 50% 50%,rgba(143,47,160,0.18),transparent 55%)}
+.final-cta-section{padding:var(--section-pad) 24px;background:radial-gradient(ellipse 60% 45% at 50% 50%,rgba(143,47,160,0.18),transparent 55%)}
 .final-cta-section h2{margin-bottom:12px}
-.final-form{max-width:440px;margin:0 auto;background:linear-gradient(160deg,rgba(18,18,26,0.78),rgba(14,14,20,0.72));backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid rgba(143,47,160,0.25);border-radius:22px;padding:32px;position:relative;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,0.4),0 0 100px rgba(143,47,160,0.1)}
-.final-form::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;pointer-events:none;background:linear-gradient(90deg,transparent 10%,rgba(255,255,255,0.1) 50%,transparent 90%)}
-.final-form::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;pointer-events:none;background:linear-gradient(90deg,transparent 10%,rgba(143,47,160,0.25) 50%,transparent 90%)}
-.final-form input,.final-form select{width:100%;padding:14px 16px;margin-bottom:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:var(--white);font-family:var(--font);font-size:15px;outline:none;transition:border-color 0.3s;direction:rtl}
-.final-form input::placeholder{color:rgba(255,255,255,0.35)}
-.final-form input:focus,.final-form select:focus{border-color:var(--purple-main)}
-.final-form .cta-btn{width:100%;text-align:center;padding:19px 44px;font-size:17px;background:linear-gradient(135deg,rgba(90,30,110,0.85),rgba(60,20,80,0.9));border-color:rgba(143,47,160,0.5);box-shadow:0 12px 32px rgba(0,0,0,0.4),0 0 40px rgba(143,47,160,0.15),inset 0 1px 0 rgba(255,255,255,0.1)}
+.final-cta-section p{font-size:17px;color:var(--white-dim);line-height:1.8}
+.final-cta-section .callout-strong{font-size:20px;font-weight:700;color:var(--white);margin:28px 0;display:block}
 
 /* SELECT STYLING */
 .form-select{width:100%;padding:14px 16px;margin-bottom:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:var(--white);font-family:var(--font);font-size:15px;outline:none;transition:border-color 0.3s;direction:rtl;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23d8d9e1' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:16px center;cursor:pointer}
@@ -536,7 +529,6 @@ input:focus-visible,select:focus-visible{outline:none;border-color:var(--purple-
 @media(min-width:481px) and (max-width:768px){
 section{padding:80px 20px}
 .tech-section{padding:60px 20px}
-.not-netflix{padding:68px 20px}
 .text-testimonials{padding-top:68px;padding-bottom:68px}
 .navbar-logo img{height:48px}
 /* Hero */
@@ -567,10 +559,7 @@ section{padding:80px 20px}
 .process-card{padding:30px 22px}
 .compare-card{padding:26px 20px}
 .tech-box{padding:28px 22px}
-.final-form{padding:28px 22px}
-.not-netflix .highlight-box{padding:32px 28px}
 .why-callout{padding:20px 20px;font-size:17px}
-.cost-callout{padding:20px 20px;font-size:17px}
 .faq-q{font-size:15px;padding:18px 0}
 .faq-a p{font-size:14px}
 /* Deliverables accordion (tablet: keep expand behavior) */
@@ -593,7 +582,6 @@ body{padding-bottom:70px}
 /* Reduce blur for perf */
 .glow-card{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .hero-focus{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-.final-form{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
 .cta-btn{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 }
 
@@ -606,7 +594,6 @@ body{padding-bottom:70px}
 .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
 section{padding:80px 20px}
 .tech-section{padding:60px 20px}
-.not-netflix{padding:68px 20px}
 .hero{padding-top:102px;min-height:auto;overflow:hidden}
 .hero-figure img{max-width:240px;-webkit-mask-image:linear-gradient(to bottom,#000 45%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.15) 85%,transparent 100%);mask-image:linear-gradient(to bottom,#000 45%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.15) 85%,transparent 100%)}
 .hero-figure-glow{width:min(320px,90vw);height:360px;filter:blur(80px);max-width:100vw}
@@ -624,7 +611,6 @@ section{padding:80px 20px}
 .steps-grid::before{display:none}
 .steps-wiring{display:none}
 .process-grid{grid-template-columns:1fr}
-.not-netflix .highlight-box{padding:28px 22px;max-width:100%}
 .navbar-logo img{height:44px}
 .deliverables-primary{grid-template-columns:repeat(2,1fr);gap:12px}
 .deliverables-secondary{grid-template-columns:repeat(2,1fr);gap:10px}
@@ -656,9 +642,7 @@ body{padding-bottom:70px}
 .process-card{padding:28px 20px}
 .compare-card{padding:24px 18px}
 .tech-box{padding:24px 18px}
-.final-form{padding:24px 18px}
 .why-callout{padding:18px 16px;font-size:16px}
-.cost-callout{padding:18px 16px;font-size:17px}
 .glow-divider{max-width:90%}
 .faq-q{font-size:15px;padding:16px 0}
 .faq-a p{font-size:14px}
@@ -666,10 +650,7 @@ body{padding-bottom:70px}
 /* Reduce blur for performance */
 .glow-card{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .hero-focus{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-.final-form{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
 .cta-btn{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-/* Cost header: wrap on small tablet */
-.cost-header{flex-wrap:wrap;gap:12px}
 /* FAQ list full width */
 .faq-list{max-width:100%}
 /* Process highlight */
@@ -678,7 +659,6 @@ body{padding-bottom:70px}
 .section-desc{font-size:16px}
 /* Final CTA section */
 .final-cta-section{padding:80px 20px}
-.final-form{max-width:100%}
 /* VSL wrapper full width */
 .vsl-wrapper{max-width:100%}
 /* Tech box full width */
@@ -693,7 +673,6 @@ body{padding-bottom:70px}
 @media(max-width:480px){
 section{padding:60px 14px}
 .tech-section{padding:48px 14px}
-.not-netflix{padding:60px 14px}
 .hero{padding-top:82px}
 .hero-headline .hero-line1,.hero-headline .hero-line2,.hero-headline .hero-line3{font-size:clamp(24px,8vw,36px);letter-spacing:-0.5px}
 .hero-focus{padding:18px 14px 20px;border-radius:18px;margin:14px auto 0;overflow:hidden}
@@ -717,7 +696,6 @@ section{padding:60px 14px}
 .process-card{padding:22px 16px}
 .compare-card{padding:20px 14px}
 .tech-box{padding:20px 14px;max-width:100%}
-.final-form{padding:24px 18px;max-width:100%;border-radius:18px}
 .deliver-card{padding:16px 12px}
 /* Font size reductions */
 h1{letter-spacing:-0.5px}
@@ -745,15 +723,9 @@ h3{font-size:clamp(16px,4vw,20px)}
 .bonus-box{padding:18px 16px;gap:12px;flex-direction:column;text-align:center}
 .bonus-badge{font-size:12px;padding:5px 12px}
 .bonus-box p{font-size:14px}
-/* Not Netflix */
-.not-netflix .highlight-box{padding:24px 16px;max-width:100%}
 /* Why section */
 .why-content p{font-size:16px}
 .why-callout{font-size:15px;padding:16px 14px}
-/* Cost */
-.cost-callout{font-size:15px;padding:16px 14px}
-.cost-header{flex-direction:column;align-items:center;gap:8px;text-align:center}
-.cost-warning-icon{font-size:32px}
 /* CTA area */
 .cta-sub{font-size:13px}
 /* Authority logos — already hidden via 768px rule */
@@ -976,7 +948,7 @@ h3{font-size:clamp(16px,4vw,20px)}
 }
 /* ===== iOS INPUT ZOOM FIX ===== */
 @media(max-width:768px){
-  .modal-form input,.final-form input,.final-form select,.form-select{font-size:16px}
+  .modal-form input,.form-select{font-size:16px}
   .navbar{backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3)}
   .navbar.scrolled{backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5)}
 }
@@ -991,7 +963,7 @@ h3{font-size:clamp(16px,4vw,20px)}
   .authority-logo{animation:none}
   .consent-banner.visible{animation:none;transform:translateY(0)}
   .consent-banner.hidden{animation:none;transform:translateY(100%)}
-  .glow-card,.cta-btn,.hero-focus,.final-form{backdrop-filter:none;-webkit-backdrop-filter:none}
+  .glow-card,.cta-btn,.hero-focus{backdrop-filter:none;-webkit-backdrop-filter:none}
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -1087,8 +1059,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<div class="glow-divider"></div>
-
 <!-- VSL -->
 <section class="vsl-section" id="vsl">
   <div class="container"><div class="vsl-wrapper">
@@ -1105,8 +1075,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div></div>
 </section>
 
-<div class="glow-divider"></div>
-
 <!-- WHY -->
 <section class="why-section" id="why">
   <div class="container"><div class="why-content">
@@ -1118,8 +1086,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="mt-32 reveal"><button class="cta-btn" onclick="openModal()">תראה לי איפה אני נתקע</button></div>
   </div></div>
 </section>
-
-<div class="glow-divider"></div>
 
 <!-- STEPS -->
 <section class="steps-section" id="steps">
@@ -1153,8 +1119,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<div class="glow-divider"></div>
-
 <!-- PROCESS -->
 <section class="process-section" id="process">
   <div class="container">
@@ -1162,7 +1126,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="sub-text reveal reveal-delay-1 sub-center-16">אתה יודע מה הבעיה עם קורסים? הם כלליים מדי, והבעיה עם ייעוץ אישי? הוא יקר מדי. אז בניתי מבנה שמשלב את שניהם, קבוצה שנותנת אנרגיה ומראה, ותהליך אישי שנותן דיוק.</p>
     <div class="process-grid">
       <div class="process-card glow-card reveal reveal-delay-2"><div class="card-badge"><img src="assets/icons/icon-group.png" alt="קבוצה" style="height:20px;width:20px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> קבוצה</div><h3>7 מפגשי מאסטרמיינד קבוצתיים לייב</h3><p>אחת לשבועיים, 4 שעות עבודה נטו. כל מפגש בונה חלק אחר במנגנון שלך: מ DNA, דרך שיטה, ועד הפעלה בשטח.</p></div>
-      <div class="process-card glow-card reveal reveal-delay-3"><div class="card-badge"><img src="assets/icons/icon-personal.png" alt="אישי" style="height:20px;width:20px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> אישי</div><h3>3 תהליכים אישיים איתי</h3><p>בנקודות הקריטיות של ההתחלה, האמצע והסוף. אני לא נותן לך לנחש אם עשית נכון, אלא מזקק אותך אישית ומדייק את מה שבנית.</p></div>
+      <div class="process-card process-card--premium glow-card reveal reveal-delay-3"><div class="card-badge"><img src="assets/icons/icon-personal.png" alt="אישי" style="height:20px;width:20px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> אישי</div><h3>3 תהליכים אישיים איתי</h3><p>בנקודות הקריטיות של ההתחלה, האמצע והסוף. אני לא נותן לך לנחש אם עשית נכון, אלא מזקק אותך אישית ומדייק את מה שבנית.</p></div>
     </div>
     <div class="process-highlight glow-card reveal">
       <p>רק שלושת המפגשים האישיים האלו מתומחרים בנפרד ב <span class="stat">15,000 שקל</span>. כאן אתה מקבל אותם כחלק ממבנה שלם שבנוי לייצר לך מסלול ממוקד ותוצאה מדידה לאורך התהליך.</p>
@@ -1172,12 +1136,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<div class="glow-divider"></div>
+
 <!-- COMPARISON -->
 <section class="comparison-section" id="comparison">
   <div class="container">
     <h2 class="reveal text-center">אז מה שונה פה ולמה זה <span class="highlight">לא עוד קורס או יועץ?</span></h2>
     <div class="compare-grid">
-      <div class="compare-card glow-card reveal">
+      <div class="compare-card reveal">
         <h3 class="compare-title">יועץ עסקי</h3>
         <div class="compare-tried">
           <span class="compare-label">הניסיון:</span>
@@ -1189,7 +1155,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>בונים את ה-DNA והמיצוב שעליהם כל המנגנון יושב.</p>
         </div>
       </div>
-      <div class="compare-card glow-card reveal">
+      <div class="compare-card reveal">
         <h3 class="compare-title">קורסים לשיווק</h3>
         <div class="compare-tried">
           <span class="compare-label">הניסיון:</span>
@@ -1201,7 +1167,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>בונים יסודות קודם ויוצאים עם נכסים ולא עם שיעורי בית.</p>
         </div>
       </div>
-      <div class="compare-card glow-card reveal">
+      <div class="compare-card reveal">
         <h3 class="compare-title">קמפיינר</h3>
         <div class="compare-tried">
           <span class="compare-label">הניסיון:</span>
@@ -1213,7 +1179,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>מסרים שמביאים לקוחות שכבר מבינים את הערך לפני השיחה.</p>
         </div>
       </div>
-      <div class="compare-card glow-card reveal">
+      <div class="compare-card reveal">
         <h3 class="compare-title">רילס ויראליים</h3>
         <div class="compare-tried">
           <span class="compare-label">הניסיון:</span>
@@ -1225,7 +1191,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>קו תוכן אסטרטגי שבונה סמכות ומוביל לפניות, לא רק לצפיות.</p>
         </div>
       </div>
-      <div class="compare-card glow-card reveal">
+      <div class="compare-card reveal">
         <h3 class="compare-title">ניסית לבד</h3>
         <div class="compare-tried">
           <span class="compare-label">הניסיון:</span>
@@ -1241,8 +1207,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="sub-text reveal mt-32 sub-center">כל מה שניסית עד עכשיו עבד על הסימפטום ולא על השורש. אני לא מתקן, אני בונה מהיסוד.</p>
   </div>
 </section>
-
-<div class="glow-divider"></div>
 
 <!-- DELIVERABLES — WHITE SECTION -->
 <section class="deliverables-section" id="deliverables">
@@ -1261,24 +1225,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="bonus-box reveal mt-32"><span class="bonus-badge">💡 בונוס</span><p>15+ פרוטוקולים ותבניות מוכנות, גישה לקהילה סגורה, והקלטות לכל החיים.</p></div>
     <p class="sub-text reveal mt-32 sub-center">זה בדיוק מה שמאפשר לשיווק שלך להפסיק להיות הימור, ולהפוך למערכת ממוקדת שעובדת יציב.</p>
-  </div>
-</section>
-
-<div class="glow-divider"></div>
-
-<!-- TRANSFORMATION -->
-<section class="after-section" id="after">
-  <div class="container">
-    <h2 class="reveal text-center">אתה לא יוצא מפה עם עוד ידע<br><span class="highlight">אתה יוצא עם סדר, מיקוד ומבנה ברור שעובד תכלס</span></h2>
-    <p class="sub-text reveal reveal-delay-1 sub-center">יש לך קו אסטרטגי ברור שמתחבר ל DNA העסקי שלך<br>ועליו כל התוכן, המסרים והשיווק יושבים במבנה אחיד<br>אין יותר בלבול ואין יותר ניסיונות שמבזבזים זמן, כסף ואנרגיה</p>
-    <div class="transform-grid">
-      <div class="transform-card reveal reveal-delay-1"><strong>✅ אתה פותח את היום ואתה יודע בדיוק מה אתה עושה</strong><p>מה אתה אומר, מה עולה ולמי זה מתאים<br>כי יש לך שליטה וביטחון במה שאתה מוציא החוצה ומי זה מושך<br>ואתה לא מוצא את עצמך שוב מול מסך בלי לדעת מה להגיד</p></div>
-      <div class="transform-card reveal reveal-delay-2"><strong>✅ כששואלים מה אתה עושה או במה אתה שונה מאחרים, אתה לא מסתבך</strong><p>יש לך מסר ברור שמחובר לערך שאתה באמת מביא ומה יוצא מזה תכלס<br>והצד השני ישר מבין למה אתה הבחירה הנכונה לו</p></div>
-      <div class="transform-card reveal reveal-delay-3"><strong>✅ אתה לא מתעסק יותר במחיר ובהשוואות</strong><p>כי הערך שלך ברור ועובר בצורה מדויקת<br>ואי אפשר להשוות אותך לאחרים כי הם לא אתה</p></div>
-      <div class="transform-card reveal reveal-delay-4"><strong>✅ יש לך מנגנון ברור ושיטתי</strong><p>ברור לך מאיפה מגיעים הלקוחות ומה קורה בכל שלב<br>אתה מפסיק לנחש ולקוות שמשהו יתפוס<br>ומתחיל לעבוד מתוך הבנה מלאה של מה אתה עושה ולמה</p></div>
-      <div class="transform-card transform-card--wide reveal"><strong>✅ כשמישהו בתחום שלך מוזכר, השם שלך עולה ישר</strong><p>ולא כי שיווקת יותר אלא כי נחרטת בזיכרון כסמכות בתחום שלך</p></div>
-    </div>
-    <div class="text-center mt-48 reveal"><button class="cta-btn" onclick="openModal()">אני רוצה לבנות את זה, בוא נבדוק התאמה</button></div>
   </div>
 </section>
 
@@ -1306,7 +1252,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<div class="glow-divider"></div>
+<!-- TRANSFORMATION -->
+<section class="after-section" id="after">
+  <div class="container">
+    <h2 class="reveal text-center">אתה לא יוצא מפה עם עוד ידע<br><span class="highlight">אתה יוצא עם סדר, מיקוד ומבנה ברור שעובד תכלס</span></h2>
+    <p class="sub-text reveal reveal-delay-1 sub-center">יש לך קו אסטרטגי ברור שמתחבר ל DNA העסקי שלך<br>ועליו כל התוכן, המסרים והשיווק יושבים במבנה אחיד<br>אין יותר בלבול ואין יותר ניסיונות שמבזבזים זמן, כסף ואנרגיה</p>
+    <div class="transform-grid">
+      <div class="transform-card reveal reveal-delay-1"><strong>✅ אתה פותח את היום ואתה יודע בדיוק מה אתה עושה</strong><p>מה אתה אומר, מה עולה ולמי זה מתאים<br>כי יש לך שליטה וביטחון במה שאתה מוציא החוצה ומי זה מושך<br>ואתה לא מוצא את עצמך שוב מול מסך בלי לדעת מה להגיד</p></div>
+      <div class="transform-card reveal reveal-delay-2"><strong>✅ כששואלים מה אתה עושה או במה אתה שונה מאחרים, אתה לא מסתבך</strong><p>יש לך מסר ברור שמחובר לערך שאתה באמת מביא ומה יוצא מזה תכלס<br>והצד השני ישר מבין למה אתה הבחירה הנכונה לו</p></div>
+      <div class="transform-card reveal reveal-delay-3"><strong>✅ אתה לא מתעסק יותר במחיר ובהשוואות</strong><p>כי הערך שלך ברור ועובר בצורה מדויקת<br>ואי אפשר להשוות אותך לאחרים כי הם לא אתה</p></div>
+      <div class="transform-card reveal reveal-delay-4"><strong>✅ יש לך מנגנון ברור ושיטתי</strong><p>ברור לך מאיפה מגיעים הלקוחות ומה קורה בכל שלב<br>אתה מפסיק לנחש ולקוות שמשהו יתפוס<br>ומתחיל לעבוד מתוך הבנה מלאה של מה אתה עושה ולמה</p></div>
+      <div class="transform-card transform-card--wide reveal"><strong>✅ כשמישהו בתחום שלך מוזכר, השם שלך עולה ישר</strong><p>ולא כי שיווקת יותר אלא כי נחרטת בזיכרון כסמכות בתחום שלך</p></div>
+    </div>
+    <div class="text-center mt-48 reveal"><button class="cta-btn" onclick="openModal()">אני רוצה לבנות את זה, בוא נבדוק התאמה</button></div>
+  </div>
+</section>
 
 <!-- STORY -->
 <section class="story-section" id="story">
@@ -1334,7 +1294,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<div class="glow-divider"></div>
+<!-- TECH -->
+<section class="tech-section" id="tech">
+  <div class="container"><div class="tech-box glow-card reveal">
+    <p class="section-desc">המסגרת הזו נבנתה כדי שתעבוד ותבנה בפועל, לא כדי שתצפה בהדרכות.</p>
+    <div class="tech-grid">
+      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-calendar.png" alt="תאריך" style="height:18px;width:18px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> מחזור #25 בוקר נפתח ב-23/04/2026 | ימי חמישי 10:00–14:00</span></div>
+      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-calendar.png" alt="תאריך" style="height:18px;width:18px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> מחזור #25 ערב נפתח ב-27/04/2026 | ימי שני 17:00–21:00</span></div>
+      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-live.png" alt="לייב" style="height:18px;width:18px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> מפגשים לייב, וההקלטות זמינות לך לכל החיים</span></div>
+      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-group.png" alt="קבוצה" style="height:18px;width:18px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> עד 15 משתתפים בקבוצה בלבד כדי לשמור על איכות הקבוצה ויחס אישי ממני</span></div>
+    </div>
+  </div></div>
+</section>
 
 <div class="glow-divider"></div>
 
@@ -1353,21 +1324,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="screenshot-card"><img src="assets/images/8.png" alt="עדות" loading="lazy"></div>
     </div>
   </div>
-</section>
-
-<div class="glow-divider"></div>
-
-<!-- TECH -->
-<section class="tech-section" id="tech">
-  <div class="container"><div class="tech-box glow-card reveal">
-    <p class="section-desc">המסגרת הזו נבנתה כדי שתעבוד ותבנה בפועל, לא כדי שתצפה בהדרכות.</p>
-    <div class="tech-grid">
-      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-calendar.png" alt="תאריך" style="height:18px;width:18px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> מחזור #25 בוקר נפתח ב-23/04/2026 | ימי חמישי 10:00–14:00</span></div>
-      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-calendar.png" alt="תאריך" style="height:18px;width:18px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> מחזור #25 ערב נפתח ב-27/04/2026 | ימי שני 17:00–21:00</span></div>
-      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-live.png" alt="לייב" style="height:18px;width:18px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> מפגשים לייב, וההקלטות זמינות לך לכל החיים</span></div>
-      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-group.png" alt="קבוצה" style="height:18px;width:18px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> עד 15 משתתפים בקבוצה בלבד כדי לשמור על איכות הקבוצה ויחס אישי ממני</span></div>
-    </div>
-  </div></div>
 </section>
 
 <div class="glow-divider"></div>
@@ -1404,20 +1360,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="mt-16">ואתה רואה אנשים פחות טובים ממך מושכים את הלקוחות אליהם, לא כי הם טובים יותר,<br>כי הם פשוט יודעים איך להוציא את עצמם נכון, זאת בדיוק הנקודה.</p>
       <p class="mt-16"><strong>השאלה היא לא כמה עולה להצטרף, השאלה היא כמה עולה לך להישאר בדיוק איפה שאתה.</strong></p>
     </div>
-    <div class="final-form reveal reveal-delay-2">
-      <form id="bottomForm" onsubmit="return submitBottomForm(event)">
-        <input type="text" id="bname" placeholder="שם מלא" required aria-label="שם מלא" />
-        <input type="email" id="bemail" placeholder="אימייל" required aria-label="אימייל" />
-        <input type="tel" id="bphone" placeholder="טלפון" required aria-label="טלפון" />
-        <select id="bcycle" class="form-select" required aria-label="בחר מחזור">
-          <option value="" disabled selected>בחר מחזור מועדף</option>
-          <option value="morning-25">מחזור #25 בוקר (נפתח ב-23/04/2026)</option>
-          <option value="evening-25">מחזור #25 ערב (נפתח ב-27/04/2026)</option>
-          <option value="future">מחזורים עתידיים (תאריכים מאוחרים יותר)</option>
-        </select>
-        <label class="consent-checkbox"><input type="checkbox" id="bconsent" required /><span>אני מאשר/ת קבלת תוכן רלוונטי ועדכונים מאוריאל סול (ניתן להסיר בכל עת).</span></label>
-        <button class="cta-btn" type="submit">בוא נעצור את זה עכשיו</button>
-      </form>
+    <div class="reveal reveal-delay-2" style="margin-top:32px">
+      <button class="cta-btn" onclick="openModal()">בוא נעצור את זה עכשיו</button>
     </div>
     <p class="sub-text reveal mt-32 sub-center" style="max-width:600px">אם הגעת עד לפה, אתה כבר מבין שזה לא עניין של עוד תוכן או עוד ניסיון.<br>זה עניין של לבנות את זה נכון מהיסוד.<br>עכשיו זה הזמן.</p>
   </div>
@@ -1662,33 +1606,6 @@ function submitForm(e){
       phone: phone.value.replace(/[^\d+]/g,''),
       cycle: cycle.value,
       source: 'popup'
-    }, e.target.querySelector('.cta-btn'));
-  }
-  return false;
-}
-
-// FORM VALIDATION (BOTTOM)
-function submitBottomForm(e){
-  e.preventDefault();
-  let valid=true;
-  const name=document.getElementById('bname');
-  const email=document.getElementById('bemail');
-  const phone=document.getElementById('bphone');
-  const cycle=document.getElementById('bcycle');
-  [name,email,phone].forEach(i=>i.style.borderColor='');
-  if(name.value.trim().length<2){name.style.borderColor='#f44336';valid=false}
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){email.style.borderColor='#f44336';valid=false}
-  if(!/^\+?\d{9,15}$/.test(phone.value.replace(/[^\d+]/g,''))){phone.style.borderColor='#f44336';valid=false}
-  if(!cycle.value){cycle.style.borderColor='#f44336';valid=false}else{cycle.style.borderColor=''}
-  var consent=document.getElementById('bconsent');
-  if(!consent.checked){consent.parentElement.style.outline='2px solid #f44336';consent.parentElement.style.outlineOffset='2px';valid=false}else{consent.parentElement.style.outline='';consent.parentElement.style.outlineOffset=''}
-  if(valid){
-    submitLead({
-      name: name.value.trim(),
-      email: email.value.trim(),
-      phone: phone.value.replace(/[^\d+]/g,''),
-      cycle: cycle.value,
-      source: 'bottom_form'
     }, e.target.querySelector('.cta-btn'));
   }
   return false;
