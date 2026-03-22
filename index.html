@@ -948,7 +948,7 @@ h3{font-size:clamp(16px,4vw,20px)}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
-  .step-row,.compare-row,.deliverables-layer,.transform-card{opacity:1!important;transform:none!important}
+  .step-row,.compare-row,.deliverables-layer,.transform-card,.filter-card{opacity:1!important;transform:none!important}
   .hero-figure img{animation:none}
   .authority-logo{animation:none}
   .consent-banner.visible{animation:none;transform:translateY(0)}
@@ -1310,8 +1310,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <h2 class="reveal text-center">רגע לפני שאנחנו מדברים, <span class="highlight">בוא נהיה כנים.</span></h2>
     <div class="filter-grid">
-      <div class="filter-card filter-yes glow-card reveal reveal-delay-1"><h3>זה בול בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">&check;</span> אתה מומחה שכבר יש לו לקוחות וניסיון, ואתה לא מתחיל מאפס.</div><div class="filter-item"><span class="fi-icon">&check;</span> אתה מרגיש שאתה הסוד הכי שמור בתחום שלך ונמאס לך.</div><div class="filter-item"><span class="fi-icon">&check;</span> אתה מוכן לעבוד, ליישם, ולהיות מחויב ל 13 שבועות.</div></div>
-      <div class="filter-card filter-no glow-card reveal reveal-delay-2"><h3>זה ממש לא בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">&times;</span> אתה מחפש כפתור קסם או ויראליות ריקה.</div><div class="filter-item"><span class="fi-icon">&times;</span> אתה רוצה שמישהו ינהל לך את האינסטגרם במקומך.</div><div class="filter-item"><span class="fi-icon">&times;</span> אתה לא מוכן לעצור ולהסתכל על מה שבאמת תקוע.</div></div>
+      <div class="filter-card filter-yes glow-card"><h3>זה בול בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">&check;</span> אתה מומחה שכבר יש לו לקוחות וניסיון, ואתה לא מתחיל מאפס.</div><div class="filter-item"><span class="fi-icon">&check;</span> אתה מרגיש שאתה הסוד הכי שמור בתחום שלך ונמאס לך.</div><div class="filter-item"><span class="fi-icon">&check;</span> אתה מוכן לעבוד, ליישם, ולהיות מחויב ל 13 שבועות.</div></div>
+      <div class="filter-card filter-no glow-card"><h3>זה ממש לא בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">&times;</span> אתה מחפש כפתור קסם או ויראליות ריקה.</div><div class="filter-item"><span class="fi-icon">&times;</span> אתה רוצה שמישהו ינהל לך את האינסטגרם במקומך.</div><div class="filter-item"><span class="fi-icon">&times;</span> אתה לא מוכן לעצור ולהסתכל על מה שבאמת תקוע.</div></div>
     </div>
   </div>
 </section>
@@ -1786,6 +1786,9 @@ gsap.fromTo('.compare-row',{y:20,opacity:0},{y:0,opacity:1,duration:0.6,stagger:
 
 // Transformation cards — staggered reveal
 gsap.from('.transform-card',{y:30,opacity:0,duration:0.7,stagger:0.15,scrollTrigger:{trigger:'.transform-grid',start:'top 80%'}});
+
+// Filter cards — staggered reveal (entry only)
+gsap.fromTo('.filter-card',{y:24,opacity:0},{y:0,opacity:function(i,el){return el.classList.contains('filter-no')?0.45:1},duration:0.7,stagger:0.15,scrollTrigger:{trigger:'.filter-grid',start:'top 80%'}});
 
 // Transform card glow on scroll focus (class-based to avoid inline style conflicts)
 document.querySelectorAll('.transform-card').forEach(function(card){
