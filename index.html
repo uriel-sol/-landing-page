@@ -241,10 +241,13 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .steps-intro{text-align:center;margin-bottom:60px}
 .steps-intro .sub-text{margin:0 auto}
 .steps-timeline{display:flex;flex-direction:column;gap:0;position:relative;max-width:800px;margin:0 auto}
-.steps-timeline::before{content:'';position:absolute;top:0;bottom:0;right:50%;transform:translateX(50%);width:1px;background:linear-gradient(180deg,transparent,rgba(143,47,160,0.2) 10%,rgba(143,47,160,0.2) 90%,transparent);z-index:0}
+.steps-timeline::before{content:none}
+.steps-timeline-line{position:absolute;top:0;bottom:0;right:50%;transform:translateX(50%);width:2px;background:linear-gradient(180deg,rgba(185,33,204,0.5),rgba(143,47,160,0.35) 50%,rgba(185,33,204,0.5));z-index:0;transform-origin:top center;scale:1 0;box-shadow:0 0 8px rgba(185,33,204,0.25),0 0 24px rgba(143,47,160,0.12)}
 .step-row{display:grid;grid-template-columns:1fr 60px 1fr;align-items:center;gap:0;position:relative;z-index:1;padding:28px 0}
-.step-row-number{text-align:center;font-size:36px;font-weight:800;color:rgba(185,33,204,0.35);line-height:1;font-variant-numeric:tabular-nums}
-.step-row-icon{display:flex;align-items:center;justify-content:center;width:52px;height:52px;margin:0 auto;border-radius:50%;background:rgba(143,47,160,0.08);border:1px solid rgba(143,47,160,0.18);box-shadow:0 0 80px rgba(120,55,140,0.07)}
+.step-row-number{text-align:center;font-size:38px;font-weight:800;color:rgba(185,33,204,0.18);line-height:1;font-variant-numeric:tabular-nums;transition:color 0.6s ease}
+.step-row.activated .step-row-number{color:rgba(185,33,204,0.55)}
+.step-row-icon{display:flex;align-items:center;justify-content:center;width:52px;height:52px;margin:0 auto;border-radius:50%;background:rgba(143,47,160,0.08);border:1px solid rgba(143,47,160,0.18);box-shadow:0 0 0 rgba(120,55,140,0);transition:box-shadow 0.8s ease,border-color 0.8s ease}
+.step-row.activated .step-row-icon{box-shadow:0 0 18px rgba(185,33,204,0.2),0 0 40px rgba(143,47,160,0.1);border-color:rgba(185,33,204,0.35)}
 .step-row-icon img{width:28px;height:28px;object-fit:contain}
 .step-row-content{padding:0 20px}
 .step-row-content h3{font-size:19px;margin-bottom:8px;color:var(--white);font-weight:700}
@@ -635,7 +638,7 @@ section{padding:80px 20px}
 .step-row-icon img{width:22px;height:22px}
 .step-row-content{padding:0}
 .step-row-content h3{font-size:17px}
-.steps-timeline::before{right:47px;transform:none}
+.steps-timeline-line{right:47px;transform:none;transform-origin:top center;scale:1 0}
 .process-grid{grid-template-columns:1fr}
 .process-card--premium{transform:scale(1)!important}
 .navbar-logo img{height:44px}
@@ -720,7 +723,7 @@ section{padding:60px 14px}
 .step-row-number{font-size:24px}
 .step-row-icon{width:36px;height:36px}
 .step-row-icon img{width:20px;height:20px}
-.steps-timeline::before{right:39px;transform:none}
+.steps-timeline-line{right:39px;transform:none;transform-origin:top center;scale:1 0}
 .process-grid{grid-template-columns:1fr}
 .compare-row{grid-template-columns:1fr}
 .filter-grid{grid-template-columns:1fr}
@@ -1001,6 +1004,10 @@ h2{margin-bottom:20px}
   *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
   .step-row,.compare-row,.deliverables-layer,.transform-card,.filter-card{opacity:1!important;transform:none!important}
+  .steps-timeline-line{scale:1 1!important}
+  .step-row{opacity:1!important}
+  .step-row .step-row-number{color:rgba(185,33,204,0.55)!important}
+  .step-row .step-row-icon{box-shadow:0 0 18px rgba(185,33,204,0.2),0 0 40px rgba(143,47,160,0.1)!important;border-color:rgba(185,33,204,0.35)!important}
   .hero-figure img{animation:none}
   .authority-logo{animation:none}
   .consent-banner.visible{animation:none;transform:translateY(0)}
@@ -1144,6 +1151,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="sub-text reveal reveal-delay-1">אנחנו לא מנסים דברים, אלא בונים נכסים לפי סדר ברור.</p>
     </div>
     <div class="steps-timeline">
+      <div class="steps-timeline-line"></div>
       <div class="step-row">
         <div class="step-row-number">01</div>
         <div class="step-row-icon"><img src="assets/icons/icon-dna.png" alt="פיצוח ה-DNA" loading="lazy"></div>
@@ -1847,12 +1855,16 @@ if(!prefersReducedMotion){
 // VSL video — scale reveal
 gsap.from('.vsl-video',{scale:0.97,opacity:0,duration:0.9,delay:0.1,ease:'power3.out',scrollTrigger:{trigger:'.vsl-video',start:'top 80%'}});
 
-// Steps — activation sequence: line appears, then steps enter in order
-if(!prefersReducedMotion){
-  // Animate the timeline line first
-  gsap.fromTo('.steps-timeline::before',{scaleY:0},{scaleY:1,duration:0.8,ease:'power2.out'});
-}
-gsap.fromTo('.step-row',{y:20,opacity:0},{y:0,opacity:1,duration:0.6,stagger:0.25,ease:'power2.out',scrollTrigger:{trigger:'.steps-timeline',start:'top 80%'}});
+// Steps — activation sequence: line fills top→bottom, then steps enter one by one
+(function(){
+  var stepsTimeline=gsap.timeline({scrollTrigger:{trigger:'.steps-timeline',start:'top 78%',once:true}});
+  // 1. Line fills from top to bottom
+  stepsTimeline.to('.steps-timeline-line',{scale:'1 1',duration:1,ease:'power2.inOut'});
+  // 2. Each step enters sequentially with activation
+  document.querySelectorAll('.step-row').forEach(function(row,i){
+    stepsTimeline.fromTo(row,{y:24,opacity:0},{y:0,opacity:1,duration:0.55,ease:'power2.out',onComplete:function(){row.classList.add('activated');}},'-=0.35');
+  });
+})();
 
 // Comparison rows — staggered reveal (entry only)
 gsap.fromTo('.compare-row',{y:20,opacity:0},{y:0,opacity:1,duration:0.6,stagger:0.1,scrollTrigger:{trigger:'.compare-rows',start:'top 80%'}});
