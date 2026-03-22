@@ -239,70 +239,77 @@ radial-gradient(500px 220px at 50% 115%,rgba(120,55,140,0.10),transparent 72%)}
 .why-callout.reveal{transform:translateX(20px);opacity:0}
 .why-callout.reveal.visible{transform:translateX(0);opacity:1}
 
-/* ===== STEPS (3D CARDS) ===== */
+/* ===== STEPS (VERTICAL TIMELINE) ===== */
 .steps-section{background:var(--black)}
 .steps-intro{text-align:center;margin-bottom:60px}
 .steps-intro .sub-text{margin:0 auto}
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
-.steps-grid::before{content:'';position:absolute;top:44px;left:8%;right:8%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.12),rgba(143,47,160,0.15),rgba(255,255,255,0.12),transparent);z-index:0}
-.step-card{border-radius:20px;padding:40px 32px;position:relative;z-index:1}
-.step-card:hover{transform:translateY(-4px)}
-.step-number{font-size:56px;font-weight:900;background:linear-gradient(135deg,rgba(185,33,204,0.4),rgba(185,33,204,0.15));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:16px}
-.step-card h3{font-size:20px;margin-bottom:14px}
-.step-card p{font-size:15px;color:var(--white-dim);line-height:1.8}
+.steps-timeline{display:flex;flex-direction:column;gap:0;position:relative;max-width:800px;margin:0 auto}
+.steps-timeline::before{content:'';position:absolute;top:0;bottom:0;right:50%;transform:translateX(50%);width:1px;background:linear-gradient(180deg,transparent,rgba(143,47,160,0.2) 10%,rgba(143,47,160,0.2) 90%,transparent);z-index:0}
+.step-row{display:grid;grid-template-columns:1fr 60px 1fr;align-items:center;gap:0;position:relative;z-index:1;padding:28px 0}
+.step-row-number{text-align:center;font-size:36px;font-weight:800;color:rgba(185,33,204,0.35);line-height:1;font-variant-numeric:tabular-nums}
+.step-row-icon{display:flex;align-items:center;justify-content:center;width:52px;height:52px;margin:0 auto;border-radius:50%;background:rgba(143,47,160,0.08);border:1px solid rgba(143,47,160,0.18)}
+.step-row-icon img{width:28px;height:28px;object-fit:contain}
+.step-row-content{padding:0 20px}
+.step-row-content h3{font-size:19px;margin-bottom:8px;color:var(--white);font-weight:700}
+.step-row-content p{font-size:15px;color:var(--white-dim);line-height:1.8}
 
 /* PROCESS */
-.process-section{background:radial-gradient(ellipse at 70% 80%,rgba(143,47,160,0.05),transparent 50%),var(--black)}
-.process-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:40px 0}
-.process-card{border-radius:20px;padding:42px;position:relative}
-.process-card:hover{transform:translateY(-4px)}
-.process-card--premium{border:1px solid rgba(143,47,160,0.3)!important;box-shadow:0 8px 32px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.08),0 0 60px rgba(143,47,160,0.08);transform:scale(1.02)}
-.process-card--premium::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(143,47,160,0.5),transparent);border-radius:20px 20px 0 0;pointer-events:none}
+.process-section{background:var(--black)}
+.process-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;margin:40px 0}
+.process-card{border-radius:20px;padding:42px;position:relative;transition:transform 0.4s var(--ease-structural)}
+.process-card--group{opacity:0.85}
+.process-card--premium{border:1px solid rgba(143,47,160,0.25)!important;box-shadow:0 8px 32px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.08);transform:scale(1.02)}
+.process-card--premium::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(143,47,160,0.4),transparent);border-radius:20px 20px 0 0;pointer-events:none}
 .process-card h3{font-size:22px}
 .process-card p{font-size:15px;color:var(--white-dim);line-height:1.8}
 .process-card .card-badge{display:inline-flex;align-items:center;padding:5px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:20px;font-size:12px;font-weight:500;color:#c0c1cc;margin-bottom:16px;letter-spacing:0.3px}
 .process-highlight{background:linear-gradient(145deg,rgba(18,18,26,0.65),rgba(14,14,20,0.6));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:28px;margin-top:16px;box-shadow:0 8px 32px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.06)}
 .process-highlight p{font-size:16px;color:var(--white-dim);line-height:1.8}
-.process-highlight .stat{font-size:20px;font-weight:700;color:#fff;text-shadow:0 0 16px rgba(255,255,255,0.1)}
+.process-highlight .stat{font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.5px}
 
-/* COMPARISON — DARK SECTION */
+/* COMPARISON — FULL-WIDTH ROWS */
 .comparison-section{background:var(--black);position:relative;overflow:hidden}
 .comparison-section::before{display:none}
-.comparison-section::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:radial-gradient(ellipse 60% 100% at 50% 100%,rgba(143,47,160,0.06),transparent);pointer-events:none;z-index:0}
+.comparison-section::after{display:none}
 .comparison-section h2{color:var(--white)}
 .comparison-section .highlight{color:var(--core)}
 .comparison-section h2{margin-bottom:16px}
-.compare-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px}
-.compare-card{border-radius:18px;padding:36px 30px;display:flex;flex-direction:column;gap:0;background:linear-gradient(145deg,rgba(18,18,26,0.78),rgba(14,14,20,0.72));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);box-shadow:0 8px 32px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.07);transition:border-color 0.5s ease,box-shadow 0.6s ease,transform 0.4s var(--ease-structural)}
-.compare-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 10%,rgba(255,255,255,0.12) 50%,transparent 90%);pointer-events:none;z-index:3}
-.compare-card:hover{border-color:rgba(255,255,255,0.16);box-shadow:0 14px 44px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.1);transform:translateY(-3px)}
-.compare-title{font-size:17px;font-weight:700;color:var(--white);margin-bottom:16px;letter-spacing:-0.2px}
-.compare-tried{opacity:0.5;margin-bottom:16px}
-.compare-label{display:inline-block;font-size:11px;font-weight:600;color:rgba(255,255,255,0.5);margin-bottom:8px;letter-spacing:0.8px;text-transform:uppercase}
-.compare-label--hero{color:var(--core-light);text-shadow:0 0 12px rgba(185,33,204,0.3);font-size:12px;letter-spacing:1px}
-.compare-tried p{font-size:14px;color:var(--white-dim);line-height:1.7}
-.compare-divider{height:1px;background:linear-gradient(90deg,transparent 5%,rgba(143,47,160,0.35) 50%,transparent 95%);margin:4px 0 16px;opacity:0.8}
-.compare-here{border-right:4px solid rgba(143,47,160,0.45);padding-right:18px}
-.compare-here p{font-size:15px;color:#fff;font-weight:600;line-height:1.7}
-.compare-card:nth-child(even){border-color:rgba(143,47,160,0.12)}
-.compare-card:last-child:nth-child(odd){grid-column:1/-1;max-width:500px;margin:0 auto;width:100%}
+.compare-rows{display:flex;flex-direction:column;gap:0;margin-top:40px;max-width:900px;margin-left:auto;margin-right:auto}
+.compare-row{display:grid;grid-template-columns:1fr 1px 1fr;gap:0;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.06);align-items:start}
+.compare-row:last-child{border-bottom:none}
+.compare-row-title{font-size:15px;font-weight:700;color:var(--white);margin-bottom:12px;letter-spacing:-0.2px}
+.compare-row-tried{padding-left:32px;text-align:right}
+.compare-row-tried p{font-size:14px;color:rgba(255,255,255,0.4);line-height:1.7}
+.compare-row-divider{width:1px;height:100%;min-height:40px;background:rgba(143,47,160,0.2);margin:0 auto}
+.compare-row-here{padding-right:32px;text-align:right}
+.compare-row-here p{font-size:15px;color:#fff;font-weight:600;line-height:1.7}
+.compare-row-label{display:block;font-size:11px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:6px}
+.compare-row-tried .compare-row-label{color:rgba(255,255,255,0.35)}
+.compare-row-here .compare-row-label{color:rgba(143,47,160,0.7)}
 .comparison-section .sub-text{color:var(--white-dim)}
 
 /* DELIVERABLES — WHITE SECTION */
 .deliverables-section{background:#fafafa;position:relative;overflow:hidden}
 .deliverables-section::before{display:none}
-.deliverables-section::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:radial-gradient(ellipse 60% 100% at 50% 100%,rgba(143,47,160,0.06),transparent);pointer-events:none;z-index:0}
-.deliverables-section .deliver-card{border-bottom:2px solid rgba(143,47,160,0.12)}
+.deliverables-section::after{display:none}
 .deliverables-section .container>h2{text-align:center;max-width:900px;margin-left:auto;margin-right:auto;color:#111}
 .deliverables-section .highlight{color:var(--core)}
 .deliverables-section .sub-text{color:#555}
-.deliverables-primary{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.deliverables-secondary{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
-.deliverables-secondary .deliver-card--compact:last-child:nth-child(odd){grid-column:1/-1}
-.deliverables-section .deliver-card{border-radius:16px;padding:32px 24px;position:relative;background:#fff;border:1px solid #e8e8ec;box-shadow:0 2px 16px rgba(0,0,0,0.05);transition:transform 0.3s,box-shadow 0.3s}
-.deliverables-section .deliver-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(143,47,160,0.08)}
-.deliverables-section .deliver-card:first-child{box-shadow:0 4px 20px rgba(143,47,160,0.06)}
-.deliverables-section .deliver-card h3{font-size:18px;margin-bottom:10px;color:#111;font-weight:700}
+/* Central object */
+.deliverables-hero{text-align:center;margin:40px auto 48px;max-width:600px}
+.deliverables-hero-icon{width:72px;height:72px;margin:0 auto 20px;border-radius:50%;background:linear-gradient(135deg,rgba(143,47,160,0.1),rgba(143,47,160,0.04));border:1px solid rgba(143,47,160,0.15);display:flex;align-items:center;justify-content:center}
+.deliverables-hero-icon svg{width:32px;height:32px;stroke:var(--core);fill:none;stroke-width:1.5}
+.deliverables-hero p{font-size:16px;color:#555;line-height:1.7}
+/* Layer labels */
+.deliverables-layer{margin-top:36px}
+.deliverables-layer-label{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(143,47,160,0.55);margin-bottom:16px;padding-right:4px}
+/* Cards grid per layer */
+.deliverables-layer-grid{display:grid;gap:20px}
+.deliverables-layer-grid--3{grid-template-columns:repeat(3,1fr)}
+.deliverables-layer-grid--2{grid-template-columns:repeat(2,1fr)}
+.deliverables-section .deliver-card{border-radius:16px;padding:28px 24px;position:relative;background:#fff;border:1px solid #e8e8ec;box-shadow:0 2px 12px rgba(0,0,0,0.04);transition:transform 0.3s,box-shadow 0.3s}
+.deliverables-section .deliver-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.07)}
+.deliverables-section .deliver-card h3{font-size:17px;margin-bottom:8px;color:#111;font-weight:700}
 .deliverables-section .deliver-card p{font-size:14px;color:#555;line-height:1.7}
 .deliver-card--compact{padding:24px 20px !important}
 .deliver-card--compact h3{font-size:16px !important}
@@ -348,9 +355,7 @@ radial-gradient(500px 220px at 50% 115%,rgba(120,55,140,0.10),transparent 72%)}
 .story-image-glow{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:360px;height:420px;background:radial-gradient(circle,rgba(143,47,160,0.25),transparent 62%);filter:blur(100px);z-index:1;pointer-events:none}
 .story-content p{font-size:16px;color:var(--white-dim);line-height:1.8;margin-bottom:20px}
 
-/* ===== STEPS WIRING ===== */
-.steps-wiring{position:absolute;top:50px;right:15%;width:70%;height:2px;background:rgba(255,255,255,0.05);z-index:0;pointer-events:none}
-.steps-wiring .wire-fill{position:absolute;top:0;right:0;bottom:0;width:100%;transform:scaleX(0);transform-origin:right center;background:var(--core-light);box-shadow:0 0 15px var(--core-light);border-radius:2px}
+/* (steps wiring removed — using vertical timeline) */
 
 /* ===== MOCKUP FRAMES ===== */
 .mockup-frame{width:100%;background:none;border-top:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-top:16px;position:relative;overflow:hidden;transition:transform 0.4s ease}
@@ -533,39 +538,30 @@ section{padding:80px 20px}
 .hero .cta-btn{min-width:0;width:100%;max-width:380px}
 .hero-figure img{min-width:auto;max-width:260px}
 .hero-figure-glow{width:340px;height:380px;filter:blur(90px)}
-/* 2-column grids where appropriate for tablet */
-.steps-grid{grid-template-columns:repeat(2,1fr)}
-.steps-grid::before{display:none}
-.steps-wiring{display:none}
+/* Timeline stays single column on tablet */
+.steps-timeline{max-width:100%}
 .process-grid{grid-template-columns:repeat(2,1fr)}
-.compare-grid{grid-template-columns:repeat(2,1fr)}
-/* 5th compare card spans full width on tablet (odd item in 2-col grid) */
-.compare-card:last-child:nth-child(odd){grid-column:1/-1}
+.compare-rows{max-width:100%}
 .filter-grid{grid-template-columns:repeat(2,1fr)}
-.deliverables-primary{grid-template-columns:repeat(2,1fr);gap:16px}
-.deliverables-secondary{grid-template-columns:repeat(2,1fr);gap:12px}
+.deliverables-layer-grid--3{grid-template-columns:repeat(2,1fr)}
+.deliverables-layer-grid--2{grid-template-columns:repeat(2,1fr)}
 .videos-grid{grid-template-columns:repeat(2,1fr)}
 /* Story keeps side-by-side but narrower image */
 .story-grid{grid-template-columns:240px 1fr;gap:28px}
 .story-image{position:relative;top:auto}
 /* Padding reductions */
-.step-card{padding:30px 22px}
+.step-row{padding:22px 0}
 .process-card{padding:30px 22px}
-.compare-card{padding:26px 20px}
+.compare-row{padding:22px 0}
 .tech-box{padding:28px 22px}
 .why-content{grid-template-columns:1fr;gap:24px}
 .why-visual{display:none}
 .why-callout{padding:20px 20px;font-size:17px}
 .faq-q{font-size:15px;padding:18px 0}
 .faq-a p{font-size:14px}
-/* Deliverables accordion (tablet: keep expand behavior) */
-.deliver-card{padding:20px 16px;cursor:pointer}
-.deliver-card p,.deliver-card .mockup-frame{display:none}
-.deliver-card h3{font-size:15px;margin:0}
-.deliver-card h3::after{content:'+';float:left;font-size:18px;font-weight:400;color:rgba(255,255,255,0.4);transition:transform 0.3s}
-.deliver-card.active{grid-column:1 / -1}
-.deliver-card.active p{display:block}
-.deliver-card.active h3::after{content:'−'}
+/* Deliverables tablet: smaller padding */
+.deliver-card{padding:20px 16px}
+.deliverables-hero{margin:28px auto 36px}
 /* Marquee */
 .screenshots-grid{grid-template-columns:repeat(3,1fr)}
 /* carousel removed — using grid */
@@ -602,21 +598,23 @@ section{padding:80px 20px}
 .hero .cta-btn{min-width:0;width:100%;max-width:360px}
 .hero-form{max-width:100%;margin:32px auto 0}
 .sub-text{margin:0 auto}
-.steps-grid{grid-template-columns:1fr}
-.steps-grid::before{display:none}
-.steps-wiring{display:none}
+.steps-timeline{max-width:100%}
+.step-row{grid-template-columns:48px 48px 1fr;gap:12px}
+.step-row-number{font-size:28px}
+.step-row-icon{width:40px;height:40px}
+.step-row-icon img{width:22px;height:22px}
+.step-row-content{padding:0}
+.step-row-content h3{font-size:17px}
+.steps-timeline::before{right:47px;transform:none}
 .process-grid{grid-template-columns:1fr}
 .process-card--premium{transform:scale(1)!important}
 .navbar-logo img{height:44px}
-.deliverables-primary{grid-template-columns:repeat(2,1fr);gap:12px}
-.deliverables-secondary{grid-template-columns:repeat(2,1fr);gap:10px}
+.deliverables-layer-grid--3{grid-template-columns:repeat(2,1fr);gap:12px}
+.deliverables-layer-grid--2{grid-template-columns:1fr}
 .deliver-card{padding:18px 14px}
 .deliver-card .mockup-frame{display:none}
-.deliver-card h3{font-size:15px;margin:0}
-.deliver-card h3::after{content:'+';float:left;font-size:18px;font-weight:400;color:rgba(255,255,255,0.4);transition:transform 0.3s}
-.deliver-card.active{grid-column:1 / -1}
-.deliver-card.active p{display:block}
-.deliver-card.active h3::after{content:'−'}
+.deliverables-hero{margin:24px auto 32px}
+.deliverables-hero-icon{width:60px;height:60px}
 .videos-grid{grid-template-columns:repeat(2,1fr);gap:16px}
 .story-grid{grid-template-columns:1fr}
 .story-image{text-align:center;position:relative;top:auto}
@@ -624,16 +622,20 @@ section{padding:80px 20px}
 .filter-grid{grid-template-columns:1fr}
 .screenshots-grid{grid-template-columns:repeat(3,1fr);gap:12px}
 /* carousel removed */
-.compare-grid{grid-template-columns:1fr}
+/* Comparison rows stack on mobile */
+.compare-row{grid-template-columns:1fr;gap:12px;padding:24px 0}
+.compare-row-divider{width:100%;height:1px;min-height:1px}
+.compare-row-tried{padding-left:0}
+.compare-row-here{padding-right:0}
+.compare-rows-header{display:none !important}
 .bonus-box{flex-direction:column;text-align:center}
 /* transform-grid inherits base styles */
 .social-proof{gap:16px}
 .scroll-line-svg{display:none}
 body{padding-bottom:70px}
 /* Padding/spacing reductions */
-.step-card{padding:28px 20px}
+.step-row{padding:20px 0}
 .process-card{padding:28px 20px}
-.compare-card{padding:24px 18px}
 .tech-box{padding:24px 18px}
 .why-callout{padding:18px 16px;font-size:16px}
 .glow-divider{max-width:90%}
@@ -675,18 +677,24 @@ section{padding:60px 14px}
 .hero-cta-area{margin-top:24px}
 .hero-figure{margin-bottom:-50px}
 /* Single column everywhere */
-.deliverables-primary{grid-template-columns:1fr}
-.deliverables-secondary{grid-template-columns:repeat(2,1fr);gap:10px}
-.steps-grid{grid-template-columns:1fr}
+.deliverables-layer-grid--3{grid-template-columns:1fr}
+.deliverables-layer-grid--2{grid-template-columns:1fr}
+.steps-timeline{max-width:100%}
+.step-row{grid-template-columns:40px 40px 1fr;gap:8px}
+.step-row-number{font-size:24px}
+.step-row-icon{width:36px;height:36px}
+.step-row-icon img{width:20px;height:20px}
+.steps-timeline::before{right:39px;transform:none}
 .process-grid{grid-template-columns:1fr}
-.compare-grid{grid-template-columns:1fr}
+.compare-row{grid-template-columns:1fr}
 .filter-grid{grid-template-columns:1fr}
 .videos-grid{grid-template-columns:repeat(2,1fr);gap:12px}
 /* Card padding reductions */
-.step-number{font-size:48px}
-.step-card{padding:22px 16px}
+.step-row{padding:18px 0}
+.step-row-content h3{font-size:16px;margin-bottom:6px}
+.step-row-content p{font-size:14px}
 .process-card{padding:22px 16px}
-.compare-card{padding:20px 14px}
+.compare-row{padding:18px 0}
 .tech-box{padding:20px 14px;max-width:100%}
 .deliver-card{padding:16px 12px}
 /* Font size reductions */
@@ -720,9 +728,9 @@ h3{font-size:clamp(16px,4vw,20px)}
 .process-highlight p{font-size:15px}
 .process-highlight .stat{font-size:17px}
 /* Compare */
-.compare-title{font-size:15px}
-.compare-tried p{font-size:13px}
-.compare-here p{font-size:14px}
+.compare-row-title{font-size:15px}
+.compare-row-tried p{font-size:13px}
+.compare-row-here p{font-size:14px}
 /* Filter */
 .filter-card{padding:28px 16px}
 .filter-card h3{font-size:18px}
@@ -778,17 +786,15 @@ h3{font-size:clamp(16px,4vw,20px)}
 .why-visual{display:none}
 .why-content p{text-align:right}
 .why-callout{text-align:right}
-.compare-tried p,.compare-here p{text-align:right}
+.compare-row-tried p,.compare-row-here p{text-align:right}
 .process-card p{text-align:right}
-.step-card p{text-align:right}
+.step-row-content p{text-align:right}
 .filter-item{text-align:right}
 /* Comparison mobile weight */
-.compare-card{padding:24px 18px;border-right:2px solid rgba(143,47,160,0.12)}
-.compare-title{font-size:17px}
-.compare-here p{font-size:15px}
-.compare-tried p{font-size:14px}
-.compare-divider{margin:14px 0 18px}
-.compare-grid{gap:20px;margin-top:28px}
+.compare-row-title{font-size:16px}
+.compare-row-here p{font-size:14px}
+.compare-row-tried p{font-size:13px}
+.compare-rows{margin-top:28px}
 .comparison-section .sub-text.mt-32{margin-top:24px}
 /* Quotes mobile — handled in carousel section above */
 /* Deliverables sub-text spacing */
@@ -1084,25 +1090,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 class="reveal">ממומחה שאף אחד לא רואה, <span class="highlight">למומחה שאנשים מפנים אליו.</span></h2>
       <p class="sub-text reveal reveal-delay-1">אנחנו לא מנסים דברים, אלא בונים נכסים לפי סדר ברור.</p>
     </div>
-    <div class="steps-grid">
-      <div class="steps-wiring"><div class="wire-fill" id="stepsWire"></div></div>
-      <div class="step-card glow-card reveal reveal-delay-1">
-        <div class="step-number">01</div>
-        <div class="icon-3d"><img src="assets/icons/icon-dna.png" alt="פיצוח ה-DNA" loading="lazy"></div>
-        <h3>פיצוח ה DNA</h3>
-        <p>אנחנו מגלים מה באמת מבדל אותך מכולם, וזה הופך לבסיס שעליו העסק, התוכן והמסרים שלך יושבים. אתה מפסיק לגמגם מול השאלה "אז מה אתה עושה" ויש לך תשובה אחת שגורמת לאנשים לעצור ולהקשיב.</p>
+    <div class="steps-timeline">
+      <div class="step-row reveal">
+        <div class="step-row-number">01</div>
+        <div class="step-row-icon"><img src="assets/icons/icon-dna.png" alt="פיצוח ה-DNA" loading="lazy"></div>
+        <div class="step-row-content">
+          <h3>פיצוח ה DNA</h3>
+          <p>אנחנו מגלים מה באמת מבדל אותך מכולם, וזה הופך לבסיס שעליו העסק, התוכן והמסרים שלך יושבים. אתה מפסיק לגמגם מול השאלה "אז מה אתה עושה" ויש לך תשובה אחת שגורמת לאנשים לעצור ולהקשיב.</p>
+        </div>
       </div>
-      <div class="step-card glow-card reveal reveal-delay-2">
-        <div class="step-number">02</div>
-        <div class="icon-3d"><img src="assets/icons/icon-method.png" alt="אריזת הייחודיות לשיטה" loading="lazy"></div>
-        <h3>אריזת הייחודיות לשיטה</h3>
-        <p>אנחנו לוקחים את מה שזיקקנו והופכים אותו לשיטה ברורה שאפשר להסביר, למכור ולהעביר. הידע שלך מקבל מבנה, ואתה מפסיק להרגיש כמו ספק שירות שאפשר להחליף, ומתחיל להיות הדמות שאנשים רוצים לעבוד דווקא איתה.</p>
+      <div class="step-row reveal">
+        <div class="step-row-number">02</div>
+        <div class="step-row-icon"><img src="assets/icons/icon-method.png" alt="אריזת הייחודיות לשיטה" loading="lazy"></div>
+        <div class="step-row-content">
+          <h3>אריזת הייחודיות לשיטה</h3>
+          <p>אנחנו לוקחים את מה שזיקקנו והופכים אותו לשיטה ברורה שאפשר להסביר, למכור ולהעביר. הידע שלך מקבל מבנה, ואתה מפסיק להרגיש כמו ספק שירות שאפשר להחליף, ומתחיל להיות הדמות שאנשים רוצים לעבוד דווקא איתה.</p>
+        </div>
       </div>
-      <div class="step-card glow-card reveal reveal-delay-3">
-        <div class="step-number">03</div>
-        <div class="icon-3d"><img src="assets/icons/icon-magnetic-demand.png" alt="מנגנון הביקוש וההשפעה" loading="lazy"></div>
-        <h3>מנגנון הביקוש וההשפעה</h3>
-        <p>אתה מפסיק לנחש מה להעלות ולקוות שמישהו יראה. יש לך מנגנון ברור שמביא אליך את האנשים הנכונים כשהם כבר מוכנים לקנות, גם כשאתה לא בחדר.</p>
+      <div class="step-row reveal">
+        <div class="step-row-number">03</div>
+        <div class="step-row-icon"><img src="assets/icons/icon-magnetic-demand.png" alt="מנגנון הביקוש וההשפעה" loading="lazy"></div>
+        <div class="step-row-content">
+          <h3>מנגנון הביקוש וההשפעה</h3>
+          <p>אתה מפסיק לנחש מה להעלות ולקוות שמישהו יראה. יש לך מנגנון ברור שמביא אליך את האנשים הנכונים כשהם כבר מוכנים לקנות, גם כשאתה לא בחדר.</p>
+        </div>
       </div>
     </div>
     <div class="text-center mt-48 reveal"><button class="cta-btn" onclick="openModal()">תראה לי איך המנגנון הזה נראה תכלס</button></div>
@@ -1115,7 +1126,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="reveal text-center">לא קורס שצופים בו לבד <span class="highlight">ולא ייעוץ שעולה פי 4.</span></h2>
     <p class="sub-text reveal reveal-delay-1 sub-center-16">אתה יודע מה הבעיה עם קורסים? הם כלליים מדי, והבעיה עם ייעוץ אישי? הוא יקר מדי. אז בניתי מבנה שמשלב את שניהם, קבוצה שנותנת אנרגיה ומראה, ותהליך אישי שנותן דיוק.</p>
     <div class="process-grid">
-      <div class="process-card glow-card reveal reveal-delay-2"><div class="card-badge"><img src="assets/icons/icon-group.png" alt="קבוצה" style="height:20px;width:20px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> קבוצה</div><h3>7 מפגשי מאסטרמיינד קבוצתיים לייב</h3><p>אחת לשבועיים, 4 שעות עבודה נטו. כל מפגש בונה חלק אחר במנגנון שלך: מ DNA, דרך שיטה, ועד הפעלה בשטח.</p></div>
+      <div class="process-card process-card--group glow-card reveal reveal-delay-2"><div class="card-badge"><img src="assets/icons/icon-group.png" alt="קבוצה" style="height:20px;width:20px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> קבוצה</div><h3>7 מפגשי מאסטרמיינד קבוצתיים לייב</h3><p>אחת לשבועיים, 4 שעות עבודה נטו. כל מפגש בונה חלק אחר במנגנון שלך: מ DNA, דרך שיטה, ועד הפעלה בשטח.</p></div>
       <div class="process-card process-card--premium glow-card reveal reveal-delay-3"><div class="card-badge"><img src="assets/icons/icon-personal.png" alt="אישי" style="height:20px;width:20px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> אישי</div><h3>3 תהליכים אישיים איתי</h3><p>בנקודות הקריטיות של ההתחלה, האמצע והסוף. אני לא נותן לך לנחש אם עשית נכון, אלא מזקק אותך אישית ומדייק את מה שבנית.</p></div>
     </div>
     <div class="process-highlight glow-card reveal">
@@ -1132,64 +1143,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="comparison-section" id="comparison">
   <div class="container">
     <h2 class="reveal text-center">אז מה שונה פה ולמה זה <span class="highlight">לא עוד קורס או יועץ?</span></h2>
-    <div class="compare-grid">
-      <div class="compare-card reveal">
-        <h3 class="compare-title">יועץ עסקי</h3>
-        <div class="compare-tried">
-          <span class="compare-label">הניסיון:</span>
+    <div class="compare-rows-header reveal" style="display:grid;grid-template-columns:1fr 1px 1fr;max-width:900px;margin:40px auto 0;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.1)">
+      <div style="text-align:right;padding-left:32px"><span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.4);letter-spacing:0.8px;text-transform:uppercase">מה ניסית</span></div>
+      <div style="width:1px;background:rgba(143,47,160,0.2);margin:0 auto"></div>
+      <div style="text-align:right;padding-right:32px"><span style="font-size:13px;font-weight:600;color:rgba(143,47,160,0.6);letter-spacing:0.8px;text-transform:uppercase">מה קורה פה</span></div>
+    </div>
+    <div class="compare-rows">
+      <div class="compare-row reveal">
+        <div class="compare-row-tried">
+          <span class="compare-row-title">יועץ עסקי</span>
           <p>נתן לך "תעלה מחיר ותשווק יותר" בלי לשאול מי אתה ומה הערך שלך.</p>
         </div>
-        <div class="compare-divider"></div>
-        <div class="compare-here">
-          <span class="compare-label compare-label--hero">ב"קוד המפצח":</span>
+        <div class="compare-row-divider"></div>
+        <div class="compare-row-here">
           <p>בונים את ה-DNA והמיצוב שעליהם כל המנגנון יושב.</p>
         </div>
       </div>
-      <div class="compare-card reveal">
-        <h3 class="compare-title">קורסים לשיווק</h3>
-        <div class="compare-tried">
-          <span class="compare-label">הניסיון:</span>
+      <div class="compare-row reveal">
+        <div class="compare-row-tried">
+          <span class="compare-row-title">קורסים לשיווק</span>
           <p>קיבלת ידע שלא יישמת כי לא היה לך "למה" או "מי" לפני הטקטיקה.</p>
         </div>
-        <div class="compare-divider"></div>
-        <div class="compare-here">
-          <span class="compare-label compare-label--hero">ב"קוד המפצח":</span>
+        <div class="compare-row-divider"></div>
+        <div class="compare-row-here">
           <p>בונים יסודות קודם ויוצאים עם נכסים ולא עם שיעורי בית.</p>
         </div>
       </div>
-      <div class="compare-card reveal">
-        <h3 class="compare-title">קמפיינר</h3>
-        <div class="compare-tried">
-          <span class="compare-label">הניסיון:</span>
+      <div class="compare-row reveal">
+        <div class="compare-row-tried">
+          <span class="compare-row-title">קמפיינר</span>
           <p>לידים קרים, "כמה זה עולה" בהודעה ראשונה והשוואות למתחרים.</p>
         </div>
-        <div class="compare-divider"></div>
-        <div class="compare-here">
-          <span class="compare-label compare-label--hero">ב"קוד המפצח":</span>
+        <div class="compare-row-divider"></div>
+        <div class="compare-row-here">
           <p>מסרים שמביאים לקוחות שכבר מבינים את הערך לפני השיחה.</p>
         </div>
       </div>
-      <div class="compare-card reveal">
-        <h3 class="compare-title">רילס ויראליים</h3>
-        <div class="compare-tried">
-          <span class="compare-label">הניסיון:</span>
+      <div class="compare-row reveal">
+        <div class="compare-row-tried">
+          <span class="compare-row-title">רילס ויראליים</span>
           <p>עוקבים בלי פניות כי לא היה מסר ברור מאחורי החשיפה.</p>
         </div>
-        <div class="compare-divider"></div>
-        <div class="compare-here">
-          <span class="compare-label compare-label--hero">ב"קוד המפצח":</span>
+        <div class="compare-row-divider"></div>
+        <div class="compare-row-here">
           <p>קו תוכן אסטרטגי שבונה סמכות ומוביל לפניות, לא רק לצפיות.</p>
         </div>
       </div>
-      <div class="compare-card reveal">
-        <h3 class="compare-title">ניסית לבד</h3>
-        <div class="compare-tried">
-          <span class="compare-label">הניסיון:</span>
+      <div class="compare-row reveal">
+        <div class="compare-row-tried">
+          <span class="compare-row-title">ניסית לבד</span>
           <p>שעות על תוכן שלא זז וכל פוסט הוא מאבק על מה להגיד.</p>
         </div>
-        <div class="compare-divider"></div>
-        <div class="compare-here">
-          <span class="compare-label compare-label--hero">ב"קוד המפצח":</span>
+        <div class="compare-row-divider"></div>
+        <div class="compare-row-here">
           <p>מפת תוכן ומנגנון שמראה לך מה לעשות, מתי ולמה.</p>
         </div>
       </div>
@@ -1202,17 +1208,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="deliverables-section" id="deliverables">
   <div class="container">
     <h2 class="reveal text-center">בסוף 13 שבועות אתה יוצא עם <span class="highlight">מנגנון בנוי,</span> ולא עם מחברת סיכומים.</h2>
-    <div class="deliverables-primary">
-      <div class="deliver-card reveal reveal-delay-1"><h3>מסמך DNA עסקי</h3><p>תשובה חדה לשאלה מי אתה, מה הערך שלך ולמה דווקא אתה ולא המתחרה שלך.</p><div class="mockup-frame"><img src="assets/images/mockup-dna.png" alt="מסמך DNA עסקי" loading="lazy"></div></div>
-      <div class="deliver-card reveal reveal-delay-2"><h3>אפיון לקוח עומק (פסיכוגרפי)</h3><p>זורקים לפח את ההגדרות של "גיל ומקום מגורים" וממפים את הראש של הלקוח שלך. מה כואב לו, מה הוא כבר ניסה בעבר, ואיך לנסח מסר שגורם לו להגיד "הוא קורא לי את המחשבות".</p><div class="mockup-frame"><img src="assets/images/mockup-customer.png" alt="אפיון לקוח עומק" loading="lazy"></div></div>
-      <div class="deliver-card reveal reveal-delay-3"><h3>שלד השיטה</h3><p>הידע שלך הופך למסלול עם תחנות ותוצרים ברורים שאפשר למכור ולהסביר הלאה.</p><div class="mockup-frame"><img src="assets/images/mockup-method.png" alt="שלד השיטה" loading="lazy"></div></div>
+    <!-- Central object -->
+    <div class="deliverables-hero reveal">
+      <div class="deliverables-hero-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <p>כל מה שתבנה ב-13 שבועות — מסודר בשלוש שכבות, מהיסודות ועד המנוע.</p>
     </div>
-    <div class="deliverables-secondary">
-      <div class="deliver-card deliver-card--compact reveal"><h3>מערכת הפעלה למותג</h3><p>הופכים את ה DNA שלך למערכת ברורה שעובדת בכל מקום שהלקוח פוגש אותך, מהפוסט הראשון ועד הסגירה.</p></div>
-      <div class="deliver-card deliver-card--compact reveal"><h3>מפת תוכן אסטרטגית</h3><p>תוכנית ל 180 יום שמראה לך בדיוק מה להעלות ומתי. מי רואה אותך בפעם הראשונה, מי כבר עוקב, מי מתעניין ומי מוכן לקנות. הכל מחובר ל DNA שלך.</p></div>
-      <div class="deliver-card deliver-card--compact reveal"><h3>מערכת המרות</h3><p>מסלול ברור שלוקח בן אדם שלא מכיר אותך לנקודה שבה הוא מוכן לדבר איתך, עם תסריטים מוכנים ופרופיל שעובד בשבילך.</p></div>
-      <div class="deliver-card deliver-card--compact reveal"><h3>המוח האסטרטגי</h3><p>AI שמאומן על ה DNA שלך, יושב איתך לאורך כל התהליך ונשאר איתך גם אחריו. לא מחולל טקסטים, אלא שותף אסטרטגי לכל מהלך עסקי-שיווקי.</p></div>
-      <div class="deliver-card deliver-card--compact reveal"><h3>אוטומציה ממירה</h3><p>4 אוטומציות שכל בעל עסק חייב שיהיו פעילות ברשתות שלו, כדי לחמם קהל, להוביל לפניות ולהניע להמרה.</p></div>
+
+    <!-- Layer 1: Foundations -->
+    <div class="deliverables-layer reveal">
+      <div class="deliverables-layer-label">יסודות</div>
+      <div class="deliverables-layer-grid deliverables-layer-grid--3">
+        <div class="deliver-card"><h3>מסמך DNA עסקי</h3><p>תשובה חדה לשאלה מי אתה, מה הערך שלך ולמה דווקא אתה ולא המתחרה שלך.</p><div class="mockup-frame"><img src="assets/images/mockup-dna.png" alt="מסמך DNA עסקי" loading="lazy"></div></div>
+        <div class="deliver-card"><h3>אפיון לקוח עומק (פסיכוגרפי)</h3><p>זורקים לפח את ההגדרות של "גיל ומקום מגורים" וממפים את הראש של הלקוח שלך. מה כואב לו, מה הוא כבר ניסה בעבר, ואיך לנסח מסר שגורם לו להגיד "הוא קורא לי את המחשבות".</p><div class="mockup-frame"><img src="assets/images/mockup-customer.png" alt="אפיון לקוח עומק" loading="lazy"></div></div>
+        <div class="deliver-card"><h3>שלד השיטה</h3><p>הידע שלך הופך למסלול עם תחנות ותוצרים ברורים שאפשר למכור ולהסביר הלאה.</p><div class="mockup-frame"><img src="assets/images/mockup-method.png" alt="שלד השיטה" loading="lazy"></div></div>
+      </div>
+    </div>
+
+    <!-- Layer 2: Architecture -->
+    <div class="deliverables-layer reveal">
+      <div class="deliverables-layer-label">ארכיטקטורה</div>
+      <div class="deliverables-layer-grid deliverables-layer-grid--2">
+        <div class="deliver-card deliver-card--compact"><h3>מערכת הפעלה למותג</h3><p>הופכים את ה DNA שלך למערכת ברורה שעובדת בכל מקום שהלקוח פוגש אותך, מהפוסט הראשון ועד הסגירה.</p></div>
+        <div class="deliver-card deliver-card--compact"><h3>מפת תוכן אסטרטגית</h3><p>תוכנית ל 180 יום שמראה לך בדיוק מה להעלות ומתי. מי רואה אותך בפעם הראשונה, מי כבר עוקב, מי מתעניין ומי מוכן לקנות. הכל מחובר ל DNA שלך.</p></div>
+      </div>
+    </div>
+
+    <!-- Layer 3: Engine -->
+    <div class="deliverables-layer reveal">
+      <div class="deliverables-layer-label">מנוע</div>
+      <div class="deliverables-layer-grid deliverables-layer-grid--3">
+        <div class="deliver-card deliver-card--compact"><h3>מערכת המרות</h3><p>מסלול ברור שלוקח בן אדם שלא מכיר אותך לנקודה שבה הוא מוכן לדבר איתך, עם תסריטים מוכנים ופרופיל שעובד בשבילך.</p></div>
+        <div class="deliver-card deliver-card--compact"><h3>המוח האסטרטגי</h3><p>AI שמאומן על ה DNA שלך, יושב איתך לאורך כל התהליך ונשאר איתך גם אחריו. לא מחולל טקסטים, אלא שותף אסטרטגי לכל מהלך עסקי-שיווקי.</p></div>
+        <div class="deliver-card deliver-card--compact"><h3>אוטומציה ממירה</h3><p>4 אוטומציות שכל בעל עסק חייב שיהיו פעילות ברשתות שלו, כדי לחמם קהל, להוביל לפניות ולהניע להמרה.</p></div>
+      </div>
     </div>
     <div class="bonus-box reveal mt-32"><span class="bonus-badge">💡 בונוס</span><p>15+ פרוטוקולים ותבניות מוכנות, גישה לקהילה סגורה, והקלטות לכל החיים.</p></div>
     <p class="sub-text reveal mt-32 sub-center">זה בדיוק מה שמאפשר לשיווק שלך להפסיק להיות הימור, ולהפוך למערכת ממוקדת שעובדת יציב.</p>
@@ -1722,17 +1752,7 @@ var prefersReducedMotion=window.matchMedia('(prefers-reduced-motion:reduce)').ma
 
 // (mouse spotlight removed — mobile-first)
 
-// Steps wiring: draws with scroll (scaleX for GPU compositing)
-var stepsWire=document.getElementById('stepsWire');
-if(stepsWire){
-  stepsWire.style.transformOrigin='right center';
-  stepsWire.style.transform='scaleX(0)';
-  stepsWire.style.width='100%';
-  gsap.to(stepsWire,{
-    scrollTrigger:{trigger:'#steps',start:'center 80%',end:'center 40%',scrub:true},
-    scaleX:1,ease:'none'
-  });
-}
+// (steps wiring removed — using vertical timeline)
 
 // Scroll-based glow (inner glow when card hits viewport center)
 document.querySelectorAll('.glow-card').forEach(function(card){
@@ -1757,11 +1777,11 @@ document.querySelectorAll('section:not(.hero)').forEach(function(sec){
 // VSL video — scale reveal
 gsap.from('.vsl-video',{scale:0.96,opacity:0,duration:1,delay:0.15,ease:'power3.out',scrollTrigger:{trigger:'.vsl-video',start:'top 80%'}});
 
-// Steps cards — staggered reveal (0.2s per card)
-gsap.from('.step-card',{y:30,opacity:0,duration:0.8,stagger:0.2,scrollTrigger:{trigger:'.steps-grid',start:'top 80%'}});
+// Steps rows — staggered reveal (entry only)
+gsap.from('.step-row',{y:24,opacity:0,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.steps-timeline',start:'top 80%'}});
 
-// Comparison cards — staggered reveal (0.12s per card)
-gsap.from('.compare-card',{y:24,opacity:0,duration:0.7,stagger:0.12,scrollTrigger:{trigger:'.compare-grid',start:'top 80%'}});
+// Comparison rows — staggered reveal (entry only)
+gsap.from('.compare-row',{y:20,opacity:0,duration:0.6,stagger:0.1,scrollTrigger:{trigger:'.compare-rows',start:'top 80%'}});
 
 // Transformation cards — staggered reveal
 gsap.from('.transform-card',{y:30,opacity:0,duration:0.7,stagger:0.15,scrollTrigger:{trigger:'.transform-grid',start:'top 80%'}});
@@ -1860,15 +1880,8 @@ document.querySelectorAll('.process-highlight .stat').forEach(function(el){
   });
 });
 
-// Mobile deliverables accordion
-document.querySelectorAll('.deliver-card').forEach(function(card){
-  card.addEventListener('click', function(){
-    if(window.innerWidth > 768) return;
-    var isActive = card.classList.contains('active');
-    document.querySelectorAll('.deliver-card.active').forEach(function(c){ c.classList.remove('active'); });
-    if(!isActive) card.classList.add('active');
-  });
-});
+// Deliverables layers — staggered reveal (entry only)
+gsap.from('.deliverables-layer',{y:24,opacity:0,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.deliverables-hero',start:'top 80%'}});
 
 </script>
 <a href="accessibility.html" class="accessibility-fab" aria-label="מעבר להצהרת נגישות">נגישות</a>
