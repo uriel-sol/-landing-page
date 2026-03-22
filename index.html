@@ -257,7 +257,7 @@ radial-gradient(500px 220px at 50% 115%,rgba(120,55,140,0.10),transparent 72%)}
 .process-section{background:var(--black)}
 .process-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;margin:40px 0}
 .process-card{border-radius:20px;padding:42px;position:relative;transition:transform 0.4s var(--ease-structural)}
-.process-card--group{opacity:0.85}
+.process-card--group{opacity:1}
 .process-card--premium{border:1px solid rgba(143,47,160,0.25)!important;box-shadow:0 8px 32px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.08);transform:scale(1.02)}
 .process-card--premium::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(143,47,160,0.4),transparent);border-radius:20px 20px 0 0;pointer-events:none}
 .process-card h3{font-size:22px}
@@ -283,6 +283,7 @@ radial-gradient(500px 220px at 50% 115%,rgba(120,55,140,0.10),transparent 72%)}
 .compare-row-divider{width:1px;height:100%;min-height:40px;background:rgba(143,47,160,0.2);margin:0 auto}
 .compare-row-here{padding-right:32px;text-align:right}
 .compare-row-here p{font-size:15px;color:#fff;font-weight:600;line-height:1.7}
+.compare-row-here-title{display:none}
 .compare-row-label{display:block;font-size:11px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:6px}
 .compare-row-tried .compare-row-label{color:rgba(255,255,255,0.35)}
 .compare-row-here .compare-row-label{color:rgba(143,47,160,0.7)}
@@ -302,7 +303,7 @@ radial-gradient(500px 220px at 50% 115%,rgba(120,55,140,0.10),transparent 72%)}
 .deliverables-hero p{font-size:16px;color:#555;line-height:1.7}
 /* Layer labels */
 .deliverables-layer{margin-top:36px}
-.deliverables-layer-label{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(143,47,160,0.55);margin-bottom:16px;padding-right:4px}
+.deliverables-layer-label{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(101,33,115,0.85);margin-bottom:16px;padding-right:4px}
 /* Cards grid per layer */
 .deliverables-layer-grid{display:grid;gap:20px}
 .deliverables-layer-grid--3{grid-template-columns:repeat(3,1fr)}
@@ -319,14 +320,15 @@ radial-gradient(500px 220px at 50% 115%,rgba(120,55,140,0.10),transparent 72%)}
 .bonus-box p{font-size:15px;color:#555}
 
 /* TRANSFORMATION SECTION */
-.after-section{background:var(--black);background:radial-gradient(ellipse 50% 35% at 50% 50%,rgba(143,47,160,0.06),transparent 60%),var(--black)}
-.transform-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:900px;margin:40px auto 0}
-.transform-card{position:relative;padding:22px 20px;border-radius:16px;border:1px solid rgba(255,255,255,0.08);background:linear-gradient(145deg,rgba(18,18,26,0.6),rgba(14,14,20,0.5));transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s}
-.transform-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(143,47,160,0.35),transparent);border-radius:16px 16px 0 0;pointer-events:none}
-.transform-card:hover{border-color:rgba(143,47,160,0.2);box-shadow:0 8px 28px rgba(0,0,0,0.3),0 0 30px rgba(143,47,160,0.05)}
-.transform-card--wide{grid-column:1/-1;text-align:center;max-width:700px;margin:0 auto;width:100%;border-color:rgba(143,47,160,0.15);box-shadow:0 0 30px rgba(143,47,160,0.04)}
-.transform-card--wide::before{background:linear-gradient(90deg,transparent,rgba(143,47,160,0.25),transparent)}
-.transform-card strong{color:var(--core-light);font-weight:700;display:block;margin-bottom:8px;font-size:17px;line-height:1.5}
+.after-section{background:var(--black)}
+.transform-grid{display:flex;flex-direction:column;gap:0;max-width:700px;margin:40px auto 0}
+.transform-card{position:relative;padding:24px 0;border-radius:0;border:none;border-bottom:1px solid rgba(255,255,255,0.06);background:none;transition:none}
+.transform-card:last-child{border-bottom:none}
+.transform-card::before{display:none}
+.transform-card:hover{border-color:rgba(255,255,255,0.06);box-shadow:none;transform:none}
+.transform-card--wide{grid-column:auto;text-align:inherit;max-width:none;margin:0;width:auto;border-color:transparent;box-shadow:none}
+.transform-card--wide::before{display:none}
+.transform-card strong{color:var(--white);font-weight:700;display:block;margin-bottom:6px;font-size:17px;line-height:1.6}
 .transform-card p{color:var(--white-dim);font-size:15px;line-height:1.7}
 
 /* VISUAL BREAK / QUOTE */
@@ -348,12 +350,12 @@ radial-gradient(500px 220px at 50% 115%,rgba(120,55,140,0.10),transparent 72%)}
 .play-small svg{fill:white;width:22px;height:22px;margin-right:-2px}
 
 /* STORY */
-.story-section{background:linear-gradient(180deg,var(--black) 0%,rgba(40,12,50,0.4) 30%,rgba(50,15,60,0.35) 50%,rgba(40,12,50,0.4) 70%,var(--black) 100%)}
-.story-grid{display:grid;grid-template-columns:360px 1fr;gap:48px;align-items:center}
+.story-section{background:linear-gradient(180deg,var(--black) 0%,rgba(40,12,50,0.12) 30%,rgba(50,15,60,0.10) 50%,rgba(40,12,50,0.12) 70%,var(--black) 100%)}
+.story-grid{display:grid;grid-template-columns:380px 1fr;gap:56px;align-items:center}
 .story-image{position:relative}
-.story-image img{width:100%;position:relative;z-index:2;-webkit-mask-image:linear-gradient(to bottom,#000 60%,transparent 96%);mask-image:linear-gradient(to bottom,#000 60%,transparent 96%)}
-.story-image-glow{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:360px;height:420px;background:radial-gradient(circle,rgba(143,47,160,0.25),transparent 62%);filter:blur(100px);z-index:1;pointer-events:none}
-.story-content p{font-size:16px;color:var(--white-dim);line-height:1.8;margin-bottom:20px}
+.story-image img{width:100%;position:relative;z-index:2;-webkit-mask-image:linear-gradient(to bottom,#000 65%,transparent 96%);mask-image:linear-gradient(to bottom,#000 65%,transparent 96%)}
+.story-image-glow{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:360px;height:420px;background:radial-gradient(circle,rgba(143,47,160,0.15),transparent 62%);filter:blur(100px);z-index:1;pointer-events:none}
+.story-content p{font-size:16px;color:var(--white-dim);line-height:1.85;margin-bottom:22px;max-width:560px}
 
 /* (steps wiring removed — using vertical timeline) */
 
@@ -369,15 +371,15 @@ radial-gradient(500px 220px at 50% 115%,rgba(120,55,140,0.10),transparent 72%)}
 .filter-section{background:var(--black-light)}
 .filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
 .filter-card{border-radius:16px;padding:40px;position:relative}
-.filter-card::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(56% 64% at 100% 0,rgba(143,47,160,0.06),transparent 76%)}
-.filter-yes{border:1px solid rgba(143,47,160,0.25)!important;background:linear-gradient(145deg,rgba(22,18,30,0.8),rgba(16,14,24,0.75))!important;box-shadow:0 0 40px rgba(143,47,160,0.06),inset 0 1px 0 rgba(255,255,255,0.08);transform:scale(1.01);z-index:2}
-.filter-yes:hover{border-color:rgba(185,33,204,0.45)!important;box-shadow:0 0 50px rgba(143,47,160,0.1)}
-.filter-yes h3{color:#fff}
-.filter-no{border:1px solid rgba(255,255,255,0.04)!important;background:rgba(10,10,14,0.6)!important;opacity:0.45;transform:scale(0.98)}
+.filter-card::after{display:none}
+.filter-yes{border:1px solid rgba(143,47,160,0.2);background:linear-gradient(145deg,rgba(22,18,30,0.7),rgba(16,14,24,0.65));box-shadow:inset 0 1px 0 rgba(255,255,255,0.06);z-index:2}
+.filter-yes:hover{border-color:rgba(143,47,160,0.3)}
+.filter-yes h3{color:#fff;font-size:21px}
+.filter-no{border:1px solid rgba(255,255,255,0.04);background:rgba(10,10,14,0.5);opacity:0.5;transform:scale(0.98)}
 .filter-no:hover{opacity:0.6}
 .filter-no h3{color:var(--white-dim)}
 .filter-card h3{font-size:20px;margin-bottom:20px}
-.filter-item{display:flex;gap:12px;margin-bottom:14px;font-size:15px;color:var(--white-dim);align-items:flex-start}
+.filter-item{display:flex;gap:12px;margin-bottom:16px;font-size:15px;color:var(--white-dim);align-items:flex-start;line-height:1.7}
 .fi-icon{width:22px;height:22px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:13px;font-weight:700;line-height:1}
 .filter-yes .fi-icon{background:rgba(143,47,160,0.2);color:#c464d4;border:1px solid rgba(143,47,160,0.3)}
 .filter-no .fi-icon{background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.35);border:1px solid rgba(255,255,255,0.08)}
@@ -396,23 +398,23 @@ radial-gradient(500px 220px at 50% 115%,rgba(120,55,140,0.10),transparent 72%)}
 
 /* TECH */
 .tech-section{background:var(--black-light);padding:60px 24px}
-.tech-box{border-radius:20px;padding:40px;max-width:700px;margin:0 auto;position:relative}
-.tech-box::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 70% at 100% 0,rgba(143,47,160,0.06),transparent 70%)}
-.tech-grid{display:flex;flex-direction:column;gap:16px}
-.tech-item{display:flex;align-items:center;gap:12px;font-size:16px;color:var(--white)}
+.tech-box{border-radius:16px;padding:36px 32px;max-width:700px;margin:0 auto;position:relative;background:rgba(14,14,20,0.6);border:1px solid rgba(255,255,255,0.06)}
+.tech-box::after{display:none}
+.tech-grid{display:flex;flex-direction:column;gap:18px}
+.tech-item{display:flex;align-items:center;gap:12px;font-size:16px;color:var(--white);line-height:1.7}
 .tech-icon{width:10px;height:10px;border-radius:50%;background:rgba(220,221,229,0.9);display:inline-block;box-shadow:0 0 0 4px rgba(220,221,229,0.16)}
 
 /* ===== FAQ (SPLIT) ===== */
 .faq-section{background:var(--black)}
 .faq-list{max-width:750px;margin:0 auto}
 .faq-group-title{font-size:18px;font-weight:600;color:#d6d6df;margin:32px 0 16px}
-.faq-item{border-radius:12px;margin-bottom:10px;padding:0 20px;position:relative}
-.faq-item::before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,0.03),transparent 55%)}
-.faq-item:hover{border-color:rgba(255,255,255,0.18)}
-.faq-item.open{border-color:rgba(143,47,160,0.2)!important;border-right:3px solid rgba(143,47,160,0.35);box-shadow:0 8px 32px rgba(0,0,0,0.3),0 0 50px rgba(143,47,160,0.05)}
+.faq-item{border-radius:10px;margin-bottom:14px;padding:0 20px;position:relative;border:1px solid rgba(255,255,255,0.06);background:rgba(14,14,20,0.4)}
+.faq-item::before{display:none}
+.faq-item:hover{border-color:rgba(255,255,255,0.12)}
+.faq-item.open{border-color:rgba(143,47,160,0.18);border-right:3px solid rgba(143,47,160,0.3);background:rgba(14,14,20,0.6)}
 .faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 0;background:none;border:none;color:var(--white);font-family:var(--font);font-size:16px;font-weight:500;cursor:pointer;text-align:right;gap:16px;transition:color 0.3s}
 .faq-q:hover{color:#d8d9e1}
-.faq-icon{font-size:24px;color:var(--core-light);transition:transform 0.3s;flex-shrink:0}
+.faq-icon{font-size:22px;color:var(--core-light);transition:transform 0.3s;flex-shrink:0}
 .faq-item.open .faq-icon{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease,opacity 0.4s ease;opacity:0}
 .faq-item.open .faq-a{opacity:1}
@@ -420,14 +422,14 @@ radial-gradient(500px 220px at 50% 115%,rgba(120,55,140,0.10),transparent 72%)}
 .faq-a p{font-size:15px;color:var(--white-dim);line-height:1.8}
 
 /* FINAL CTA */
-.final-cta-section{padding:var(--section-pad) 24px;background:radial-gradient(ellipse 60% 45% at 50% 50%,rgba(143,47,160,0.22),transparent 55%)}
-.final-cta-section h2{margin-bottom:12px}
+.final-cta-section{padding:var(--section-pad) 24px;background:radial-gradient(ellipse 60% 45% at 50% 50%,rgba(143,47,160,0.10),transparent 55%),var(--black)}
+.final-cta-section h2{margin-bottom:16px}
 .final-cta-section p{font-size:17px;color:var(--white-dim);line-height:1.8}
 .final-cta-section .callout-strong{font-size:22px;font-weight:700;color:var(--white);margin:32px 0;display:block}
 
 /* FINAL FORM (bottom) */
-.final-form-separator{height:1px;max-width:200px;margin:40px auto;background:linear-gradient(90deg,transparent,rgba(143,47,160,0.4),transparent)}
-.final-form{max-width:440px;margin:0 auto;background:rgba(22,22,22,0.7);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(185,33,204,0.2);border-radius:16px;padding:28px;box-shadow:0 16px 48px rgba(0,0,0,0.35),0 0 60px rgba(143,47,160,0.06)}
+.final-form-separator{height:1px;max-width:200px;margin:48px auto;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.12),transparent)}
+.final-form{max-width:440px;margin:0 auto;background:rgba(18,18,24,0.8);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.10);border-radius:16px;padding:32px;box-shadow:0 20px 60px rgba(0,0,0,0.4)}
 .final-form .cta-btn{background:linear-gradient(135deg,#70267f,#9a3bab)!important;border-color:rgba(185,33,204,0.4)!important;color:#fff}
 .final-form input,.final-form select{width:100%;padding:14px 16px;margin-bottom:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:var(--white);font-family:var(--font);font-size:15px;outline:none;transition:border-color 0.3s;direction:rtl}
 .final-form input::placeholder{color:rgba(255,255,255,0.35)}
@@ -547,7 +549,7 @@ section{padding:80px 20px}
 .deliverables-layer-grid--2{grid-template-columns:repeat(2,1fr)}
 .videos-grid{grid-template-columns:repeat(2,1fr)}
 /* Story keeps side-by-side but narrower image */
-.story-grid{grid-template-columns:240px 1fr;gap:28px}
+.story-grid{grid-template-columns:260px 1fr;gap:32px}
 .story-image{position:relative;top:auto}
 /* Padding reductions */
 .step-row{padding:22px 0}
@@ -623,10 +625,16 @@ section{padding:80px 20px}
 .screenshots-grid{grid-template-columns:repeat(3,1fr);gap:12px}
 /* carousel removed */
 /* Comparison rows stack on mobile */
-.compare-row{grid-template-columns:1fr;gap:12px;padding:24px 0}
-.compare-row-divider{width:100%;height:1px;min-height:1px}
-.compare-row-tried{padding-left:0}
-.compare-row-here{padding-right:0}
+.compare-row{grid-template-columns:1fr;gap:0;padding:0;border-bottom:none}
+.compare-rows{gap:28px}
+.compare-row-tried{padding:20px 16px 0;text-align:right}
+.compare-row-tried .compare-row-title{display:block;font-size:17px;font-weight:800;color:var(--white);margin-bottom:6px}
+.compare-row-tried p{font-size:14px;margin-bottom:0}
+.compare-row-divider{width:100%;height:1px;min-height:1px;background:rgba(143,47,160,0.25);margin:16px 0}
+.compare-row-here{padding:0 16px 20px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.08)}
+.compare-row-here-title{display:block;font-size:13px;font-weight:700;color:rgba(143,47,160,0.7);letter-spacing:0.6px;text-transform:uppercase;margin-bottom:6px}
+.compare-row-here p{font-size:14px;font-weight:600}
+.compare-row:last-child .compare-row-here{border-bottom:none}
 .compare-rows-header{display:none !important}
 .bonus-box{flex-direction:column;text-align:center}
 /* transform-grid inherits base styles */
@@ -708,9 +716,7 @@ h3{font-size:clamp(16px,4vw,20px)}
 .screenshots-grid{grid-template-columns:repeat(2,1fr);gap:10px}
 /* carousel removed */
 /* Timeline */
-.transform-grid{grid-template-columns:1fr;gap:16px}
-.transform-card--wide{border-top:2px solid rgba(143,47,160,0.2)}
-.transform-card{padding:22px 18px}
+.transform-card{padding:20px 0}
 .transform-card strong{font-size:15px}
 .transform-card p{font-size:14px}
 /* Bonus box */
@@ -791,10 +797,10 @@ h3{font-size:clamp(16px,4vw,20px)}
 .step-row-content p{text-align:right}
 .filter-item{text-align:right}
 /* Comparison mobile weight */
-.compare-row-title{font-size:16px}
-.compare-row-here p{font-size:14px}
+.compare-rows{margin-top:24px;gap:24px}
+.compare-row-tried .compare-row-title{font-size:16px}
 .compare-row-tried p{font-size:13px}
-.compare-rows{margin-top:28px}
+.compare-row-here p{font-size:13px}
 .comparison-section .sub-text.mt-32{margin-top:24px}
 /* Quotes mobile — handled in carousel section above */
 /* Deliverables sub-text spacing */
@@ -943,11 +949,12 @@ h3{font-size:clamp(16px,4vw,20px)}
   .navbar.scrolled{backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5)}
 }
 /* ===== SCROLL-FOCUS CLASS (replaces inline styles) ===== */
-.transform-card.scroll-focus{transform:translateY(-2px);border-color:rgba(143,47,160,0.2);box-shadow:0 8px 28px rgba(0,0,0,0.3),0 0 30px rgba(143,47,160,0.05)}
+.transform-card.scroll-focus{transform:none;border-color:rgba(255,255,255,0.06);box-shadow:none}
 /* ===== PREFERS-REDUCED-MOTION ===== */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
+  .step-row,.compare-row,.deliverables-layer,.transform-card,.filter-card{opacity:1!important;transform:none!important}
   .hero-figure img{animation:none}
   .authority-logo{animation:none}
   .consent-banner.visible{animation:none;transform:translateY(0)}
@@ -1091,7 +1098,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="sub-text reveal reveal-delay-1">אנחנו לא מנסים דברים, אלא בונים נכסים לפי סדר ברור.</p>
     </div>
     <div class="steps-timeline">
-      <div class="step-row reveal">
+      <div class="step-row">
         <div class="step-row-number">01</div>
         <div class="step-row-icon"><img src="assets/icons/icon-dna.png" alt="פיצוח ה-DNA" loading="lazy"></div>
         <div class="step-row-content">
@@ -1099,7 +1106,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>אנחנו מגלים מה באמת מבדל אותך מכולם, וזה הופך לבסיס שעליו העסק, התוכן והמסרים שלך יושבים. אתה מפסיק לגמגם מול השאלה "אז מה אתה עושה" ויש לך תשובה אחת שגורמת לאנשים לעצור ולהקשיב.</p>
         </div>
       </div>
-      <div class="step-row reveal">
+      <div class="step-row">
         <div class="step-row-number">02</div>
         <div class="step-row-icon"><img src="assets/icons/icon-method.png" alt="אריזת הייחודיות לשיטה" loading="lazy"></div>
         <div class="step-row-content">
@@ -1107,7 +1114,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>אנחנו לוקחים את מה שזיקקנו והופכים אותו לשיטה ברורה שאפשר להסביר, למכור ולהעביר. הידע שלך מקבל מבנה, ואתה מפסיק להרגיש כמו ספק שירות שאפשר להחליף, ומתחיל להיות הדמות שאנשים רוצים לעבוד דווקא איתה.</p>
         </div>
       </div>
-      <div class="step-row reveal">
+      <div class="step-row">
         <div class="step-row-number">03</div>
         <div class="step-row-icon"><img src="assets/icons/icon-magnetic-demand.png" alt="מנגנון הביקוש וההשפעה" loading="lazy"></div>
         <div class="step-row-content">
@@ -1149,53 +1156,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="text-align:right;padding-right:32px"><span style="font-size:13px;font-weight:600;color:rgba(143,47,160,0.6);letter-spacing:0.8px;text-transform:uppercase">מה קורה פה</span></div>
     </div>
     <div class="compare-rows">
-      <div class="compare-row reveal">
+      <div class="compare-row">
         <div class="compare-row-tried">
           <span class="compare-row-title">יועץ עסקי</span>
           <p>נתן לך "תעלה מחיר ותשווק יותר" בלי לשאול מי אתה ומה הערך שלך.</p>
         </div>
         <div class="compare-row-divider"></div>
         <div class="compare-row-here">
+          <span class="compare-row-here-title">מה קורה פה</span>
           <p>בונים את ה-DNA והמיצוב שעליהם כל המנגנון יושב.</p>
         </div>
       </div>
-      <div class="compare-row reveal">
+      <div class="compare-row">
         <div class="compare-row-tried">
           <span class="compare-row-title">קורסים לשיווק</span>
           <p>קיבלת ידע שלא יישמת כי לא היה לך "למה" או "מי" לפני הטקטיקה.</p>
         </div>
         <div class="compare-row-divider"></div>
         <div class="compare-row-here">
+          <span class="compare-row-here-title">מה קורה פה</span>
           <p>בונים יסודות קודם ויוצאים עם נכסים ולא עם שיעורי בית.</p>
         </div>
       </div>
-      <div class="compare-row reveal">
+      <div class="compare-row">
         <div class="compare-row-tried">
           <span class="compare-row-title">קמפיינר</span>
           <p>לידים קרים, "כמה זה עולה" בהודעה ראשונה והשוואות למתחרים.</p>
         </div>
         <div class="compare-row-divider"></div>
         <div class="compare-row-here">
+          <span class="compare-row-here-title">מה קורה פה</span>
           <p>מסרים שמביאים לקוחות שכבר מבינים את הערך לפני השיחה.</p>
         </div>
       </div>
-      <div class="compare-row reveal">
+      <div class="compare-row">
         <div class="compare-row-tried">
           <span class="compare-row-title">רילס ויראליים</span>
           <p>עוקבים בלי פניות כי לא היה מסר ברור מאחורי החשיפה.</p>
         </div>
         <div class="compare-row-divider"></div>
         <div class="compare-row-here">
+          <span class="compare-row-here-title">מה קורה פה</span>
           <p>קו תוכן אסטרטגי שבונה סמכות ומוביל לפניות, לא רק לצפיות.</p>
         </div>
       </div>
-      <div class="compare-row reveal">
+      <div class="compare-row">
         <div class="compare-row-tried">
           <span class="compare-row-title">ניסית לבד</span>
           <p>שעות על תוכן שלא זז וכל פוסט הוא מאבק על מה להגיד.</p>
         </div>
         <div class="compare-row-divider"></div>
         <div class="compare-row-here">
+          <span class="compare-row-here-title">מה קורה פה</span>
           <p>מפת תוכן ומנגנון שמראה לך מה לעשות, מתי ולמה.</p>
         </div>
       </div>
@@ -1217,7 +1229,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <!-- Layer 1: Foundations -->
-    <div class="deliverables-layer reveal">
+    <div class="deliverables-layer">
       <div class="deliverables-layer-label">יסודות</div>
       <div class="deliverables-layer-grid deliverables-layer-grid--3">
         <div class="deliver-card"><h3>מסמך DNA עסקי</h3><p>תשובה חדה לשאלה מי אתה, מה הערך שלך ולמה דווקא אתה ולא המתחרה שלך.</p><div class="mockup-frame"><img src="assets/images/mockup-dna.png" alt="מסמך DNA עסקי" loading="lazy"></div></div>
@@ -1227,7 +1239,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <!-- Layer 2: Architecture -->
-    <div class="deliverables-layer reveal">
+    <div class="deliverables-layer">
       <div class="deliverables-layer-label">ארכיטקטורה</div>
       <div class="deliverables-layer-grid deliverables-layer-grid--2">
         <div class="deliver-card deliver-card--compact"><h3>מערכת הפעלה למותג</h3><p>הופכים את ה DNA שלך למערכת ברורה שעובדת בכל מקום שהלקוח פוגש אותך, מהפוסט הראשון ועד הסגירה.</p></div>
@@ -1236,7 +1248,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <!-- Layer 3: Engine -->
-    <div class="deliverables-layer reveal">
+    <div class="deliverables-layer">
       <div class="deliverables-layer-label">מנוע</div>
       <div class="deliverables-layer-grid deliverables-layer-grid--3">
         <div class="deliver-card deliver-card--compact"><h3>מערכת המרות</h3><p>מסלול ברור שלוקח בן אדם שלא מכיר אותך לנקודה שבה הוא מוכן לדבר איתך, עם תסריטים מוכנים ופרופיל שעובד בשבילך.</p></div>
@@ -1309,15 +1321,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <h2 class="reveal text-center">רגע לפני שאנחנו מדברים, <span class="highlight">בוא נהיה כנים.</span></h2>
     <div class="filter-grid">
-      <div class="filter-card filter-yes glow-card reveal reveal-delay-1"><h3>זה בול בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">&check;</span> אתה מומחה שכבר יש לו לקוחות וניסיון, ואתה לא מתחיל מאפס.</div><div class="filter-item"><span class="fi-icon">&check;</span> אתה מרגיש שאתה הסוד הכי שמור בתחום שלך ונמאס לך.</div><div class="filter-item"><span class="fi-icon">&check;</span> אתה מוכן לעבוד, ליישם, ולהיות מחויב ל 13 שבועות.</div></div>
-      <div class="filter-card filter-no glow-card reveal reveal-delay-2"><h3>זה ממש לא בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">&times;</span> אתה מחפש כפתור קסם או ויראליות ריקה.</div><div class="filter-item"><span class="fi-icon">&times;</span> אתה רוצה שמישהו ינהל לך את האינסטגרם במקומך.</div><div class="filter-item"><span class="fi-icon">&times;</span> אתה לא מוכן לעצור ולהסתכל על מה שבאמת תקוע.</div></div>
+      <div class="filter-card filter-yes"><h3>זה בול בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">&check;</span> אתה מומחה שכבר יש לו לקוחות וניסיון, ואתה לא מתחיל מאפס.</div><div class="filter-item"><span class="fi-icon">&check;</span> אתה מרגיש שאתה הסוד הכי שמור בתחום שלך ונמאס לך.</div><div class="filter-item"><span class="fi-icon">&check;</span> אתה מוכן לעבוד, ליישם, ולהיות מחויב ל 13 שבועות.</div></div>
+      <div class="filter-card filter-no"><h3>זה ממש לא בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">&times;</span> אתה מחפש כפתור קסם או ויראליות ריקה.</div><div class="filter-item"><span class="fi-icon">&times;</span> אתה רוצה שמישהו ינהל לך את האינסטגרם במקומך.</div><div class="filter-item"><span class="fi-icon">&times;</span> אתה לא מוכן לעצור ולהסתכל על מה שבאמת תקוע.</div></div>
     </div>
   </div>
 </section>
 
 <!-- TECH -->
 <section class="tech-section" id="tech">
-  <div class="container"><div class="tech-box glow-card reveal">
+  <div class="container"><div class="tech-box reveal">
     <p class="section-desc">המסגרת הזו נבנתה כדי שתעבוד ותבנה בפועל, לא כדי שתצפה בהדרכות.</p>
     <div class="tech-grid">
       <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-calendar.png" alt="תאריך" style="height:18px;width:18px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> מחזור #25 בוקר נפתח ב-23/04/2026 | ימי חמישי 10:00–14:00</span></div>
@@ -1356,13 +1368,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="reveal text-center mb-48">שאלות שאנשים חכמים שואלים <span class="highlight">לפני שהם נכנסים</span></h2>
     <div class="faq-list">
       <div class="faq-group-title">הפיל שבחדר (שאלות על התהליך)</div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-1" onclick="toggleFaq(this.parentElement)"><span>מה אם כבר עשיתי תהליך בידול וזה לא החזיק?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-1" role="region"><p>אתה יודע למה זה לא החזיק? כי לא עשית בידול, עשית קופירייטינג. זה כמו לקנות חליפה יקרה שלא תפורה עליך. אנחנו עובדים על מה שעדיין לא זוקק, הדרך שאתה חושב ופותר. כשזה ברור, אתה יוצא מהתחרות על מחיר ומגיע למגרש שבו הלקוח בוחר בך כי אין לו אלטרנטיבה אמיתית.</p></div></div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-2" onclick="toggleFaq(this.parentElement)"><span>איך אני יודע שזה לא עוד תהליך אסטרטגי תיאורטי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-2" role="region"><p>כי אתה לא יוצא מפה עם רעיונות. אתה יוצא עם נכסים שאפשר להפעיל מחר: מסמך DNA, שלד שיטה, מפת תוכן. אי אפשר לבנות גורד שחקים מתיאוריות, צריך יציקות בטון.</p></div></div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-3" onclick="toggleFaq(this.parentElement)"><span>אני לא כריזמטי ולא רוצה להיות "אושיית רשת", זה מתאים לי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-3" role="region"><p>מותג זה לא הופעה, מותג זה עמדה מקצועית וסמכות. רוב הלקוחות שלי לא רוצים להיות בפרונט בצורה רועשת, הם רוצים שהמקצועיות שלהם תדבר. בשביל זה צריך מנגנון.</p></div></div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-4" onclick="toggleFaq(this.parentElement)"><span>מה אם זה לא הזמן הנכון מבחינה כלכלית?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-4" role="region"><p>השאלה היא כמה עולה לך להמשיך בלי יסודות? עוד קמפיין שלא ממיר, עוד לקוחות שבורחים למתחרה זול. השאלה היא אם אתה יכול להרשות לעצמך להמשיך להפסיד את הלקוחות שאתה באמת שווה. ואם אתה לא בטוח שזה מתאים לך, בדיוק בשביל זה יש שיחת התאמה. אם אין התאמה, אני אגיד לך הכי ישיר שיש. אני לא מחפש למלא אולמות.</p></div></div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-5" onclick="toggleFaq(this.parentElement)"><span>כמה זמן זה דורש ממני בפועל (ואם אני עמוס)?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-5" role="region"><p>מפגש קבוצתי אחת לשבועיים, ועוד כ-3 שעות שבועיות ליישום. התהליך לא מוסיף עומס לטווח הארוך, הוא מנקה אותו, כי אתה מפסיק לנחש כל בוקר מה לעשות.</p></div></div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-6" onclick="toggleFaq(this.parentElement)"><span>איך אני יודע שזה יעבוד דווקא בתחום שלי ולמה משולב?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-6" role="region"><p>התהליך בנוי עליך כבן אדם וכמומחה, לא על נישה. המודל משולב כי קבוצה נותנת אנרגיה ומראה, אבל הפיצוח הכירורגי קורה רק בארבע עיניים איתי.</p></div></div>
-      <div class="faq-item glow-card reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-7" onclick="toggleFaq(this.parentElement)"><span>אני לא טכנולוגי, ה-AI ילחיץ אותי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-7" role="region"><p>להפך. ה-AI מוריד ממך עבודה שחורה, אנחנו מגדירים אותו יחד, וכשנסיים יהיה לך שותף אסטרטגי מאומן על ה-DNA שלך.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-1" onclick="toggleFaq(this.parentElement)"><span>מה אם כבר עשיתי תהליך בידול וזה לא החזיק?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-1" role="region"><p>אתה יודע למה זה לא החזיק? כי לא עשית בידול, עשית קופירייטינג. זה כמו לקנות חליפה יקרה שלא תפורה עליך. אנחנו עובדים על מה שעדיין לא זוקק, הדרך שאתה חושב ופותר. כשזה ברור, אתה יוצא מהתחרות על מחיר ומגיע למגרש שבו הלקוח בוחר בך כי אין לו אלטרנטיבה אמיתית.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-2" onclick="toggleFaq(this.parentElement)"><span>איך אני יודע שזה לא עוד תהליך אסטרטגי תיאורטי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-2" role="region"><p>כי אתה לא יוצא מפה עם רעיונות. אתה יוצא עם נכסים שאפשר להפעיל מחר: מסמך DNA, שלד שיטה, מפת תוכן. אי אפשר לבנות גורד שחקים מתיאוריות, צריך יציקות בטון.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-3" onclick="toggleFaq(this.parentElement)"><span>אני לא כריזמטי ולא רוצה להיות "אושיית רשת", זה מתאים לי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-3" role="region"><p>מותג זה לא הופעה, מותג זה עמדה מקצועית וסמכות. רוב הלקוחות שלי לא רוצים להיות בפרונט בצורה רועשת, הם רוצים שהמקצועיות שלהם תדבר. בשביל זה צריך מנגנון.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-4" onclick="toggleFaq(this.parentElement)"><span>מה אם זה לא הזמן הנכון מבחינה כלכלית?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-4" role="region"><p>השאלה היא כמה עולה לך להמשיך בלי יסודות? עוד קמפיין שלא ממיר, עוד לקוחות שבורחים למתחרה זול. השאלה היא אם אתה יכול להרשות לעצמך להמשיך להפסיד את הלקוחות שאתה באמת שווה. ואם אתה לא בטוח שזה מתאים לך, בדיוק בשביל זה יש שיחת התאמה. אם אין התאמה, אני אגיד לך הכי ישיר שיש. אני לא מחפש למלא אולמות.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-5" onclick="toggleFaq(this.parentElement)"><span>כמה זמן זה דורש ממני בפועל (ואם אני עמוס)?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-5" role="region"><p>מפגש קבוצתי אחת לשבועיים, ועוד כ-3 שעות שבועיות ליישום. התהליך לא מוסיף עומס לטווח הארוך, הוא מנקה אותו, כי אתה מפסיק לנחש כל בוקר מה לעשות.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-6" onclick="toggleFaq(this.parentElement)"><span>איך אני יודע שזה יעבוד דווקא בתחום שלי ולמה משולב?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-6" role="region"><p>התהליך בנוי עליך כבן אדם וכמומחה, לא על נישה. המודל משולב כי קבוצה נותנת אנרגיה ומראה, אבל הפיצוח הכירורגי קורה רק בארבע עיניים איתי.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-a-7" onclick="toggleFaq(this.parentElement)"><span>אני לא טכנולוגי, ה-AI ילחיץ אותי?</span><span class="faq-icon">+</span></button><div class="faq-a" id="faq-a-7" role="region"><p>להפך. ה-AI מוריד ממך עבודה שחורה, אנחנו מגדירים אותו יחד, וכשנסיים יהיה לך שותף אסטרטגי מאומן על ה-DNA שלך.</p></div></div>
     </div>
   </div>
 </section>
@@ -1778,13 +1790,16 @@ document.querySelectorAll('section:not(.hero)').forEach(function(sec){
 gsap.from('.vsl-video',{scale:0.96,opacity:0,duration:1,delay:0.15,ease:'power3.out',scrollTrigger:{trigger:'.vsl-video',start:'top 80%'}});
 
 // Steps rows — staggered reveal (entry only)
-gsap.from('.step-row',{y:24,opacity:0,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.steps-timeline',start:'top 80%'}});
+gsap.fromTo('.step-row',{y:24,opacity:0},{y:0,opacity:1,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.steps-timeline',start:'top 80%'}});
 
 // Comparison rows — staggered reveal (entry only)
-gsap.from('.compare-row',{y:20,opacity:0,duration:0.6,stagger:0.1,scrollTrigger:{trigger:'.compare-rows',start:'top 80%'}});
+gsap.fromTo('.compare-row',{y:20,opacity:0},{y:0,opacity:1,duration:0.6,stagger:0.1,scrollTrigger:{trigger:'.compare-rows',start:'top 80%'}});
 
 // Transformation cards — staggered reveal
 gsap.from('.transform-card',{y:30,opacity:0,duration:0.7,stagger:0.15,scrollTrigger:{trigger:'.transform-grid',start:'top 80%'}});
+
+// Filter cards — staggered reveal (entry only)
+gsap.fromTo('.filter-card',{y:24,opacity:0},{y:0,opacity:function(i,el){return el.classList.contains('filter-no')?0.45:1},duration:0.7,stagger:0.15,scrollTrigger:{trigger:'.filter-grid',start:'top 80%'}});
 
 // Transform card glow on scroll focus (class-based to avoid inline style conflicts)
 document.querySelectorAll('.transform-card').forEach(function(card){
@@ -1881,7 +1896,7 @@ document.querySelectorAll('.process-highlight .stat').forEach(function(el){
 });
 
 // Deliverables layers — staggered reveal (entry only)
-gsap.from('.deliverables-layer',{y:24,opacity:0,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.deliverables-hero',start:'top 80%'}});
+gsap.fromTo('.deliverables-layer',{y:24,opacity:0},{y:0,opacity:1,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.deliverables-hero',start:'top 80%'}});
 
 </script>
 <a href="accessibility.html" class="accessibility-fab" aria-label="מעבר להצהרת נגישות">נגישות</a>
