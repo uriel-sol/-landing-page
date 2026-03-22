@@ -257,7 +257,7 @@ radial-gradient(500px 220px at 50% 115%,rgba(120,55,140,0.10),transparent 72%)}
 .process-section{background:var(--black)}
 .process-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;margin:40px 0}
 .process-card{border-radius:20px;padding:42px;position:relative;transition:transform 0.4s var(--ease-structural)}
-.process-card--group{opacity:0.85}
+.process-card--group{opacity:1}
 .process-card--premium{border:1px solid rgba(143,47,160,0.25)!important;box-shadow:0 8px 32px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.08);transform:scale(1.02)}
 .process-card--premium::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(143,47,160,0.4),transparent);border-radius:20px 20px 0 0;pointer-events:none}
 .process-card h3{font-size:22px}
@@ -302,7 +302,7 @@ radial-gradient(500px 220px at 50% 115%,rgba(120,55,140,0.10),transparent 72%)}
 .deliverables-hero p{font-size:16px;color:#555;line-height:1.7}
 /* Layer labels */
 .deliverables-layer{margin-top:36px}
-.deliverables-layer-label{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(143,47,160,0.55);margin-bottom:16px;padding-right:4px}
+.deliverables-layer-label{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(101,33,115,0.85);margin-bottom:16px;padding-right:4px}
 /* Cards grid per layer */
 .deliverables-layer-grid{display:grid;gap:20px}
 .deliverables-layer-grid--3{grid-template-columns:repeat(3,1fr)}
@@ -948,6 +948,7 @@ h3{font-size:clamp(16px,4vw,20px)}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
+  .step-row,.compare-row,.deliverables-layer,.transform-card{opacity:1!important;transform:none!important}
   .hero-figure img{animation:none}
   .authority-logo{animation:none}
   .consent-banner.visible{animation:none;transform:translateY(0)}
@@ -1091,7 +1092,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="sub-text reveal reveal-delay-1">אנחנו לא מנסים דברים, אלא בונים נכסים לפי סדר ברור.</p>
     </div>
     <div class="steps-timeline">
-      <div class="step-row reveal">
+      <div class="step-row">
         <div class="step-row-number">01</div>
         <div class="step-row-icon"><img src="assets/icons/icon-dna.png" alt="פיצוח ה-DNA" loading="lazy"></div>
         <div class="step-row-content">
@@ -1099,7 +1100,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>אנחנו מגלים מה באמת מבדל אותך מכולם, וזה הופך לבסיס שעליו העסק, התוכן והמסרים שלך יושבים. אתה מפסיק לגמגם מול השאלה "אז מה אתה עושה" ויש לך תשובה אחת שגורמת לאנשים לעצור ולהקשיב.</p>
         </div>
       </div>
-      <div class="step-row reveal">
+      <div class="step-row">
         <div class="step-row-number">02</div>
         <div class="step-row-icon"><img src="assets/icons/icon-method.png" alt="אריזת הייחודיות לשיטה" loading="lazy"></div>
         <div class="step-row-content">
@@ -1107,7 +1108,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>אנחנו לוקחים את מה שזיקקנו והופכים אותו לשיטה ברורה שאפשר להסביר, למכור ולהעביר. הידע שלך מקבל מבנה, ואתה מפסיק להרגיש כמו ספק שירות שאפשר להחליף, ומתחיל להיות הדמות שאנשים רוצים לעבוד דווקא איתה.</p>
         </div>
       </div>
-      <div class="step-row reveal">
+      <div class="step-row">
         <div class="step-row-number">03</div>
         <div class="step-row-icon"><img src="assets/icons/icon-magnetic-demand.png" alt="מנגנון הביקוש וההשפעה" loading="lazy"></div>
         <div class="step-row-content">
@@ -1149,7 +1150,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="text-align:right;padding-right:32px"><span style="font-size:13px;font-weight:600;color:rgba(143,47,160,0.6);letter-spacing:0.8px;text-transform:uppercase">מה קורה פה</span></div>
     </div>
     <div class="compare-rows">
-      <div class="compare-row reveal">
+      <div class="compare-row">
         <div class="compare-row-tried">
           <span class="compare-row-title">יועץ עסקי</span>
           <p>נתן לך "תעלה מחיר ותשווק יותר" בלי לשאול מי אתה ומה הערך שלך.</p>
@@ -1159,7 +1160,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>בונים את ה-DNA והמיצוב שעליהם כל המנגנון יושב.</p>
         </div>
       </div>
-      <div class="compare-row reveal">
+      <div class="compare-row">
         <div class="compare-row-tried">
           <span class="compare-row-title">קורסים לשיווק</span>
           <p>קיבלת ידע שלא יישמת כי לא היה לך "למה" או "מי" לפני הטקטיקה.</p>
@@ -1169,7 +1170,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>בונים יסודות קודם ויוצאים עם נכסים ולא עם שיעורי בית.</p>
         </div>
       </div>
-      <div class="compare-row reveal">
+      <div class="compare-row">
         <div class="compare-row-tried">
           <span class="compare-row-title">קמפיינר</span>
           <p>לידים קרים, "כמה זה עולה" בהודעה ראשונה והשוואות למתחרים.</p>
@@ -1179,7 +1180,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>מסרים שמביאים לקוחות שכבר מבינים את הערך לפני השיחה.</p>
         </div>
       </div>
-      <div class="compare-row reveal">
+      <div class="compare-row">
         <div class="compare-row-tried">
           <span class="compare-row-title">רילס ויראליים</span>
           <p>עוקבים בלי פניות כי לא היה מסר ברור מאחורי החשיפה.</p>
@@ -1189,7 +1190,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>קו תוכן אסטרטגי שבונה סמכות ומוביל לפניות, לא רק לצפיות.</p>
         </div>
       </div>
-      <div class="compare-row reveal">
+      <div class="compare-row">
         <div class="compare-row-tried">
           <span class="compare-row-title">ניסית לבד</span>
           <p>שעות על תוכן שלא זז וכל פוסט הוא מאבק על מה להגיד.</p>
@@ -1217,7 +1218,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <!-- Layer 1: Foundations -->
-    <div class="deliverables-layer reveal">
+    <div class="deliverables-layer">
       <div class="deliverables-layer-label">יסודות</div>
       <div class="deliverables-layer-grid deliverables-layer-grid--3">
         <div class="deliver-card"><h3>מסמך DNA עסקי</h3><p>תשובה חדה לשאלה מי אתה, מה הערך שלך ולמה דווקא אתה ולא המתחרה שלך.</p><div class="mockup-frame"><img src="assets/images/mockup-dna.png" alt="מסמך DNA עסקי" loading="lazy"></div></div>
@@ -1227,7 +1228,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <!-- Layer 2: Architecture -->
-    <div class="deliverables-layer reveal">
+    <div class="deliverables-layer">
       <div class="deliverables-layer-label">ארכיטקטורה</div>
       <div class="deliverables-layer-grid deliverables-layer-grid--2">
         <div class="deliver-card deliver-card--compact"><h3>מערכת הפעלה למותג</h3><p>הופכים את ה DNA שלך למערכת ברורה שעובדת בכל מקום שהלקוח פוגש אותך, מהפוסט הראשון ועד הסגירה.</p></div>
@@ -1236,7 +1237,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <!-- Layer 3: Engine -->
-    <div class="deliverables-layer reveal">
+    <div class="deliverables-layer">
       <div class="deliverables-layer-label">מנוע</div>
       <div class="deliverables-layer-grid deliverables-layer-grid--3">
         <div class="deliver-card deliver-card--compact"><h3>מערכת המרות</h3><p>מסלול ברור שלוקח בן אדם שלא מכיר אותך לנקודה שבה הוא מוכן לדבר איתך, עם תסריטים מוכנים ופרופיל שעובד בשבילך.</p></div>
@@ -1778,10 +1779,10 @@ document.querySelectorAll('section:not(.hero)').forEach(function(sec){
 gsap.from('.vsl-video',{scale:0.96,opacity:0,duration:1,delay:0.15,ease:'power3.out',scrollTrigger:{trigger:'.vsl-video',start:'top 80%'}});
 
 // Steps rows — staggered reveal (entry only)
-gsap.from('.step-row',{y:24,opacity:0,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.steps-timeline',start:'top 80%'}});
+gsap.fromTo('.step-row',{y:24,opacity:0},{y:0,opacity:1,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.steps-timeline',start:'top 80%'}});
 
 // Comparison rows — staggered reveal (entry only)
-gsap.from('.compare-row',{y:20,opacity:0,duration:0.6,stagger:0.1,scrollTrigger:{trigger:'.compare-rows',start:'top 80%'}});
+gsap.fromTo('.compare-row',{y:20,opacity:0},{y:0,opacity:1,duration:0.6,stagger:0.1,scrollTrigger:{trigger:'.compare-rows',start:'top 80%'}});
 
 // Transformation cards — staggered reveal
 gsap.from('.transform-card',{y:30,opacity:0,duration:0.7,stagger:0.15,scrollTrigger:{trigger:'.transform-grid',start:'top 80%'}});
@@ -1881,7 +1882,7 @@ document.querySelectorAll('.process-highlight .stat').forEach(function(el){
 });
 
 // Deliverables layers — staggered reveal (entry only)
-gsap.from('.deliverables-layer',{y:24,opacity:0,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.deliverables-hero',start:'top 80%'}});
+gsap.fromTo('.deliverables-layer',{y:24,opacity:0},{y:0,opacity:1,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.deliverables-hero',start:'top 80%'}});
 
 </script>
 <a href="accessibility.html" class="accessibility-fab" aria-label="מעבר להצהרת נגישות">נגישות</a>
