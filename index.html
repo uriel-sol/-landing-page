@@ -430,9 +430,9 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .testimonial-grid{columns:3;column-gap:20px;max-width:1100px;margin:0 auto}
 .testimonial-grid .testimonial-card{break-inside:avoid;margin-bottom:20px;display:inline-block;width:100%}
 
-/* Grid wrap with fade overlay */
-.testimonial-grid-wrap{position:relative}
-.testimonial-grid-fade{position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,transparent,var(--black));pointer-events:none;z-index:2;transition:opacity 0.5s ease}
+/* Featured wrap with fade overlay */
+.testimonial-featured-wrap{position:relative}
+.testimonial-grid-fade{position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to bottom,transparent 0%,rgba(8,8,10,0.3) 30%,rgba(8,8,10,0.7) 60%,var(--black) 100%);pointer-events:none;z-index:2;transition:opacity 0.5s ease}
 .testimonial-grid-fade.is-hidden{opacity:0}
 
 /* More testimonials — hidden by default */
@@ -441,10 +441,15 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .testimonial-more{columns:3;column-gap:20px;max-width:1100px;margin:0 auto}
 .testimonial-more .testimonial-card{break-inside:avoid;margin-bottom:20px;display:inline-block;width:100%}
 
-/* Expand button */
+/* Neon spin keyframes */
+@keyframes neon-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+/* Expand button — black glass + rotating neon border */
 .testimonial-expand-wrap{text-align:center;margin-top:40px}
-.testimonial-expand-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;border:1px solid rgba(255,255,255,0.12);border-radius:50px;background:rgba(255,255,255,0.04);color:var(--white);font-family:var(--font);font-size:15px;font-weight:600;cursor:pointer;transition:background 0.3s,border-color 0.3s,transform 0.3s}
-.testimonial-expand-btn:hover{background:rgba(255,255,255,0.08);border-color:rgba(143,47,160,0.3);transform:translateY(-1px)}
+.testimonial-expand-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;border:none;border-radius:50px;background:transparent;color:var(--white);font-family:var(--font);font-size:15px;font-weight:600;cursor:pointer;position:relative;overflow:hidden;z-index:0;transition:transform 0.3s,box-shadow 0.3s}
+.testimonial-expand-btn::before{content:'';position:absolute;inset:-2px;background:conic-gradient(from 0deg,#8f2fa0,#b159c1,transparent 40%,transparent 60%,#b159c1,#8f2fa0);border-radius:50px;animation:neon-spin 3s linear infinite;z-index:-2}
+.testimonial-expand-btn::after{content:'';position:absolute;inset:1.5px;background:rgba(0,0,0,0.35);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:50px;z-index:-1}
+.testimonial-expand-btn:hover{transform:translateY(-1px);box-shadow:0 0 20px rgba(143,47,160,0.25)}
 .testimonial-expand-btn .arrow{display:inline-block;transition:transform 0.4s ease;font-size:18px}
 .testimonial-expand-btn.is-open .arrow{transform:rotate(180deg)}
 
@@ -1475,24 +1480,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="reveal text-center">אל תקשיבו לי, <span class="highlight">תראו מה הם כותבים</span></h2>
     <p class="section-subtitle reveal">צילומי מסך אמיתיים מהשטח. בלי עריכה, בלי פילטר.</p>
 
-    <!-- Featured testimonials — editorial cluster: 2 stacked left + 1 tall right -->
-    <div class="testimonial-featured reveal">
-      <div class="testimonial-featured-stack">
-        <div class="testimonial-card testimonial-card--feature"><img src="assets/images/testimonial-feature-01.png" alt="עדות מובילה — 47,000 ש״ח" loading="lazy"></div>
-        <div class="testimonial-card testimonial-card--feature"><img src="assets/images/testimonial-grid-05.png" alt="עדות מובילה — הכפלת הכנסות" loading="lazy"></div>
-      </div>
-      <div class="testimonial-card testimonial-card--feature"><img src="assets/images/testimonial-grid-06.png" alt="עדות מובילה — הזמנות" loading="lazy"></div>
-    </div>
-
-    <!-- Main grid — first 6 visible -->
-    <div class="testimonial-grid-wrap">
-      <div class="testimonial-grid">
-        <div class="testimonial-card"><img src="assets/images/testimonial-feature-02.png" alt="עדות" loading="lazy"></div>
-        <div class="testimonial-card"><img src="assets/images/testimonial-grid-01.png" alt="עדות" loading="lazy"></div>
-        <div class="testimonial-card"><img src="assets/images/testimonial-grid-02.png" alt="עדות" loading="lazy"></div>
-        <div class="testimonial-card"><img src="assets/images/testimonial-grid-03.png" alt="עדות" loading="lazy"></div>
-        <div class="testimonial-card"><img src="assets/images/testimonial-grid-04.png" alt="עדות" loading="lazy"></div>
-        <div class="testimonial-card"><img src="assets/images/testimonial-grid-07.png" alt="עדות" loading="lazy"></div>
+    <!-- Featured testimonials — 3 visible on load -->
+    <div class="testimonial-featured-wrap">
+      <div class="testimonial-featured reveal">
+        <div class="testimonial-featured-stack">
+          <div class="testimonial-card testimonial-card--feature"><img src="assets/images/testimonial-feature-01.png" alt="עדות מובילה — 47,000 ש״ח" loading="lazy"></div>
+          <div class="testimonial-card testimonial-card--feature"><img src="assets/images/testimonial-grid-05.png" alt="עדות מובילה — הכפלת הכנסות" loading="lazy"></div>
+        </div>
+        <div class="testimonial-card testimonial-card--feature"><img src="assets/images/testimonial-grid-06.png" alt="עדות מובילה — הזמנות" loading="lazy"></div>
       </div>
       <div class="testimonial-grid-fade" id="testimonialGridFade"></div>
     </div>
@@ -1500,14 +1495,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Expand button -->
     <div class="testimonial-expand-wrap">
       <button class="testimonial-expand-btn" id="testimonialExpandBtn" onclick="toggleMoreTestimonials()">
-        <span class="btn-text">עוד עדויות</span>
+        <span class="btn-text">יש עוד עדויות</span>
         <span class="arrow">&#x25BC;</span>
       </button>
     </div>
 
-    <!-- More testimonials — revealed on click -->
+    <!-- More testimonials — revealed on click (6 grid + 8 extra) -->
     <div class="testimonial-more-wrap" id="testimonialMoreWrap">
       <div class="testimonial-more">
+        <div class="testimonial-card"><img src="assets/images/testimonial-feature-02.png" alt="עדות" loading="lazy"></div>
+        <div class="testimonial-card"><img src="assets/images/testimonial-grid-01.png" alt="עדות" loading="lazy"></div>
+        <div class="testimonial-card"><img src="assets/images/testimonial-grid-02.png" alt="עדות" loading="lazy"></div>
+        <div class="testimonial-card"><img src="assets/images/testimonial-grid-03.png" alt="עדות" loading="lazy"></div>
+        <div class="testimonial-card"><img src="assets/images/testimonial-grid-04.png" alt="עדות" loading="lazy"></div>
+        <div class="testimonial-card"><img src="assets/images/testimonial-grid-07.png" alt="עדות" loading="lazy"></div>
         <div class="testimonial-card"><img src="assets/images/testimonial-grid-08.png" alt="עדות" loading="lazy"></div>
         <div class="testimonial-card"><img src="assets/images/testimonial-grid-09.png" alt="עדות" loading="lazy"></div>
         <div class="testimonial-card"><img src="assets/images/testimonial-grid-10.png" alt="עדות" loading="lazy"></div>
@@ -1912,7 +1913,7 @@ function toggleMoreTestimonials(){
   const isOpen=wrap.classList.toggle('is-open');
   btn.classList.toggle('is-open',isOpen);
   fade.classList.toggle('is-hidden',isOpen);
-  btn.querySelector('.btn-text').textContent=isOpen?'הסתר עדויות':'לעוד עדויות';
+  btn.querySelector('.btn-text').textContent=isOpen?'הסתר עדויות':'יש עוד עדויות';
   if(isOpen){
     wrap.querySelectorAll('.testimonial-card').forEach((el,i)=>{el.style.transitionDelay=i*0.08+'s';cardObserver.observe(el)});
   }
