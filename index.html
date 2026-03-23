@@ -421,6 +421,7 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .testimonial-card img{width:100%;display:block;border-radius:10px}
 .testimonial-card--feature{padding:8px}
 .testimonial-card--feature img{border-radius:11px}
+.testimonial-featured-stack{display:flex;flex-direction:column;gap:24px}
 
 /* Grid testimonials — editorial masonry */
 .testimonial-grid{columns:3;column-gap:20px;max-width:1100px;margin:0 auto}
@@ -706,6 +707,7 @@ section{padding:80px 20px}
 .filter-grid{grid-template-columns:1fr}
 /* Testimonial wall mobile */
 .testimonial-featured{grid-template-columns:1fr;gap:16px;max-width:400px}
+.testimonial-featured-stack{gap:16px}
 .testimonial-grid{columns:2;column-gap:14px}
 .testimonial-more{columns:2;column-gap:14px}
 /* Comparison rows stack on mobile */
@@ -1464,10 +1466,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="reveal text-center">אל תקשיבו לי, <span class="highlight">תראו מה הם כותבים</span></h2>
     <p class="section-subtitle reveal">צילומי מסך אמיתיים מהשטח. בלי עריכה, בלי פילטר.</p>
 
-    <!-- Featured 2 testimonials -->
+    <!-- Featured testimonials — 1 left + 2 stacked right -->
     <div class="testimonial-featured reveal">
       <div class="testimonial-card testimonial-card--feature"><img src="assets/images/testimonial-feature-01.png" alt="עדות מובילה" loading="lazy"></div>
-      <div class="testimonial-card testimonial-card--feature"><img src="assets/images/testimonial-feature-02.png" alt="עדות מובילה" loading="lazy"></div>
+      <div class="testimonial-featured-stack">
+        <div class="testimonial-card testimonial-card--feature"><img src="assets/images/testimonial-feature-02.png" alt="עדות מובילה" loading="lazy"></div>
+        <div class="testimonial-card testimonial-card--feature"><img src="assets/images/testimonial-grid-06.png" alt="עדות מובילה" loading="lazy"></div>
+      </div>
     </div>
 
     <!-- Main grid — editorial masonry -->
@@ -1477,7 +1482,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="testimonial-card"><img src="assets/images/testimonial-grid-03.png" alt="עדות" loading="lazy"></div>
       <div class="testimonial-card"><img src="assets/images/testimonial-grid-04.png" alt="עדות" loading="lazy"></div>
       <div class="testimonial-card"><img src="assets/images/testimonial-grid-05.png" alt="עדות" loading="lazy"></div>
-      <div class="testimonial-card"><img src="assets/images/testimonial-grid-06.png" alt="עדות" loading="lazy"></div>
       <div class="testimonial-card"><img src="assets/images/testimonial-grid-07.png" alt="עדות" loading="lazy"></div>
       <div class="testimonial-card"><img src="assets/images/testimonial-grid-08.png" alt="עדות" loading="lazy"></div>
       <div class="testimonial-card"><img src="assets/images/testimonial-grid-09.png" alt="עדות" loading="lazy"></div>
