@@ -415,7 +415,7 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .testimonial-wall .section-subtitle{text-align:center;color:var(--white-dim);font-size:16px;margin-top:8px;margin-bottom:48px;line-height:1.7}
 
 /* Featured testimonials — 2 large */
-.testimonial-featured{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:36px;max-width:900px;margin-left:auto;margin-right:auto}
+.testimonial-featured{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:36px;max-width:900px;margin-left:auto;margin-right:auto;align-items:start}
 .testimonial-card{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);box-shadow:0 6px 24px rgba(0,0,0,0.3);background:rgba(18,18,26,0.7);transition:transform 0.4s ease,box-shadow 0.4s ease;padding:6px}
 .testimonial-card:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,0.4)}
 .testimonial-card img{width:100%;display:block;border-radius:10px}
@@ -1489,24 +1489,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="testimonial-card"><img src="assets/images/testimonial-grid-15.png" alt="עדות" loading="lazy"></div>
     </div>
 
-    <!-- More testimonials (hidden until click) -->
+    <!-- More testimonials — will be added when testimonial-more files are uploaded -->
     <div class="testimonial-more-wrap" id="testimonialMoreWrap">
-      <div class="testimonial-more">
-        <div class="testimonial-card"><img src="assets/images/testimonial-more-01.png" alt="עדות נוספת" loading="lazy"></div>
-        <div class="testimonial-card"><img src="assets/images/testimonial-more-02.png" alt="עדות נוספת" loading="lazy"></div>
-        <div class="testimonial-card"><img src="assets/images/testimonial-more-03.png" alt="עדות נוספת" loading="lazy"></div>
-        <div class="testimonial-card"><img src="assets/images/testimonial-more-04.png" alt="עדות נוספת" loading="lazy"></div>
-        <div class="testimonial-card"><img src="assets/images/testimonial-more-05.png" alt="עדות נוספת" loading="lazy"></div>
-        <div class="testimonial-card"><img src="assets/images/testimonial-more-06.png" alt="עדות נוספת" loading="lazy"></div>
-      </div>
-    </div>
-
-    <!-- Expand button -->
-    <div class="testimonial-expand-wrap">
-      <button class="testimonial-expand-btn" id="testimonialExpandBtn" onclick="toggleMoreTestimonials()">
-        <span class="btn-text">לעוד עדויות</span>
-        <span class="arrow">&#9660;</span>
-      </button>
+      <div class="testimonial-more"></div>
     </div>
   </div>
 </section>
