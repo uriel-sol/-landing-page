@@ -256,10 +256,11 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 /* PROCESS */
 .process-section{background:var(--black)}
 .process-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;margin:40px 0}
-.process-card{border-radius:20px;padding:42px;position:relative;transition:transform 0.4s var(--ease-structural)}
+.process-card{border-radius:20px;padding:42px;position:relative}
 .process-card--group{opacity:1}
-.process-card--premium{border:1px solid rgba(143,47,160,0.25)!important;box-shadow:0 8px 32px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.08);transform:scale(1.02)}
-.process-card--premium::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(143,47,160,0.4),transparent);border-radius:20px 20px 0 0;pointer-events:none}
+.process-card--premium{border:1px solid rgba(143,47,160,0.25);box-shadow:0 8px 32px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.08);padding:48px 46px}
+.process-card--premium h3{font-size:24px;font-weight:800}
+.process-card--premium p{font-size:16px}
 .process-card h3{font-size:22px}
 .process-card p{font-size:15px;color:var(--white-dim);line-height:1.8}
 .process-card .card-badge{display:inline-flex;align-items:center;padding:5px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:20px;font-size:12px;font-weight:500;color:#c0c1cc;margin-bottom:16px;letter-spacing:0.3px}
@@ -288,6 +289,28 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .compare-row-tried .compare-row-label{color:rgba(255,255,255,0.35)}
 .compare-row-here .compare-row-label{color:rgba(143,47,160,0.7)}
 .comparison-section .sub-text{color:var(--white-dim)}
+/* Comparison header */
+.compare-rows-header{display:grid;grid-template-columns:1fr 1px 1fr;max-width:900px;margin:40px auto 0;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.compare-header-col{text-align:right}
+.compare-header-col--tried{padding-left:32px}
+.compare-header-col--here{padding-right:32px}
+.compare-header-label{font-size:13px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase}
+.compare-header-label--tried{color:rgba(255,255,255,0.4)}
+.compare-header-label--here{color:rgba(143,47,160,0.6)}
+.compare-header-divider{width:1px;background:rgba(143,47,160,0.2);margin:0 auto}
+/* Why section heading override */
+.why-section h2{grid-column:1/-1;margin-bottom:32px}
+/* Final CTA inline replacements */
+.final-cta-body{max-width:780px}
+.final-cta-lead{font-size:18px;line-height:1.9;color:var(--white-dim)}
+.final-cta-quote{font-size:20px;font-weight:700;color:var(--white);line-height:1.7;border-right:3px solid rgba(143,47,160,0.4);padding-right:20px}
+.final-cta-bottom{max-width:600px}
+/* Tech item icon inline replacement */
+.tech-item-icon{height:18px;width:18px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px}
+/* Card badge icon */
+.card-badge-icon{height:20px;width:20px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px}
+/* SVG hidden defs */
+.svg-defs{position:absolute}
 
 /* DELIVERABLES — WHITE SECTION */
 .deliverables-section{background:#fafafa;position:relative;overflow:hidden}
@@ -296,11 +319,9 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .deliverables-section .container>h2{text-align:center;max-width:900px;margin-left:auto;margin-right:auto;color:#111}
 .deliverables-section .highlight{color:var(--core)}
 .deliverables-section .sub-text{color:#555}
-/* Central object */
-.deliverables-hero{text-align:center;margin:40px auto 48px;max-width:600px}
-.deliverables-hero-icon{width:72px;height:72px;margin:0 auto 20px;border-radius:50%;background:linear-gradient(135deg,rgba(143,47,160,0.1),rgba(143,47,160,0.04));border:1px solid rgba(143,47,160,0.15);display:flex;align-items:center;justify-content:center;box-shadow:0 0 100px rgba(120,55,140,0.08)}
-.deliverables-hero-icon svg{width:32px;height:32px;stroke:var(--core);fill:none;stroke-width:1.5}
-.deliverables-hero p{font-size:16px;color:#555;line-height:1.7}
+/* Deliverables intro text */
+.deliverables-intro{text-align:center;margin:32px auto 40px;max-width:600px}
+.deliverables-intro p{font-size:16px;color:#555;line-height:1.7}
 /* Layer labels */
 .deliverables-layer{margin-top:36px}
 .deliverables-layer-label{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(101,33,115,0.85);margin-bottom:16px;padding-right:4px}
@@ -598,7 +619,7 @@ section{padding:80px 20px}
 .faq-a p{font-size:14px}
 /* Deliverables tablet: smaller padding */
 .deliver-card{padding:20px 16px}
-.deliverables-hero{margin:28px auto 36px}
+.deliverables-intro{margin:28px auto 36px}
 /* Marquee */
 .screenshots-grid{grid-template-columns:repeat(3,1fr);gap:16px}
 /* carousel removed — using grid */
@@ -644,14 +665,13 @@ section{padding:80px 20px}
 .step-row-content h3{font-size:17px}
 .steps-timeline-line{right:47px;transform:none;transform-origin:top center;scale:1 0}
 .process-grid{grid-template-columns:1fr}
-.process-card--premium{transform:scale(1)!important}
+.process-card--premium{padding:28px 20px}
 .navbar-logo img{height:44px}
 .deliverables-layer-grid--3{grid-template-columns:repeat(2,1fr);gap:12px}
 .deliverables-layer-grid--2{grid-template-columns:1fr}
 .deliver-card{padding:18px 14px}
 .deliver-card .mockup-frame{display:none}
-.deliverables-hero{margin:24px auto 32px}
-.deliverables-hero-icon{width:60px;height:60px}
+.deliverables-intro{margin:24px auto 32px}
 .videos-grid{grid-template-columns:repeat(2,1fr);gap:16px}
 .story-grid{grid-template-columns:1fr}
 .story-image{text-align:center;position:relative;top:auto}
@@ -718,6 +738,18 @@ body{padding-bottom:70px}
 .compare-row.in-view .compare-row-here{border-color:rgba(143,47,160,0.55);box-shadow:0 0 24px rgba(143,47,160,0.08);background:rgba(143,47,160,0.07)}
 /* === FIX 3: Hero glow — stronger on mobile === */
 .hero-figure-glow{width:min(460px,95vw);height:500px;filter:blur(80px);max-width:100vw;background:radial-gradient(ellipse 75% 65% at 50% 50%,rgba(130,50,155,0.34),rgba(120,55,140,0.15) 50%,transparent 80%)}
+/* Accessibility fab */
+.accessibility-fab{left:12px;bottom:12px;font-size:13px;padding:9px 12px}
+/* Consent banner */
+.consent-banner{padding:16px 18px}
+.consent-banner-inner{flex-direction:column;text-align:center}
+.consent-banner-actions{justify-content:center}
+.consent-banner-text{font-size:12px;min-width:auto}
+.consent-modal-box{padding:28px 20px}
+/* iOS input zoom fix */
+.modal-form input,.form-select{font-size:16px}
+.navbar{backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3)}
+.navbar.scrolled{backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5)}
 }
 
 /* ===== RESPONSIVE — MOBILE ONLY (up to 480px) ===== */
@@ -903,14 +935,6 @@ h2{margin-bottom:20px}
   box-shadow:0 10px 24px rgba(0,0,0,0.28),0 0 0 3px rgba(143,47,160,0.16);
   outline:none;
 }
-@media (max-width:768px){
-  .accessibility-fab{
-    left:12px;
-    bottom:12px;
-    font-size:13px;
-    padding:9px 12px;
-  }
-}
 /* CONSENT BANNER */
 .consent-banner{
   position:fixed;bottom:0;left:0;right:0;z-index:150;
@@ -1006,19 +1030,6 @@ h2{margin-bottom:20px}
 }
 .consent-footer-link{color:rgba(255,255,255,0.35);cursor:pointer;transition:color 0.3s}
 .consent-footer-link:hover{color:#c8c9d6}
-@media(max-width:768px){
-  .consent-banner{padding:16px 18px}
-  .consent-banner-inner{flex-direction:column;text-align:center}
-  .consent-banner-actions{justify-content:center}
-  .consent-banner-text{font-size:12px;min-width:auto}
-  .consent-modal-box{padding:28px 20px}
-}
-/* ===== iOS INPUT ZOOM FIX ===== */
-@media(max-width:768px){
-  .modal-form input,.form-select{font-size:16px}
-  .navbar{backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3)}
-  .navbar.scrolled{backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5)}
-}
 /* ===== SCROLL-FOCUS CLASS (replaces inline styles) ===== */
 .transform-card.scroll-focus{transform:none;border-color:rgba(255,255,255,0.06);box-shadow:none}
 /* ===== PREFERS-REDUCED-MOTION ===== */
@@ -1056,7 +1067,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </svg>
 
 <!-- SVG Gradient Definition (shared) -->
-<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B921CC"/><stop offset="100%" stop-color="#d44de6"/></linearGradient></defs></svg>
+<svg width="0" height="0" class="svg-defs"><defs><linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B921CC"/><stop offset="100%" stop-color="#d44de6"/></linearGradient></defs></svg>
 
 <!-- POPUP MODAL -->
 <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -1149,7 +1160,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- WHY -->
 <section class="why-section" id="why">
   <div class="container">
-    <h2 class="reveal text-center" style="grid-column:1/-1;margin-bottom:32px">ניסית יועצים, קורסים, קמפיינים ותוכן, ועדיין <span class="highlight">אין שיטה שעובדת, אין סדר ואין תוצאות.</span></h2>
+    <h2 class="reveal text-center">ניסית יועצים, קורסים, קמפיינים ותוכן, ועדיין <span class="highlight">אין שיטה שעובדת, אין סדר ואין תוצאות.</span></h2>
     <div class="why-content">
       <div class="why-text">
         <div class="why-callout reveal reveal-delay-1">למה? כי בנית הכל, אבל לא את היסודות.</div>
@@ -1209,8 +1220,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="reveal text-center">לא קורס שצופים בו לבד <span class="highlight">ולא ייעוץ שעולה פי 4.</span></h2>
     <p class="sub-text reveal reveal-delay-1 sub-center-16">אתה יודע מה הבעיה עם קורסים? הם כלליים מדי, והבעיה עם ייעוץ אישי? הוא יקר מדי. אז בניתי מבנה שמשלב את שניהם, קבוצה שנותנת אנרגיה ומראה, ותהליך אישי שנותן דיוק.</p>
     <div class="process-grid">
-      <div class="process-card process-card--group glow-card reveal reveal-delay-2"><div class="card-badge"><img src="assets/icons/icon-group.png" alt="קבוצה" style="height:20px;width:20px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> קבוצה</div><h3>7 מפגשי מאסטרמיינד קבוצתיים לייב</h3><p>אחת לשבועיים, 4 שעות עבודה נטו. כל מפגש בונה חלק אחר במנגנון שלך: מ DNA, דרך שיטה, ועד הפעלה בשטח.</p></div>
-      <div class="process-card process-card--premium glow-card reveal reveal-delay-3"><div class="card-badge"><img src="assets/icons/icon-personal.png" alt="אישי" style="height:20px;width:20px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> אישי</div><h3>3 תהליכים אישיים איתי</h3><p>בנקודות הקריטיות של ההתחלה, האמצע והסוף. אני לא נותן לך לנחש אם עשית נכון, אלא מזקק אותך אישית ומדייק את מה שבנית.</p></div>
+      <div class="process-card process-card--group glow-card reveal reveal-delay-2"><div class="card-badge"><img src="assets/icons/icon-group.png" alt="קבוצה" class="card-badge-icon"> קבוצה</div><h3>7 מפגשי מאסטרמיינד קבוצתיים לייב</h3><p>אחת לשבועיים, 4 שעות עבודה נטו. כל מפגש בונה חלק אחר במנגנון שלך: מ DNA, דרך שיטה, ועד הפעלה בשטח.</p></div>
+      <div class="process-card process-card--premium glow-card reveal reveal-delay-3"><div class="card-badge"><img src="assets/icons/icon-personal.png" alt="אישי" class="card-badge-icon"> אישי</div><h3>3 תהליכים אישיים איתי</h3><p>בנקודות הקריטיות של ההתחלה, האמצע והסוף. אני לא נותן לך לנחש אם עשית נכון, אלא מזקק אותך אישית ומדייק את מה שבנית.</p></div>
     </div>
     <div class="process-highlight glow-card reveal">
       <p>רק שלושת המפגשים האישיים האלו מתומחרים בנפרד ב <span class="stat">15,000 שקל</span>. כאן אתה מקבל אותם כחלק ממבנה שלם שבנוי לייצר לך מסלול ממוקד ותוצאה מדידה לאורך התהליך.</p>
@@ -1226,10 +1237,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="comparison-section" id="comparison">
   <div class="container">
     <h2 class="reveal text-center">אז מה שונה פה ולמה זה <span class="highlight">לא עוד קורס או יועץ?</span></h2>
-    <div class="compare-rows-header reveal" style="display:grid;grid-template-columns:1fr 1px 1fr;max-width:900px;margin:40px auto 0;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.1)">
-      <div style="text-align:right;padding-left:32px"><span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.4);letter-spacing:0.8px;text-transform:uppercase">מה ניסית</span></div>
-      <div style="width:1px;background:rgba(143,47,160,0.2);margin:0 auto"></div>
-      <div style="text-align:right;padding-right:32px"><span style="font-size:13px;font-weight:600;color:rgba(143,47,160,0.6);letter-spacing:0.8px;text-transform:uppercase">מה קורה פה</span></div>
+    <div class="compare-rows-header reveal">
+      <div class="compare-header-col compare-header-col--tried"><span class="compare-header-label compare-header-label--tried">מה ניסית</span></div>
+      <div class="compare-header-divider"></div>
+      <div class="compare-header-col compare-header-col--here"><span class="compare-header-label compare-header-label--here">מה קורה פה</span></div>
     </div>
     <div class="compare-rows">
       <div class="compare-row">
@@ -1296,11 +1307,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="deliverables-section" id="deliverables">
   <div class="container">
     <h2 class="reveal text-center">בסוף 13 שבועות אתה יוצא עם <span class="highlight">מנגנון בנוי,</span> ולא עם מחברת סיכומים.</h2>
-    <!-- Central object -->
-    <div class="deliverables-hero reveal">
-      <div class="deliverables-hero-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-      </div>
+    <div class="deliverables-intro reveal">
       <p>כל מה שתבנה ב-13 שבועות — מסודר בשלוש שכבות, מהיסודות ועד המנוע.</p>
     </div>
 
@@ -1410,10 +1417,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container"><div class="tech-box reveal">
     <p class="section-desc">המסגרת הזו נבנתה כדי שתעבוד ותבנה בפועל, לא כדי שתצפה בהדרכות.</p>
     <div class="tech-grid">
-      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-calendar.png" alt="תאריך" style="height:18px;width:18px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> מחזור #25 בוקר נפתח ב-23/04/2026 | ימי חמישי 10:00–14:00</span></div>
-      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-calendar.png" alt="תאריך" style="height:18px;width:18px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> מחזור #25 ערב נפתח ב-27/04/2026 | ימי שני 17:00–21:00</span></div>
-      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-live.png" alt="לייב" style="height:18px;width:18px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> מפגשים לייב, וההקלטות זמינות לך לכל החיים</span></div>
-      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-group.png" alt="קבוצה" style="height:18px;width:18px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:6px"> עד 15 משתתפים בקבוצה בלבד כדי לשמור על איכות הקבוצה ויחס אישי ממני</span></div>
+      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-calendar.png" alt="תאריך" class="tech-item-icon"> מחזור #25 בוקר נפתח ב-23/04/2026 | ימי חמישי 10:00–14:00</span></div>
+      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-calendar.png" alt="תאריך" class="tech-item-icon"> מחזור #25 ערב נפתח ב-27/04/2026 | ימי שני 17:00–21:00</span></div>
+      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-live.png" alt="לייב" class="tech-item-icon"> מפגשים לייב, וההקלטות זמינות לך לכל החיים</span></div>
+      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-group.png" alt="קבוצה" class="tech-item-icon"> עד 15 משתתפים בקבוצה בלבד כדי לשמור על איכות הקבוצה ויחס אישי ממני</span></div>
     </div>
   </div></div>
 </section>
@@ -1463,17 +1470,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="final-cta-section" id="final">
   <div class="container text-center">
     <h2 class="reveal">החשבונית הסמויה <span class="highlight">שאתה משלם כל חודש</span></h2>
-    <div class="sub-text reveal reveal-delay-1 mx-auto-32" style="max-width:780px">
-      <p style="font-size:18px;line-height:1.9;color:var(--white-dim)">אני אגיד לך את זה הכי ישיר, כל עוד אין לך מיקוד, סדר ויסודות, אתה לא באמת מתקדם. אתה ממשיך לעבוד קשה על מה שלא באמת מקדם את העסק.</p>
-      <p class="mt-16" style="line-height:1.9">וזה לא עוד פוסט שלא עבד או עוד קמפיין שלא הביא פניות. זו תקופה שלמה שעוברת.</p>
-      <p class="mt-16" style="line-height:1.9">ובזמן הזה, אנשים פחות טובים ממך תופסים מקום, לא כי הם טובים יותר, אלא כי הם יודעים להוציא את עצמם נכון.</p>
-      <p class="mt-32" style="font-size:20px;font-weight:700;color:var(--white);line-height:1.7;border-right:3px solid rgba(143,47,160,0.4);padding-right:20px">אז השאלה היא לא אם אתה צריך עוד תוכן או קמפיין. השאלה היא אם הגיע הזמן לבנות את זה נכון מהיסוד.</p>
-      <p class="mt-16" style="line-height:1.9">אתה יכול להמשיך לנסות לבד, או לבנות את זה פעם אחת כמו שצריך.</p>
+    <div class="sub-text reveal reveal-delay-1 mx-auto-32 final-cta-body">
+      <p class="final-cta-lead">אני אגיד לך את זה הכי ישיר, כל עוד אין לך מיקוד, סדר ויסודות, אתה לא באמת מתקדם. אתה ממשיך לעבוד קשה על מה שלא באמת מקדם את העסק.</p>
+      <p class="mt-16">וזה לא עוד פוסט שלא עבד או עוד קמפיין שלא הביא פניות. זו תקופה שלמה שעוברת.</p>
+      <p class="mt-16">ובזמן הזה, אנשים פחות טובים ממך תופסים מקום, לא כי הם טובים יותר, אלא כי הם יודעים להוציא את עצמם נכון.</p>
+      <p class="mt-32 final-cta-quote">אז השאלה היא לא אם אתה צריך עוד תוכן או קמפיין. השאלה היא אם הגיע הזמן לבנות את זה נכון מהיסוד.</p>
+      <p class="mt-16">אתה יכול להמשיך לנסות לבד, או לבנות את זה פעם אחת כמו שצריך.</p>
     </div>
-    <div class="reveal reveal-delay-2" style="margin-top:32px">
+    <div class="reveal reveal-delay-2 mt-32">
       <button class="cta-btn" onclick="openModal()">בוא נעצור את זה עכשיו</button>
     </div>
-    <p class="sub-text reveal mt-32 sub-center" style="max-width:600px">אם הגעת עד לפה, אתה כבר יודע שזה לא עניין של עוד ניסיון. עכשיו זה הזמן להחליט.</p>
+    <p class="sub-text reveal mt-32 sub-center final-cta-bottom">אם הגעת עד לפה, אתה כבר יודע שזה לא עניין של עוד ניסיון. עכשיו זה הזמן להחליט.</p>
     <div class="final-form-separator"></div>
     <div class="final-form reveal reveal-delay-2">
       <form id="bottomForm" onsubmit="return submitBottomForm(event)">
@@ -2014,7 +2021,7 @@ document.querySelectorAll('.process-highlight .stat').forEach(function(el){
 });
 
 // Deliverables layers — staggered reveal (entry only)
-gsap.fromTo('.deliverables-layer',{y:24,opacity:0},{y:0,opacity:1,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.deliverables-hero',start:'top 80%'}});
+gsap.fromTo('.deliverables-layer',{y:24,opacity:0},{y:0,opacity:1,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.deliverables-intro',start:'top 80%'}});
 
 // Final CTA — slightly more pronounced entry (clean, no loop)
 if(!prefersReducedMotion){
