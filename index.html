@@ -278,13 +278,10 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .comparison-section .highlight{color:var(--core)}
 .compare-intro{text-align:center;font-size:17px;color:var(--white-dim);line-height:1.8;max-width:600px;margin:0 auto}
 .flow-list{margin-top:40px;max-width:700px;margin-left:auto;margin-right:auto}
-.flow-item{padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.06);text-align:right;direction:rtl}
-.flow-item:last-child{border-bottom:none}
-.flow-label{font-size:11px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:4px}
-.flow-label--here{color:rgba(143,47,160,0.7);margin-top:14px}
-.flow-title{font-size:16px;font-weight:700;color:var(--white);margin-bottom:2px}
-.flow-text{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.75}
-.flow-text--here{color:var(--white);font-weight:600;font-size:15px}
+.flow-item{padding:28px 0;text-align:right;direction:rtl}
+.flow-title{font-size:17px;font-weight:700;color:var(--white);margin-bottom:6px}
+.flow-pain{font-size:15px;color:rgba(255,255,255,0.45);line-height:1.75;margin-bottom:10px}
+.flow-shift{font-size:15px;color:var(--core-light);font-weight:600;line-height:1.75}
 .compare-closing{text-align:center;max-width:640px;margin:48px auto 0;font-size:17px;color:var(--white-dim);line-height:1.85}
 .compare-closing strong{color:var(--white);font-weight:700}
 /* Why section heading override */
@@ -636,7 +633,7 @@ section{padding:80px 20px}
 /* Padding reductions */
 .step-row{padding:22px 0}
 .process-card{padding:30px 22px}
-.flow-item{padding:20px 0}
+.flow-item{padding:24px 0}
 .tech-box{padding:28px 22px}
 .why-content{grid-template-columns:1fr;gap:24px}
 .why-visual{display:none}
@@ -748,8 +745,8 @@ body{padding-bottom:70px}
 /* === FIX 1: Story-to-filter smooth transition === */
 .story-to-filter-separator{height:0}
 /* === FIX 2: Comparison — small screen refinements === */
-.flow-text{font-size:13px}
-.flow-text--here{font-size:14px}
+.flow-pain{font-size:14px}
+.flow-shift{font-size:14px}
 /* === FIX 3: Hero glow — stronger on mobile === */
 .hero-figure-glow{width:min(460px,95vw);height:500px;filter:blur(80px);max-width:100vw;background:radial-gradient(ellipse 75% 65% at 50% 50%,rgba(130,50,155,0.34),rgba(120,55,140,0.15) 50%,transparent 80%)}
 /* Accessibility fab */
@@ -797,7 +794,7 @@ section{padding:60px 14px}
 .step-row-content h3{font-size:16px;margin-bottom:6px}
 .step-row-content p{font-size:14px}
 .process-card{padding:22px 16px}
-.flow-item{padding:18px 0}
+.flow-item{padding:20px 0}
 .tech-box{padding:20px 14px;max-width:100%}
 .deliver-card{padding:16px 12px}
 /* Font size reductions */
@@ -831,9 +828,9 @@ h3{font-size:clamp(16px,4vw,20px)}
 .process-highlight p{font-size:15px}
 .process-highlight .stat{font-size:17px}
 /* Compare */
-.flow-item{padding:16px 0}
-.flow-text{font-size:13px}
-.flow-text--here{font-size:13px}
+.flow-item{padding:18px 0}
+.flow-pain{font-size:14px}
+.flow-shift{font-size:14px}
 .story-to-filter-separator{height:0}
 /* Filter */
 .filter-card{padding:28px 16px}
@@ -891,7 +888,7 @@ h3{font-size:clamp(16px,4vw,20px)}
 .why-visual{display:none}
 .why-content p{text-align:right}
 .why-callout{text-align:right}
-.flow-text{text-align:right}
+.flow-pain,.flow-shift{text-align:right}
 .process-card p{text-align:right}
 .step-row-content p{text-align:right}
 .filter-item{text-align:right}
@@ -1250,43 +1247,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="flow-list">
       <div class="flow-item reveal">
-        <p class="flow-label">מה ניסית</p>
         <p class="flow-title">יועץ עסקי</p>
-        <p class="flow-text">יצאת עם תוכנית, אבל לא ידעת להסביר למה שמישהו יבחר דווקא בך.</p>
-        <p class="flow-label flow-label--here">מה קורה פה בתהליך</p>
-        <p class="flow-text flow-text--here">סוף סוף ברור לך מה מבדל אותך, ומשם הכל מתחיל להתחבר.</p>
+        <p class="flow-pain">יצאת עם תוכנית, אבל לא ידעת להסביר למה שמישהו יבחר דווקא בך.</p>
+        <p class="flow-shift">סוף סוף ברור לך מה מבדל אותך, ומשם הכל מתחיל להתחבר.</p>
       </div>
 
       <div class="flow-item reveal">
-        <p class="flow-label">מה ניסית</p>
         <p class="flow-title">קורסים לשיווק</p>
-        <p class="flow-text">קיבלת כלים, אבל לא היה ברור איך הם מתחברים למה שאתה עושה ולמי שבאמת צריך אותך.</p>
-        <p class="flow-label flow-label--here">מה קורה פה בתהליך</p>
-        <p class="flow-text flow-text--here">כל כלי נכנס למקום שלו, ויושב על קו אחד ברור שמשאיר אותך ממוקד בכל שלב.</p>
+        <p class="flow-pain">קיבלת כלים, אבל לא היה ברור איך הם מתחברים למה שאתה עושה ולמי שבאמת צריך אותך.</p>
+        <p class="flow-shift">כל כלי נכנס למקום שלו, ויושב על קו אחד ברור שמשאיר אותך ממוקד בכל שלב.</p>
       </div>
 
       <div class="flow-item reveal">
-        <p class="flow-label">מה ניסית</p>
         <p class="flow-title">קמפיינר</p>
-        <p class="flow-text">הרצת מודעות, אבל הן לא חיברו אנשים לערך והפתרון שאתה באמת מביא.</p>
-        <p class="flow-label flow-label--here">מה קורה פה בתהליך</p>
-        <p class="flow-text flow-text--here">השיווק יוצא מתוך המסר, והמסר יוצא מתוך מה שאתה באמת פותר. אנשים ישר מבינים למה זה בשבילם.</p>
+        <p class="flow-pain">הרצת מודעות, אבל הן לא חיברו אנשים לערך והפתרון שאתה באמת מביא.</p>
+        <p class="flow-shift">השיווק יוצא מתוך המסר, והמסר יוצא מתוך מה שאתה באמת פותר. אנשים ישר מבינים למה זה בשבילם.</p>
       </div>
 
       <div class="flow-item reveal">
-        <p class="flow-label">מה ניסית</p>
         <p class="flow-title">רילס ויראליים</p>
-        <p class="flow-text">הבאת צפיות, אבל הן לא הפכו לפניות.</p>
-        <p class="flow-label flow-label--here">מה קורה פה בתהליך</p>
-        <p class="flow-text flow-text--here">התוכן כבר לא עומד לבד. הוא חלק ממערכת שמובילה לפניות.</p>
+        <p class="flow-pain">הבאת צפיות, אבל הן לא הפכו לפניות.</p>
+        <p class="flow-shift">התוכן כבר לא עומד לבד. הוא חלק ממערכת שמובילה לפניות.</p>
       </div>
 
       <div class="flow-item reveal">
-        <p class="flow-label">מה ניסית</p>
         <p class="flow-title">ניסית לבד</p>
-        <p class="flow-text">עשית הכל, אבל כל חלק הלך לכיוון אחר.</p>
-        <p class="flow-label flow-label--here">מה קורה פה בתהליך</p>
-        <p class="flow-text flow-text--here">הכל מתחבר למנגנון אחד. אתה מפסיק לקוות ולנסות, ומתחיל לעבוד עם סדר, שליטה ובהירות.</p>
+        <p class="flow-pain">עשית הכל, אבל כל חלק הלך לכיוון אחר.</p>
+        <p class="flow-shift">הכל מתחבר למנגנון אחד. אתה מפסיק לקוות ולנסות, ומתחיל לעבוד עם סדר, שליטה ובהירות.</p>
       </div>
     </div>
 
