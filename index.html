@@ -138,7 +138,7 @@ section{transition:none;transform-origin:center center}
 .reveal-delay-1{transition-delay:0.12s}.reveal-delay-2{transition-delay:0.24s}.reveal-delay-3{transition-delay:0.36s}.reveal-delay-4{transition-delay:0.48s}
 
 /* FOCUS STATES */
-.cta-btn:focus-visible,.carousel-btn:focus-visible,.modal-close:focus-visible,.faq-q:focus-visible{outline:2px solid var(--purple-main);outline-offset:3px;box-shadow:0 0 0 4px rgba(185,33,204,0.2)}
+.cta-btn:focus-visible,.modal-close:focus-visible,.faq-q:focus-visible{outline:2px solid var(--purple-main);outline-offset:3px;box-shadow:0 0 0 4px rgba(185,33,204,0.2)}
 input:focus-visible,select:focus-visible{outline:2px solid var(--purple-main);outline-offset:1px}
 a:focus-visible{outline:2px solid var(--purple-main);outline-offset:2px;border-radius:4px}
 
@@ -344,11 +344,6 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .transform-card strong{color:var(--white);font-weight:700;display:block;margin-bottom:6px;font-size:17px;line-height:1.6}
 .transform-card p{color:var(--white-dim);font-size:15px;line-height:1.7}
 
-/* VISUAL BREAK / QUOTE */
-.visual-break{padding:60px 24px;text-align:center;background:var(--black)}
-.visual-break .big-number{font-size:clamp(48px,8vw,80px);font-weight:900;color:#d5d6de;line-height:1}
-.visual-break .big-label{font-size:18px;color:var(--white-dim);margin-top:12px}
-.visual-break .quote{font-size:clamp(20px,3vw,28px);font-weight:600;color:var(--white);max-width:700px;margin:0 auto;line-height:1.5}
 
 /* VIDEO TESTIMONIALS */
 .video-testimonials{background:var(--black-light)}
@@ -667,6 +662,7 @@ body{padding-bottom:70px}
 
 /* ===== RESPONSIVE — MOBILE + TABLET SHARED (up to 768px) ===== */
 @media(max-width:768px){
+.navbar .container{justify-content:space-between}
 .nav-hamburger{display:flex}
 .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(8,8,12,0.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:20px 24px;gap:16px;border-bottom:1px solid rgba(255,255,255,0.08)}
 .nav-links.nav-open{display:flex}
@@ -685,7 +681,6 @@ section{padding:80px 20px}
 .hero-focus::after{inset:8px;border-radius:14px}
 .hero-focus .sub-text{font-size:17px;line-height:1.7}
 .hero .cta-btn{min-width:0;width:100%;max-width:360px}
-.hero-form{max-width:100%;margin:32px auto 0}
 .sub-text{margin:0 auto}
 .steps-timeline{max-width:100%}
 .step-row{grid-template-columns:48px 48px 1fr;gap:12px}
@@ -725,7 +720,6 @@ section{padding:80px 20px}
 .split-closing-link{font-size:15px}
 .bonus-box{flex-direction:column;text-align:center}
 /* transform-grid inherits base styles */
-.social-proof{gap:16px}
 .scroll-line-svg{display:none}
 body{padding-bottom:70px}
 /* Padding/spacing reductions */
@@ -1093,7 +1087,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()" aria-label="סגור">&times;</button>
     <img src="logo_final.png" alt="Uriel Sol" class="modal-logo">
-    <div class="modal-title" id="modal-title">בוא נבין ביחד מה תוקע אותך</div>
+    <h2 class="modal-title" id="modal-title" style="margin:0">בוא נבין ביחד מה תוקע אותך</h2>
     <div class="modal-sub">שיחת זום אסטרטגית של 30 עד 60 דקות. נשים הכל על השולחן, בלי שעון מתקתק.</div>
     <form class="modal-form" id="leadForm" onsubmit="return submitForm(event)">
       <input type="text" id="fname" placeholder="שם מלא" required aria-label="שם מלא" />
