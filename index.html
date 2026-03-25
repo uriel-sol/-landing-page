@@ -270,23 +270,25 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .process-highlight p{font-size:16px;color:var(--white-dim);line-height:1.8}
 .process-highlight .stat{font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.5px}
 
-/* COMPARISON — NARRATIVE FLOW */
+/* COMPARISON — SPLIT LAYOUT */
 .comparison-section{background:var(--black);position:relative;overflow:hidden}
 .comparison-section::before{display:none}
 .comparison-section::after{display:none}
 .comparison-section h2{color:var(--white);margin-bottom:24px}
 .comparison-section .highlight{color:var(--core)}
 .compare-intro{text-align:center;font-size:17px;color:var(--white-dim);line-height:1.8;max-width:600px;margin:0 auto}
-.flow-narrative{max-width:620px;margin:48px auto 0;text-align:right;direction:rtl}
-.flow-block{padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
-.flow-block:last-child{border-bottom:none}
-.flow-block h3{font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px}
-.flow-block p{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:0}
-.flow-insight{color:rgba(185,130,210,0.85) !important;font-weight:600;margin-top:6px}
-.flow-summary{text-align:center;max-width:600px;margin:56px auto 0;padding-top:32px;border-top:1px solid rgba(255,255,255,0.06)}
-.flow-summary-lead{font-size:16px;color:var(--white-dim);margin-bottom:8px}
-.flow-summary-core{font-size:18px;font-weight:700;color:var(--white);line-height:1.7;margin-bottom:12px}
-.flow-summary-link{font-size:16px;color:var(--core-light);font-weight:600}
+.split-rows{margin-top:48px;max-width:900px;margin-left:auto;margin-right:auto}
+.split-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:32px 0;border-bottom:1px solid rgba(255,255,255,0.05);direction:rtl;align-items:start}
+.split-row:last-child{border-bottom:none}
+.split-left{text-align:right}
+.split-left h3{font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px}
+.split-left p{font-size:15px;color:rgba(255,255,255,0.5);line-height:1.8}
+.split-right{text-align:right}
+.split-right p{font-size:16px;color:rgba(195,140,220,0.9);font-weight:600;line-height:1.8}
+.split-closing{text-align:center;max-width:600px;margin:64px auto 0}
+.split-closing-lead{font-size:16px;color:var(--white-dim);line-height:1.8;margin-bottom:16px}
+.split-closing-core{font-size:20px;font-weight:700;color:var(--white);line-height:1.6;margin-bottom:16px}
+.split-closing-link{font-size:17px;color:var(--core-light);font-weight:600}
 /* Why section heading override */
 .why-section h2{grid-column:1/-1;margin-bottom:32px}
 /* Final CTA inline replacements */
@@ -625,7 +627,7 @@ section{padding:80px 20px}
 /* Timeline stays single column on tablet */
 .steps-timeline{max-width:100%}
 .process-grid{grid-template-columns:repeat(2,1fr)}
-.flow-narrative{max-width:100%}
+.split-rows{max-width:100%}
 .filter-grid{grid-template-columns:repeat(2,1fr)}
 .deliverables-layer-grid--3{grid-template-columns:repeat(2,1fr)}
 .deliverables-layer-grid--2{grid-template-columns:repeat(2,1fr)}
@@ -636,7 +638,7 @@ section{padding:80px 20px}
 /* Padding reductions */
 .step-row{padding:22px 0}
 .process-card{padding:30px 22px}
-.flow-block{padding:24px 0}
+.split-row{padding:24px 0;gap:32px}
 .tech-box{padding:28px 22px}
 .why-content{grid-template-columns:1fr;gap:24px}
 .why-visual{display:none}
@@ -710,14 +712,15 @@ section{padding:80px 20px}
 .testimonial-featured-stack{gap:16px}
 .testimonial-grid{columns:2;column-gap:14px}
 .testimonial-more{columns:2;column-gap:14px}
-/* Comparison mobile */
+/* Comparison mobile — stack layout */
 .compare-intro{font-size:15px}
-.flow-block{padding:20px 0}
-.flow-block p{font-size:14px}
-.flow-insight{font-size:14px}
-.flow-summary{margin-top:40px;padding-top:24px}
-.flow-summary-core{font-size:16px}
-.flow-summary-link{font-size:15px}
+.split-row{grid-template-columns:1fr;gap:8px;padding:24px 0}
+.split-left h3{font-size:16px}
+.split-left p{font-size:14px}
+.split-right p{font-size:15px}
+.split-closing{margin-top:40px}
+.split-closing-core{font-size:17px}
+.split-closing-link{font-size:15px}
 .bonus-box{flex-direction:column;text-align:center}
 /* transform-grid inherits base styles */
 .social-proof{gap:16px}
@@ -753,8 +756,8 @@ body{padding-bottom:70px}
 /* === FIX 1: Story-to-filter smooth transition === */
 .story-to-filter-separator{height:0}
 /* === FIX 2: Comparison — small screen refinements === */
-.flow-block p{font-size:14px}
-.flow-insight{font-size:14px}
+.split-left p{font-size:14px}
+.split-right p{font-size:14px}
 /* === FIX 3: Hero glow — stronger on mobile === */
 .hero-figure-glow{width:min(460px,95vw);height:500px;filter:blur(80px);max-width:100vw;background:radial-gradient(ellipse 75% 65% at 50% 50%,rgba(130,50,155,0.34),rgba(120,55,140,0.15) 50%,transparent 80%)}
 /* Accessibility fab */
@@ -802,7 +805,7 @@ section{padding:60px 14px}
 .step-row-content h3{font-size:16px;margin-bottom:6px}
 .step-row-content p{font-size:14px}
 .process-card{padding:22px 16px}
-.flow-block{padding:20px 0}
+.split-row{padding:20px 0}
 .tech-box{padding:20px 14px;max-width:100%}
 .deliver-card{padding:16px 12px}
 /* Font size reductions */
@@ -836,9 +839,8 @@ h3{font-size:clamp(16px,4vw,20px)}
 .process-highlight p{font-size:15px}
 .process-highlight .stat{font-size:17px}
 /* Compare */
-.flow-block{padding:18px 0}
-.flow-block p{font-size:14px}
-.flow-insight{font-size:14px}
+.split-row{padding:18px 0}
+.split-left p,.split-right p{font-size:14px}
 .story-to-filter-separator{height:0}
 /* Filter */
 .filter-card{padding:28px 16px}
@@ -896,14 +898,14 @@ h3{font-size:clamp(16px,4vw,20px)}
 .why-visual{display:none}
 .why-content p{text-align:right}
 .why-callout{text-align:right}
-.flow-block p,.flow-insight{text-align:right}
+.split-left p,.split-right p{text-align:right}
 .process-card p{text-align:right}
 .step-row-content p{text-align:right}
 .filter-item{text-align:right}
 /* Comparison mobile weight */
-.flow-block h3{font-size:15px}
-.flow-summary{margin-top:28px;padding-top:20px}
-.flow-summary-core{font-size:15px}
+.split-left h3{font-size:15px}
+.split-closing{margin-top:28px}
+.split-closing-core{font-size:15px}
 /* Quotes mobile — handled in carousel section above */
 /* Deliverables sub-text spacing */
 .deliverables-section .sub-text{margin-top:28px}
@@ -1051,7 +1053,7 @@ h2{margin-bottom:20px}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
-  .step-row,.flow-block,.deliverables-layer,.transform-card,.filter-card{opacity:1!important;transform:none!important}
+  .step-row,.split-row,.deliverables-layer,.transform-card,.filter-card{opacity:1!important;transform:none!important}
   .steps-timeline-line{scale:1 1!important}
   .step-row{opacity:1!important}
   .step-row .step-row-number{color:rgba(185,33,204,0.55)!important}
@@ -1254,42 +1256,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="reveal text-center">ניסית הכל, אבל שום דבר <span class="highlight">לא באמת עבד לאורך זמן</span></h2>
     <p class="compare-intro reveal">הבעיה אף פעם לא הייתה מה עשית, אלא איך הכל יושב ביחד.</p>
 
-    <div class="flow-narrative">
-      <div class="flow-block reveal">
-        <h3>יועץ עסקי</h3>
-        <p>יצאת עם תוכנית, אבל לא ידעת להסביר למה שמישהו יבחר דווקא בך.</p>
-        <p class="flow-insight">סוף סוף ברור לך מה מבדל אותך, ומשם הכל מתחיל להתחבר.</p>
+    <div class="split-rows">
+      <div class="split-row reveal">
+        <div class="split-left">
+          <h3>יועץ עסקי</h3>
+          <p>יצאת עם תוכנית, אבל לא ידעת להסביר למה שמישהו יבחר דווקא בך.</p>
+        </div>
+        <div class="split-right">
+          <p>סוף סוף ברור לך מה מבדל אותך, ומשם הכל מתחיל להתחבר.</p>
+        </div>
       </div>
 
-      <div class="flow-block reveal">
-        <h3>קורסים לשיווק</h3>
-        <p>קיבלת כלים, אבל לא היה ברור איך הם מתחברים למה שאתה עושה ולמי שבאמת צריך אותך.</p>
-        <p class="flow-insight">כל כלי נכנס למקום שלו, ויושב על קו אחד ברור שמשאיר אותך ממוקד בכל שלב.</p>
+      <div class="split-row reveal">
+        <div class="split-left">
+          <h3>קורסים לשיווק</h3>
+          <p>קיבלת כלים, אבל לא היה ברור איך הם מתחברים למה שאתה עושה ולמי שבאמת צריך אותך.</p>
+        </div>
+        <div class="split-right">
+          <p>כל כלי נכנס למקום שלו, ויושב על קו אחד ברור שמשאיר אותך ממוקד בכל שלב.</p>
+        </div>
       </div>
 
-      <div class="flow-block reveal">
-        <h3>קמפיינר</h3>
-        <p>הרצת מודעות, אבל הן לא חיברו אנשים לערך והפתרון שאתה באמת מביא.</p>
-        <p class="flow-insight">השיווק יוצא מתוך המסר, והמסר יוצא מתוך מה שאתה באמת פותר. אנשים ישר מבינים למה זה בשבילם.</p>
+      <div class="split-row reveal">
+        <div class="split-left">
+          <h3>קמפיינר</h3>
+          <p>הרצת מודעות, אבל הן לא חיברו אנשים לערך והפתרון שאתה באמת מביא.</p>
+        </div>
+        <div class="split-right">
+          <p>השיווק יוצא מתוך המסר, והמסר יוצא מתוך מה שאתה באמת פותר, שאנשים ישר מבינים למה זה בשבילם.</p>
+        </div>
       </div>
 
-      <div class="flow-block reveal">
-        <h3>רילס ויראליים</h3>
-        <p>הבאת צפיות, אבל הן לא הפכו לפניות.</p>
-        <p class="flow-insight">התוכן כבר לא עומד לבד. הוא חלק ממערכת שמובילה לפניות.</p>
+      <div class="split-row reveal">
+        <div class="split-left">
+          <h3>רילס ויראליים</h3>
+          <p>הבאת צפיות, אבל הן לא הפכו לפניות.</p>
+        </div>
+        <div class="split-right">
+          <p>התוכן כבר לא עומד לבד. הוא חלק ממערכת שמובילה לפניות.</p>
+        </div>
       </div>
 
-      <div class="flow-block reveal">
-        <h3>ניסית לבד</h3>
-        <p>עשית הכל, אבל כל חלק הלך לכיוון אחר.</p>
-        <p class="flow-insight">הכל מתחבר למנגנון אחד. אתה מפסיק לקוות ולנסות, ומתחיל לעבוד עם סדר, שליטה ובהירות.</p>
+      <div class="split-row reveal">
+        <div class="split-left">
+          <h3>ניסית לבד</h3>
+          <p>עשית הכל, אבל כל חלק הלך לכיוון אחר.</p>
+        </div>
+        <div class="split-right">
+          <p>הכל מתחבר למנגנון אחד. אתה מפסיק לקוות ולנסות, ומתחיל לעבוד עם סדר, שליטה ובהירות.</p>
+        </div>
       </div>
     </div>
 
-    <div class="flow-summary reveal">
-      <p class="flow-summary-lead">בכל הדוגמאות האלה חוזרת אותה בעיה אחת:</p>
-      <p class="flow-summary-core">עשית דברים נכונים, אבל בלי קו מנחה אחד שמחבר את כולם.</p>
-      <p class="flow-summary-link">וזה בדיוק מה שאנחנו בונים ב־13 שבועות.</p>
+    <div class="split-closing reveal">
+      <p class="split-closing-lead">לא חסר לך ערך. לא חסרים לך כלים.<br>חסר לך משהו אחד, שיחבר את כל מה שאתה כבר עושה למערכת שעובדת.</p>
+      <p class="split-closing-core">וזה בדיוק מה שאתה בונה כאן ב־13 שבועות.</p>
     </div>
   </div>
 </section>
@@ -1938,7 +1959,7 @@ gsap.from('.vsl-video',{scale:0.97,opacity:0,duration:0.9,delay:0.1,ease:'power3
 })();
 
 // Comparison rows — staggered reveal (entry only)
-gsap.fromTo('.flow-block',{y:16,opacity:0},{y:0,opacity:1,duration:0.5,stagger:0.1,scrollTrigger:{trigger:'.flow-narrative',start:'top 80%'}});
+gsap.fromTo('.split-row',{y:20,opacity:0},{y:0,opacity:1,duration:0.5,stagger:0.12,scrollTrigger:{trigger:'.split-rows',start:'top 80%'}});
 
 // Story image glow — fade in on scroll
 var storyGlow=document.querySelector('.story-image-glow');
