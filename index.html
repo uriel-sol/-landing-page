@@ -47,12 +47,29 @@ gtag('consent','default',{
             'ad_user_data':'granted',
             'ad_personalization':'granted'
           });
+          if(typeof fbq==='function')fbq('consent','grant');
         }
       }
     }
   }catch(e){}
 })();
 </script>
+<!-- Meta Pixel (respects Consent Mode — ad_storage) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('consent','revoke');
+fbq('init','1510678392731607');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1510678392731607&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1090,13 +1107,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="modal-title" id="modal-title" style="margin:0">בוא נבין ביחד מה תוקע אותך</h2>
     <div class="modal-sub">שיחת זום אסטרטגית של 30 עד 60 דקות. נשים הכל על השולחן, בלי שעון מתקתק.</div>
     <form class="modal-form" id="leadForm" onsubmit="return submitForm(event)">
-      <input type="text" id="fname" placeholder="שם מלא" required aria-label="שם מלא" />
+      <input type="text" id="fname" name="name" placeholder="שם מלא" required aria-label="שם מלא" />
       <div class="error-msg" id="fnameErr">נא להזין שם מלא</div>
-      <input type="email" id="femail" placeholder="אימייל" required aria-label="אימייל" />
+      <input type="email" id="femail" name="email" placeholder="אימייל" required aria-label="אימייל" />
       <div class="error-msg" id="femailErr">נא להזין כתובת מייל תקינה</div>
-      <input type="tel" id="fphone" placeholder="טלפון" required aria-label="טלפון" />
+      <input type="tel" id="fphone" name="phone" placeholder="טלפון" required aria-label="טלפון" />
       <div class="error-msg" id="fphoneErr">נא להזין מספר טלפון תקין</div>
-      <select id="fcycle" class="form-select" required aria-label="בחר מחזור">
+      <select id="fcycle" name="cycle" class="form-select" required aria-label="בחר מחזור">
         <option value="" disabled selected>בחר מחזור מועדף</option>
         <option value="morning-25">מחזור #25 בוקר (נפתח ב-23/04/2026)</option>
         <option value="evening-25">מחזור #25 ערב (נפתח ב-27/04/2026)</option>
@@ -1419,7 +1436,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <h2 class="reveal text-center">רגע לפני שאנחנו מדברים, <span class="highlight">בוא נהיה כנים.</span></h2>
     <div class="filter-grid">
-      <div class="filter-card filter-yes"><h3>זה בול בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">&check;</span> אתה מומחה שכבר יש לו לקוחות וניסיון, ואתה לא מתחיל מאפס.</div><div class="filter-item"><span class="fi-icon">&check;</span> אתה מרגיש שאתה הסוד הכי שמור בתחום שלך ונמאס לך.</div><div class="filter-item"><span class="fi-icon">&check;</span> אתה מוכן לעבוד, ליישם, ולהיות מחויב ל 13 שבועות.</div></div>
+      <div class="filter-card filter-yes"><h3>זה בול בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">&check;</span> אתה מומחה שכבר יש לו לקוחות וניסיון, ואתה לא מתחיל מאפס.</div><div class="filter-item"><span class="fi-icon">&check;</span> אתה מרגיש שאתה הסוד הכי שמור בתחום שלך ונמאס לך.</div><div class="filter-item"><span class="fi-icon">&check;</span> אתה מוכן לעבוד, ליישם, ולהיות מחויב ל-13 שבועות.</div></div>
       <div class="filter-card filter-no"><h3>זה ממש לא בשבילך אם:</h3><div class="filter-item"><span class="fi-icon">&times;</span> אתה מחפש כפתור קסם או ויראליות ריקה.</div><div class="filter-item"><span class="fi-icon">&times;</span> אתה רוצה שמישהו ינהל לך את האינסטגרם במקומך.</div><div class="filter-item"><span class="fi-icon">&times;</span> אתה לא מוכן לעצור ולהסתכל על מה שבאמת תקוע.</div></div>
     </div>
   </div>
@@ -1528,10 +1545,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="final-form-separator"></div>
     <div class="final-form reveal reveal-delay-2">
       <form id="bottomForm" onsubmit="return submitBottomForm(event)">
-        <input type="text" id="bname" placeholder="שם מלא" required aria-label="שם מלא" />
-        <input type="email" id="bemail" placeholder="אימייל" required aria-label="אימייל" />
-        <input type="tel" id="bphone" placeholder="טלפון" required aria-label="טלפון" />
-        <select id="bcycle" class="form-select" required aria-label="בחר מחזור">
+        <input type="text" id="bname" name="name" placeholder="שם מלא" required aria-label="שם מלא" />
+        <div class="error-msg" id="bnameErr">נא להזין שם מלא</div>
+        <input type="email" id="bemail" name="email" placeholder="אימייל" required aria-label="אימייל" />
+        <div class="error-msg" id="bemailErr">נא להזין כתובת מייל תקינה</div>
+        <input type="tel" id="bphone" name="phone" placeholder="טלפון" required aria-label="טלפון" />
+        <div class="error-msg" id="bphoneErr">נא להזין מספר טלפון תקין</div>
+        <select id="bcycle" name="cycle" class="form-select" required aria-label="בחר מחזור">
           <option value="" disabled selected>בחר מחזור מועדף</option>
           <option value="morning-25">מחזור #25 בוקר (נפתח ב-23/04/2026)</option>
           <option value="evening-25">מחזור #25 ערב (נפתח ב-27/04/2026)</option>
@@ -1539,7 +1559,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </select>
         <label class="consent-checkbox"><input type="checkbox" id="bconsent" required /><span>אני מאשר/ת קבלת תוכן רלוונטי ועדכונים מאוריאל סול (ניתן להסיר בכל עת).</span></label>
         <button class="cta-btn" type="submit">הגיע הזמן לעשות את זה נכון</button>
-        <p class="cta-sub cta-sub-center mt-16">התהליך הקרוב מוגבל ל 15 משתתפים בלבד כדי לשמור על איכות הקבוצה והליווי.</p>
+        <p class="cta-sub cta-sub-center mt-16">התהליך הקרוב מוגבל ל-15 משתתפים בלבד כדי לשמור על איכות הקבוצה והליווי.</p>
       </form>
     </div>
   </div>
@@ -1606,6 +1626,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       'ad_user_data':data.marketing?'granted':'denied',
       'ad_personalization':data.marketing?'granted':'denied'
     });
+    if(typeof fbq==='function')fbq('consent',data.marketing?'grant':'revoke');
     dataLayer.push({'event':'consent_update'});
   }
 
@@ -1797,10 +1818,11 @@ function submitBottomForm(e){
   const email=document.getElementById('bemail');
   const phone=document.getElementById('bphone');
   const cycle=document.getElementById('bcycle');
-  [name,email,phone].forEach(i=>i.style.borderColor='');
-  if(name.value.trim().length<2){name.style.borderColor='#f44336';valid=false}
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){email.style.borderColor='#f44336';valid=false}
-  if(!/^\+?\d{9,15}$/.test(phone.value.replace(/[^\d+]/g,''))){phone.style.borderColor='#f44336';valid=false}
+  [name,email,phone].forEach(i=>{i.classList.remove('error');i.style.borderColor=''});
+  document.querySelectorAll('#bottomForm .error-msg').forEach(m=>m.style.display='none');
+  if(name.value.trim().length<2){name.classList.add('error');document.getElementById('bnameErr').style.display='block';valid=false}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){email.classList.add('error');document.getElementById('bemailErr').style.display='block';valid=false}
+  if(!/^\+?\d{9,15}$/.test(phone.value.replace(/[^\d+]/g,''))){phone.classList.add('error');document.getElementById('bphoneErr').style.display='block';valid=false}
   if(!cycle.value){cycle.style.borderColor='#f44336';valid=false}else{cycle.style.borderColor=''}
   var consent=document.getElementById('bconsent');
   if(!consent.checked){consent.parentElement.style.outline='2px solid #f44336';consent.parentElement.style.outlineOffset='2px';valid=false}else{consent.parentElement.style.outline='';consent.parentElement.style.outlineOffset=''}
