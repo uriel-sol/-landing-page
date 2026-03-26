@@ -366,10 +366,16 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 
 /* VIDEO TESTIMONIALS */
 .video-testimonials{background:var(--black-light)}
-.videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
-.video-card{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);transition:border-color 0.35s,transform 0.35s,box-shadow 0.35s}
+.authority-line{text-align:center;font-size:17px;color:var(--white-dim);line-height:1.8;max-width:700px;margin:0 auto 32px}
+.social-carousel{margin:0 auto 40px;max-width:900px;overflow:hidden;position:relative;height:180px}
+.social-carousel-track{display:flex;gap:16px;animation:scrollCarousel 30s linear infinite}
+.social-carousel-track img{height:170px;border-radius:12px;object-fit:cover;flex-shrink:0}
+@keyframes scrollCarousel{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.result-line{text-align:center;font-size:17px;color:var(--white-dim);line-height:1.8;max-width:700px;margin:32px auto 0}
+.videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:40px}
+.video-card{border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);transition:border-color 0.35s,transform 0.35s,box-shadow 0.35s}
 .video-card:hover{border-color:rgba(143,47,160,0.18);box-shadow:0 8px 24px rgba(0,0,0,0.3);transform:translateY(-2px)}
-.video-thumb{position:relative;cursor:pointer;aspect-ratio:16/9;overflow:hidden;background:var(--black-card)}
+.video-thumb{position:relative;cursor:pointer;aspect-ratio:9/16;overflow:hidden;background:var(--black-card)}
 .video-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 0.3s}
 .video-thumb:hover img{transform:scale(1.02)}
 .video-thumb iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
@@ -646,7 +652,7 @@ section{padding:80px 20px}
 .filter-grid{grid-template-columns:repeat(2,1fr)}
 .deliverables-layer-grid--3{grid-template-columns:repeat(2,1fr)}
 .deliverables-layer-grid--2{grid-template-columns:repeat(2,1fr)}
-.videos-grid{grid-template-columns:repeat(2,1fr)}
+.videos-grid{gap:8px}
 /* Story keeps side-by-side but narrower image */
 .story-grid{grid-template-columns:260px 1fr;gap:32px}
 .story-image{position:relative;top:auto}
@@ -717,7 +723,7 @@ section{padding:80px 20px}
 .deliver-card{padding:18px 14px}
 .deliver-card .mockup-frame{display:none}
 .deliverables-intro{margin:24px auto 32px}
-.videos-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+.videos-grid{gap:8px}
 .story-grid{grid-template-columns:1fr}
 .story-image{text-align:center;position:relative;top:auto}
 .story-image img{width:220px;margin:0 auto}
@@ -814,7 +820,7 @@ section{padding:60px 14px}
 .steps-timeline-line{right:39px;transform:none;transform-origin:top center;scale:1 0}
 .process-grid{grid-template-columns:1fr}
 .filter-grid{grid-template-columns:1fr}
-.videos-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+.videos-grid{gap:6px}
 /* Card padding reductions */
 .step-row{padding:18px 0}
 .step-row-content h3{font-size:16px;margin-bottom:6px}
@@ -1078,6 +1084,7 @@ h2{margin-bottom:20px}
   .consent-banner.visible{animation:none;transform:translateY(0)}
   .consent-banner.hidden{animation:none;transform:translateY(100%)}
   .glow-card,.cta-btn,.hero-focus{backdrop-filter:none;-webkit-backdrop-filter:none}
+  .social-carousel-track{animation:none}
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -1184,7 +1191,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p class="sub-text reveal reveal-delay-2 sub-center">רוב האנשים רצים לשווק לפני שהם מבינים מה באמת מחזיק אותם. בלי יסודות ברורים, כל תוכן, מסר או קמפיין נשחק. <span class="highlight">קוד המפצח</span> בנוי מ 3 שלבים ברורים שמחברים את מי שאתה, למה שאתה מביא, ואיך זה יוצא החוצה בצורה שעובדת.</p>
     <div class="text-center mt-32 reveal reveal-delay-3">
-      <button class="cta-btn" onclick="openModal()">תראה לי איפה אני עומד היום</button>
+      <button class="cta-btn" onclick="openModal()">בוא נבדוק אם זה מתאים לך</button>
     </div>
   </div></div>
 </section>
@@ -1199,7 +1206,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="reveal reveal-delay-2">רצת לשווק לפני שפיצחת מה באמת מבדל אותך, מה הערך שאתה מביא, ואיך הכל מתחבר לקו אחד ברור. לכן כל מה שאתה עושה מרגיש מפוזר, גם אם אתה מוכשר.</p>
         <div class="why-callout reveal reveal-delay-3">תחשוב על זה רגע, אי אפשר לבנות גורד שחקים בלי יסודות בטון. וזה בדיוק הבטון שחסר לך.</div>
         <p class="reveal reveal-delay-4">והמחיר האמיתי הוא לא רק שהשיווק לא עובד. לאט לאט אתה מתחיל לפקפק בעצמך, במה שאתה מביא ובערך שלך. לא כי אתה לא טוב, אלא כי שום דבר עוד לא בנוי בצורה שמשקפת את זה החוצה.</p>
-        <div class="mt-32 reveal"><button class="cta-btn" onclick="openModal()">תראה לי איפה אני נתקע</button></div>
+        <div class="mt-32 reveal"><button class="cta-btn" onclick="openModal()">בוא נבדוק אם זה מתאים לך</button></div>
       </div>
       <div class="why-visual">
         <div class="why-visual-block"></div>
@@ -1242,7 +1249,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
-    <div class="text-center mt-48 reveal"><button class="cta-btn" onclick="openModal()">תראה לי איך המנגנון הזה נראה תכלס</button></div>
+    <div class="text-center mt-48 reveal"><button class="cta-btn" onclick="openModal()">בוא נבדוק אם זה מתאים לך</button></div>
   </div>
 </section>
 
@@ -1275,7 +1282,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="split-row reveal">
         <div class="split-left">
           <h3>יועץ עסקי</h3>
-          <p>יצאת עם תוכנית, אבל לא ידעת להסביר למה שמישהו יבחר דווקא בך.</p>
+          <p>בנה לך תוכנית בלי לזקק מה הערך הייחודי שלך, במה אתה שונה, ובלי לחבר את זה לתוכן ולמסר שמוציא את זה החוצה.</p>
         </div>
         <div class="split-right">
           <span class="split-right-label">בתהליך</span>
@@ -1297,18 +1304,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="split-row reveal">
         <div class="split-left">
           <h3>קמפיינר</h3>
-          <p>הרצת מודעות, אבל הן לא חיברו אנשים לערך והפתרון שאתה באמת מביא.</p>
+          <p>הריץ מודעות בלי להכיר את הלקוח שלך, מה כואב לו, מה הוא כבר ניסה, ואיך הפתרון שלך מתחבר לכל זה.</p>
         </div>
         <div class="split-right">
           <span class="split-right-label">בתהליך</span>
-          <p>השיווק יוצא מתוך המסר, והמסר יוצא מתוך <strong>מה שאתה באמת פותר</strong>, שאנשים ישר מבינים למה זה בשבילם.</p>
+          <p>השיווק יוצא מתוך המסר, והמסר יוצא מתוך <strong>מי שאתה ומה שאתה פותר</strong>.</p>
         </div>
       </div>
 
       <div class="split-row reveal">
         <div class="split-left">
           <h3>רילס ויראליים</h3>
-          <p>הבאת צפיות, אבל הן לא הפכו לפניות.</p>
+          <p>הבאת חשיפה ועוקבים, אבל בלי חיבור לאיך שאתה נחרט בזיכרון ונהיה הראשון שעולה לאנשים בראש כשהנושא שלך עולה.</p>
         </div>
         <div class="split-right">
           <span class="split-right-label">בתהליך</span>
@@ -1382,6 +1389,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="video-testimonials" id="videos">
   <div class="container">
     <h2 class="reveal text-center"><span class="highlight">הם עשו את זה</span> ויש להם מה לספר</h2>
+    <p class="authority-line reveal">24 מחזורים, מאות בעלי עסקים ומומחים שבנו את היסודות והמנגנון שלהם.</p>
+
+    <div class="social-carousel reveal">
+      <div class="social-carousel-track">
+        <!-- תמונות 16:9 יתווספו כשהמשתמש יעלה אותן -->
+      </div>
+      <p class="carousel-placeholder" style="text-align:center;color:rgba(255,255,255,0.3);font-size:14px;padding:40px 0;">קרוסלת תמונות — ממתין להעלאת תמונות</p>
+    </div>
+
     <div class="videos-grid reveal">
       <div class="video-card" data-vid="V6cgYiMA5xw"><div class="video-thumb"><img src="https://img.youtube.com/vi/V6cgYiMA5xw/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-small"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="white"/></svg></div></div></div>
       <div class="video-card" data-vid="NYMCapciQTA"><div class="video-thumb"><img src="https://img.youtube.com/vi/NYMCapciQTA/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-small"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="white"/></svg></div></div></div>
@@ -1389,7 +1405,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="video-card" data-vid="tJRGOTy1B-k"><div class="video-thumb"><img src="https://img.youtube.com/vi/tJRGOTy1B-k/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-small"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="white"/></svg></div></div></div>
       <div class="video-card" data-vid="gBlajkk5B70"><div class="video-thumb"><img src="https://img.youtube.com/vi/gBlajkk5B70/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-small"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="white"/></svg></div></div></div>
       <div class="video-card" data-vid="X3y9kSQLg4I"><div class="video-thumb"><img src="https://img.youtube.com/vi/X3y9kSQLg4I/hqdefault.jpg" alt="עדות" loading="lazy"><div class="play-small"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="white"/></svg></div></div></div>
+      <!-- 3 סרטונים נוספים — ממתין ל-YouTube IDs -->
+      <div class="video-card" data-vid="PLACEHOLDER_7"><div class="video-thumb" style="display:flex;align-items:center;justify-content:center;background:var(--black-card)"><div class="play-small"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="white"/></svg></div></div></div>
+      <div class="video-card" data-vid="PLACEHOLDER_8"><div class="video-thumb" style="display:flex;align-items:center;justify-content:center;background:var(--black-card)"><div class="play-small"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="white"/></svg></div></div></div>
+      <div class="video-card" data-vid="PLACEHOLDER_9"><div class="video-thumb" style="display:flex;align-items:center;justify-content:center;background:var(--black-card)"><div class="play-small"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="white"/></svg></div></div></div>
     </div>
+
+    <p class="result-line reveal">קיבלו פניות מאנשים שהגיעו מוכנים, סגרו לקוחות במחיר גבוה יותר בלי התנגדויות והשוואות, והפסיקו לנחש מה לעשות כל בוקר.</p>
   </div>
 </section>
 <!-- Video Modal -->
@@ -1412,7 +1434,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="transform-card reveal reveal-delay-4"><strong>✅ יש לך מנגנון ברור ושיטתי.</strong><p>ברור לך מאיפה מגיעים הלקוחות ומה קורה בכל שלב, ואתה עובד מתוך הבנה מלאה, לא מתוך ניחוש.</p></div>
       <div class="transform-card transform-card--wide reveal"><strong>✅ כשמישהו בתחום שלך מוזכר, השם שלך עולה ישר.</strong><p>לא כי שיווקת יותר, אלא כי נחרטת בזיכרון כסמכות בתחום שלך.</p></div>
     </div>
-    <div class="text-center mt-48 reveal"><button class="cta-btn" onclick="openModal()">אני רוצה לבנות את זה, בוא נבדוק התאמה</button></div>
+    <div class="text-center mt-48 reveal"><button class="cta-btn" onclick="openModal()">בוא נבדוק אם זה מתאים לך</button></div>
   </div>
 </section>
 
@@ -1426,7 +1448,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="reveal reveal-delay-2">הלכתי ליועצים עסקיים שבנו לי אסטרטגיות על בסיס מה שאמרתי להם שאני יודע. אבל אף אחד לא שאל אותי את השאלות האמיתיות שאני לא חשבתי עליהן: מי אתה באמת, מה הערך שאתה מביא, ולמה שמישהו יבחר דווקא בך?</p>
       <p class="reveal reveal-delay-3">ואז, ב 7 באוקטובר, הכול עצר. ובמקום לברוח לפעולה, פשוט עצרתי. פתחתי שיחה עם AI וביקשתי ממנו לשאול אותי שאלות. הוא שאל, ואני עניתי. וכשקראתי את מה שאני עצמי כתבתי, ראיתי את עצמי בבהירות בפעם הראשונה.</p>
       <p class="reveal reveal-delay-4">הבנתי שחסר לי מישהו שיחפור איתי ויגיד לי שזה הבסיס שלי, ובוא נבנה ממנו משהו אמיתי. אז היום אני עושה לאחרים את מה שאף אחד לא עשה איתי. אני לא ממציא להם בידול ולא מדביק להם שיטה, אלא עוזר להם לראות את מה שכבר יש להם ולבנות מזה מנגנון שמושך את האנשים הנכונים.</p>
-      <div class="mt-32 reveal"><button class="cta-btn" onclick="openModal()">בוא נראה מה אצלך עדיין לא מתורגם ללקוחות</button></div>
+      <div class="mt-32 reveal"><button class="cta-btn" onclick="openModal()">בוא נבדוק אם זה מתאים לך</button></div>
     </div>
   </div></div>
 </section>
@@ -1534,16 +1556,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container text-center">
     <h2 class="reveal">החשבונית הסמויה <span class="highlight">שאתה משלם כל חודש</span></h2>
     <div class="sub-text reveal reveal-delay-1 mx-auto-32 final-cta-body">
-      <p class="final-cta-lead">אני אגיד לך את זה הכי ישיר, כל עוד אין לך מיקוד, סדר ויסודות, אתה לא באמת מתקדם. אתה ממשיך לעבוד קשה על מה שלא באמת מקדם את העסק.</p>
-      <p class="mt-16">וזה לא עוד פוסט שלא עבד או עוד קמפיין שלא הביא פניות. זו תקופה שלמה שעוברת.</p>
-      <p class="mt-16">ובזמן הזה, אנשים פחות טובים ממך תופסים מקום, לא כי הם טובים יותר, אלא כי הם יודעים להוציא את עצמם נכון.</p>
+      <p class="final-cta-lead">כל עוד אין לך מיקוד, סדר ויסודות, אתה לא באמת מתקדם. ובזמן הזה, אנשים פחות טובים ממך תופסים מקום, לא כי הם טובים יותר, אלא כי הם יודעים להוציא את עצמם נכון.</p>
       <p class="mt-32 final-cta-quote">אז השאלה היא לא אם אתה צריך עוד תוכן או קמפיין. השאלה היא אם הגיע הזמן לבנות את זה נכון מהיסוד.</p>
-      <p class="mt-16">אתה יכול להמשיך לנסות לבד, או לבנות את זה פעם אחת כמו שצריך.</p>
     </div>
     <div class="reveal reveal-delay-2 mt-32">
-      <button class="cta-btn" onclick="openModal()">בוא נעצור את זה עכשיו</button>
+      <button class="cta-btn" onclick="openModal()">בוא נבדוק אם זה מתאים לך</button>
     </div>
-    <p class="sub-text reveal mt-32 sub-center final-cta-bottom">אם הגעת עד לפה, אתה כבר יודע שזה לא עניין של עוד ניסיון. עכשיו זה הזמן להחליט.</p>
     <div class="final-form-separator"></div>
     <div class="final-form reveal reveal-delay-2">
       <form id="bottomForm" onsubmit="return submitBottomForm(event)">
@@ -1560,7 +1578,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <option value="future">מחזורים עתידיים (תאריכים מאוחרים יותר)</option>
         </select>
         <label class="consent-checkbox"><input type="checkbox" id="bconsent" required /><span>אני מאשר/ת קבלת תוכן רלוונטי ועדכונים מאוריאל סול (ניתן להסיר בכל עת).</span></label>
-        <button class="cta-btn" type="submit">הגיע הזמן לעשות את זה נכון</button>
+        <button class="cta-btn" type="submit">הגיע הזמן לבנות את זה נכון</button>
         <p class="cta-sub cta-sub-center mt-16">התהליך הקרוב מוגבל ל-15 משתתפים בלבד כדי לשמור על איכות הקבוצה והליווי.</p>
       </form>
     </div>
