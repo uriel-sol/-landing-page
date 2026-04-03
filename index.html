@@ -323,33 +323,46 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 /* SVG hidden defs */
 .svg-defs{position:absolute}
 
-/* DELIVERABLES — WHITE SECTION */
-.deliverables-section{background:#fafafa;position:relative;overflow:hidden}
+/* DELIVERABLES — DARK SYSTEM */
+.deliverables-section{background:var(--black);color:var(--white);position:relative;overflow:hidden}
 .deliverables-section::before{display:none}
 .deliverables-section::after{display:none}
-.deliverables-section .container>h2{text-align:center;max-width:900px;margin-left:auto;margin-right:auto;color:#111}
+.deliverables-section .container>h2{text-align:center;max-width:900px;margin-left:auto;margin-right:auto;color:var(--white)}
 .deliverables-section .highlight{color:var(--core)}
-.deliverables-section .sub-text{color:#555}
-/* Deliverables intro text */
+.deliverables-section .sub-text{color:var(--white-dim)}
 .deliverables-intro{text-align:center;margin:32px auto 40px;max-width:600px}
-.deliverables-intro p{font-size:16px;color:#555;line-height:1.7}
-/* Layer labels */
-.deliverables-layer{margin-top:40px}
-.deliverables-layer-label{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(101,33,115,0.85);margin-bottom:16px;padding-right:4px}
-/* Cards grid per layer */
-.deliverables-layer-grid{display:grid;gap:20px}
-.deliverables-layer-grid--3{grid-template-columns:repeat(3,1fr)}
-.deliverables-layer-grid--2{grid-template-columns:repeat(2,1fr)}
-.deliverables-section .deliver-card{border-radius:16px;padding:28px 24px;position:relative;background:#fff;border:1px solid #e8e8ec;box-shadow:0 2px 12px rgba(0,0,0,0.04);transition:transform 0.3s,box-shadow 0.3s}
-.deliverables-section .deliver-card:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,0.05)}
-.deliverables-section .deliver-card h3{font-size:17px;margin-bottom:8px;color:#111;font-weight:700}
-.deliverables-section .deliver-card p{font-size:14px;color:#555;line-height:1.7}
-.deliver-card--compact{padding:24px 20px !important}
-.deliver-card--compact h3{font-size:16px !important}
-.deliver-card--compact p{font-size:13px !important}
-.bonus-box{margin-top:32px;background:rgba(143,47,160,0.03);border:1px solid rgba(143,47,160,0.15);border-radius:16px;padding:24px 28px;display:flex;align-items:center;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
-.bonus-badge{display:inline-flex;align-items:center;padding:6px 16px;background:#fff;border:1px solid rgba(143,47,160,0.2);border-radius:20px;font-size:13px;font-weight:600;white-space:nowrap;color:var(--core);box-shadow:0 2px 8px rgba(0,0,0,0.06)}
-.bonus-box p{font-size:15px;color:#555}
+.deliverables-intro p{font-size:16px;color:var(--white-dim);line-height:1.7}
+/* Pyramid hero */
+.pyramid-hero{text-align:center;position:relative;max-width:600px;margin:40px auto 56px}
+.pyramid-hero img{width:100%;max-width:500px;display:block;margin:0 auto;position:relative;z-index:1}
+.pyramid-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;background:radial-gradient(ellipse,rgba(143,47,160,0.15) 0%,transparent 60%);pointer-events:none;z-index:0}
+/* System layers */
+.system-layers{max-width:860px;margin:0 auto}
+.system-layer{margin-bottom:56px}
+.system-layer-header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+.system-layer-line{flex:1;height:1px;background:rgba(255,255,255,0.06)}
+.system-layer-name{font-size:13px;font-weight:600;white-space:nowrap}
+.system-layer--foundations .system-layer-name{color:rgba(130,100,160,0.7)}
+.system-layer--architecture .system-layer-name{color:rgba(160,120,190,0.8)}
+.system-layer--engine .system-layer-name{color:rgba(195,140,220,0.9)}
+/* System items grid */
+.system-items{display:grid;gap:0;direction:rtl}
+.system-items--3{grid-template-columns:repeat(3,1fr)}
+.system-items--2{grid-template-columns:repeat(2,1fr)}
+/* System item — content unit, not a card */
+.system-item{padding:24px 16px;text-align:center}
+.system-item-icon{width:56px;height:56px;object-fit:contain;margin:0 auto 14px;display:block;opacity:0.85}
+.system-item h3{font-size:15px;font-weight:600;color:var(--white);margin-bottom:8px}
+.system-item p{font-size:13px;color:var(--white-dim);line-height:1.7;text-align:right}
+/* Subtle dividers per layer */
+.system-layer--engine .system-item{border-bottom:1px solid rgba(195,140,220,0.08)}
+.system-layer--architecture .system-item{border-bottom:1px solid rgba(160,120,190,0.06)}
+.system-layer--foundations .system-item{border-bottom:1px solid rgba(130,100,160,0.05)}
+.system-items .system-item:last-child{border-bottom:none}
+/* Bonus box — dark mode */
+.bonus-box{margin-top:32px;background:rgba(143,47,160,0.06);border:1px solid rgba(143,47,160,0.15);border-radius:16px;padding:24px 28px;display:flex;align-items:center;gap:16px}
+.bonus-badge{display:inline-flex;align-items:center;padding:6px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(143,47,160,0.25);border-radius:20px;font-size:13px;font-weight:600;white-space:nowrap;color:var(--core-light)}
+.bonus-box p{font-size:15px;color:var(--white-dim)}
 
 /* TRANSFORMATION SECTION */
 .after-section{background:var(--black)}
@@ -393,11 +406,6 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 
 /* (steps wiring removed — using vertical timeline) */
 
-/* ===== MOCKUP FRAMES ===== */
-.mockup-frame{width:100%;background:none;border-top:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-top:16px;position:relative;overflow:hidden;transition:transform 0.4s ease}
-.mockup-frame::before,.mockup-frame::after{display:none}
-.mockup-frame img{width:100%;border-radius:8px;display:block;object-fit:contain}
-.deliver-card:hover .mockup-frame{transform:translateY(-3px)}
 
 /* (mouse-glow removed — mobile-first) */
 
@@ -529,7 +537,7 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .video-modal-overlay.active{display:flex}
 .video-modal-box{position:relative;width:100%;max-width:900px;max-height:90vh}
 .video-modal-box .modal-close{position:absolute;top:-44px;left:0;z-index:3}
-.video-modal-content{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000}
+.video-modal-content{width:100%;max-width:400px;aspect-ratio:9/16;border-radius:12px;overflow:hidden;background:#000;margin:0 auto}
 .video-modal-content iframe{width:100%;height:100%;border:none}
 
 /* FOOTER */
@@ -581,7 +589,7 @@ input:focus-visible,select:focus-visible{outline:none;border-color:var(--purple-
 
 /* ===== POLISH: UNIFIED SYSTEM ===== */
 /* Consistent shadow depth across all cards */
-.process-card,.filter-card,.faq-item,.tech-box,.deliver-card,.video-card{
+.process-card,.filter-card,.faq-item,.tech-box,.video-card{
   box-shadow:0 4px 20px rgba(0,0,0,0.25)}
 .process-card:hover,.filter-yes:hover{
   box-shadow:0 8px 32px rgba(0,0,0,0.35)}
@@ -589,7 +597,7 @@ input:focus-visible,select:focus-visible{outline:none;border-color:var(--purple-
 .process-card,.tech-box,.faq-item{
   border:1px solid rgba(255,255,255,0.07)}
 /* Consistent hover transition curve */
-.process-card,.filter-card,.faq-item,.video-card,.deliver-card,.testimonial-card{
+.process-card,.filter-card,.faq-item,.video-card,.testimonial-card{
   transition:border-color var(--duration-hover) var(--ease-structural),box-shadow var(--duration-hover) var(--ease-structural),transform var(--duration-hover) var(--ease-structural)}
 /* Consistent section spacing */
 section + .glow-divider{margin-top:0;margin-bottom:0}
@@ -599,9 +607,6 @@ section + .glow-divider{margin-top:0;margin-bottom:0}
 /* Consistent purple accent — uniform hover border tint */
 .glow-card:hover,.process-card:hover,.faq-item:hover,.video-card:hover{
   border-color:rgba(143,47,160,0.16)}
-/* Deliverables white cards — tighter consistent hover */
-.deliverables-section .deliver-card:hover{
-  box-shadow:0 6px 20px rgba(0,0,0,0.06);border-color:#ddd}
 /* Final form — refined border to match system */
 .final-form{border-color:rgba(255,255,255,0.08)}
 /* CTA hover — unified subtle lift */
@@ -650,8 +655,9 @@ section{padding:80px 20px}
 .process-grid{grid-template-columns:repeat(2,1fr)}
 .split-rows{max-width:100%}
 .filter-grid{grid-template-columns:repeat(2,1fr)}
-.deliverables-layer-grid--3{grid-template-columns:repeat(2,1fr)}
-.deliverables-layer-grid--2{grid-template-columns:repeat(2,1fr)}
+.pyramid-hero{max-width:400px;margin:32px auto 40px}
+.system-items--3{grid-template-columns:repeat(2,1fr)}
+.system-items--2{grid-template-columns:1fr}
 .videos-grid{gap:8px}
 /* Story keeps side-by-side but narrower image */
 .story-grid{grid-template-columns:260px 1fr;gap:32px}
@@ -666,9 +672,7 @@ section{padding:80px 20px}
 .why-callout{padding:20px 20px;font-size:17px}
 .faq-q{font-size:15px;padding:18px 0}
 .faq-a p{font-size:14px}
-/* Deliverables tablet: smaller padding */
-.deliver-card{padding:20px 16px}
-.deliverables-intro{margin:28px auto 36px}
+/* Deliverables tablet: handled in system-items rules above */
 /* Marquee */
 /* Testimonial wall tablet */
 .testimonial-featured{grid-template-columns:repeat(2,1fr);gap:18px}
@@ -718,11 +722,10 @@ section{padding:80px 20px}
 .process-grid{grid-template-columns:1fr}
 .process-card--premium{padding:28px 20px}
 .navbar-logo img{height:44px}
-.deliverables-layer-grid--3{grid-template-columns:repeat(2,1fr);gap:12px}
-.deliverables-layer-grid--2{grid-template-columns:1fr}
-.deliver-card{padding:18px 14px}
-.deliver-card .mockup-frame{display:none}
-.deliverables-intro{margin:24px auto 32px}
+.pyramid-hero{max-width:350px;margin:28px auto 36px}
+.system-items--3{grid-template-columns:repeat(2,1fr)}
+.system-items--2{grid-template-columns:1fr}
+.system-item{padding:20px 12px}
 .videos-grid{gap:8px}
 .story-grid{grid-template-columns:1fr}
 .story-image{text-align:center;position:relative;top:auto}
@@ -810,8 +813,12 @@ section{padding:60px 14px}
 .hero-cta-area{margin-top:24px}
 .hero-figure{margin-bottom:-50px}
 /* Single column everywhere */
-.deliverables-layer-grid--3{grid-template-columns:1fr}
-.deliverables-layer-grid--2{grid-template-columns:1fr}
+.pyramid-hero{max-width:280px;margin:24px auto 32px}
+.system-items--3{grid-template-columns:1fr}
+.system-items--2{grid-template-columns:1fr}
+.system-item{padding:16px 8px}
+.system-item h3{font-size:14px}
+.system-item-icon{width:48px;height:48px}
 .steps-timeline{max-width:100%}
 .step-row{grid-template-columns:40px 40px 1fr;gap:8px}
 .step-row-number{font-size:24px}
@@ -828,7 +835,6 @@ section{padding:60px 14px}
 .process-card{padding:22px 16px}
 .split-row{padding:20px 0}
 .tech-box{padding:20px 14px;max-width:100%}
-.deliver-card{padding:16px 12px}
 /* Font size reductions */
 h1{letter-spacing:-0.5px}
 h2{font-size:clamp(20px,6vw,30px);margin-bottom:16px}
@@ -928,8 +934,7 @@ h3{font-size:clamp(16px,4vw,20px)}
 .split-closing{margin-top:28px}
 .split-closing-core{font-size:15px}
 /* Quotes mobile — handled in carousel section above */
-/* Deliverables sub-text spacing */
-.deliverables-section .sub-text{margin-top:28px}
+/* Deliverables sub-text spacing — handled inline */
 /* Testimonial wall mobile curation */
 .testimonial-wall{padding:60px 14px}
 /* POLISH: Mobile refinements */
@@ -939,7 +944,6 @@ h3{font-size:clamp(16px,4vw,20px)}
 /* Ensure readable contrast on small screens */
 /* Touch-friendly: remove hover-only effects */
 .cta-btn:hover{transform:none}
-.deliver-card:hover{transform:none}
 .video-card:hover{transform:none}
 .testimonial-card:hover{transform:none}
 /* Consistent internal spacing in cards */
@@ -1074,7 +1078,7 @@ h2{margin-bottom:20px}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
-  .step-row,.split-row,.deliverables-layer,.transform-card,.filter-card{opacity:1!important;transform:none!important}
+  .step-row,.split-row,.system-layer,.transform-card,.filter-card{opacity:1!important;transform:none!important}
   .steps-timeline-line{scale:1 1!important}
   .step-row{opacity:1!important}
   .step-row .step-row-number{color:rgba(185,33,204,0.55)!important}
@@ -1342,7 +1346,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- DELIVERABLES — WHITE SECTION -->
+<!-- DELIVERABLES — SYSTEM -->
 <section class="deliverables-section" id="deliverables">
   <div class="container">
     <h2 class="reveal text-center">בסוף 13 שבועות אתה יוצא עם <span class="highlight">מנגנון בנוי,</span> ולא עם מחברת סיכומים.</h2>
@@ -1350,34 +1354,85 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>כל מה שתבנה ב-13 שבועות — מסודר בשלוש שכבות, מהיסודות ועד המנוע.</p>
     </div>
 
-    <!-- Layer 1: Foundations -->
-    <div class="deliverables-layer">
-      <div class="deliverables-layer-label">יסודות</div>
-      <div class="deliverables-layer-grid deliverables-layer-grid--3">
-        <div class="deliver-card"><h3>מסמך DNA עסקי</h3><p>תשובה חדה לשאלה מי אתה, מה הערך שלך ולמה דווקא אתה ולא המתחרה שלך.</p><div class="mockup-frame"><img src="assets/images/mockup-dna.png" alt="מסמך DNA עסקי" loading="lazy"></div></div>
-        <div class="deliver-card"><h3>אפיון לקוח עומק (פסיכוגרפי)</h3><p>זורקים לפח את ההגדרות של "גיל ומקום מגורים" וממפים את הראש של הלקוח שלך. מה כואב לו, מה הוא כבר ניסה בעבר, ואיך לנסח מסר שגורם לו להגיד "הוא קורא לי את המחשבות".</p><div class="mockup-frame"><img src="assets/images/mockup-customer.png" alt="אפיון לקוח עומק" loading="lazy"></div></div>
-        <div class="deliver-card"><h3>שלד השיטה</h3><p>הידע שלך הופך למסלול עם תחנות ותוצרים ברורים שאפשר למכור ולהסביר הלאה.</p><div class="mockup-frame"><img src="assets/images/mockup-method.png" alt="שלד השיטה" loading="lazy"></div></div>
-      </div>
+    <div class="pyramid-hero reveal">
+      <img src="assets/icons/Untitled design - Pyramidhero.png" alt="פירמידת המנגנון — יסודות, ארכיטקטורה, מנוע" loading="lazy">
+      <div class="pyramid-glow"></div>
     </div>
 
-    <!-- Layer 2: Architecture -->
-    <div class="deliverables-layer">
-      <div class="deliverables-layer-label">ארכיטקטורה</div>
-      <div class="deliverables-layer-grid deliverables-layer-grid--2">
-        <div class="deliver-card deliver-card--compact"><h3>מערכת הפעלה למותג</h3><p>הופכים את ה DNA שלך למערכת ברורה שעובדת בכל מקום שהלקוח פוגש אותך, מהפוסט הראשון ועד הסגירה.</p></div>
-        <div class="deliver-card deliver-card--compact"><h3>מפת תוכן אסטרטגית</h3><p>תוכנית ל 180 יום שמראה לך בדיוק מה להעלות ומתי. מי רואה אותך בפעם הראשונה, מי כבר עוקב, מי מתעניין ומי מוכן לקנות. הכל מחובר ל DNA שלך.</p></div>
+    <div class="system-layers">
+
+      <div class="system-layer system-layer--foundations reveal">
+        <div class="system-layer-header">
+          <span class="system-layer-line"></span>
+          <span class="system-layer-name">יסודות</span>
+          <span class="system-layer-line"></span>
+        </div>
+        <div class="system-items system-items--3">
+          <div class="system-item">
+            <img class="system-item-icon" src="assets/icons/Untitled design - Business DNA.png" alt="" loading="lazy">
+            <h3>מסמך DNA עסקי</h3>
+            <p>תשובה חדה לשאלה מי אתה, מה הערך שלך ולמה דווקא אתה ולא המתחרה שלך.</p>
+          </div>
+          <div class="system-item">
+            <img class="system-item-icon" src="assets/icons/Untitled design - Ideal Client Profile.png" alt="" loading="lazy">
+            <h3>אפיון לקוח עומק (פסיכוגרפי)</h3>
+            <p>זורקים לפח את ההגדרות של "גיל ומקום מגורים" וממפים את הראש של הלקוח שלך. מה כואב לו, מה הוא כבר ניסה בעבר, ואיך לנסח מסר שגורם לו להגיד "הוא קורא לי את המחשבות".</p>
+          </div>
+          <div class="system-item">
+            <img class="system-item-icon" src="assets/icons/Untitled design - Method Framework.png" alt="" loading="lazy">
+            <h3>שלד השיטה</h3>
+            <p>הידע שלך הופך למסלול עם תחנות ותוצרים ברורים שאפשר למכור ולהסביר הלאה.</p>
+          </div>
+        </div>
       </div>
+
+      <div class="system-layer system-layer--architecture reveal">
+        <div class="system-layer-header">
+          <span class="system-layer-line"></span>
+          <span class="system-layer-name">ארכיטקטורה</span>
+          <span class="system-layer-line"></span>
+        </div>
+        <div class="system-items system-items--2">
+          <div class="system-item">
+            <img class="system-item-icon" src="assets/icons/Untitled design - Brand Operating System.png" alt="" loading="lazy">
+            <h3>מערכת הפעלה למותג</h3>
+            <p>הופכים את ה DNA שלך למערכת ברורה שעובדת בכל מקום שהלקוח פוגש אותך, מהפוסט הראשון ועד הסגירה.</p>
+          </div>
+          <div class="system-item">
+            <img class="system-item-icon" src="assets/icons/Untitled design - Strategic Content Map.png" alt="" loading="lazy">
+            <h3>מפת תוכן אסטרטגית</h3>
+            <p>תוכנית ל 180 יום שמראה לך בדיוק מה להעלות ומתי. מי רואה אותך בפעם הראשונה, מי כבר עוקב, מי מתעניין ומי מוכן לקנות. הכל מחובר ל DNA שלך.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="system-layer system-layer--engine reveal">
+        <div class="system-layer-header">
+          <span class="system-layer-line"></span>
+          <span class="system-layer-name">מנוע</span>
+          <span class="system-layer-line"></span>
+        </div>
+        <div class="system-items system-items--3">
+          <div class="system-item">
+            <img class="system-item-icon" src="assets/icons/Untitled design - Conversion System.png" alt="" loading="lazy">
+            <h3>מערכת המרות</h3>
+            <p>מסלול ברור שלוקח בן אדם שלא מכיר אותך לנקודה שבה הוא מוכן לדבר איתך, עם תסריטים מוכנים ופרופיל שעובד בשבילך.</p>
+          </div>
+          <div class="system-item">
+            <img class="system-item-icon" src="assets/icons/Untitled design - Strategic Brain.png" alt="" loading="lazy">
+            <h3>המוח האסטרטגי</h3>
+            <p>AI שמאומן על ה DNA שלך, יושב איתך לאורך כל התהליך ונשאר איתך גם אחריו. לא מחולל טקסטים, אלא שותף אסטרטגי לכל מהלך עסקי-שיווקי.</p>
+          </div>
+          <div class="system-item">
+            <img class="system-item-icon" src="assets/icons/Untitled design - Automation System.png" alt="" loading="lazy">
+            <h3>אוטומציה ממירה</h3>
+            <p>4 אוטומציות שכל בעל עסק חייב שיהיו פעילות ברשתות שלו, כדי לחמם קהל, להוביל לפניות ולהניע להמרה.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Layer 3: Engine -->
-    <div class="deliverables-layer">
-      <div class="deliverables-layer-label">מנוע</div>
-      <div class="deliverables-layer-grid deliverables-layer-grid--3">
-        <div class="deliver-card deliver-card--compact"><h3>מערכת המרות</h3><p>מסלול ברור שלוקח בן אדם שלא מכיר אותך לנקודה שבה הוא מוכן לדבר איתך, עם תסריטים מוכנים ופרופיל שעובד בשבילך.</p></div>
-        <div class="deliver-card deliver-card--compact"><h3>המוח האסטרטגי</h3><p>AI שמאומן על ה DNA שלך, יושב איתך לאורך כל התהליך ונשאר איתך גם אחריו. לא מחולל טקסטים, אלא שותף אסטרטגי לכל מהלך עסקי-שיווקי.</p></div>
-        <div class="deliver-card deliver-card--compact"><h3>אוטומציה ממירה</h3><p>4 אוטומציות שכל בעל עסק חייב שיהיו פעילות ברשתות שלו, כדי לחמם קהל, להוביל לפניות ולהניע להמרה.</p></div>
-      </div>
-    </div>
     <div class="bonus-box reveal mt-32"><span class="bonus-badge">💡 בונוס</span><p>15+ פרוטוקולים ותבניות מוכנות, גישה לקהילה סגורה, והקלטות לכל החיים.</p></div>
     <p class="sub-text reveal mt-32 sub-center">זה בדיוק מה שמאפשר לשיווק שלך להפסיק להיות הימור, ולהפוך למערכת ממוקדת שעובדת יציב.</p>
   </div>
@@ -2113,7 +2168,7 @@ document.querySelectorAll('.process-highlight .stat').forEach(function(el){
 });
 
 // Deliverables layers — staggered reveal (entry only)
-gsap.fromTo('.deliverables-layer',{y:24,opacity:0},{y:0,opacity:1,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.deliverables-intro',start:'top 80%'}});
+gsap.fromTo('.system-layer',{y:24,opacity:0},{y:0,opacity:1,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.pyramid-hero',start:'top 80%'}});
 
 // Final CTA — slightly more pronounced entry (clean, no loop)
 if(!prefersReducedMotion){
