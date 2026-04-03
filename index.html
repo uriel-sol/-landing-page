@@ -330,34 +330,37 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .deliverables-section .container>h2{text-align:center;max-width:900px;margin-left:auto;margin-right:auto;color:var(--white)}
 .deliverables-section .highlight{color:var(--core)}
 .deliverables-section .sub-text{color:var(--white-dim)}
-.deliverables-intro{text-align:center;margin:32px auto 40px;max-width:600px}
+.deliverables-intro{text-align:center;margin:24px auto 0;max-width:600px}
 .deliverables-intro p{font-size:16px;color:var(--white-dim);line-height:1.7}
 /* Pyramid hero */
-.pyramid-hero{text-align:center;position:relative;max-width:600px;margin:40px auto 56px}
+.pyramid-hero{text-align:center;position:relative;max-width:600px;margin:40px auto 32px}
 .pyramid-hero img{width:100%;max-width:500px;display:block;margin:0 auto;position:relative;z-index:1}
-.pyramid-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;background:radial-gradient(ellipse,rgba(143,47,160,0.15) 0%,transparent 60%);pointer-events:none;z-index:0}
+.pyramid-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:140%;height:140%;background:radial-gradient(ellipse 60% 55% at 50% 50%,rgba(143,47,160,0.28) 0%,rgba(120,40,145,0.15) 30%,rgba(100,30,130,0.06) 55%,transparent 75%);pointer-events:none;z-index:0;filter:blur(8px)}
 /* System layers */
-.system-layers{max-width:860px;margin:0 auto}
-.system-layer{margin-bottom:56px}
+.system-layers{max-width:860px;margin:0 auto;position:relative}
+.system-layers::before{content:'';position:absolute;top:-20px;left:50%;transform:translateX(-50%);width:1px;height:40px;background:linear-gradient(to bottom,rgba(143,47,160,0.25),rgba(143,47,160,0));pointer-events:none}
+.system-layer{margin-bottom:40px}
+.system-layer:last-child{margin-bottom:0}
 .system-layer-header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
-.system-layer-line{flex:1;height:1px;background:rgba(255,255,255,0.06)}
-.system-layer-name{font-size:13px;font-weight:600;white-space:nowrap}
-.system-layer--foundations .system-layer-name{color:rgba(130,100,160,0.7)}
-.system-layer--architecture .system-layer-name{color:rgba(160,120,190,0.8)}
-.system-layer--engine .system-layer-name{color:rgba(195,140,220,0.9)}
+.system-layer-line{flex:1;height:1px;background:rgba(255,255,255,0.08)}
+.system-layer-name{font-size:15px;font-weight:700;white-space:nowrap}
+.system-layer--foundations .system-layer-name{color:rgba(150,115,180,0.85)}
+.system-layer--architecture .system-layer-name{color:rgba(175,135,205,0.9)}
+.system-layer--engine .system-layer-name{color:rgba(210,160,235,0.95)}
 /* System items grid */
 .system-items{display:grid;gap:0;direction:rtl}
 .system-items--3{grid-template-columns:repeat(3,1fr)}
 .system-items--2{grid-template-columns:repeat(2,1fr)}
 /* System item — content unit, not a card */
-.system-item{padding:24px 16px;text-align:center}
-.system-item-icon{width:56px;height:56px;object-fit:contain;margin:0 auto 14px;display:block;opacity:0.85}
+.system-item{padding:28px 20px;text-align:center;transition:background 0.3s}
+.system-item:hover{background:rgba(255,255,255,0.015)}
+.system-item-icon{width:80px;height:80px;object-fit:contain;margin:0 auto 16px;display:block;opacity:0.9}
 .system-item h3{font-size:15px;font-weight:600;color:var(--white);margin-bottom:8px}
 .system-item p{font-size:13px;color:var(--white-dim);line-height:1.7;text-align:right}
 /* Subtle dividers per layer */
-.system-layer--engine .system-item{border-bottom:1px solid rgba(195,140,220,0.08)}
-.system-layer--architecture .system-item{border-bottom:1px solid rgba(160,120,190,0.06)}
-.system-layer--foundations .system-item{border-bottom:1px solid rgba(130,100,160,0.05)}
+.system-layer--engine .system-item{border-bottom:1px solid rgba(195,140,220,0.1)}
+.system-layer--architecture .system-item{border-bottom:1px solid rgba(160,120,190,0.08)}
+.system-layer--foundations .system-item{border-bottom:1px solid rgba(130,100,160,0.07)}
 .system-items .system-item:last-child{border-bottom:none}
 /* Bonus box — dark mode */
 .bonus-box{margin-top:32px;background:rgba(143,47,160,0.06);border:1px solid rgba(143,47,160,0.15);border-radius:16px;padding:24px 28px;display:flex;align-items:center;gap:16px}
@@ -655,7 +658,7 @@ section{padding:80px 20px}
 .process-grid{grid-template-columns:repeat(2,1fr)}
 .split-rows{max-width:100%}
 .filter-grid{grid-template-columns:repeat(2,1fr)}
-.pyramid-hero{max-width:400px;margin:32px auto 40px}
+.pyramid-hero{max-width:400px;margin:28px auto 24px}
 .system-items--3{grid-template-columns:repeat(2,1fr)}
 .system-items--2{grid-template-columns:1fr}
 .videos-grid{gap:8px}
@@ -722,7 +725,7 @@ section{padding:80px 20px}
 .process-grid{grid-template-columns:1fr}
 .process-card--premium{padding:28px 20px}
 .navbar-logo img{height:44px}
-.pyramid-hero{max-width:350px;margin:28px auto 36px}
+.pyramid-hero{max-width:350px;margin:24px auto 20px}
 .system-items--3{grid-template-columns:repeat(2,1fr)}
 .system-items--2{grid-template-columns:1fr}
 .system-item{padding:20px 12px}
@@ -813,12 +816,12 @@ section{padding:60px 14px}
 .hero-cta-area{margin-top:24px}
 .hero-figure{margin-bottom:-50px}
 /* Single column everywhere */
-.pyramid-hero{max-width:280px;margin:24px auto 32px}
+.pyramid-hero{max-width:280px;margin:20px auto 16px}
 .system-items--3{grid-template-columns:1fr}
 .system-items--2{grid-template-columns:1fr}
 .system-item{padding:16px 8px}
 .system-item h3{font-size:14px}
-.system-item-icon{width:48px;height:48px}
+.system-item-icon{width:64px;height:64px}
 .steps-timeline{max-width:100%}
 .step-row{grid-template-columns:40px 40px 1fr;gap:8px}
 .step-row-number{font-size:24px}
@@ -1414,7 +1417,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="system-items system-items--3">
           <div class="system-item">
-            <img class="system-item-icon" src="assets/icons/Untitled design - Conversion System.png" alt="" loading="lazy">
+            <img class="system-item-icon" src="assets/icons/Conversion System2.png" alt="" loading="lazy">
             <h3>מערכת המרות</h3>
             <p>מסלול ברור שלוקח בן אדם שלא מכיר אותך לנקודה שבה הוא מוכן לדבר איתך, עם תסריטים מוכנים ופרופיל שעובד בשבילך.</p>
           </div>
