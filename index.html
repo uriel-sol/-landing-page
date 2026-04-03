@@ -374,6 +374,8 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .bonus-badge{display:inline-flex;align-items:center;padding:6px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(143,47,160,0.25);border-radius:20px;font-size:13px;font-weight:600;white-space:nowrap;color:var(--core-light)}
 .bonus-box p{font-size:15px;color:var(--white-dim)}
 .carousel-dots{display:none}
+.mobile-title{display:none}
+.desktop-title{display:inline}
 
 /* TRANSFORMATION SECTION */
 .after-section{background:var(--black)}
@@ -732,22 +734,28 @@ section{padding:80px 20px}
 .process-card--premium{padding:28px 20px}
 .navbar-logo img{height:44px}
 .pyramid-hero{max-width:350px;margin:24px auto 12px}
+.deliverables-section{padding-top:80px}
 /* Mobile carousel for deliverables */
 .system-items{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:10px;padding:2px 0}
 .system-items::-webkit-scrollbar{display:none}
-.system-items .system-item{flex:0 0 82%;scroll-snap-align:center;min-width:0;padding:20px 18px;text-align:center;background:rgba(255,255,255,0.02);border:1px solid rgba(143,47,160,0.06);border-radius:14px}
+.system-items .system-item{flex:0 0 82%;scroll-snap-align:center;min-width:0;padding:18px 16px;text-align:right;background:rgba(255,255,255,0.02);border:1px solid rgba(143,47,160,0.06);border-radius:14px;display:grid;grid-template-columns:48px 1fr;grid-template-rows:auto auto;gap:0 14px;align-items:center}
 .system-items--2 .system-item{flex:0 0 88%}
 .system-items--3,.system-items--2{grid-template-columns:none}
-.system-item p{text-align:center;font-size:12.5px;line-height:1.6}
-.system-item h3{font-size:14px;margin-bottom:6px}
-.system-item-icon{width:56px;height:56px;margin-bottom:10px}
+.system-item-icon{width:48px;height:48px;margin:0;grid-row:1;grid-column:1}
+.system-item h3{font-size:14px;margin-bottom:0;grid-row:1;grid-column:2;text-align:right}
+.system-item p{text-align:right;font-size:12.5px;line-height:1.55;grid-row:2;grid-column:1/3;margin-top:10px}
 .system-layer--foundations .system-items,.system-layer--architecture .system-items,.system-layer--engine .system-items{max-width:100%}
 .carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:10px}
 .carousel-dots .dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.15);transition:background 0.3s,transform 0.3s}
 .carousel-dots .dot.active{background:var(--core-light);transform:scale(1.3)}
-.system-layer{padding:12px 0;margin-bottom:16px;border-radius:0;background:none}
-.system-layer-header{margin-bottom:14px}
+.system-layer{padding:16px 12px;margin-bottom:20px;border-radius:14px}
+.system-layer--foundations{background:radial-gradient(ellipse 80% 60% at 50% 30%,rgba(130,100,160,0.06),transparent 70%)}
+.system-layer--architecture{background:radial-gradient(ellipse 80% 60% at 50% 30%,rgba(160,120,190,0.07),transparent 70%)}
+.system-layer--engine{background:radial-gradient(ellipse 80% 60% at 50% 30%,rgba(210,160,235,0.08),transparent 70%)}
+.system-layer-header{margin-bottom:12px}
 .system-item + .system-item{border-right:none}
+.mobile-title{display:inline}
+.desktop-title{display:none}
 .videos-grid{gap:8px}
 .story-grid{grid-template-columns:1fr}
 .story-image{text-align:center;position:relative;top:auto}
@@ -836,11 +844,11 @@ section{padding:60px 14px}
 .hero-figure{margin-bottom:-50px}
 /* Single column everywhere */
 .pyramid-hero{max-width:280px;margin:16px auto 10px}
-.system-items .system-item{flex:0 0 86%;padding:18px 14px}
+.system-items .system-item{flex:0 0 86%;padding:16px 14px;grid-template-columns:42px 1fr;gap:0 12px}
 .system-items--2 .system-item{flex:0 0 90%}
 .system-item h3{font-size:13px}
-.system-item-icon{width:48px;height:48px}
-.system-item p{font-size:12px}
+.system-item-icon{width:42px;height:42px}
+.system-item p{font-size:11.5px;margin-top:8px}
 .steps-timeline{max-width:100%}
 .step-row{grid-template-columns:40px 40px 1fr;gap:8px}
 .step-row-number{font-size:24px}
@@ -1396,7 +1404,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="system-items system-items--3">
           <div class="system-item">
             <img class="system-item-icon" src="assets/icons/Untitled design - Business DNA.png" alt="" loading="lazy">
-            <h3>מסמך DNA עסקי</h3>
+            <h3><span class="desktop-title">מסמך DNA עסקי</span><span class="mobile-title">DNA עסקי</span></h3>
             <p>תשובה חדה לשאלה מי אתה, מה הערך שלך ולמה דווקא אתה ולא המתחרה שלך.</p>
           </div>
           <div class="system-item">
@@ -1443,7 +1451,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="system-items system-items--3">
           <div class="system-item">
             <img class="system-item-icon" src="assets/icons/Conversion System2.png" alt="" loading="lazy">
-            <h3>מערכת המרות</h3>
+            <h3><span class="desktop-title">מערכת המרות</span><span class="mobile-title">מנגנון ההמרה</span></h3>
             <p>מסלול ברור שלוקח בן אדם שלא מכיר אותך לנקודה שבה הוא מוכן לדבר איתך, עם תסריטים מוכנים ופרופיל שעובד בשבילך.</p>
           </div>
           <div class="system-item">
