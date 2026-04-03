@@ -333,20 +333,30 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .deliverables-intro{text-align:center;margin:24px auto 0;max-width:600px}
 .deliverables-intro p{font-size:16px;color:var(--white-dim);line-height:1.7}
 /* Pyramid hero */
-.pyramid-hero{text-align:center;position:relative;max-width:600px;margin:40px auto 32px}
+.pyramid-hero{text-align:center;position:relative;max-width:600px;margin:40px auto 16px}
 .pyramid-hero img{width:100%;max-width:500px;display:block;margin:0 auto;position:relative;z-index:1}
 .pyramid-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:140%;height:140%;background:radial-gradient(ellipse 60% 55% at 50% 50%,rgba(143,47,160,0.28) 0%,rgba(120,40,145,0.15) 30%,rgba(100,30,130,0.06) 55%,transparent 75%);pointer-events:none;z-index:0;filter:blur(8px)}
 /* System layers */
 .system-layers{max-width:860px;margin:0 auto;position:relative}
-.system-layers::before{content:'';position:absolute;top:-20px;left:50%;transform:translateX(-50%);width:1px;height:40px;background:linear-gradient(to bottom,rgba(143,47,160,0.25),rgba(143,47,160,0));pointer-events:none}
-.system-layer{margin-bottom:40px}
+.system-layers::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:100%;background:linear-gradient(to bottom,rgba(143,47,160,0.2) 0%,rgba(143,47,160,0.06) 50%,rgba(143,47,160,0) 100%);pointer-events:none}
+.system-layer{margin-bottom:28px;border-radius:12px;padding:24px 20px}
 .system-layer:last-child{margin-bottom:0}
+.system-layer--foundations{background:linear-gradient(180deg,rgba(130,100,160,0.04) 0%,transparent 100%)}
+.system-layer--architecture{background:linear-gradient(180deg,rgba(160,120,190,0.05) 0%,transparent 100%)}
+.system-layer--engine{background:linear-gradient(180deg,rgba(210,160,235,0.06) 0%,transparent 100%)}
 .system-layer-header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
 .system-layer-line{flex:1;height:1px;background:rgba(255,255,255,0.08)}
+.system-layer--foundations .system-layer-line{background:rgba(130,100,160,0.12)}
+.system-layer--architecture .system-layer-line{background:rgba(160,120,190,0.12)}
+.system-layer--engine .system-layer-line{background:rgba(210,160,235,0.12)}
 .system-layer-name{font-size:15px;font-weight:700;white-space:nowrap}
 .system-layer--foundations .system-layer-name{color:rgba(150,115,180,0.85)}
 .system-layer--architecture .system-layer-name{color:rgba(175,135,205,0.9)}
 .system-layer--engine .system-layer-name{color:rgba(210,160,235,0.95)}
+/* Funnel effect — echoes pyramid shape */
+.system-layer--foundations .system-items{max-width:860px;margin:0 auto}
+.system-layer--architecture .system-items{max-width:720px;margin:0 auto}
+.system-layer--engine .system-items{max-width:620px;margin:0 auto}
 /* System items grid */
 .system-items{display:grid;gap:0;direction:rtl}
 .system-items--3{grid-template-columns:repeat(3,1fr)}
@@ -357,15 +367,12 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .system-item-icon{width:80px;height:80px;object-fit:contain;margin:0 auto 16px;display:block;opacity:0.9}
 .system-item h3{font-size:15px;font-weight:600;color:var(--white);margin-bottom:8px}
 .system-item p{font-size:13px;color:var(--white-dim);line-height:1.7;text-align:right}
-/* Subtle dividers per layer */
-.system-layer--engine .system-item{border-bottom:1px solid rgba(195,140,220,0.1)}
-.system-layer--architecture .system-item{border-bottom:1px solid rgba(160,120,190,0.08)}
-.system-layer--foundations .system-item{border-bottom:1px solid rgba(130,100,160,0.07)}
-.system-items .system-item:last-child{border-bottom:none}
+.system-item + .system-item{border-right:1px solid rgba(255,255,255,0.04)}
 /* Bonus box — dark mode */
 .bonus-box{margin-top:32px;background:rgba(143,47,160,0.06);border:1px solid rgba(143,47,160,0.15);border-radius:16px;padding:24px 28px;display:flex;align-items:center;gap:16px}
 .bonus-badge{display:inline-flex;align-items:center;padding:6px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(143,47,160,0.25);border-radius:20px;font-size:13px;font-weight:600;white-space:nowrap;color:var(--core-light)}
 .bonus-box p{font-size:15px;color:var(--white-dim)}
+.carousel-dots{display:none}
 
 /* TRANSFORMATION SECTION */
 .after-section{background:var(--black)}
@@ -658,9 +665,7 @@ section{padding:80px 20px}
 .process-grid{grid-template-columns:repeat(2,1fr)}
 .split-rows{max-width:100%}
 .filter-grid{grid-template-columns:repeat(2,1fr)}
-.pyramid-hero{max-width:400px;margin:28px auto 24px}
-.system-items--3{grid-template-columns:repeat(2,1fr)}
-.system-items--2{grid-template-columns:1fr}
+.pyramid-hero{max-width:400px;margin:28px auto 16px}
 .videos-grid{gap:8px}
 /* Story keeps side-by-side but narrower image */
 .story-grid{grid-template-columns:260px 1fr;gap:32px}
@@ -725,10 +730,21 @@ section{padding:80px 20px}
 .process-grid{grid-template-columns:1fr}
 .process-card--premium{padding:28px 20px}
 .navbar-logo img{height:44px}
-.pyramid-hero{max-width:350px;margin:24px auto 20px}
-.system-items--3{grid-template-columns:repeat(2,1fr)}
-.system-items--2{grid-template-columns:1fr}
-.system-item{padding:20px 12px}
+.pyramid-hero{max-width:350px;margin:24px auto 12px}
+/* Mobile carousel for deliverables */
+.system-items{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;padding:4px 0}
+.system-items::-webkit-scrollbar{display:none}
+.system-items .system-item{flex:0 0 82%;scroll-snap-align:center;min-width:0;padding:28px 20px;text-align:center;background:rgba(255,255,255,0.025);border:1px solid rgba(143,47,160,0.08);border-radius:16px}
+.system-items--2 .system-item{flex:0 0 88%}
+.system-items--3,.system-items--2{grid-template-columns:none}
+.system-item p{text-align:center}
+.system-item-icon{width:72px;height:72px}
+.system-layer--foundations .system-items,.system-layer--architecture .system-items,.system-layer--engine .system-items{max-width:100%}
+.carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:14px}
+.carousel-dots .dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.15);transition:background 0.3s,transform 0.3s}
+.carousel-dots .dot.active{background:var(--core-light);transform:scale(1.3)}
+.system-layer{padding:16px 0;border-radius:0;background:none}
+.system-item + .system-item{border-right:none}
 .videos-grid{gap:8px}
 .story-grid{grid-template-columns:1fr}
 .story-image{text-align:center;position:relative;top:auto}
@@ -816,10 +832,9 @@ section{padding:60px 14px}
 .hero-cta-area{margin-top:24px}
 .hero-figure{margin-bottom:-50px}
 /* Single column everywhere */
-.pyramid-hero{max-width:280px;margin:20px auto 16px}
-.system-items--3{grid-template-columns:1fr}
-.system-items--2{grid-template-columns:1fr}
-.system-item{padding:16px 8px}
+.pyramid-hero{max-width:280px;margin:16px auto 10px}
+.system-items .system-item{flex:0 0 88%;padding:24px 16px}
+.system-items--2 .system-item{flex:0 0 92%}
 .system-item h3{font-size:14px}
 .system-item-icon{width:64px;height:64px}
 .steps-timeline{max-width:100%}
@@ -1092,6 +1107,8 @@ h2{margin-bottom:20px}
   .consent-banner.hidden{animation:none;transform:translateY(100%)}
   .glow-card,.cta-btn,.hero-focus{backdrop-filter:none;-webkit-backdrop-filter:none}
   .social-carousel-track{animation:none}
+  .system-items{scroll-snap-type:none;scroll-behavior:auto}
+  .carousel-dots .dot{transition:none}
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -1387,6 +1404,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p>הידע שלך הופך למסלול עם תחנות ותוצרים ברורים שאפשר למכור ולהסביר הלאה.</p>
           </div>
         </div>
+        <div class="carousel-dots"></div>
       </div>
 
       <div class="system-layer system-layer--architecture reveal">
@@ -1407,6 +1425,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p>תוכנית ל 180 יום שמראה לך בדיוק מה להעלות ומתי. מי רואה אותך בפעם הראשונה, מי כבר עוקב, מי מתעניין ומי מוכן לקנות. הכל מחובר ל DNA שלך.</p>
           </div>
         </div>
+        <div class="carousel-dots"></div>
       </div>
 
       <div class="system-layer system-layer--engine reveal">
@@ -1432,6 +1451,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p>4 אוטומציות שכל בעל עסק חייב שיהיו פעילות ברשתות שלו, כדי לחמם קהל, להוביל לפניות ולהניע להמרה.</p>
           </div>
         </div>
+        <div class="carousel-dots"></div>
       </div>
 
     </div>
@@ -2172,6 +2192,41 @@ document.querySelectorAll('.process-highlight .stat').forEach(function(el){
 
 // Deliverables layers — staggered reveal (entry only)
 gsap.fromTo('.system-layer',{y:24,opacity:0},{y:0,opacity:1,duration:0.7,stagger:0.2,scrollTrigger:{trigger:'.pyramid-hero',start:'top 80%'}});
+
+// Mobile carousel dots — IntersectionObserver (RTL-safe)
+(function(){
+  var mq=window.matchMedia('(max-width:768px)');
+  function initCarousels(){
+    document.querySelectorAll('.system-items').forEach(function(track){
+      var dots=track.nextElementSibling;
+      if(!dots||!dots.classList.contains('carousel-dots'))return;
+      dots.innerHTML='';
+      var items=track.querySelectorAll('.system-item');
+      if(!mq.matches){dots.innerHTML='';return;}
+      items.forEach(function(_,i){
+        var d=document.createElement('span');
+        d.className='dot'+(i===0?' active':'');
+        d.addEventListener('click',function(){
+          items[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+        });
+        dots.appendChild(d);
+      });
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){
+            var idx=Array.prototype.indexOf.call(items,e.target);
+            dots.querySelectorAll('.dot').forEach(function(d,j){
+              d.classList.toggle('active',j===idx);
+            });
+          }
+        });
+      },{root:track,threshold:0.6});
+      items.forEach(function(it){obs.observe(it);});
+    });
+  }
+  initCarousels();
+  mq.addEventListener('change',initCarousels);
+})();
 
 // Final CTA — slightly more pronounced entry (clean, no loop)
 if(!prefersReducedMotion){
