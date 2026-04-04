@@ -163,11 +163,6 @@ section{transition:none;transform-origin:center center}
 @keyframes revealFallback{to{opacity:1;transform:none}}
 @supports (animation-fill-mode:forwards){.hero .micro-copy,.hero-headline,.hero-focus,.hero-cta-area,.hero-figure{animation:revealFallback 0s 3s forwards}}
 
-/* FOCUS STATES */
-.cta-btn:focus-visible,.modal-close:focus-visible,.faq-q:focus-visible{outline:2px solid var(--purple-main);outline-offset:3px;box-shadow:0 0 0 4px rgba(185,33,204,0.2)}
-input:focus-visible,select:focus-visible{outline:2px solid var(--purple-main);outline-offset:1px}
-a:focus-visible{outline:2px solid var(--purple-main);outline-offset:2px;border-radius:4px}
-
 /* NAVBAR */
 .navbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 24px;background:rgba(8,8,12,0.7);backdrop-filter:blur(28px) saturate(1.3);-webkit-backdrop-filter:blur(28px) saturate(1.3);border-bottom:1px solid rgba(255,255,255,0.06);transition:background 0.4s,backdrop-filter 0.4s,border-color 0.4s,box-shadow 0.4s}
 .navbar.scrolled{background:rgba(8,8,12,0.45);backdrop-filter:blur(36px) saturate(1.5);-webkit-backdrop-filter:blur(36px) saturate(1.5);border-bottom-color:rgba(255,255,255,0.12);box-shadow:0 4px 24px rgba(0,0,0,0.25)}
@@ -182,7 +177,7 @@ a:focus-visible{outline:2px solid var(--purple-main);outline-offset:2px;border-r
 @keyframes modalIn{from{opacity:0;transform:scale(0.95) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
 .modal-close{position:absolute;top:16px;left:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:var(--white);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s}
 .modal-close:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.25)}
-.modal-title{font-size:22px;font-weight:700;margin-bottom:6px;text-align:center}
+.modal-title{font-size:22px;font-weight:700;margin:0 0 6px;text-align:center}
 .modal-sub{font-size:14px;color:#b8b8c2;text-align:center;margin-bottom:24px}
 .modal-form input{width:100%;padding:14px 16px;margin-bottom:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:var(--white);font-family:var(--font);font-size:15px;outline:none;transition:border-color 0.3s;direction:rtl}
 .modal-form input::placeholder{color:rgba(255,255,255,0.35)}
@@ -232,6 +227,7 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .vsl-video{position:relative;width:100%;padding-bottom:56.25%;border-radius:20px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.18);box-shadow:0 24px 60px rgba(0,0,0,0.55);margin:40px 0;background:#050508}
 .vsl-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
 .vsl-video--placeholder{padding-bottom:0}
+.vsl-placeholder-img{width:100%;display:block;border-radius:inherit}
 .vsl-coming-soon{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.7);color:rgba(255,255,255,0.8);font-size:14px;padding:8px 20px;border-radius:20px;border:1px solid rgba(143,47,160,0.25);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);white-space:nowrap}
 
 
@@ -550,9 +546,13 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .consent-checkbox{display:flex;align-items:flex-start;gap:10px;margin:12px 0 16px;cursor:pointer;font-size:13px;color:var(--white-dim);line-height:1.6}
 .consent-checkbox input[type="checkbox"]{width:18px;height:18px;margin-top:2px;flex-shrink:0;accent-color:var(--core);cursor:pointer}
 
+/* ===== SKIP LINK ===== */
+.skip-to-content{position:absolute;top:-100px;left:50%;transform:translateX(-50%);z-index:999;padding:12px 24px;background:var(--core);color:#fff;border-radius:8px;font-weight:700;transition:top 0.3s;text-decoration:none}
+.skip-to-content:focus{top:16px}
+
 /* ===== FOCUS STATES ===== */
 :focus-visible{outline:2px solid var(--purple-main);outline-offset:2px}
-.cta-btn:focus-visible{outline:2px solid var(--white);outline-offset:4px}
+.cta-btn:focus-visible,.modal-close:focus-visible{outline:2px solid var(--white);outline-offset:4px}
 input:focus-visible,select:focus-visible{outline:none;border-color:var(--purple-main);box-shadow:0 0 0 2px rgba(185,33,204,0.3)}
 .faq-q:focus-visible{outline:2px solid var(--purple-main);outline-offset:-2px;border-radius:8px}
 
@@ -616,10 +616,8 @@ section + .glow-divider{margin-top:0;margin-bottom:0}
 .nav-hamburger.active span:nth-child(2){opacity:0}
 .nav-hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
-/* ===== RESPONSIVE — TABLET (481px – 768px) ===== */
+/* ===== RESPONSIVE — TABLET ONLY (481px – 768px) ===== */
 @media(min-width:481px) and (max-width:768px){
-section{padding:80px 20px}
-.tech-section{padding:60px 20px}
 .navbar-logo img{height:48px}
 /* Hero */
 .hero{padding-top:110px;min-height:auto;overflow:hidden}
@@ -634,7 +632,6 @@ section{padding:80px 20px}
 .process-grid{grid-template-columns:repeat(2,1fr)}
 .split-rows{max-width:100%}
 .filter-grid{grid-template-columns:repeat(2,1fr)}
-.videos-grid{gap:8px}
 /* Story keeps side-by-side but narrower image */
 .story-grid{grid-template-columns:260px 1fr;gap:32px}
 .story-image{position:relative;top:auto}
@@ -646,22 +643,9 @@ section{padding:80px 20px}
 .why-content{grid-template-columns:1fr;gap:24px}
 .why-visual{display:none}
 .why-callout{padding:20px 20px;font-size:17px}
-.faq-q{font-size:15px;padding:18px 0}
-.faq-a p{font-size:14px}
-/* Deliverables tablet: handled in system-items rules above */
-/* Marquee */
 /* Testimonial wall tablet */
 .testimonial-featured{grid-template-columns:repeat(2,1fr);gap:18px}
-.testimonial-more{columns:2;column-gap:16px}
 .bonus-box{flex-direction:row}
-/* transform-grid inherits base styles */
-.scroll-line-svg{display:none}
-.sub-text{margin:0 auto}
-body{padding-bottom:70px}
-/* Reduce blur for perf */
-.glow-card{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.hero-focus{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-.cta-btn{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 }
 
 /* ===== RESPONSIVE — MOBILE + TABLET SHARED (up to 768px) ===== */
@@ -1079,7 +1063,7 @@ h2{margin-bottom:20px}
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<a href="#hero" class="skip-to-content" style="position:absolute;top:-100px;left:50%;transform:translateX(-50%);z-index:999;padding:12px 24px;background:var(--core);color:#fff;border-radius:8px;font-weight:700;transition:top 0.3s;text-decoration:none" onfocus="this.style.top='16px'" onblur="this.style.top='-100px'">דלג לתוכן</a>
+<a href="#hero" class="skip-to-content">דלג לתוכן</a>
 <div class="grid-bg"></div>
 
 <!-- SVG SCROLLYTELLING LINE (desktop only) -->
@@ -1096,7 +1080,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()" aria-label="סגור">&times;</button>
     <img src="logo_final.png" alt="Uriel Sol" class="modal-logo">
-    <h2 class="modal-title" id="modal-title" style="margin:0">בוא נבין ביחד מה תוקע אותך</h2>
+    <h2 class="modal-title" id="modal-title">בוא נבין ביחד מה תוקע אותך</h2>
     <div class="modal-sub">שיחת זום אסטרטגית של 30 עד 60 דקות. נשים הכל על השולחן, בלי שעון מתקתק.</div>
     <form class="modal-form" id="leadForm" onsubmit="return submitForm(event)">
       <input type="text" id="fname" name="name" placeholder="שם מלא" required aria-label="שם מלא" />
@@ -1168,7 +1152,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container"><div class="vsl-wrapper">
     <h2 class="reveal">רוב מי שמגיע אלי ניסה הכל, <span class="highlight">אבל לא לפי הסדר הנכון.</span></h2>
     <div class="vsl-video vsl-video--placeholder">
-      <img src="assets/images/youtubepholder1.png" alt="סרטון הסבר — בקרוב" style="width:100%;display:block;border-radius:inherit">
+      <img src="assets/images/youtubepholder1.png" alt="סרטון הסבר — בקרוב" class="vsl-placeholder-img">
       <div class="vsl-coming-soon">הסרטון המלא יעלה בקרוב</div>
     </div>
     <p class="sub-text reveal reveal-delay-2 sub-center">רוב האנשים רצים לשווק לפני שהם מבינים מה באמת מחזיק אותם. בלי יסודות ברורים, כל תוכן, מסר או קמפיין נשחק. <span class="highlight">קוד המפצח</span> בנוי מ 3 שלבים ברורים שמחברים את מי שאתה, למה שאתה מביא, ואיך זה יוצא החוצה בצורה שעובדת.</p>
@@ -1789,18 +1773,18 @@ async function submitLead(data, btn){
       body: formData
     });
     if(!response.ok) throw new Error('Webhook error: ' + response.status);
-    // Analytics events (fire if available)
+    var redirected=false;
+    function goToThankYou(){if(!redirected){redirected=true;window.location.href='thank-you.html'}}
     window.dataLayer=window.dataLayer||[];
     dataLayer.push({
       'event': 'lead_submit',
       'source': data.source,
       'cycle': data.cycle,
       'content_name': 'kod_hamfatzach',
-      'eventCallback': function(){ window.location.href = 'thank-you.html'; },
+      'eventCallback': goToThankYou,
       'eventTimeout': 2000
     });
-    // Fallback redirect if GTM callback never fires (ad blocker, no consent)
-    setTimeout(function(){ window.location.href = 'thank-you.html'; }, 2500);
+    setTimeout(goToThankYou, 2500);
   } catch(err) {
     console.error('Submit error:', err);
     btn.textContent = origText;
@@ -1809,49 +1793,21 @@ async function submitLead(data, btn){
   }
 }
 
-// FORM VALIDATION (POPUP)
-function submitForm(e){
+// SHARED FORM VALIDATION
+function validateAndSubmit(e, prefix, errorScope, source){
   e.preventDefault();
   let valid=true;
-  const name=document.getElementById('fname');
-  const email=document.getElementById('femail');
-  const phone=document.getElementById('fphone');
-  const cycle=document.getElementById('fcycle');
-  [name,email,phone].forEach(i=>{i.classList.remove('error')});
-  document.querySelectorAll('.error-msg').forEach(m=>m.style.display='none');
-  if(name.value.trim().length<2){name.classList.add('error');document.getElementById('fnameErr').style.display='block';valid=false}
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){email.classList.add('error');document.getElementById('femailErr').style.display='block';valid=false}
-  if(!/^\+?\d{9,15}$/.test(phone.value.replace(/[^\d+]/g,''))){phone.classList.add('error');document.getElementById('fphoneErr').style.display='block';valid=false}
-  if(!cycle.value){cycle.style.borderColor='#f44336';valid=false}else{cycle.style.borderColor=''}
-  var consent=document.getElementById('fconsent');
-  if(!consent.checked){consent.parentElement.style.outline='2px solid #f44336';consent.parentElement.style.outlineOffset='2px';valid=false}else{consent.parentElement.style.outline='';consent.parentElement.style.outlineOffset=''}
-  if(valid){
-    submitLead({
-      name: name.value.trim(),
-      email: email.value.trim(),
-      phone: phone.value.replace(/[^\d+]/g,''),
-      cycle: cycle.value,
-      source: 'popup'
-    }, e.target.querySelector('.cta-btn'));
-  }
-  return false;
-}
-
-// FORM VALIDATION (BOTTOM)
-function submitBottomForm(e){
-  e.preventDefault();
-  let valid=true;
-  const name=document.getElementById('bname');
-  const email=document.getElementById('bemail');
-  const phone=document.getElementById('bphone');
-  const cycle=document.getElementById('bcycle');
+  const name=document.getElementById(prefix+'name');
+  const email=document.getElementById(prefix+'email');
+  const phone=document.getElementById(prefix+'phone');
+  const cycle=document.getElementById(prefix+'cycle');
   [name,email,phone].forEach(i=>{i.classList.remove('error');i.style.borderColor=''});
-  document.querySelectorAll('#bottomForm .error-msg').forEach(m=>m.style.display='none');
-  if(name.value.trim().length<2){name.classList.add('error');document.getElementById('bnameErr').style.display='block';valid=false}
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){email.classList.add('error');document.getElementById('bemailErr').style.display='block';valid=false}
-  if(!/^\+?\d{9,15}$/.test(phone.value.replace(/[^\d+]/g,''))){phone.classList.add('error');document.getElementById('bphoneErr').style.display='block';valid=false}
+  (errorScope||document).querySelectorAll('.error-msg').forEach(m=>m.style.display='none');
+  if(name.value.trim().length<2){name.classList.add('error');document.getElementById(prefix+'nameErr').style.display='block';valid=false}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){email.classList.add('error');document.getElementById(prefix+'emailErr').style.display='block';valid=false}
+  if(!/^\+?\d{9,15}$/.test(phone.value.replace(/[^\d+]/g,''))){phone.classList.add('error');document.getElementById(prefix+'phoneErr').style.display='block';valid=false}
   if(!cycle.value){cycle.style.borderColor='#f44336';valid=false}else{cycle.style.borderColor=''}
-  var consent=document.getElementById('bconsent');
+  var consent=document.getElementById(prefix+'consent');
   if(!consent.checked){consent.parentElement.style.outline='2px solid #f44336';consent.parentElement.style.outlineOffset='2px';valid=false}else{consent.parentElement.style.outline='';consent.parentElement.style.outlineOffset=''}
   if(valid){
     submitLead({
@@ -1859,11 +1815,13 @@ function submitBottomForm(e){
       email: email.value.trim(),
       phone: phone.value.replace(/[^\d+]/g,''),
       cycle: cycle.value,
-      source: 'bottom_form'
+      source: source
     }, e.target.querySelector('.cta-btn'));
   }
   return false;
 }
+function submitForm(e){return validateAndSubmit(e,'f',document,'popup')}
+function submitBottomForm(e){return validateAndSubmit(e,'b',document.getElementById('bottomForm'),'bottom_form')}
 
 // FAQ ACCORDION (one at a time)
 function toggleFaq(item){
