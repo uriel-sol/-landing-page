@@ -155,6 +155,11 @@ section{transition:none;transform-origin:center center}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity var(--duration-reveal) var(--ease-structural),transform var(--duration-reveal) var(--ease-structural)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-delay-1{transition-delay:0.12s}.reveal-delay-2{transition-delay:0.24s}.reveal-delay-3{transition-delay:0.36s}.reveal-delay-4{transition-delay:0.48s}
+/* Hero elements: GSAP controls animation, start hidden */
+.hero .micro-copy,.hero-headline,.hero-focus,.hero-cta-area,.hero-figure{opacity:0}
+/* Fallback: if GSAP CDN fails, make hero visible after 3s */
+@keyframes revealFallback{to{opacity:1;transform:none}}
+@supports (animation-fill-mode:forwards){.hero .micro-copy,.hero-headline,.hero-focus,.hero-cta-area,.hero-figure{animation:revealFallback 0s 3s forwards}}
 
 /* FOCUS STATES */
 .cta-btn:focus-visible,.modal-close:focus-visible,.faq-q:focus-visible{outline:2px solid var(--purple-main);outline-offset:3px;box-shadow:0 0 0 4px rgba(185,33,204,0.2)}
@@ -240,6 +245,7 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .vsl-video{position:relative;width:100%;padding-bottom:56.25%;border-radius:20px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.18);box-shadow:0 24px 60px rgba(0,0,0,0.55);margin:40px 0;background:#050508}
 .vsl-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
 .vsl-video--placeholder{padding-bottom:0}
+.vsl-coming-soon{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.7);color:rgba(255,255,255,0.8);font-size:14px;padding:8px 20px;border-radius:20px;border:1px solid rgba(143,47,160,0.25);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);white-space:nowrap}
 .play-overlay{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:rgba(10,10,10,0.5);cursor:pointer;transition:background 0.3s}
 .play-overlay:hover{background:rgba(10,10,10,0.3)}
 .play-icon{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,#70267f,#9a3bab);display:flex;align-items:center;justify-content:center;box-shadow:0 16px 36px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.15)}
@@ -1169,21 +1175,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="hero-inner">
       <div class="hero-content">
-        <p class="micro-copy reveal">למומחה שכבר יש לו ניסיון, לקוחות ותוצאות, אבל עדיין זה לא עובד חלק</p>
-        <h1 class="hero-headline reveal reveal-delay-1">
+        <p class="micro-copy">למומחה שכבר יש לו ניסיון, לקוחות ותוצאות, אבל עדיין זה לא עובד חלק</p>
+        <h1 class="hero-headline">
           <span class="hero-line1">הלקוחות שלך אומרים שאתה</span>
           <span class="hero-line2">הכי טוב שהכירו, אז למה אתה עדיין</span>
           <span class="hero-line3">רודף אחרי לקוחות?</span>
         </h1>
         <div class="hero-focus">
-          <p class="sub-text reveal reveal-delay-2">אתה יודע? זו לא בעיה של שיווק ולא בעיה של מכירות. אתה יודע שאתה טוב, אתה משקיע אנרגיה, זמן וכסף, אבל זה לא יוצא החוצה. לא כי אתה לא מספיק טוב, אלא כי כל מה שאתה עושה לא מחובר לקו אחד ברור, ולא משנה כמה תשקיע, בלי זה, זה לא יזוז.</p>
-          <p class="sub-text reveal reveal-delay-3 mt-16">ב <span class="highlight">13 שבועות</span> נחבר את מי שאתה והערך שאתה מביא לקו אחד ברור, שאתה יודע בדיוק מה אתה עושה, למה, ואיך זה יוצא החוצה.</p>
+          <p class="sub-text">אתה יודע? זו לא בעיה של שיווק ולא בעיה של מכירות. אתה יודע שאתה טוב, אתה משקיע אנרגיה, זמן וכסף, אבל זה לא יוצא החוצה. לא כי אתה לא מספיק טוב, אלא כי כל מה שאתה עושה לא מחובר לקו אחד ברור, ולא משנה כמה תשקיע, בלי זה, זה לא יזוז.</p>
+          <p class="sub-text mt-16">ב <span class="highlight">13 שבועות</span> נחבר את מי שאתה והערך שאתה מביא לקו אחד ברור, שאתה יודע בדיוק מה אתה עושה, למה, ואיך זה יוצא החוצה.</p>
         </div>
-        <div class="hero-cta-area reveal reveal-delay-4">
+        <div class="hero-cta-area">
           <button class="cta-btn" onclick="openModal()">בוא נבדוק אם זה מתאים לך</button>
         </div>
       </div>
-      <div class="hero-figure reveal reveal-delay-2">
+      <div class="hero-figure">
         <div class="hero-figure-glow"></div>
         <img src="assets/images/noback.png" alt="אוריאל סול" />
         <!-- Authority logos removed: wasted bandwidth on mobile (hidden via CSS but still fetched), clipping issues on narrow desktop viewports -->
@@ -1198,6 +1204,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="reveal">רוב מי שמגיע אלי ניסה הכל, <span class="highlight">אבל לא לפי הסדר הנכון.</span></h2>
     <div class="vsl-video vsl-video--placeholder">
       <img src="assets/images/youtubepholder1.png" alt="סרטון הסבר — בקרוב" style="width:100%;display:block;border-radius:inherit">
+      <div class="vsl-coming-soon">הסרטון המלא יעלה בקרוב</div>
     </div>
     <p class="sub-text reveal reveal-delay-2 sub-center">רוב האנשים רצים לשווק לפני שהם מבינים מה באמת מחזיק אותם. בלי יסודות ברורים, כל תוכן, מסר או קמפיין נשחק. <span class="highlight">קוד המפצח</span> בנוי מ 3 שלבים ברורים שמחברים את מי שאתה, למה שאתה מביא, ואיך זה יוצא החוצה בצורה שעובדת.</p>
     <div class="text-center mt-32 reveal reveal-delay-3">
@@ -2029,7 +2036,7 @@ gsap.from('.vsl-video',{scale:0.97,opacity:0,duration:0.9,delay:0.1,ease:'power3
 (function(){
   var stepsTimeline=gsap.timeline({scrollTrigger:{trigger:'.steps-timeline',start:'top 78%',once:true}});
   // 1. Line fills from top to bottom
-  stepsTimeline.to('.steps-timeline-line',{scale:'1 1',duration:1,ease:'power2.inOut'});
+  stepsTimeline.to('.steps-timeline-line',{scaleY:1,duration:1,ease:'power2.inOut'});
   // 2. Each step enters sequentially with activation
   document.querySelectorAll('.step-row').forEach(function(row,i){
     stepsTimeline.fromTo(row,{y:24,opacity:0},{y:0,opacity:1,duration:0.55,ease:'power2.out',onComplete:function(){row.classList.add('activated');}},'-=0.35');
