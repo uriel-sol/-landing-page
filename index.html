@@ -247,10 +247,10 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 
 /* WHY SECTION */
 .why-section{background:#0e0e12;background:radial-gradient(ellipse at center,rgba(255,255,255,0.03),transparent 60%),#0e0e12}
-.why-content{max-width:960px;margin:0 auto;display:grid;grid-template-columns:60% 40%;gap:48px;align-items:start;direction:rtl}
+.why-content{max-width:960px;margin:0 auto;display:grid;grid-template-columns:60% 40%;gap:48px;align-items:center;direction:rtl}
 .why-text{text-align:right}
-.why-visual{display:flex;align-items:center;justify-content:center;padding-top:60px}
-.why-visual-img{width:100%;max-width:280px;height:auto;object-fit:contain;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.4)) drop-shadow(0 0 80px rgba(120,55,140,0.08))}
+.why-visual{display:flex;align-items:center;justify-content:center}
+.why-visual-img{width:100%;max-width:340px;height:auto;object-fit:contain;filter:drop-shadow(0 16px 32px rgba(0,0,0,0.5)) drop-shadow(0 0 60px rgba(120,55,140,0.1))}
 .why-content p{font-size:17px;color:var(--white-dim);line-height:1.9;margin-bottom:20px}
 .why-content p strong{color:var(--white);font-weight:600}
 .why-callout{padding:28px 32px;margin:30px auto;background:linear-gradient(145deg,rgba(18,18,26,0.6),rgba(14,14,20,0.5));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.1);border-right:3px solid rgba(143,47,160,0.45);border-radius:12px;font-size:19px;color:var(--white);font-weight:500;max-width:760px;box-shadow:0 4px 20px rgba(0,0,0,0.2),0 0 40px rgba(143,47,160,0.04);text-align:right}
@@ -269,7 +269,6 @@ radial-gradient(500px 280px at 50% 85%,rgba(120,55,140,0.12),transparent 65%)}
 .step-row.activated .step-row-number{color:rgba(185,33,204,0.55)}
 .step-row-icon{display:flex;align-items:center;justify-content:center;width:52px;height:52px;margin:0 auto;border-radius:50%;background:rgba(143,47,160,0.08);border:1px solid rgba(143,47,160,0.18);box-shadow:0 0 0 rgba(120,55,140,0);transition:box-shadow 0.8s ease,border-color 0.8s ease}
 .step-row.activated .step-row-icon{box-shadow:0 0 18px rgba(185,33,204,0.2),0 0 40px rgba(143,47,160,0.1);border-color:rgba(185,33,204,0.35)}
-.step-row-icon img{width:28px;height:28px;object-fit:contain}
 .step-row-content{padding:0 20px}
 .step-row-content h3{font-size:19px;margin-bottom:8px;color:var(--white);font-weight:700}
 .step-row-content p{font-size:15px;color:var(--white-dim);line-height:1.8}
@@ -710,7 +709,6 @@ section{padding:80px 20px}
 .step-row{grid-template-columns:48px 48px 1fr;gap:12px}
 .step-row-number{font-size:28px}
 .step-row-icon{width:40px;height:40px}
-.step-row-icon img{width:22px;height:22px}
 .step-row-content{padding:0}
 .step-row-content h3{font-size:17px}
 .steps-timeline-line{right:47px;transform:none;transform-origin:top center;scale:1 0}
@@ -832,7 +830,6 @@ section{padding:60px 14px}
 .step-row{grid-template-columns:40px 40px 1fr;gap:8px}
 .step-row-number{font-size:24px}
 .step-row-icon{width:36px;height:36px}
-.step-row-icon img{width:20px;height:20px}
 .steps-timeline-line{right:39px;transform:none;transform-origin:top center;scale:1 0}
 .process-grid{grid-template-columns:1fr}
 .filter-grid{grid-template-columns:1fr}
@@ -1199,9 +1196,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container"><div class="vsl-wrapper">
     <h2 class="reveal">רוב מי שמגיע אלי ניסה הכל, <span class="highlight">אבל לא לפי הסדר הנכון.</span></h2>
     <div class="vsl-video reveal reveal-delay-1">
-      <div class="play-overlay" onclick="this.style.display='none';this.parentElement.innerHTML='<iframe src=\'https://www.youtube-nocookie.com/embed/VIDEO_ID?autoplay=1\' allow=\'autoplay; encrypted-media\' allowfullscreen></iframe>'">
-        <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-      </div>
+      <img src="assets/images/youtubepholder1.png" alt="סרטון הסבר — בקרוב" style="width:100%;height:100%;position:absolute;top:0;left:0;object-fit:cover;border-radius:inherit">
     </div>
     <p class="sub-text reveal reveal-delay-2 sub-center">רוב האנשים רצים לשווק לפני שהם מבינים מה באמת מחזיק אותם. בלי יסודות ברורים, כל תוכן, מסר או קמפיין נשחק. <span class="highlight">קוד המפצח</span> בנוי מ 3 שלבים ברורים שמחברים את מי שאתה, למה שאתה מביא, ואיך זה יוצא החוצה בצורה שעובדת.</p>
     <div class="text-center mt-32 reveal reveal-delay-3">
@@ -1223,7 +1218,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="mt-32 reveal"><button class="cta-btn" onclick="openModal()">בוא נבדוק אם זה מתאים לך</button></div>
       </div>
       <div class="why-visual">
-        <img src="assets/icons/why-visual-asset.png" alt="משפך אסטרטגי — מיסודות לתוצאות" class="why-visual-img">
+        <img src="assets/icons/why-visual-asset2.0.png" alt="מבנה לא שלם — חלקים חסרים" class="why-visual-img">
       </div>
     </div>
   </div>
@@ -1240,7 +1235,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="steps-timeline-line"></div>
       <div class="step-row">
         <div class="step-row-number">01</div>
-        <div class="step-row-icon"><img src="assets/icons/icon-dna.png" alt="פיצוח ה-DNA" loading="lazy"></div>
+        <div class="step-row-icon"></div>
         <div class="step-row-content">
           <h3>פיצוח ה DNA</h3>
           <p>אנחנו מגלים מה באמת מבדל אותך מכולם, וזה הופך לבסיס שעליו העסק, התוכן והמסרים שלך יושבים. אתה מפסיק לגמגם מול השאלה "אז מה אתה עושה" ויש לך תשובה אחת שגורמת לאנשים לעצור ולהקשיב.</p>
@@ -1248,7 +1243,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="step-row">
         <div class="step-row-number">02</div>
-        <div class="step-row-icon"><img src="assets/icons/icon-method.png" alt="אריזת הייחודיות לשיטה" loading="lazy"></div>
+        <div class="step-row-icon"></div>
         <div class="step-row-content">
           <h3>אריזת הייחודיות לשיטה</h3>
           <p>אנחנו לוקחים את מה שזיקקנו והופכים אותו לשיטה ברורה שאפשר להסביר, למכור ולהעביר. הידע שלך מקבל מבנה, ואתה מפסיק להרגיש כמו ספק שירות שאפשר להחליף, ומתחיל להיות הדמות שאנשים רוצים לעבוד דווקא איתה.</p>
@@ -1256,7 +1251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="step-row">
         <div class="step-row-number">03</div>
-        <div class="step-row-icon"><img src="assets/icons/icon-magnetic-demand.png" alt="מנגנון הביקוש וההשפעה" loading="lazy"></div>
+        <div class="step-row-icon"></div>
         <div class="step-row-content">
           <h3>מנגנון הביקוש וההשפעה</h3>
           <p>אתה מפסיק לנחש מה להעלות ולקוות שמישהו יראה. יש לך מנגנון ברור שמביא אליך את האנשים הנכונים כשהם כבר מוכנים לקנות, גם כשאתה לא בחדר.</p>
