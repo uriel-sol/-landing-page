@@ -1050,8 +1050,8 @@ h2{margin-bottom:20px}
   .carousel-dots .dot{transition:none}
 }
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1136,7 +1136,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="hero-figure">
         <div class="hero-figure-glow"></div>
-        <img src="assets/images/noback.png" alt="אוריאל סול" />
+        <img src="assets/images/noback.png" alt="אוריאל סול" fetchpriority="high" />
         <!-- Authority logos removed: wasted bandwidth on mobile (hidden via CSS but still fetched), clipping issues on narrow desktop viewports -->
       </div>
     </div>
@@ -1148,7 +1148,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container"><div class="vsl-wrapper">
     <h2 class="reveal">רוב מי שמגיע אלי ניסה הכל, <span class="highlight">אבל לא לפי הסדר הנכון.</span></h2>
     <div class="vsl-video vsl-video--placeholder">
-      <img src="assets/images/youtubepholder1.png" alt="סרטון הסבר — בקרוב" class="vsl-placeholder-img">
+      <img src="assets/images/youtubepholder1.png" alt="סרטון הסבר — בקרוב" class="vsl-placeholder-img" loading="lazy">
       <div class="vsl-coming-soon">הסרטון המלא יעלה בקרוב</div>
     </div>
     <p class="sub-text reveal reveal-delay-2 sub-center">רוב האנשים רצים לשווק לפני שהם מבינים מה באמת מחזיק אותם. בלי יסודות ברורים, כל תוכן, מסר או קמפיין נשחק. <span class="highlight">קוד המפצח</span> בנוי מ 3 שלבים ברורים שמחברים את מי שאתה, למה שאתה מביא, ואיך זה יוצא החוצה בצורה שעובדת.</p>
@@ -1171,7 +1171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="mt-32 reveal"><button class="cta-btn" onclick="openModal()">בוא נבדוק אם זה מתאים לך</button></div>
       </div>
       <div class="why-visual">
-        <img src="assets/icons/why-visual-asset2.0.png" alt="מבנה לא שלם — חלקים חסרים" class="why-visual-img">
+        <img src="assets/icons/why-visual-asset2.0.png" alt="מבנה לא שלם — חלקים חסרים" class="why-visual-img" loading="lazy">
       </div>
     </div>
   </div>
@@ -1221,8 +1221,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="reveal text-center">לא קורס שצופים בו לבד <span class="highlight">ולא ייעוץ שעולה פי 4.</span></h2>
     <p class="sub-text reveal reveal-delay-1 sub-center-16">אתה יודע מה הבעיה עם קורסים? הם כלליים מדי, והבעיה עם ייעוץ אישי? הוא יקר מדי. אז בניתי מבנה שמשלב את שניהם, קבוצה שנותנת אנרגיה ומראה, ותהליך אישי שנותן דיוק.</p>
     <div class="process-grid">
-      <div class="process-card process-card--group glow-card reveal reveal-delay-2"><div class="card-badge"><img src="assets/icons/icon-group.png" alt="קבוצה" class="card-badge-icon"> קבוצה</div><h3>7 מפגשי מאסטרמיינד קבוצתיים לייב</h3><p>אחת לשבועיים, 4 שעות עבודה נטו. כל מפגש בונה חלק אחר במנגנון שלך: מ DNA, דרך שיטה, ועד הפעלה בשטח.</p></div>
-      <div class="process-card process-card--premium glow-card reveal reveal-delay-3"><div class="card-badge"><img src="assets/icons/icon-personal.png" alt="אישי" class="card-badge-icon"> אישי</div><h3>3 תהליכים אישיים איתי</h3><p>בנקודות הקריטיות של ההתחלה, האמצע והסוף. אני לא נותן לך לנחש אם עשית נכון, אלא מזקק אותך אישית ומדייק את מה שבנית.</p></div>
+      <div class="process-card process-card--group glow-card reveal reveal-delay-2"><div class="card-badge"><img src="assets/icons/icon-group.png" alt="קבוצה" class="card-badge-icon" loading="lazy"> קבוצה</div><h3>7 מפגשי מאסטרמיינד קבוצתיים לייב</h3><p>אחת לשבועיים, 4 שעות עבודה נטו. כל מפגש בונה חלק אחר במנגנון שלך: מ DNA, דרך שיטה, ועד הפעלה בשטח.</p></div>
+      <div class="process-card process-card--premium glow-card reveal reveal-delay-3"><div class="card-badge"><img src="assets/icons/icon-personal.png" alt="אישי" class="card-badge-icon" loading="lazy"> אישי</div><h3>3 תהליכים אישיים איתי</h3><p>בנקודות הקריטיות של ההתחלה, האמצע והסוף. אני לא נותן לך לנחש אם עשית נכון, אלא מזקק אותך אישית ומדייק את מה שבנית.</p></div>
     </div>
     <div class="process-highlight glow-card reveal">
       <p>רק שלושת המפגשים האישיים האלו מתומחרים בנפרד ב <span class="stat">15,000 שקל</span>. כאן אתה מקבל אותם כחלק ממבנה שלם שבנוי לייצר לך מסלול ממוקד ותוצאה מדידה לאורך התהליך.</p>
@@ -1475,9 +1475,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container"><div class="tech-box reveal">
     <p class="section-desc">המסגרת הזו נבנתה כדי שתעבוד ותבנה בפועל, לא כדי שתצפה בהדרכות.</p>
     <div class="tech-grid">
-      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-calendar.png" alt="תאריך" class="tech-item-icon"> מחזור #25 בוקר נפתח ב-23/04/2026 | ימי חמישי 10:00–14:00</span></div>
-      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-calendar.png" alt="תאריך" class="tech-item-icon"> מחזור #25 ערב נפתח ב-27/04/2026 | ימי שני 17:00–21:00</span></div>
-      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-live.png" alt="לייב" class="tech-item-icon"> מפגשים לייב, וההקלטות זמינות לך לכל החיים</span></div>
+      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-calendar.png" alt="תאריך" class="tech-item-icon" loading="lazy"> מחזור #25 בוקר נפתח ב-23/04/2026 | ימי חמישי 10:00–14:00</span></div>
+      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-calendar.png" alt="תאריך" class="tech-item-icon" loading="lazy"> מחזור #25 ערב נפתח ב-27/04/2026 | ימי שני 17:00–21:00</span></div>
+      <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-live.png" alt="לייב" class="tech-item-icon" loading="lazy"> מפגשים לייב, וההקלטות זמינות לך לכל החיים</span></div>
       <div class="tech-item"><span class="tech-icon"></span><span><img src="assets/icons/icon-group.png" alt="קבוצה" class="tech-item-icon"> עד 15 משתתפים בקבוצה בלבד כדי לשמור על איכות הקבוצה ויחס אישי ממני</span></div>
     </div>
   </div></div>
