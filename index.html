@@ -945,12 +945,12 @@ h2{margin-bottom:20px}
   border-top:1px solid rgba(255,255,255,0.08);
   box-shadow:0 -8px 32px rgba(0,0,0,0.4);
   transform:translateY(100%);
-  display:none;
+  pointer-events:none;
 }
-.consent-banner.visible{display:block;animation:consentUp 0.6s var(--ease-structural) 1.5s forwards}
-.consent-banner.hidden{animation:consentDown 0.4s var(--ease-structural) forwards}
-@keyframes consentUp{to{transform:translateY(0)}}
-@keyframes consentDown{to{transform:translateY(100%)}}
+.consent-banner.visible{pointer-events:auto;animation:consentUp 0.6s var(--ease-structural) 1.5s forwards}
+.consent-banner.hidden{pointer-events:none;animation:consentDown 0.4s var(--ease-structural) forwards}
+@keyframes consentUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+@keyframes consentDown{from{transform:translateY(0)}to{transform:translateY(100%)}}
 .consent-banner-inner{
   max-width:var(--max-width);margin:0 auto;
   display:flex;align-items:center;gap:20px;flex-wrap:wrap;
