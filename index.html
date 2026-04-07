@@ -1852,6 +1852,11 @@ function toggleFaq(item){
     if(btn)btn.setAttribute('aria-expanded','true');
   }
 }
+window.addEventListener('resize',function(){
+  document.querySelectorAll('.faq-item.open .faq-a').forEach(function(a){
+    a.style.maxHeight=a.scrollHeight+'px';
+  });
+});
 
 // VIDEO GRID — click to open modal
 function openVideoModal(vid){
