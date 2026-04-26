@@ -1,0 +1,9 @@
+# Local preview screenshots (generated for review, not source)
+preview-*.png
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
