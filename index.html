@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://www.youtube-nocookie.com">
 <link rel="preconnect" href="https://img.youtube.com">
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&family=Frank+Ruhl+Libre:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <!-- Consent Mode v2 defaults (must load before GTM) -->
 <script>
 window.dataLayer=window.dataLayer||[];
@@ -101,7 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 --purple-glow:var(--core-glow);--purple-glow-strong:rgba(var(--core-rgb),0.6);
 --gradient-purple:var(--gradient-core);
 /* === SYSTEM === */
---font:'Heebo',sans-serif;--font-display:'Frank Ruhl Libre',serif;--max-width:1100px;
+--font:'Heebo',sans-serif;--font-display:'Heebo',sans-serif;--max-width:1100px;
 --glow-shadow:0 14px 36px rgba(0,0,0,0.35);
 --glow-text:none;
 --red-dark:#3a0a0a;--red-border:rgba(244,67,54,0.3);
@@ -205,8 +205,8 @@ linear-gradient(180deg,rgba(0,0,0,0.55),transparent 20%,transparent 80%,rgba(0,0
 
 /* Hero headline: three-line style (centered, compact) */
 .hero-headline{position:relative;z-index:3;margin-bottom:20px;text-align:center;margin-left:auto;margin-right:auto;text-wrap:balance}
-.hero-headline .hero-line1{display:block;font-family:var(--font-display);font-size:clamp(36px,5vw,60px);font-weight:900;color:var(--white);line-height:1.12;letter-spacing:0;text-wrap:balance}
-.hero-headline .hero-line2{display:block;font-family:var(--font-display);font-size:clamp(36px,5vw,60px);font-weight:900;line-height:1.12;letter-spacing:0;color:#FFFFFF;text-shadow:0 0 22px rgba(var(--core-rgb),0.18);text-wrap:balance}
+.hero-headline .hero-line1{display:block;font-family:var(--font-display);font-size:clamp(36px,5vw,60px);font-weight:800;color:var(--white);line-height:1.12;letter-spacing:0;text-wrap:balance}
+.hero-headline .hero-line2{display:block;font-family:var(--font-display);font-size:clamp(36px,5vw,60px);font-weight:800;line-height:1.12;letter-spacing:0;color:#FFFFFF;text-shadow:0 0 22px rgba(var(--core-rgb),0.18);text-wrap:balance}
 .hero-headline .hero-line3{display:block;font-family:var(--font);font-size:clamp(19px,2.4vw,26px);font-weight:600;line-height:1.4;letter-spacing:0;color:var(--white-dim);margin-top:14px;text-wrap:balance}
 
 /* Hero figure (below text, centered) */
@@ -219,6 +219,30 @@ animation:heroFadeIn 1.2s var(--ease-structural) both}
 .hero-figure-photo img{position:relative;z-index:1;width:100%;display:block;filter:grayscale(0.35) contrast(1.06) brightness(0.96)}
 .hero-figure-photo::after{content:'';position:absolute;inset:0;z-index:2;background:#500D5F;mix-blend-mode:color;opacity:0.28;pointer-events:none}
 @keyframes heroFadeIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== CAST PHOTO — reusable duotone recipe (extracted from hero) =====
+   Unifies every real-face photo on the page to one temperature: grayscale + purple
+   color-blend overlay. Modifiers control mask direction, intensity and shape;
+   base recipe intentionally mirrors .hero-figure-photo so all cast members read as one family. */
+.cast-photo{position:relative;display:block}
+.cast-photo img{position:relative;z-index:1;width:100%;height:auto;display:block;filter:grayscale(0.35) contrast(1.06) brightness(0.96)}
+.cast-photo::after{content:'';position:absolute;inset:0;z-index:2;background:#500D5F;mix-blend-mode:color;opacity:0.28;pointer-events:none}
+/* Melts the top of the figure into the room (hero recipe) */
+.cast-photo--mask-top{mask-image:linear-gradient(to top,transparent 0%,#000 28%);-webkit-mask-image:linear-gradient(to top,transparent 0%,#000 28%)}
+/* Melts the bottom of the figure into the room (story/root recipe) */
+.cast-photo--mask-bottom{mask-image:linear-gradient(to bottom,#000 65%,transparent 96%);-webkit-mask-image:linear-gradient(to bottom,#000 65%,transparent 96%)}
+/* Softer pass for vulnerable/honest moments — lower contrast, gentler overlay */
+.cast-photo--soft img{filter:grayscale(0.22) contrast(1) brightness(1)}
+.cast-photo--soft::after{opacity:0.18}
+/* Circular avatar crop (process/mentor proof) */
+.cast-photo--round{border-radius:50%;overflow:hidden;aspect-ratio:1/1}
+.cast-photo--round img{height:100%;object-fit:cover}
+/* Readability pass for photos sitting behind UI copy (VSL poster) — no mask, just a bottom-weighted dark veil */
+.cast-photo--readable::before{content:'';position:absolute;inset:0;z-index:3;background:linear-gradient(180deg,rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.18) 55%,rgba(0,0,0,0.58) 100%);pointer-events:none}
+/* Framed portrait — for photos with bright backgrounds that must sit as an object in the dark room */
+.cast-photo--framed{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.09);box-shadow:0 18px 44px rgba(0,0,0,0.45),0 0 44px rgba(var(--core-rgb),0.14)}
+.cast-photo--framed::before{content:'';position:absolute;inset:0;z-index:3;background:linear-gradient(180deg,rgba(18,7,23,0.10) 0%,rgba(18,7,23,0.42) 100%);mix-blend-mode:multiply;pointer-events:none}
+.cast-photo--framed img{filter:grayscale(0.4) contrast(1.05) brightness(0.9)}
 
 .hero-focus{position:relative;display:block;max-width:700px;margin:24px auto 0;padding:28px 34px 30px;border-radius:16px;border:1px solid rgba(255,255,255,0.09);text-align:center;
 background:linear-gradient(160deg,rgba(41,15,47,0.72),rgba(27,10,33,0.66));box-shadow:0 18px 44px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.08),0 0 90px rgba(var(--core-rgb),0.06);
@@ -233,11 +257,13 @@ radial-gradient(440px 250px at 50% 85%,rgba(var(--core-rgb),0.13),transparent 65
 .vsl-section{background:#050508;text-align:center;padding:var(--section-pad) 24px calc(var(--section-pad) + 12px)}
 .vsl-section h2{margin-bottom:16px}
 .vsl-wrapper{max-width:800px;margin:0 auto}
-.vsl-video{position:relative;width:100%;padding-bottom:56.25%;border-radius:16px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.18);box-shadow:0 24px 56px rgba(0,0,0,0.55);margin:28px 0;background:#050508}
+.vsl-video{position:relative;width:100%;padding-bottom:56.25%;border-radius:16px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.18);box-shadow:0 24px 56px rgba(0,0,0,0.55),0 0 70px rgba(var(--core-rgb),0.14);margin:28px 0;background:#050508}
 .vsl-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
-.vsl-video--placeholder{padding-bottom:0}
+.vsl-video--placeholder{padding-bottom:56.25%}
 .vsl-placeholder-img{width:100%;display:block;border-radius:inherit}
-.vsl-coming-soon{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.7);color:rgba(255,255,255,0.8);font-size:14px;padding:8px 20px;border-radius:20px;border:1px solid rgba(var(--core-rgb),0.25);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);white-space:nowrap}
+.vsl-video--placeholder .cast-photo{position:absolute;inset:0;z-index:0;border-radius:inherit;overflow:hidden}
+.vsl-video--placeholder .cast-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.vsl-coming-soon{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);z-index:2;background:rgba(0,0,0,0.7);color:rgba(255,255,255,0.8);font-size:14px;padding:8px 20px;border-radius:20px;border:1px solid rgba(var(--core-rgb),0.25);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);white-space:nowrap}
 
 
 /* WHY SECTION */
@@ -258,12 +284,12 @@ radial-gradient(440px 250px at 50% 85%,rgba(var(--core-rgb),0.13),transparent 65
 .steps-intro .sub-text{margin:0 auto}
 .steps-timeline{display:flex;flex-direction:column;gap:0;position:relative;max-width:760px;margin:0 auto}
 .steps-timeline::before{content:none}
-.steps-timeline-line{position:absolute;top:0;bottom:0;right:50%;transform:translateX(50%);width:2px;background:linear-gradient(180deg,rgba(var(--core-rgb),0.55),rgba(var(--core-rgb),0.35) 50%,rgba(var(--core-rgb),0.55));z-index:0;transform-origin:top center;scale:1 0;box-shadow:0 0 8px rgba(var(--core-rgb),0.25),0 0 24px rgba(var(--core-rgb),0.12)}
+.steps-timeline-line{position:absolute;top:0;bottom:0;right:50%;transform:translateX(50%);width:2px;background:linear-gradient(180deg,rgba(var(--core-rgb),0.55),rgba(var(--core-rgb),0.35) 50%,rgba(var(--core-rgb),0.55));z-index:0;transform-origin:top center;scale:1 0;box-shadow:0 0 6px rgba(var(--core-rgb),0.6),0 0 20px rgba(var(--core-rgb),0.22)}
 .step-row{display:grid;grid-template-columns:1fr 50px 1fr;align-items:center;gap:0;position:relative;z-index:1;padding:18px 0}
-.step-row-number{text-align:center;font-size:28px;font-weight:800;color:rgba(var(--core-rgb),0.22);line-height:1;font-variant-numeric:tabular-nums;transition:color 0.6s ease}
-.step-row.activated .step-row-number{color:rgba(var(--core-rgb),0.6)}
-.step-row-icon{display:flex;align-items:center;justify-content:center;width:42px;height:42px;margin:0 auto;border-radius:50%;background:rgba(var(--core-rgb),0.08);border:1px solid rgba(var(--core-rgb),0.2);box-shadow:0 0 0 rgba(var(--core-rgb),0);transition:box-shadow 0.8s ease,border-color 0.8s ease}
-.step-row.activated .step-row-icon{box-shadow:0 0 16px rgba(var(--core-rgb),0.22),0 0 36px rgba(var(--core-rgb),0.1);border-color:rgba(var(--core-rgb),0.4)}
+.step-row-number{text-align:center;font-family:var(--font);font-size:34px;font-weight:800;color:rgba(var(--core-rgb),0.28);line-height:1;font-variant-numeric:tabular-nums;transition:color 0.6s ease}
+.step-row.activated .step-row-number{color:var(--core)}
+.step-row-icon{display:flex;align-items:center;justify-content:center;width:42px;height:42px;margin:0 auto;border-radius:50%;background:rgba(var(--core-rgb),0.08);border:1px solid rgba(var(--core-rgb),0.5);box-shadow:0 0 0 rgba(var(--core-rgb),0);transition:box-shadow 0.8s ease,border-color 0.8s ease,background 0.8s ease}
+.step-row.activated .step-row-icon{box-shadow:0 0 16px rgba(var(--core-rgb),0.32),0 0 36px rgba(var(--core-rgb),0.14);border-color:var(--core);background:rgba(var(--core-rgb),0.16)}
 .step-row-content{padding:0 16px}
 .step-row-content h3{font-size:17px;margin-bottom:6px;color:var(--white);font-weight:700}
 .step-row-content p{font-size:14.5px;color:var(--white-dim);line-height:1.75}
@@ -276,12 +302,14 @@ radial-gradient(440px 250px at 50% 85%,rgba(var(--core-rgb),0.13),transparent 65
 .process-card--premium{border:1px solid rgba(var(--core-rgb),0.28);box-shadow:0 8px 32px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.08);padding:32px 28px}
 .process-card--premium h3{font-size:20px;font-weight:800}
 .process-card--premium p{font-size:15px}
+/* Human mentoring proof — small cast-photo avatar at the card's inline-start */
+.process-mentor-photo{width:120px;height:120px;margin:0 0 16px;border-radius:50%;border:2px solid rgba(var(--core-rgb),0.45);box-shadow:0 0 0 6px rgba(var(--core-rgb),0.08),0 10px 26px rgba(0,0,0,0.4)}
 .process-card h3{font-size:19px}
 .process-card p{font-size:14.5px;color:var(--white-dim);line-height:1.75}
 .process-card .card-badge{display:inline-flex;align-items:center;padding:4px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:18px;font-size:12px;font-weight:500;color:var(--white-mute);margin-bottom:14px;letter-spacing:0.3px}
 .process-highlight{background:linear-gradient(145deg,rgba(18,18,26,0.65),rgba(14,14,20,0.6));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:22px 24px;margin-top:14px;box-shadow:0 8px 32px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.06)}
 .process-highlight p{font-size:15px;color:var(--white-dim);line-height:1.75}
-.process-highlight .stat{font-size:24px;font-weight:800;color:#fff;letter-spacing:0}
+.process-highlight .stat{font-size:28px;font-weight:800;color:#fff;letter-spacing:0}
 
 /* COMPARISON — SPLIT LAYOUT */
 .comparison-section{background:var(--black);position:relative;overflow:hidden}
@@ -390,7 +418,11 @@ radial-gradient(440px 250px at 50% 85%,rgba(var(--core-rgb),0.13),transparent 65
 .story-section{background:linear-gradient(180deg,var(--black) 0%,rgba(50,15,60,0.14) 30%,rgba(60,18,72,0.12) 50%,rgba(50,15,60,0.14) 70%,var(--black) 100%)}
 .story-grid{display:grid;grid-template-columns:320px 1fr;gap:40px;align-items:center}
 .story-image{position:relative}
-.story-image img{width:100%;position:relative;z-index:2;-webkit-mask-image:linear-gradient(to bottom,#000 65%,transparent 96%);mask-image:linear-gradient(to bottom,#000 65%,transparent 96%);filter:drop-shadow(0 0 24px rgba(var(--core-rgb),0.12))}
+.story-image img{width:100%;position:relative;z-index:2}
+/* Story photo — framed portrait, slightly gentler duotone (vulnerable/honest section) */
+.story-image .cast-photo{position:relative;z-index:2}
+.story-image .cast-photo img{filter:grayscale(0.32) contrast(1.03) brightness(0.92)}
+.story-image .cast-photo::after{opacity:0.2}
 .story-image-glow{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:380px;height:440px;background:radial-gradient(circle,rgba(var(--core-rgb),0.18),rgba(120,40,150,0.06) 50%,transparent 70%);filter:blur(90px);z-index:1;pointer-events:none;opacity:0;transition:opacity 1.2s ease}
 .story-image-glow.glow-visible{opacity:1}
 .story-content p{font-size:15px;color:var(--white-dim);line-height:1.78;margin-bottom:16px;max-width:560px}
@@ -834,7 +866,7 @@ h3{font-size:clamp(16px,4vw,20px)}
 /* Process highlight */
 .process-highlight{padding:18px 14px}
 .process-highlight p{font-size:15px}
-.process-highlight .stat{font-size:17px}
+.process-highlight .stat{font-size:20px}
 /* Compare */
 .split-row{padding:18px 0}
 .split-left p,.split-right p{font-size:14px}
@@ -1047,7 +1079,15 @@ h2{margin-bottom:20px}
 .ai-section h2{text-align:center;margin-bottom:16px}
 .ai-section .ai-lead{text-align:center;max-width:720px;margin:0 auto 36px;font-size:15.5px;color:var(--white-dim);line-height:1.75}
 .ai-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:center;direction:rtl}
-.ai-pulse-visual{position:relative;min-height:200px}
+.ai-pulse-visual{position:relative;min-height:320px;display:flex;align-items:center;justify-content:center}
+/* Deep #500D5F pool — stage-setting for the future strategic-brain asset (no turquoise yet, reserved for the asset itself) */
+.ai-pulse-visual::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:420px;height:420px;background:radial-gradient(circle,rgba(80,13,95,0.55),rgba(80,13,95,0.16) 55%,transparent 76%);filter:blur(60px);z-index:0;pointer-events:none}
+/* Concentric ring backdrop — placeholder presence until the generated asset lands */
+.ai-pulse-rings{position:relative;z-index:1;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.ai-pulse-rings span{position:absolute;border-radius:50%;border:1px solid rgba(var(--core-rgb),0.3)}
+.ai-pulse-rings span:nth-child(1){width:160px;height:160px;border-color:rgba(var(--core-rgb),0.3)}
+.ai-pulse-rings span:nth-child(2){width:290px;height:290px;border-color:rgba(var(--core-rgb),0.22)}
+.ai-pulse-rings span:nth-child(3){width:420px;height:420px;border-color:rgba(var(--core-rgb),0.15)}
 .ai-points{display:flex;flex-direction:column;gap:16px}
 .ai-point{position:relative;padding:18px 22px 18px 18px;border-radius:12px;border:1px solid rgba(255,255,255,0.07);background:linear-gradient(150deg,rgba(20,7,23,0.7),rgba(17,16,20,0.6));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 6px 22px rgba(0,0,0,0.28),inset 0 1px 0 rgba(255,255,255,0.05)}
 .ai-point::before{content:'';position:absolute;right:0;top:12px;bottom:12px;width:2px;background:linear-gradient(180deg,transparent,var(--core-light),transparent);border-radius:2px;opacity:0.6}
@@ -1064,8 +1104,8 @@ h2{margin-bottom:20px}
 .library-group:last-of-type{margin-bottom:0}
 .library-group-title{display:block;text-align:center;font-size:12px;color:var(--white-dim);font-weight:700;margin:24px 0 14px;padding-bottom:10px;border-bottom:1px solid rgba(var(--core-rgb),0.14)}
 .library-shelf{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;direction:rtl;max-width:880px;margin:0 auto}
-.booklet{position:relative;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:linear-gradient(150deg,rgba(20,7,23,0.55),rgba(17,16,20,0.5));box-shadow:0 4px 14px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.04);transition:transform 0.3s var(--ease-structural),border-color 0.3s,box-shadow 0.3s;display:grid;grid-template-columns:44px 1fr;align-items:center;gap:0;padding:10px 14px}
-.booklet:hover{transform:translateY(-1px);border-color:rgba(var(--core-rgb),0.3);box-shadow:0 6px 22px rgba(0,0,0,0.35),0 0 32px rgba(var(--core-rgb),0.06)}
+.booklet{position:relative;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);border-inline-start:3px solid rgba(var(--core-rgb),0.5);background:linear-gradient(150deg,rgba(20,7,23,0.55),rgba(17,16,20,0.5));box-shadow:0 8px 22px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.04);transition:transform 0.3s var(--ease-structural),border-color 0.3s,box-shadow 0.3s;display:grid;grid-template-columns:44px 1fr;align-items:center;gap:0;padding:10px 14px}
+.booklet:hover{transform:translateY(-1px);border-color:rgba(var(--core-rgb),0.3);border-inline-start-color:var(--core);box-shadow:0 10px 28px rgba(0,0,0,0.45),0 0 32px rgba(var(--core-rgb),0.08)}
 .booklet-cover{position:relative;aspect-ratio:auto;background:
   linear-gradient(145deg,rgba(80,13,95,0.55),rgba(20,7,23,0.85));
   display:flex;align-items:center;justify-content:center;border-bottom:none;border:1px solid rgba(var(--core-rgb),0.28);border-radius:8px;padding:0;width:36px;height:36px;flex-shrink:0}
@@ -1077,16 +1117,27 @@ h2{margin-bottom:20px}
 
 /* ===== ROOT MEETING (Pgisha im hashoresh) ===== */
 .root-section .root-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:32px;align-items:center;direction:rtl}
+.root-visual{position:relative;min-height:320px}
+.root-visual-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:440px;height:440px;background:radial-gradient(ellipse 70% 65% at 50% 50%,rgba(80,13,95,0.5),rgba(80,13,95,0.18) 55%,transparent 78%);filter:blur(85px);z-index:0;pointer-events:none}
+/* Figure bleeds toward the outer edge only (away from the text column) — asymmetry principle */
+.root-visual-photo{position:relative;z-index:1;width:100%;max-width:360px;margin:0 auto}
+.root-visual-photo img{width:100%;display:block}
 
 /* ===== RESPONSIVE — NEW SECTIONS ===== */
 @media(max-width:768px){
   .ai-grid{grid-template-columns:1fr;gap:24px}
-  .ai-pulse-visual{min-height:160px}
+  .ai-pulse-visual{min-height:220px}
+  .ai-pulse-visual::before{width:280px;height:280px;filter:blur(46px)}
+  .ai-pulse-rings span:nth-child(1){width:110px;height:110px}
+  .ai-pulse-rings span:nth-child(2){width:200px;height:200px}
+  .ai-pulse-rings span:nth-child(3){width:280px;height:280px}
   .ai-point{padding:16px 16px 16px 14px}
   .library-shelf{grid-template-columns:1fr;gap:10px;max-width:520px}
   .booklet-meta h3{font-size:13.5px}
   .root-section .root-grid{grid-template-columns:1fr;gap:20px}
-  .root-visual{order:-1}
+  .root-visual{order:-1;min-height:0;display:flex;justify-content:center;padding:12px 0}
+  .root-visual-photo{position:relative;top:auto;left:auto;transform:none;margin:0 auto;max-width:220px}
+  .root-visual-glow{width:min(320px,80vw);height:320px}
   .ai-callout{padding:18px 20px;font-size:14.5px}
 }
 @media(max-width:480px){
@@ -1109,8 +1160,8 @@ h2{margin-bottom:20px}
   .step-row,.split-row,.system-layer,.transform-card,.filter-card{opacity:1!important;transform:none!important}
   .steps-timeline-line{scale:1 1!important}
   .step-row{opacity:1!important}
-  .step-row .step-row-number{color:rgba(var(--core-rgb),0.55)!important}
-  .step-row .step-row-icon{box-shadow:0 0 18px rgba(var(--core-rgb),0.2),0 0 40px rgba(var(--core-rgb),0.1)!important;border-color:rgba(var(--core-rgb),0.35)!important}
+  .step-row .step-row-number{color:var(--core)!important}
+  .step-row .step-row-icon{box-shadow:0 0 18px rgba(var(--core-rgb),0.28),0 0 40px rgba(var(--core-rgb),0.12)!important;border-color:var(--core)!important;background:rgba(var(--core-rgb),0.16)!important}
   .hero-figure-photo{animation:none}
   .consent-banner.visible{animation:none;transform:translateY(0)}
   .consent-banner.hidden{animation:none;transform:translateY(100%)}
@@ -1221,7 +1272,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container"><div class="vsl-wrapper">
     <h2 class="reveal">רוב מי שמגיע אלי ניסה הכל, <span class="highlight">אבל לא לפי הסדר הנכון.</span></h2>
     <div class="vsl-video vsl-video--placeholder">
-      <img src="assets/images/youtubepholder1.png" alt="סרטון הסבר — בקרוב" class="vsl-placeholder-img" loading="lazy">
+      <div class="cast-photo cast-photo--readable">
+        <img src="assets/images/web/face-13-web.jpg" alt="סרטון הסבר — בקרוב" class="vsl-placeholder-img" loading="lazy" width="1080" height="1350">
+      </div>
       <div class="vsl-coming-soon">הסרטון המלא יעלה בקרוב</div>
     </div>
     <p class="sub-text reveal reveal-delay-2 sub-center">אתה לא רודף אחרי לקוחות כי חסר לך תוכן או רעיון, אתה רודף אחריהם כי <span class="highlight">אין מאחורי כל מה שאתה עושה קו אחד שמסביר את הערך שלך.</span> ברגע שהקו יושב, אתה מפסיק לרדוף אחרי כל פעולה חדשה ומתחיל להבין מה באמת מקדם אותך.</p>
@@ -1248,6 +1301,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="root-visual reveal reveal-delay-2">
         <!-- ASSET-SLOT: STRATEGIC DEPTH — פגישה עם השורש -->
+        <div class="root-visual-glow"></div>
+        <div class="cast-photo cast-photo--framed root-visual-photo">
+          <img src="assets/images/web/face-14-web.jpg" alt="אוריאל סול" loading="lazy" width="1080" height="1350">
+        </div>
       </div>
     </div>
   </div>
@@ -1303,6 +1360,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="ai-grid">
       <div class="ai-pulse-visual reveal">
         <!-- ASSET-SLOT: STRATEGIC BRAIN — ה־AI שלך -->
+        <div class="ai-pulse-rings" aria-hidden="true"><span></span><span></span><span></span></div>
       </div>
       <div class="ai-points reveal reveal-delay-2">
         <div class="ai-point">
@@ -1331,7 +1389,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="sub-text reveal reveal-delay-1 sub-center-16">לא קורס שאתה צופה בו לבד, ולא ייעוץ אישי שעולה פי ארבע. אתה יודע מה הבעיה עם קורסים? הם כלליים מדי. והבעיה עם ייעוץ אישי? הוא יקר מדי. אז בניתי מבנה שמשלב את שניהם — קבוצה שנותנת אנרגיה ומראה, ותהליך אישי שנותן דיוק.</p>
     <div class="process-grid">
       <div class="process-card process-card--group glow-card reveal reveal-delay-2"><div class="card-badge"><img src="assets/icons/icon-group.png" alt="קבוצה" class="card-badge-icon" loading="lazy"> קבוצה</div><h3>7 מפגשי עומק קבוצתיים בזום</h3><p>3 שעות כל מפגש, אחת לשבועיים. כל מפגש בונה חלק אחר במנגנון שלך: מה־DNA, דרך השיטה, ועד ההפעלה בשטח. קבוצה של עד 10 משתתפים בלבד — אינטימי, זה לא קורס, זה תהליך.</p></div>
-      <div class="process-card process-card--premium glow-card reveal reveal-delay-3"><div class="card-badge"><img src="assets/icons/icon-personal.png" alt="אישי" class="card-badge-icon" loading="lazy"> אישי</div><h3>3 מפגשים אישיים בזום + מפגש בוגרים</h3><p>90 דקות כל מפגש, בנקודות הקריטיות של ההתחלה, האמצע והסוף. במפגשים האישיים אני לא נותן לך לנחש אם עשית נכון — מזקק אותך אישית ומדייק את מה שבנית. בסיום: מפגש בוגרים פרונטלי, מבט אחורה ומבט קדימה. וקבוצת ווצאפ פעילה לאורך כל התהליך.</p></div>
+      <div class="process-card process-card--premium glow-card reveal reveal-delay-3"><div class="cast-photo cast-photo--round process-mentor-photo"><img src="assets/images/web/face-09-web.jpg" alt="אוריאל סול" loading="lazy" width="120" height="120"></div><div class="card-badge"><img src="assets/icons/icon-personal.png" alt="אישי" class="card-badge-icon" loading="lazy"> אישי</div><h3>3 מפגשים אישיים בזום + מפגש בוגרים</h3><p>90 דקות כל מפגש, בנקודות הקריטיות של ההתחלה, האמצע והסוף. במפגשים האישיים אני לא נותן לך לנחש אם עשית נכון — מזקק אותך אישית ומדייק את מה שבנית. בסיום: מפגש בוגרים פרונטלי, מבט אחורה ומבט קדימה. וקבוצת ווצאפ פעילה לאורך כל התהליך.</p></div>
     </div>
     <div class="process-highlight glow-card reveal">
       <p>רק שלושת המפגשים האישיים מתומחרים בנפרד ב <span class="stat">15,000 שקל</span>. כאן אתה מקבל אותם כחלק ממבנה שלם שבנוי לייצר לך מסלול ממוקד ותוצאה מדידה לאורך התהליך.</p>
@@ -1667,7 +1725,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- STORY -->
 <section class="story-section" id="story">
   <div class="container"><div class="story-grid">
-    <div class="story-image reveal"><div class="story-image-glow"></div><img src="assets/images/noback.png" alt="אוריאל סול" loading="lazy" /></div>
+    <div class="story-image reveal"><div class="story-image-glow"></div><div class="cast-photo cast-photo--framed"><img src="assets/images/web/face-11-web.jpg" alt="אוריאל סול" loading="lazy" width="1066" height="1600" /></div></div>
     <div class="story-content">
       <h2 class="reveal">הייתי איש שיווק מצליח <span class="highlight">שלא ראה את הערך של עצמו.</span></h2>
       <p class="reveal reveal-delay-1">היו לי לקוחות והיה לי צוות רציני, מבחוץ הכל עבד, אבל מבפנים הרגשתי מתחזה. הלכתי ליועצים עסקיים שבנו לי אסטרטגיות על בסיס מה שאמרתי להם שאני יודע. אבל אף אחד לא שאל אותי את השאלות שלא ידעתי לשאול את עצמי: מי אתה באמת, מה הערך שאתה מביא, ולמה שמישהו יבחר דווקא בך?</p>
