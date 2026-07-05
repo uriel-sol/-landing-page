@@ -243,6 +243,13 @@ animation:heroFadeIn 1.2s var(--ease-structural) both}
 .cast-photo--framed{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.09);box-shadow:0 18px 44px rgba(0,0,0,0.45),0 0 44px rgba(var(--core-rgb),0.14)}
 .cast-photo--framed::before{content:'';position:absolute;inset:0;z-index:3;background:linear-gradient(180deg,rgba(18,7,23,0.10) 0%,rgba(18,7,23,0.42) 100%);mix-blend-mode:multiply;pointer-events:none}
 .cast-photo--framed img{filter:grayscale(0.4) contrast(1.05) brightness(0.9)}
+/* Generated (AI-graded) portraits already sit inside the palette — dial the duotone way down so we don't re-tint an image that's already tinted */
+.cast-photo--generated img,.hero-figure-photo.cast-photo--generated img{filter:grayscale(0.1)}
+.cast-photo--generated::after,.hero-figure-photo.cast-photo--generated::after{opacity:0.12}
+
+/* ===== METAPHOR VISUAL — generated conceptual assets (steps/AI/layers/library/after/final) ===== */
+.metaphor-visual{border-radius:16px;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,0.4),0 0 40px rgba(var(--core-rgb),0.12)}
+.metaphor-visual img{width:100%;height:auto;display:block}
 
 .hero-focus{position:relative;display:block;max-width:700px;margin:24px auto 0;padding:28px 34px 30px;border-radius:16px;border:1px solid rgba(255,255,255,0.09);text-align:center;
 background:linear-gradient(160deg,rgba(41,15,47,0.72),rgba(27,10,33,0.66));box-shadow:0 18px 44px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.08),0 0 90px rgba(var(--core-rgb),0.06);
@@ -1103,6 +1110,9 @@ h2{margin-bottom:20px}
 .ai-pulse-rings span:nth-child(1){width:160px;height:160px;border-color:rgba(var(--core-rgb),0.3)}
 .ai-pulse-rings span:nth-child(2){width:290px;height:290px;border-color:rgba(var(--core-rgb),0.22)}
 .ai-pulse-rings span:nth-child(3){width:420px;height:420px;border-color:rgba(var(--core-rgb),0.15)}
+/* Generated strategic-brain asset already carries its own concentric rings — hide the CSS placeholder rings once the image is present */
+.ai-pulse-visual.has-generated-visual .ai-pulse-rings{display:none}
+.ai-pulse-visual .metaphor-visual{position:relative;z-index:1;max-width:460px;width:100%;margin:0 auto}
 .ai-points{display:flex;flex-direction:column;gap:16px}
 .ai-point{position:relative;padding:18px 22px 18px 18px;border-radius:12px;border:1px solid rgba(255,255,255,0.07);background:linear-gradient(150deg,rgba(20,7,23,0.7),rgba(17,16,20,0.6));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 6px 22px rgba(0,0,0,0.28),inset 0 1px 0 rgba(255,255,255,0.05)}
 .ai-point::before{content:'';position:absolute;right:0;top:12px;bottom:12px;width:2px;background:linear-gradient(180deg,transparent,var(--core-light),transparent);border-radius:2px;opacity:0.6}
@@ -1276,8 +1286,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="hero-figure">
         <div class="hero-figure-glow"></div>
-        <div class="hero-figure-photo">
-          <img src="assets/images/web/face-10-web.jpg" alt="אוריאל סול" width="896" height="1196" fetchpriority="high" />
+        <div class="hero-figure-photo cast-photo--generated">
+          <img src="assets/images/generated/portrait-hero.jpg" alt="אוריאל סול" width="896" height="1196" fetchpriority="high" />
         </div>
       </div>
     </div>
@@ -1289,8 +1299,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container"><div class="vsl-wrapper">
     <h2 class="reveal">רוב מי שמגיע אלי ניסה הכל, <span class="highlight">אבל לא לפי הסדר הנכון.</span></h2>
     <div class="vsl-video vsl-video--placeholder">
-      <div class="cast-photo cast-photo--readable">
-        <img src="assets/images/web/face-13-web.jpg" alt="סרטון הסבר — בקרוב" class="vsl-placeholder-img" loading="lazy" width="1080" height="1350">
+      <div class="cast-photo cast-photo--readable cast-photo--generated">
+        <img src="assets/images/generated/portrait-vsl.jpg" alt="סרטון הסבר — בקרוב" class="vsl-placeholder-img" loading="lazy" width="922" height="1152">
       </div>
       <div class="vsl-coming-soon">הסרטון המלא יעלה בקרוב</div>
     </div>
@@ -1319,8 +1329,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="root-visual reveal reveal-delay-2">
         <!-- ASSET-SLOT: STRATEGIC DEPTH — פגישה עם השורש -->
         <div class="root-visual-glow"></div>
-        <div class="cast-photo cast-photo--framed root-visual-photo">
-          <img src="assets/images/web/face-14-web.jpg" alt="אוריאל סול" loading="lazy" width="1080" height="1350">
+        <div class="cast-photo cast-photo--framed cast-photo--generated root-visual-photo">
+          <img src="assets/images/generated/asset-root.jpg" alt="יסוד אחד עמוק בסלע מיישר רסיסים צפים — קו אחד מחבר" loading="lazy" width="1600" height="2142">
         </div>
       </div>
     </div>
@@ -1336,6 +1346,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="sub-text reveal reveal-delay-1">אנחנו לא מנסים דברים, אנחנו בונים נכסים לפי סדר ברור.</p>
     </div>
     <!-- ASSET-SLOT: VISUAL CLARITY — שלושת השלבים -->
+    <div class="metaphor-visual reveal" style="max-width:760px;margin:0 auto 40px">
+      <img src="assets/images/generated/asset-steps.jpg" alt="שלושה צמתים נועלים רסיסים מרחפים למקומם לאורך קו אחד" width="1600" height="893" loading="lazy">
+    </div>
     <div class="steps-timeline">
       <div class="steps-timeline-line"></div>
       <div class="step-row">
@@ -1375,8 +1388,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="reveal">זה לא קורס AI, <span class="highlight">זה ה־AI שלך.</span></h2>
     <p class="ai-lead reveal reveal-delay-1">כולם היום מדברים על AI: תכתוב פרומפט, תבקש אסטרטגיה, תן רעיון והוא יוציא לך טקסט. אבל זה לא AI עסקי, זה צ'אט גנרי.</p>
     <div class="ai-grid">
-      <div class="ai-pulse-visual reveal">
+      <div class="ai-pulse-visual reveal has-generated-visual">
         <!-- ASSET-SLOT: STRATEGIC BRAIN — ה־AI שלך -->
+        <div class="metaphor-visual reveal">
+          <img src="assets/images/generated/asset-ai.jpg" alt="מוח אסטרטגי מוזן בנתוני העסק שלך, טבעות אנרגיה סביב ליבה אחת" width="1600" height="1600" loading="lazy">
+        </div>
         <div class="ai-pulse-rings" aria-hidden="true"><span></span><span></span><span></span></div>
       </div>
       <div class="ai-points reveal reveal-delay-2">
@@ -1406,7 +1422,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="sub-text reveal reveal-delay-1 sub-center-16">לא קורס שאתה צופה בו לבד, ולא ייעוץ אישי שעולה פי ארבע. אתה יודע מה הבעיה עם קורסים? הם כלליים מדי. והבעיה עם ייעוץ אישי? הוא יקר מדי. אז בניתי מבנה שמשלב את שניהם — קבוצה שנותנת אנרגיה ומראה, ותהליך אישי שנותן דיוק.</p>
     <div class="process-grid" data-stagger="70">
       <div class="process-card process-card--group glow-card reveal reveal-delay-2"><div class="card-badge"><img src="assets/icons/icon-group.png" alt="קבוצה" class="card-badge-icon" loading="lazy"> קבוצה</div><h3>7 מפגשי עומק קבוצתיים בזום</h3><p>3 שעות כל מפגש, אחת לשבועיים. כל מפגש בונה חלק אחר במנגנון שלך: מה־DNA, דרך השיטה, ועד ההפעלה בשטח. קבוצה של עד 10 משתתפים בלבד — אינטימי, זה לא קורס, זה תהליך.</p></div>
-      <div class="process-card process-card--premium glow-card reveal reveal-delay-3"><div class="cast-photo cast-photo--round process-mentor-photo"><img src="assets/images/web/face-09-web.jpg" alt="אוריאל סול" loading="lazy" width="120" height="120"></div><div class="card-badge"><img src="assets/icons/icon-personal.png" alt="אישי" class="card-badge-icon" loading="lazy"> אישי</div><h3>3 מפגשים אישיים בזום + מפגש בוגרים</h3><p>90 דקות כל מפגש, בנקודות הקריטיות של ההתחלה, האמצע והסוף. במפגשים האישיים אני לא נותן לך לנחש אם עשית נכון — מזקק אותך אישית ומדייק את מה שבנית. בסיום: מפגש בוגרים פרונטלי, מבט אחורה ומבט קדימה. וקבוצת ווצאפ פעילה לאורך כל התהליך.</p></div>
+      <div class="process-card process-card--premium glow-card reveal reveal-delay-3"><div class="cast-photo cast-photo--round cast-photo--generated process-mentor-photo"><img src="assets/images/generated/portrait-process.jpg" alt="אוריאל סול" loading="lazy" width="768" height="1360" style="object-position:center 15%"></div><div class="card-badge"><img src="assets/icons/icon-personal.png" alt="אישי" class="card-badge-icon" loading="lazy"> אישי</div><h3>3 מפגשים אישיים בזום + מפגש בוגרים</h3><p>90 דקות כל מפגש, בנקודות הקריטיות של ההתחלה, האמצע והסוף. במפגשים האישיים אני לא נותן לך לנחש אם עשית נכון — מזקק אותך אישית ומדייק את מה שבנית. בסיום: מפגש בוגרים פרונטלי, מבט אחורה ומבט קדימה. וקבוצת ווצאפ פעילה לאורך כל התהליך.</p></div>
     </div>
     <div class="process-highlight glow-card reveal">
       <p>רק שלושת המפגשים האישיים מתומחרים בנפרד ב <span class="stat">15,000 שקל</span>. כאן אתה מקבל אותם כחלק ממבנה שלם שבנוי לייצר לך מסלול ממוקד ותוצאה מדידה לאורך התהליך.</p>
@@ -1500,6 +1516,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>בסוף התהליך אתה לא יוצא עם מחברת סיכומים, אתה יוצא עם מערכת שמחזיקה את העסק והשיווק שלך.</p>
     </div>
     <!-- ASSET-SLOT: VISUAL CLARITY — חמש שכבות התוצרים -->
+    <div class="metaphor-visual reveal" style="max-width:640px;margin:0 auto 40px">
+      <img src="assets/images/generated/asset-layers.jpg" alt="חמש שכבות שקופות נערמות זו על זו ומתאחדות למערכת אחת מלוכדת" width="1600" height="1194" loading="lazy">
+    </div>
 
     <div class="system-layers">
 
@@ -1651,6 +1670,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="library-mockup reveal reveal-delay-1">
       <!-- ASSET-SLOT: LIBRARY MOCKUP — ספריית 14 הנכסים -->
+      <div class="metaphor-visual reveal" style="max-width:860px;margin:0 auto">
+        <img src="assets/images/generated/asset-library.jpg" alt="ספריית נכסים חיה עם 14 חוברות ופרויקטים מסודרים על מדף אחד" width="1600" height="893" loading="lazy">
+      </div>
     </div>
 
     <div class="library-group reveal reveal-delay-2">
@@ -1728,6 +1750,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="reveal text-center">אחרי 14 שבועות, <span class="highlight">ככה זה מרגיש בפועל.</span></h2>
     <p class="sub-text reveal reveal-delay-1 sub-center">סדר, מיקוד ודיוק. מסלול, ביטחון ושליטה.</p>
     <!-- ASSET-SLOT: VISUAL CLARITY — לפני / אחרי המערכת -->
+    <div class="metaphor-visual reveal" style="max-width:860px;margin:0 auto 40px">
+      <img src="assets/images/generated/asset-after.jpg" alt="רסיסים מפוזרים בצד אחד, אותם רסיסים מיושרים לקו אחד ברור בצד השני" width="1600" height="893" loading="lazy">
+    </div>
     <div class="transform-grid" data-stagger="70">
       <div class="transform-card reveal reveal-delay-1"><strong>אתה פותח את היום ויודע על מה לעבוד.</strong><p>כי יש לך מסלול ברור, לא רשימה אינסופית.</p></div>
       <div class="transform-card reveal reveal-delay-2"><strong>כששואלים אותך מה אתה עושה, אתה לא מסתבך.</strong><p>כי יש לך עמדה מקצועית חדה.</p></div>
@@ -1742,7 +1767,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- STORY -->
 <section class="story-section" id="story">
   <div class="container"><div class="story-grid">
-    <div class="story-image reveal"><div class="story-image-glow"></div><div class="cast-photo cast-photo--framed"><img src="assets/images/web/face-11-web.jpg" alt="אוריאל סול" loading="lazy" width="1066" height="1600" /></div></div>
+    <div class="story-image reveal"><div class="story-image-glow"></div><div class="cast-photo cast-photo--framed cast-photo--generated"><img src="assets/images/generated/portrait-story.jpg" alt="אוריאל סול" loading="lazy" width="842" height="1264" /></div></div>
     <div class="story-content">
       <h2 class="reveal">הייתי איש שיווק מצליח <span class="highlight">שלא ראה את הערך של עצמו.</span></h2>
       <p class="reveal reveal-delay-1">היו לי לקוחות והיה לי צוות רציני, מבחוץ הכל עבד, אבל מבפנים הרגשתי מתחזה. הלכתי ליועצים עסקיים שבנו לי אסטרטגיות על בסיס מה שאמרתי להם שאני יודע. אבל אף אחד לא שאל אותי את השאלות שלא ידעתי לשאול את עצמי: מי אתה באמת, מה הערך שאתה מביא, ולמה שמישהו יבחר דווקא בך?</p>
@@ -1863,6 +1888,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="mt-32" style="font-size:15px;color:rgba(255,255,255,0.7);max-width:680px;margin-left:auto;margin-right:auto;line-height:1.7">כל חודש שהקו הזה לא בנוי, אתה ממשיך לשלם עליו בזמן, באנרגיה ובלקוחות שהיו יכולים לבחור בך, אבל לא הבינו למה דווקא אתה.</p>
     </div>
     <!-- ASSET-SLOT: STRATEGIC DEPTH — CTA סופי -->
+    <div class="metaphor-visual reveal" style="max-width:820px;margin:8px auto 32px;box-shadow:none;mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 100%)">
+      <img src="assets/images/generated/asset-final.jpg" alt="קו אחד רציף מחבר את כל הרסיסים למנגנון אחד שלם ורגוע" width="1600" height="893" loading="lazy">
+    </div>
     <div class="reveal reveal-delay-2 mt-32">
       <button class="cta-btn cta-final-primary" onclick="openModal()">הגיע הזמן לעשות את זה נכון מהיסוד</button>
     </div>
@@ -2455,6 +2483,28 @@ document.querySelectorAll('.transform-card').forEach(function(card){
       onUpdate:function(){syncLineDash();}
     });
   }
+})();
+
+// Lazy-image re-sync for the Connecting Line — ScrollTrigger/updateLine measure anchor sections as soon as
+// the page loads, but loading="lazy" images (the generated portraits + the six metaphor visuals) can still be
+// queued below the fold and change section heights once they actually load, drifting the Line's endpoints.
+// One debounced handler covers every late image load (and window 'load' as a final catch-all) and re-syncs both.
+(function(){
+  var debounceTimer=null;
+  function refreshLine(){
+    if(window.ScrollTrigger)ScrollTrigger.refresh();
+    if(window.updateScrollLineSvg)window.updateScrollLineSvg();
+  }
+  function scheduleRefresh(){
+    clearTimeout(debounceTimer);
+    debounceTimer=setTimeout(refreshLine,150);
+  }
+  document.querySelectorAll('img').forEach(function(img){
+    if(img.complete)return;
+    img.addEventListener('load',scheduleRefresh,{once:true});
+    img.addEventListener('error',scheduleRefresh,{once:true});
+  });
+  window.addEventListener('load',scheduleRefresh);
 })();
 
 // Counter animation for stats
