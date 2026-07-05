@@ -14,7 +14,7 @@
     body{
       margin:0;
       font-family:'Heebo',sans-serif;
-      background:#08080a;
+      background:#120717;
       color:#f3f4f8;
       direction:rtl;
       line-height:1.9;
@@ -29,8 +29,11 @@
     h2{font-size:clamp(22px,3vw,30px);margin-top:38px}
     p,li{font-size:17px;color:#d3d5de}
     strong{color:#fff}
-    a{color:#c77bd2}
+    a{color:#FFFFFF;text-decoration:none;border-bottom:1px solid rgba(141,23,150,0.6)}
+    a:hover{border-bottom-color:rgba(141,23,150,0.9)}
     ul{padding-right:20px}
+    .back-home-link{position:fixed;top:16px;right:16px;z-index:120;font-size:13px;font-weight:600;color:#f3f4f8;background:rgba(16,16,22,0.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.12);text-decoration:none;transition:color 0.3s,border-color 0.3s}
+    .back-home-link:hover{color:#fff;border-color:rgba(141,23,150,0.6)}
     .card{
       background:rgba(255,255,255,0.03);
       border:1px solid rgba(255,255,255,0.08);
@@ -48,6 +51,7 @@
   </style>
 </head>
 <body>
+  <a href="/" class="back-home-link">&larr; חזרה לדף הבית</a>
   <main class="wrap">
     <h1>הצהרת נגישות</h1>
 
