@@ -39,3 +39,10 @@
 | 2026-03-19 | GSAP scripts defer + ScrollTrigger.refresh on load | architect-lead | ביצועי FCP — scripts ב-head חוסמים parsing |
 | 2026-03-19 | SVG scrollytelling — window.load במקום setTimeout(500) | architect-lead | מיקום מדויק יותר — ממתין לטעינת כל המשאבים |
 | 2026-03-19 | Font-weight normalization — 760→800, 650→700 | architect-lead | תאימות cross-browser — ערכים לא סטנדרטיים לא נתמכים בכל הדפדפנים |
+| 2026-07-05 | בדיקת אבטחה ל-5 ריפוזיטוריז של סקילים חיצוניים (5 סוכני audit במקביל) | המשתמש + architect-lead | לפני התקנה — וידוא שאין קוד זדוני, טלמטריה, או exfiltration |
+| 2026-07-05 | התקנת 4 סקילים: ui-ux-pro-max, taste-skill, redesign-skill, banana | המשתמש | נמצאו בטוחים; תבניות המרה, כללי עיצוב אנטי-גנרי, והפקת תמונות |
+| 2026-07-05 | התקנה רזה בלבד — ללא סקילי פרימיום/Gemini של ui-ux-pro-max, ללא ui-styling (5.8MB פונטים + npm) | architect-lead | צמצום footprint; לא רלוונטי ל-HTML סטטי |
+| 2026-07-05 | banana: הסרת setup_mcp.py והפוטר הפרסומי; direct API בלבד, מפתח דרך env בלבד | architect-lead | מניעת תלות npm של צד שלישי לא מבוקרת ושמירת מפתח בטקסט גלוי |
+| 2026-07-05 | הוספת PROJECT OVERRIDES לכל סקיל מותקן — RTL/עברית, ללא CDN חיצוני, vanilla בלבד | architect-lead | הסקילים בנויים ל-LTR/לטינית; בלי ההתאמות הם עלולים להזיק לדף עברי |
+| 2026-07-05 | דחיית ruflo — לא יותקן | המשתמש + architect-lead | דורס settings.json, מרשה git push אוטומטי (מנוגד לכלל 6), מריץ npx @latest בכל סשן — סיכון שרשרת אספקה; ללא תועלת לדף יחיד |
+| 2026-07-05 | דחיית humanizer — לא יותקן | architect-lead | בטוח אך בנוי לזיהוי דפוסי אנגלית; לא אפקטיבי לקופי עברי ונלחם בשפה שיווקית |
