@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Landing page for "קוד המפצח" (The Cracking Code) by Uriel Sol — a 13-week program for business owners and experts who want to build a stable demand mechanism.
+Landing page for "קוד המפצח" (The Cracking Code) by Uriel Sol — a 14-week program for business owners and experts who want to build a stable demand mechanism.
 
 ## Source of Truth
 
